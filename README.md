@@ -1,5 +1,5 @@
 # eCommerce-Application
-This application is based on [RSScholl task](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/eCommerce-Application/Sprints/Sprint1/RSS-ECOMM-1_01.md). 
+This application is based on [RSScholl task](https://github.com/rolling-scopes-school/tasks/tree/master/tasks/eCommerce-Application). 
 
 #### Description 📝
 
