@@ -2,7 +2,7 @@
   "name": "ecommerce-application",
   "version": "1.0.0",
   "description": "final project of \"Eich's web witnesses\" team in RSS",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "jest-test": "jest",
     "test": "concurrently \"npx eslint .\" \"npx prettier . --check\"",

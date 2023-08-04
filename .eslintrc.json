@@ -13,6 +13,14 @@
   },
   "plugins": ["@typescript-eslint", "jest"],
   "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "ts": "never"
+      }
+    ],
     "linebreak-style": 0,
     "quotes": ["error", "double"],
     "semi": ["error", "always"],
@@ -22,10 +30,11 @@
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error"
   },
-  "ignorePatterns": ["package-lock.json"],
   "settings": {
-    "react": {
-      "version": "detect"
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".ts"]
+      }
     }
   }
 }
