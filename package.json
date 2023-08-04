@@ -1,0 +1,15 @@
+{
+  "name": "ecommerce-application",
+  "version": "1.0.0",
+  "description": "final project of \"Eich's web witnesses\" team in RSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pavel, Milana, Kate",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
