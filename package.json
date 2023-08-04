@@ -4,9 +4,14 @@
   "description": "final project of \"Eich's web witnesses\" team in RSS",
   "main": "index.js",
   "scripts": {
+    "test": "",
+    "eslint-checkall": "npx eslint .",
     "serve": "webpack serve",
     "build-prod": "webpack --mode=production",
-    "build-dev": "webpack --mode=development"
+    "build-dev": "webpack --mode=development",
+    "prett-checkall": "prettier . --check",
+    "prett-writeall": "prettier . --write",
+    "prepare": "husky install"
   },
   "author": "Pavel, Milana, Kate",
   "license": "ISC",
@@ -18,6 +23,7 @@
     "eslint-config-airbnb": "^19.0.4",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
+    "husky": "^8.0.0",
     "prettier": "3.0.1",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
