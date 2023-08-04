@@ -48,7 +48,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".ts", ".js"],
+    extensions: ["tsx", ".ts", ".js"],
   },
   devServer: {
     compress: true,
