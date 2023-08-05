@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "jest-test": "jest",
-    "test": "concurrently \"npx eslint .\" \"npx prettier . --check\"",
+    "test": "concurrently \"npx eslint .\" \"npx prettier . --check\" \"npx prettier . --write\"",
     "eslint-checkall": "npx eslint .",
     "serve": "webpack serve",
     "build-prod": "webpack --mode=production",
@@ -42,5 +42,9 @@
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "firebase": "^10.1.0",
+    "sass": "^1.64.2"
   }
 }
