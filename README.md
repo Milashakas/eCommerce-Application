@@ -73,6 +73,8 @@ npm run srve
 - You can also build the project locally with any mode you like
 ```Shell
 npm run build-prod
+```
+```Shell
 npm run build-dev
 ```
 After open the index.html file in dist folder
