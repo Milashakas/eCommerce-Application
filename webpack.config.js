@@ -9,13 +9,13 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
+    assetModuleFilename: "images/[hash][ext][query]",
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
   ],
-  // mode: "development",
   module: {
     rules: [
       {
@@ -39,16 +39,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: "file-loader",
-          },
-        ],
-      },
-      {
-        test: /\.svg$/,
-        loader: "svg-inline-loader",
+        test: /\.(svg|webp|png|jpe?g|gif)$/i,
+        type: "asset/resource",
       },
     ],
   },

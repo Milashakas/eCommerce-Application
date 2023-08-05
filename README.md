@@ -68,7 +68,7 @@ npm init
 ```
 2. Run the project locally via webpack-dev-server and access it on host 9000 (http://localhost:9000/)
 ```Shell
-npm run srve
+npm run serve
 ```
 - You can also build the project locally with any mode you like
 ```Shell
