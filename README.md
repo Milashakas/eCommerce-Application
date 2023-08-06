@@ -17,5 +17,64 @@ It's a **Body Care shop**, where customers enjoy of buying a lot of body care pr
 - HTML/CSS/Sass
 - TypeScript
 - Webpack
+- Redux
 - Jest
+- Firebase
+- Commercetools
 ```
+
+# Available scripts:📝
+- Run the webpack-dev-server
+```Shell
+npm run serve
+```
+- Build the project with production mode
+```Shell
+npm run build-prod
+```
+- Build the project with development mode
+```Shell
+npm run build-dev
+```
+- Check the code with prettier
+```Shell
+npm run prett-checkall
+```
+- Fix the code with prettier
+```Shell
+npm run prett-fixeall
+```
+- Analyze the code with eslint
+```Shell
+npm run eslint-checkall
+```
+- Launch jest tests
+```Shell
+npm run jest-test
+```
+- Test the code with eslint, prettier and fix prettier imprecisions
+```Shell
+npm run test
+```
+- Prepare Husky pre-commit
+```Shell
+npm run prepare
+```
+
+# Quick Start:📝
+1. Set all dependencies 
+```Shell
+npm init
+```
+2. Run the project locally via webpack-dev-server and access it on host 9000 (http://localhost:9000/)
+```Shell
+npm run serve
+```
+- You can also build the project locally with any mode you like
+```Shell
+npm run build-prod
+```
+```Shell
+npm run build-dev
+```
+After open the index.html file in dist folder
