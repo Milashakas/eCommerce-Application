@@ -1,6 +1,7 @@
 declare module "*.jpg";
 declare module "*.jpeg";
 declare module "*.png";
+declare module "node-fetch";
 
 declare module "*.svg" {
   const res: Record<string, string>;
