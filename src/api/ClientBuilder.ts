@@ -45,4 +45,4 @@ const createClient = (clientBuilderData: IClientBuilderData) => {
   return ctpClient;
 };
 
-export default createClient;
+export { createClient, IClientBuilderData };

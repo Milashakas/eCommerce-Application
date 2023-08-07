@@ -1,5 +1,5 @@
 /* eslint-disable */
-import createClient from "./ClientBuilder";
+import { createClient, IClientBuilderData } from "./ClientBuilder";
 import { createApiBuilderFromCtpClient } from "@commercetools/platform-sdk";
 
 //Ключи, которые одинаковы для создания всех клиентов нашего проекта
@@ -7,7 +7,7 @@ const PROJECT_KEY: string = "body-shop";
 const AUTH_URL: string = "https://auth.europe-west1.gcp.commercetools.com";
 const API_URL: string = "https://api.europe-west1.gcp.commercetools.com";
 
-const API_CLIENT_ADMIN_DATA = {
+const API_CLIENT_ADMIN_DATA: IClientBuilderData = {
   projectKey: PROJECT_KEY,
   clientId: "LgwtChmHZkwh3lQmk_oOOKBF",
   clientSecret: "bgKrW14DlrRsgjst7fWHqgide5NrS8TA",
@@ -16,7 +16,7 @@ const API_CLIENT_ADMIN_DATA = {
   apiURL: API_URL,
 };
 
-const API_CLIENT_UNAUTHORIZED_USER_DATA = {
+const API_CLIENT_UNAUTHORIZED_USER_DATA: IClientBuilderData = {
   projectKey: PROJECT_KEY,
   clientId: "Utfed-pCCk8CmIVSfaxvHzmM",
   clientSecret: "oQLvOue8pCSfCDhIPVl2P2x3RReZCjpP",
@@ -37,7 +37,7 @@ const API_CLIENT_UNAUTHORIZED_USER_DATA = {
   apiURL: API_URL,
 };
 
-const API_CLIENT_AUTHORIZED_USER_DATA = {
+const API_CLIENT_AUTHORIZED_USER_DATA: IClientBuilderData = {
   projectKey: PROJECT_KEY,
   clientId: "YwsQcOKR8i5V5ki885KdbGly",
   clientSecret: "0IzFJhZuGfhK0fCGaPG6K7azZLBrXphp",
@@ -53,9 +53,13 @@ const API_CLIENT_AUTHORIZED_USER_DATA = {
   apiURL: API_URL,
 };
 
-const apiClientsDataArr = [API_CLIENT_ADMIN_DATA, API_CLIENT_UNAUTHORIZED_USER_DATA, API_CLIENT_AUTHORIZED_USER_DATA];
+const apiClientsDataArr: IClientBuilderData[] = [
+  API_CLIENT_ADMIN_DATA,
+  API_CLIENT_UNAUTHORIZED_USER_DATA,
+  API_CLIENT_AUTHORIZED_USER_DATA,
+];
 
-const clientsApiRoots = apiClientsDataArr.map((apiClientData) => {
+const clientsApiRoots = apiClientsDataArr.map((apiClientData: IClientBuilderData) => {
   const client = createClient({ ...apiClientData });
   const clientApiRoot = createApiBuilderFromCtpClient(client).withProjectKey({ projectKey: PROJECT_KEY });
 
