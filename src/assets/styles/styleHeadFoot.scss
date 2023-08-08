@@ -1,0 +1,139 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.header {
+    color: white;
+    z-index: 10;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+
+
+    .header-container {
+        width: 1200px;
+        margin: 0px auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .header-logo {
+            width: 200px;
+            height: 50px;
+        }
+
+        .header-nav {
+            min-width: 600px;
+
+            .header-list {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                li {
+                    list-style-type: none;
+
+                    a {
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+            }
+
+        }
+
+        .header-icons {
+            min-width: 120px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+}
+
+.test {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/src/assets/images/Devushka_glavniy_banner_2500x1280.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+    background-position: 10vw 0px; //background-position: center center; for 1024px
+}
+
+.back {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-image: linear-gradient(90deg, #000000 46%, #737272DB 79%);
+    opacity: 0.55;
+    position: absolute;
+}
+
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .footer-container {
+        height: 350px;
+        width: 1200px;
+        margin: 0px auto;
+        padding: 70px 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        color: #777;
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-description {
+            width: 200px;
+        }
+
+        li {
+            margin-bottom: 15px;
+            list-style-type: none;
+            cursor: pointer;
+        }
+
+        li:hover {
+            color: black
+        }
+
+        a {
+            text-decoration: none;
+            color: #777;
+        }
+
+        a:hover {
+            color: black;
+        }
+
+        .footer-title {
+            font-size: 20px;
+            color: black;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    }
+}
