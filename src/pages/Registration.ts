@@ -28,68 +28,167 @@ const countries = [
   "Sweden",
 ];
 
-function addBillingAddressFields(targetForm: HTMLElement, copyValues = false) {
-  // Address: Street
-  const billingStreetInput = document.createElement("input");
-  billingStreetInput.placeholder = "Street";
-  billingStreetInput.required = true;
-  if (copyValues) {
-    const streetElement = targetForm.querySelector("input[placeholder='Street']");
-    if (streetElement instanceof HTMLInputElement) {
-      billingStreetInput.value = streetElement.value;
-    }
-  }
-  targetForm.appendChild(billingStreetInput);
+function createInput({
+  type = "text",
+  className,
+  placeholder,
+  pattern,
+  required = false,
+}: {
+  type?: string;
+  className?: string;
+  placeholder?: string;
+  pattern?: string;
+  required?: boolean;
+}): HTMLInputElement {
+  const input = document.createElement("input");
+  input.type = type;
+  if (className) input.classList.add(className);
+  if (placeholder) input.placeholder = placeholder;
+  if (pattern) input.pattern = pattern;
+  if (required) input.required = required;
+  return input;
+}
 
-  // Address: City
-  const billingCityInput = document.createElement("input");
-  billingCityInput.placeholder = "City";
-  billingCityInput.pattern = "^[a-zA-Z]+$";
-  billingCityInput.required = true;
-  if (copyValues) {
-    const cityElement = targetForm.querySelector("input[placeholder='City']");
-    if (cityElement instanceof HTMLInputElement) {
-      billingCityInput.value = cityElement.value;
-    }
-  }
-  targetForm.appendChild(billingCityInput);
+function createCountrySelect(countriesArray: string[]): HTMLSelectElement {
+  const select = document.createElement("select");
+  select.classList.add("country-select");
 
-  // Address: Postal Code
-  const billingPostalCodeInput = document.createElement("input");
-  billingPostalCodeInput.placeholder = "Postal Code";
-  billingPostalCodeInput.pattern = "^[a-zA-Z0-9 ]+$";
-  billingPostalCodeInput.required = true;
-  if (copyValues) {
-    const postalCodeElement = targetForm.querySelector("input[placeholder='Postal Code']");
-    if (postalCodeElement instanceof HTMLInputElement) {
-      billingPostalCodeInput.value = postalCodeElement.value;
-    }
-  }
-  targetForm.appendChild(billingPostalCodeInput);
+  const defaultOption = document.createElement("option");
+  defaultOption.textContent = "Select Country";
+  select.appendChild(defaultOption);
 
-  // Address: Country
-  const billingCountrySelect = document.createElement("select");
-  const defaultOption2 = document.createElement("option");
-  defaultOption2.textContent = "Select Country";
-  billingCountrySelect.appendChild(defaultOption2);
-
-  countries.forEach((country) => {
+  countriesArray.forEach((country) => {
     const option = document.createElement("option");
     option.value = country;
     option.textContent = country;
-    billingCountrySelect.appendChild(option);
+    select.appendChild(option);
   });
-  if (copyValues) {
-    const countrySelectElement = targetForm.querySelector("select");
-    if (countrySelectElement instanceof HTMLSelectElement) {
-      billingCountrySelect.value = countrySelectElement.value;
+
+  return select;
+}
+
+function renderFormAddressBlock(form: HTMLElement, countriesArray: string[]): void {
+  const streetInput = createInput({
+    className: "street-input",
+    placeholder: "Street",
+    required: true,
+  });
+  form.appendChild(streetInput);
+
+  const cityInput = createInput({
+    className: "city-input",
+    placeholder: "City",
+    pattern: "^[a-zA-Z]+$",
+    required: true,
+  });
+  form.appendChild(cityInput);
+
+  const postalCodeInput = createInput({
+    className: "postal-code-input",
+    placeholder: "Postal Code",
+    pattern: "^[a-zA-Z0-9 ]+$",
+    required: true,
+  });
+  form.appendChild(postalCodeInput);
+
+  const countrySelect = createCountrySelect(countriesArray);
+  form.appendChild(countrySelect);
+}
+
+function copyValuesToInputs(sourceForm: HTMLElement, targetForm: HTMLElement) {
+  const inputsToCopy = ["Street", "City", "Postal Code"];
+  inputsToCopy.forEach((placeholder) => {
+    const sourceElement = sourceForm.querySelector(`input[placeholder='${placeholder}']`);
+    const targetElement = targetForm.querySelector(`input[placeholder='${placeholder}']`);
+
+    if (sourceElement instanceof HTMLInputElement && targetElement instanceof HTMLInputElement) {
+      targetElement.value = sourceElement.value;
     }
+  });
+
+  const sourceCountry = sourceForm.querySelector("select");
+  const targetCountry = targetForm.querySelector(".country-select:last-of-type");
+  if (sourceCountry instanceof HTMLSelectElement && targetCountry instanceof HTMLSelectElement) {
+    targetCountry.value = sourceCountry.value;
   }
-  targetForm.appendChild(billingCountrySelect);
+}
+
+function removeExistingBillingAddress(form: HTMLElement): void {
+  const existingBillingBlock = form.querySelector(".billing-address");
+  if (existingBillingBlock) {
+    form.removeChild(existingBillingBlock);
+  }
+}
+
+function addBillingAddressFields(targetForm: HTMLElement, copyValues = false) {
+  removeExistingBillingAddress(targetForm);
+  const billingAddressContainer = document.createElement("div");
+  billingAddressContainer.classList.add("billing-address");
+  renderFormAddressBlock(billingAddressContainer, countries);
+  if (copyValues) {
+    copyValuesToInputs(targetForm, billingAddressContainer);
+  }
+  const submitButton = targetForm.querySelector(".form-button");
+  targetForm.insertBefore(billingAddressContainer, submitButton);
+}
+
+function renderFormMainBlock(form: HTMLElement): void {
+  const emailInput = createInput({
+    type: "email",
+    className: "email-input",
+    placeholder: "Email",
+    required: true,
+  });
+  form.appendChild(emailInput);
+
+  const passwordInput = createInput({
+    type: "password",
+    className: "password-input",
+    placeholder: "Password",
+    pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$",
+    required: true,
+  });
+  form.appendChild(passwordInput);
+
+  const firstNameInput = createInput({
+    className: "first-name-input",
+    placeholder: "First Name",
+    pattern: "^[a-zA-Z]+$",
+    required: true,
+  });
+  form.appendChild(firstNameInput);
+
+  const lastNameInput = createInput({
+    className: "last-name-input",
+    placeholder: "Last Name",
+    pattern: "^[a-zA-Z]+$",
+    required: true,
+  });
+  form.appendChild(lastNameInput);
+
+  const dobInput = createInput({
+    type: "date",
+    className: "birth-input",
+    required: true,
+  });
+  form.appendChild(dobInput);
+}
+
+function createRadioBtn(name: string, value: string, id: string, labelText: string): HTMLElement {
+  const label = document.createElement("label");
+  const radio = document.createElement("input");
+  radio.type = "radio";
+  radio.name = name;
+  radio.value = value;
+  radio.id = id;
+  label.htmlFor = radio.id;
+  label.appendChild(radio);
+  label.appendChild(document.createTextNode(labelText));
+  return label;
 }
 
 export default function renderRegistrationPage(): HTMLElement {
-  // Creating form element
   const form = document.createElement("form");
   form.id = "registrationForm";
 
@@ -98,119 +197,31 @@ export default function renderRegistrationPage(): HTMLElement {
   formTitle.textContent = "Looks like you are new here! Feel free to join us";
   form.appendChild(formTitle);
 
-  // Email
-  const emailInput = document.createElement("input");
-  emailInput.classList.add("email-input");
-  emailInput.type = "email";
-  emailInput.placeholder = "Email";
-  emailInput.required = true;
-  form.appendChild(emailInput);
-
-  // Password
-  const passwordInput = document.createElement("input");
-  passwordInput.classList.add("password-input");
-  passwordInput.type = "password";
-  passwordInput.placeholder = "Password";
-  passwordInput.pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$"; // Basic validation
-  passwordInput.required = true;
-  form.appendChild(passwordInput);
-
-  // First Name
-  const firstNameInput = document.createElement("input");
-  firstNameInput.classList.add("first-name-input");
-  firstNameInput.placeholder = "First Name";
-  firstNameInput.pattern = "^[a-zA-Z]+$";
-  firstNameInput.required = true;
-  form.appendChild(firstNameInput);
-
-  // Last Name
-  const lastNameInput = document.createElement("input");
-  lastNameInput.classList.add("last-name-input");
-  lastNameInput.placeholder = "Last Name";
-  lastNameInput.pattern = "^[a-zA-Z]+$";
-  lastNameInput.required = true;
-  form.appendChild(lastNameInput);
-
-  // Date of Birth
-  const dobInput = document.createElement("input");
-  dobInput.classList.add("birth-input");
-  dobInput.type = "date";
-  dobInput.required = true;
-  form.appendChild(dobInput);
+  renderFormMainBlock(form);
 
   const subTitleShipping = document.createElement("h4");
   subTitleShipping.classList.add("form-subtitle");
   subTitleShipping.textContent = "Your Shipping Address";
   form.appendChild(subTitleShipping);
 
-  // Address: Street
-  const streetInput = document.createElement("input");
-  streetInput.classList.add("street-input");
-  streetInput.placeholder = "Street";
-  streetInput.required = true;
-  form.appendChild(streetInput);
-
-  // Address: City
-  const cityInput = document.createElement("input");
-  cityInput.classList.add("city-input");
-  cityInput.placeholder = "City";
-  cityInput.pattern = "^[a-zA-Z]+$";
-  cityInput.required = true;
-  form.appendChild(cityInput);
-
-  // Address: Postal Code
-  const postalCodeInput = document.createElement("input");
-  postalCodeInput.classList.add("postal-code-input");
-  postalCodeInput.placeholder = "Postal Code";
-  postalCodeInput.pattern = "^[a-zA-Z0-9 ]+$";
-  postalCodeInput.required = true;
-  form.appendChild(postalCodeInput);
-
-  // Address: Country
-  const countrySelect = document.createElement("select");
-  countrySelect.classList.add("country-select");
-  const defaultOption = document.createElement("option");
-  defaultOption.textContent = "Select Country";
-  countrySelect.appendChild(defaultOption);
-
-  countries.forEach((country) => {
-    const option = document.createElement("option");
-    option.value = country;
-    option.textContent = country;
-    countrySelect.appendChild(option);
-  });
-  form.appendChild(countrySelect);
+  renderFormAddressBlock(form, countries);
 
   const subTitleBilling = document.createElement("h4");
   subTitleBilling.classList.add("form-subtitle");
   subTitleBilling.textContent = "Your Billing Address";
   form.appendChild(subTitleBilling);
 
-  // Radio button: Same as Shipping Address
-  const radio1Label = document.createElement("label");
-  const radio1 = document.createElement("input");
-  radio1.type = "radio";
-  radio1.name = "addressType";
-  radio1.value = "same";
-  radio1.id = "sameAsShipping";
-  radio1Label.htmlFor = radio1.id;
-  radio1Label.appendChild(radio1);
-  radio1Label.appendChild(document.createTextNode("Same as Shipping Address"));
-  form.appendChild(radio1Label);
+  const sameAsShippingRadio = createRadioBtn("addressType", "same", "sameAsShipping", "Same as Shipping Address");
+  form.appendChild(sameAsShippingRadio);
 
-  // Radio button: Differs from Shipping Address
-  const radio2Label = document.createElement("label");
-  const radio2 = document.createElement("input");
-  radio2.type = "radio";
-  radio2.name = "addressType";
-  radio2.value = "different";
-  radio2.id = "differsFromShipping";
-  radio2Label.htmlFor = radio2.id;
-  radio2Label.appendChild(radio2);
-  radio2Label.appendChild(document.createTextNode("Differs from Shipping Address"));
-  form.appendChild(radio2Label);
+  const differsFromShippingRadio = createRadioBtn(
+    "addressType",
+    "different",
+    "differsFromShipping",
+    "Differs from Shipping Address",
+  );
+  form.appendChild(differsFromShippingRadio);
 
-  // Submit Button
   const submitButton = document.createElement("button");
   submitButton.classList.add("form-button");
   submitButton.textContent = "Register";
@@ -218,17 +229,22 @@ export default function renderRegistrationPage(): HTMLElement {
 
   document.body.appendChild(form);
 
-  radio2.addEventListener("change", () => {
-    if (radio2.checked) {
-      addBillingAddressFields(form);
-    }
-  });
+  const radio2 = differsFromShippingRadio.querySelector("input");
+  if (radio2) {
+    radio2.addEventListener("change", () => {
+      if (radio2.checked) {
+        addBillingAddressFields(form);
+      }
+    });
+  }
 
-  radio1.addEventListener("change", () => {
-    if (radio1.checked) {
-      addBillingAddressFields(form, true);
-    }
-  });
-
+  const radio1 = sameAsShippingRadio.querySelector("input");
+  if (radio1) {
+    radio1.addEventListener("change", () => {
+      if (radio1.checked) {
+        addBillingAddressFields(form, true);
+      }
+    });
+  }
   return form;
 }
