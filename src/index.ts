@@ -1,6 +1,6 @@
 // import { ApiRoot } from "@commercetools/platform-sdk";
 import "./assets/styles/normalize.scss";
 import "./assets/styles/style.scss";
-import renderRegistrationPage from "./pages/Registration";
+import renderRegistrationForm from "./pages/Registration";
 
-renderRegistrationPage();
+renderRegistrationForm();

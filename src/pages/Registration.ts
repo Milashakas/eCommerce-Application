@@ -1,4 +1,5 @@
 const countries = [
+  "",
   "Austria",
   "Belgium",
   "Bulgaria",
@@ -28,223 +29,192 @@ const countries = [
   "Sweden",
 ];
 
-function createInput({
-  type = "text",
-  className,
-  placeholder,
-  pattern,
-  required = false,
-}: {
-  type?: string;
-  className?: string;
-  placeholder?: string;
-  pattern?: string;
-  required?: boolean;
-}): HTMLInputElement {
-  const input = document.createElement("input");
-  input.type = type;
-  if (className) input.classList.add(className);
-  if (placeholder) input.placeholder = placeholder;
-  if (pattern) input.pattern = pattern;
-  if (required) input.required = required;
-  return input;
+function insertSelectOptions(array: string[]): string {
+  return array.map((country) => `<option value="${country}">${country}</option>`).join("");
 }
 
-function createCountrySelect(countriesArray: string[]): HTMLSelectElement {
-  const select = document.createElement("select");
-  select.classList.add("country-select");
-
-  const defaultOption = document.createElement("option");
-  defaultOption.textContent = "Select Country";
-  select.appendChild(defaultOption);
-
-  countriesArray.forEach((country) => {
-    const option = document.createElement("option");
-    option.value = country;
-    option.textContent = country;
-    select.appendChild(option);
-  });
-
-  return select;
+function renderFormAddressBillingBlock() {
+  return `
+  <div class="billing-address-block">
+    <h4 class="form-subheader">Billing Address:</h4>
+    <div class="form-row">
+      <div class="form-input">
+        <label for="address" class="required">Street</label>
+        <input type="text" name="address" id="billing-street" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-input">
+        <label for="house-number">Building #</label>
+        <input type="text" name="building-number" id="billing-building-number">
+      </div>
+      <div class="form-input">
+        <label for="apartment-number">Apt #</label>
+        <input type="text" name="apartment-number" id="billing-apartment-number">
+      </div>
+      <div class="form-input">
+        <label for="city" class="required">City</label>
+        <input type="text" name="city" id="billing-city" pattern: "^[a-zA-Z]+$" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-input">
+        <label for="postal-code" class="required">Postal Code</label>
+        <input type="text" name="postal-code" id="billing-postal-code" pattern: "^[a-zA-Z0-9 ]+$" required>
+      </div>
+      <div class="form-input">
+        <label for="country" class="required">Country</label>
+        <select class="country-select" id="billing-select" required>
+          ${insertSelectOptions(countries)}
+        </select>
+      </div>
+    </div>
+  </div>
+  `;
 }
 
-function renderFormAddressBlock(form: HTMLElement, countriesArray: string[]): void {
-  const streetInput = createInput({
-    className: "street-input",
-    placeholder: "Street",
-    required: true,
-  });
-  form.appendChild(streetInput);
-
-  const cityInput = createInput({
-    className: "city-input",
-    placeholder: "City",
-    pattern: "^[a-zA-Z]+$",
-    required: true,
-  });
-  form.appendChild(cityInput);
-
-  const postalCodeInput = createInput({
-    className: "postal-code-input",
-    placeholder: "Postal Code",
-    pattern: "^[a-zA-Z0-9 ]+$",
-    required: true,
-  });
-  form.appendChild(postalCodeInput);
-
-  const countrySelect = createCountrySelect(countriesArray);
-  form.appendChild(countrySelect);
+function renderFormAddressShippingBlock() {
+  return `
+  <div class="shipping-address-block">
+    <h4 class="form-subheader">Shipping Address:</h4>
+    <div class="form-row">
+      <div class="form-input">
+        <label for="address" class="required">Street</label>
+        <input type="text" name="address" id="shipping-street" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-input">
+        <label for="house-number">Building #</label>
+        <input type="text" name="building-number" id="shipping-building-number">
+      </div>
+      <div class="form-input">
+        <label for="apartment-number">Apt #</label>
+        <input type="text" name="apartment-number" id="shipping-apartment-number">
+      </div>
+      <div class="form-input">
+        <label for="city" class="required">City</label>
+        <input type="text" name="city" id="shipping-city" pattern: "^[a-zA-Z]+$" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-input">
+        <label for="postal-code" class="required">Postal Code</label>
+        <input type="text" name="postal-code" id="shipping-postal-code" pattern: "^[a-zA-Z0-9 ]+$" required>
+      </div>
+      <div class="form-input">
+        <label for="country" class="required">Country</label>
+        <select class="country-select" id="shipping-select" required>
+          ${insertSelectOptions(countries)}
+        </select>
+      </div>
+    </div>
+  </div>
+  `;
 }
 
-function copyValuesToInputs(sourceForm: HTMLElement, targetForm: HTMLElement) {
-  const inputsToCopy = ["Street", "City", "Postal Code"];
-  inputsToCopy.forEach((placeholder) => {
-    const sourceElement = sourceForm.querySelector(`input[placeholder='${placeholder}']`);
-    const targetElement = targetForm.querySelector(`input[placeholder='${placeholder}']`);
+function copyBillingValuesToShipping() {
+  const billingInputs = document.querySelectorAll(".billing-address-block input, .billing-address-block select");
+  const shippingInputs = document.querySelectorAll(".shipping-address-block input, .shipping-address-block select");
 
-    if (sourceElement instanceof HTMLInputElement && targetElement instanceof HTMLInputElement) {
-      targetElement.value = sourceElement.value;
+  billingInputs.forEach((billingInput, index) => {
+    const shippingInput = shippingInputs[index];
+
+    if (shippingInput) {
+      if (billingInput instanceof HTMLInputElement && shippingInput instanceof HTMLInputElement) {
+        shippingInput.value = billingInput.value;
+        // eslint-disable-next-line max-len
+      } else if (billingInput instanceof HTMLSelectElement && shippingInput instanceof HTMLSelectElement) {
+        shippingInput.selectedIndex = billingInput.selectedIndex;
+      }
     }
   });
+}
 
-  const sourceCountry = sourceForm.querySelector("select");
-  const targetCountry = targetForm.querySelector(".country-select:last-of-type");
-  if (sourceCountry instanceof HTMLSelectElement && targetCountry instanceof HTMLSelectElement) {
-    targetCountry.value = sourceCountry.value;
+function handleSameShippingChange(e: Event) {
+  const target = e.target as HTMLInputElement;
+
+  const existingShippingBlock = document.querySelector(".shipping-address-block");
+  if (existingShippingBlock) {
+    existingShippingBlock.remove();
+  }
+
+  const formButton = document.querySelector(".form-button");
+  const shippingBlock = renderFormAddressShippingBlock();
+
+  if (target.id === "yes") {
+    formButton?.insertAdjacentHTML("beforebegin", shippingBlock);
+    copyBillingValuesToShipping();
+  } else if (target.id === "no") {
+    formButton?.insertAdjacentHTML("beforebegin", shippingBlock);
   }
 }
 
-function removeExistingBillingAddress(form: HTMLElement): void {
-  const existingBillingBlock = form.querySelector(".billing-address");
-  if (existingBillingBlock) {
-    form.removeChild(existingBillingBlock);
-  }
+function initSameShippingListener() {
+  const sameShippingRadios = document.querySelectorAll("input[name='sameShipping']");
+  sameShippingRadios.forEach((radio) => {
+    radio.addEventListener("change", handleSameShippingChange);
+  });
 }
 
-function addBillingAddressFields(targetForm: HTMLElement, copyValues = false) {
-  removeExistingBillingAddress(targetForm);
-  const billingAddressContainer = document.createElement("div");
-  billingAddressContainer.classList.add("billing-address");
-  renderFormAddressBlock(billingAddressContainer, countries);
-  if (copyValues) {
-    copyValuesToInputs(targetForm, billingAddressContainer);
-  }
-  const submitButton = targetForm.querySelector(".form-button");
-  targetForm.insertBefore(billingAddressContainer, submitButton);
-}
-
-function renderFormMainBlock(form: HTMLElement): void {
-  const emailInput = createInput({
-    type: "email",
-    className: "email-input",
-    placeholder: "Email",
-    required: true,
-  });
-  form.appendChild(emailInput);
-
-  const passwordInput = createInput({
-    type: "password",
-    className: "password-input",
-    placeholder: "Password",
-    pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$",
-    required: true,
-  });
-  form.appendChild(passwordInput);
-
-  const firstNameInput = createInput({
-    className: "first-name-input",
-    placeholder: "First Name",
-    pattern: "^[a-zA-Z]+$",
-    required: true,
-  });
-  form.appendChild(firstNameInput);
-
-  const lastNameInput = createInput({
-    className: "last-name-input",
-    placeholder: "Last Name",
-    pattern: "^[a-zA-Z]+$",
-    required: true,
-  });
-  form.appendChild(lastNameInput);
-
-  const dobInput = createInput({
-    type: "date",
-    className: "birth-input",
-    required: true,
-  });
-  form.appendChild(dobInput);
-}
-
-function createRadioBtn(name: string, value: string, id: string, labelText: string): HTMLElement {
-  const label = document.createElement("label");
-  const radio = document.createElement("input");
-  radio.type = "radio";
-  radio.name = name;
-  radio.value = value;
-  radio.id = id;
-  label.htmlFor = radio.id;
-  label.appendChild(radio);
-  label.appendChild(document.createTextNode(labelText));
-  return label;
-}
-
-export default function renderRegistrationPage(): HTMLElement {
-  const form = document.createElement("form");
-  form.id = "registrationForm";
-
-  const formTitle = document.createElement("h3");
-  formTitle.classList.add("form-title");
-  formTitle.textContent = "Looks like you are new here! Feel free to join us";
-  form.appendChild(formTitle);
-
-  renderFormMainBlock(form);
-
-  const subTitleShipping = document.createElement("h4");
-  subTitleShipping.classList.add("form-subtitle");
-  subTitleShipping.textContent = "Your Shipping Address";
-  form.appendChild(subTitleShipping);
-
-  renderFormAddressBlock(form, countries);
-
-  const subTitleBilling = document.createElement("h4");
-  subTitleBilling.classList.add("form-subtitle");
-  subTitleBilling.textContent = "Your Billing Address";
-  form.appendChild(subTitleBilling);
-
-  const sameAsShippingRadio = createRadioBtn("addressType", "same", "sameAsShipping", "Same as Shipping Address");
-  form.appendChild(sameAsShippingRadio);
-
-  const differsFromShippingRadio = createRadioBtn(
-    "addressType",
-    "different",
-    "differsFromShipping",
-    "Differs from Shipping Address",
-  );
-  form.appendChild(differsFromShippingRadio);
-
-  const submitButton = document.createElement("button");
-  submitButton.classList.add("form-button");
-  submitButton.textContent = "Register";
-  form.appendChild(submitButton);
-
-  document.body.appendChild(form);
-
-  const radio2 = differsFromShippingRadio.querySelector("input");
-  if (radio2) {
-    radio2.addEventListener("change", () => {
-      if (radio2.checked) {
-        addBillingAddressFields(form);
-      }
-    });
-  }
-
-  const radio1 = sameAsShippingRadio.querySelector("input");
-  if (radio1) {
-    radio1.addEventListener("change", () => {
-      if (radio1.checked) {
-        addBillingAddressFields(form, true);
-      }
-    });
-  }
-  return form;
+export default function renderRegistrationForm() {
+  const registrationHtml = `
+    <div class="form-content">
+      <div class="form-img">
+        <div class="form-image"></div>
+        <div class="form-img-text">Looks like you are new here! <br> Feel free to join us</div>
+      </div>
+    </div>
+    <div class="form-data">
+      <form class="registration-form">
+        <h3 class="form-header">Registration Form</h3>
+        <div class="form-row">
+          <div class="form-input">
+            <label for="name" class="required">Name</label>
+            <input type="text" name="name" id="name" required>
+          </div>
+          <div class="form-input">
+            <label for="last-name" class="required">Last Name</label>
+            <input type="text" name="last-name" id="last-name" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-input">
+            <label for="dob" class="required">Date of Birth</label>
+            <input name="dob" type="text" required onfocus="(this.type='date')" onblur="(this.type='text')" id="dob">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-input">
+            <label for="email" class="required">Email</label>
+            <input type="email" name="email" id="email" required>
+          </div>
+          <div class="form-input">
+            <label for="password" class="required">Password</label>
+            <input type="password" name="password" id="password" required>
+          </div>
+        </div>
+        ${renderFormAddressBillingBlock()}
+        <div class="form-row radio-row">
+          <label for="gender" class="radio-label required">Do you have the same shipping address?</label>
+          <div class="form-radio-item">
+            <input type="radio" name="sameShipping" id="yes">
+            <label for="yes">Yes</label>
+            <span class="check"></span>
+          </div>
+          <div class="form-radio-item">
+            <input type="radio" name="sameShipping" id="no">
+            <label for="no">No</label>
+            <span class="check"></span>
+          </div>
+        </div>
+        <button type="submit" class="form-button">Register Now</button>
+      </form>
+    </div>
+  `;
+  const div = document.createElement("div");
+  div.classList.add("form-container");
+  div.innerHTML = registrationHtml;
+  document.body.appendChild(div);
+  initSameShippingListener();
 }
