@@ -14,12 +14,12 @@ export default function renderRegistrationForm() {
           <h3 class="form-header">Registration Form</h3>
           <div class="form-row">
             <div class="form-input">
-              <label for="name" class="required">Name</label>
-              <input type="text" name="name" id="name" required>
+              <label for="name" class="required">First Name</label>
+              <input type="text" name="name" id="name" autocomplete="on" required>
             </div>
             <div class="form-input">
               <label for="last-name" class="required">Last Name</label>
-              <input type="text" name="last-name" id="last-name" required>
+              <input type="text" name="last-name" id="last-name" autocomplete="on" required>
             </div>
           </div>
           <div class="form-row">
@@ -35,7 +35,7 @@ export default function renderRegistrationForm() {
             </div>
             <div class="form-input">
               <label for="password" class="required">Password</label>
-              <input type="password" name="password" id="password" required>
+              <input type="password" name="password" id="password" autocomplete="current-password" required>
             </div>
           </div>
           ${BillingAddressBlock()}
