@@ -240,8 +240,8 @@ input[type="radio"] {
   top: 2px;
   left: 2px;
   margin: auto;
-  transition: background 0.25s linear;
-  -webkit-transition: background 0.25s linear;
+  transition: 0.25s linear;
+  -webkit-transition: 0.25s linear;
 }
 
 input[type="radio"]:checked ~ .check::before {
