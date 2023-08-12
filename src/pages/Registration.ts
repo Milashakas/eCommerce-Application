@@ -59,3 +59,12 @@ export default function renderRegistrationForm() {
   `;
   return view;
 }
+
+export function insertRegistrationFormIntoMain() {
+  const main = document.querySelector("main");
+  if (main) {
+    main.innerHTML = renderRegistrationForm();
+  } else {
+    console.error("<main> element not found!");
+  }
+}
