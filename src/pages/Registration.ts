@@ -15,11 +15,11 @@ export default function renderRegistrationForm() {
           <div class="form-row">
             <div class="form-input">
               <label for="name" class="required">First Name</label>
-              <input type="text" name="name" id="name" autocomplete="on" required>
+              <input type="text" name="name" id="name" autocomplete="username" required>
             </div>
             <div class="form-input">
               <label for="last-name" class="required">Last Name</label>
-              <input type="text" name="last-name" id="last-name" autocomplete="on" required>
+              <input type="text" name="last-name" id="last-name" autocomplete="username" required>
             </div>
           </div>
           <div class="form-row">
@@ -31,7 +31,7 @@ export default function renderRegistrationForm() {
           <div class="form-row">
             <div class="form-input">
               <label for="email" class="required">Email</label>
-              <input type="email" name="email" id="email" required>
+              <input type="email" name="email" id="email" autocomplete="email" required>
             </div>
             <div class="form-input">
               <label for="password" class="required">Password</label>
