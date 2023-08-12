@@ -1,3 +1,6 @@
+import getHeader from "../components/common/Header";
+import getFooter from "../components/common/Footer";
+
 const countries = [
   "",
   "Austria",
@@ -157,7 +160,7 @@ function initSameShippingListener() {
   });
 }
 
-export default function renderRegistrationForm() {
+export function renderRegistrationForm() {
   const registrationHtml = `
     <div class="form-content">
       <div class="form-img">
@@ -215,6 +218,21 @@ export default function renderRegistrationForm() {
   const div = document.createElement("div");
   div.classList.add("form-container");
   div.innerHTML = registrationHtml;
-  document.body.appendChild(div);
+
+  return div.outerHTML;
+}
+
+export default function renderRegistrationPage() {
+  const headerHtml = getHeader();
+  document.body.insertAdjacentHTML("beforeend", headerHtml);
+
+  const mainElement = document.createElement("main");
+  const registrationFormHtml = renderRegistrationForm();
+  mainElement.innerHTML = registrationFormHtml;
+  document.body.appendChild(mainElement);
+
+  const footerHtml = getFooter();
+  document.body.insertAdjacentHTML("beforeend", footerHtml);
+
   initSameShippingListener();
 }

@@ -24,6 +24,14 @@ body {
   position: relative;
 }
 
+.registration-page-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .form-container {
   width: 60vw;
   position: relative;
