@@ -2,11 +2,9 @@
 import "./assets/styles/normalize.scss";
 import "./assets/styles/style.scss";
 import "./assets/styles/styleHeadFoot.scss";
-import renderRegistrationPage from "./pages/Registration";
+import "./assets/styles/styleMain.scss";
+import setBasicLayout from "./pages/BasicLayout";
+import initSameShippingListener from "./modules/setShippingAddressData";
 
-renderRegistrationPage();
-
-// import "./assets/styles/styleMain.scss";
-// import setBasicLayout from "./pages/BasicLayout";
-
-// setBasicLayout();
+setBasicLayout();
+initSameShippingListener();

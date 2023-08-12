@@ -34,14 +34,9 @@ body {
 
 .form-container {
   width: 60vw;
-  position: relative;
-  margin: 0 auto;
+  margin: 120px auto 0 auto;
   background: #fff;
   display: flex;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
   border: 1px solid rgba(70, 71, 71, 0.4);
   border-radius: 10px;
 }

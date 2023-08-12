@@ -1,10 +1,9 @@
 import getFooter from "../components/common/Footer";
 import getHeader from "../components/common/Header";
-import { renderRegistrationForm } from "./Registration";
-
-const body = document.querySelector("body") as HTMLBodyElement;
+import renderRegistrationForm from "./Registration";
 
 function setBasicLayout(): void {
+  const body = document.querySelector("body") as HTMLBodyElement;
   const code: string = `
   ${getHeader()}
   <main>
