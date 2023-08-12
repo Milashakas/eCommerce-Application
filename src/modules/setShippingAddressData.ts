@@ -1,6 +1,6 @@
 import ShippingAddressBlock from "../components/ShippingAddressBlock";
 
-export const countries = [
+const countries = [
   "",
   "Austria",
   "Belgium",
@@ -31,8 +31,8 @@ export const countries = [
   "Sweden",
 ];
 
-export function insertSelectOptions(array: string[]): string {
-  return array.map((country) => `<option value="${country}">${country}</option>`).join("");
+export function insertSelectOptions(): string {
+  return countries.map((country) => `<option value="${country}">${country}</option>`).join("");
 }
 
 function copyBillingValuesToShipping() {

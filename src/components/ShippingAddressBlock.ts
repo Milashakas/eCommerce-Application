@@ -1,4 +1,4 @@
-import { countries, insertSelectOptions } from "../modules/setShippingAddressData";
+import { insertSelectOptions } from "../modules/setShippingAddressData";
 
 export default function ShippingAddressBlock() {
   return `
@@ -32,7 +32,7 @@ export default function ShippingAddressBlock() {
       <div class="form-input">
         <label for="country" class="required">Country</label>
         <select class="country-select" id="shipping-select" required>
-          ${insertSelectOptions(countries)}
+          ${insertSelectOptions()}
         </select>
       </div>
     </div>
