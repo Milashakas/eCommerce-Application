@@ -15,11 +15,11 @@ const renderRegistrationForm = () => {
           <div class="form-row">
             <div class="form-input">
               <label for="name" class="required">First Name</label>
-              <input type="text" name="name" id="name" autocomplete="username" required>
+              <input type="text" name="name" id="name" autocomplete="username" pattern ="^[a-zA-Z]+$"required>
             </div>
             <div class="form-input">
               <label for="last-name" class="required">Last Name</label>
-              <input type="text" name="last-name" id="last-name" autocomplete="username" required>
+              <input type="text" name="last-name" id="last-name" autocomplete="username" pattern ="^[a-zA-Z]+$" required>
             </div>
           </div>
           <div class="form-row">

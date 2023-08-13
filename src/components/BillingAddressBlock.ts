@@ -21,13 +21,13 @@ const BillingAddressBlock = () => {
       </div>
       <div class="form-input">
         <label for="city" class="required">City</label>
-        <input type="text" name="city" id="billing-city" pattern: "^[a-zA-Z]+$" required>
+        <input type="text" name="city" id="billing-city" pattern:"^[a-zA-Z]+$" required>
       </div>
     </div>
     <div class="form-row">
       <div class="form-input">
         <label for="postal-code" class="required">Postal Code</label>
-        <input type="text" name="postal-code" id="billing-postal-code" pattern: "^[a-zA-Z0-9 ]+$" required>
+        <input type="text" name="postal-code" id="billing-postal-code" pattern:"^[a-zA-Z0-9 ]+$" required>
       </div>
       <div class="form-input">
         <label for="country" class="required">Country</label>
