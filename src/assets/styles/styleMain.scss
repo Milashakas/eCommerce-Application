@@ -89,7 +89,8 @@ a {
     width: 100%;
     justify-content: space-between;
     p{
-        font-size: 3vw;
+        margin-top: 10px;
+        font-size: 2vw;
     }
 }
 
@@ -227,6 +228,11 @@ align-items: center;
 }
 
 @media  (max-width: 1100px) {
+    .catalog-container {
+        p{
+            font-size: 3vw;
+        }
+    }
 .brands-box4{
     display: none;
 }

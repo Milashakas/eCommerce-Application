@@ -1,9 +1,8 @@
 import getFooter from "../components/common/Footer";
 import getHeader from "../components/common/Header";
 
-const body = document.querySelector("body") as HTMLBodyElement;
-
-function setBasicLayout():void {
+const setBasicLayout = () => {
+  const body = document.querySelector("body") as HTMLBodyElement;
   const code:string = `
   ${getHeader()}
   <main>
@@ -11,6 +10,6 @@ function setBasicLayout():void {
   ${getFooter()}
 `;
   body.innerHTML = code;
-}
+};
 
 export default setBasicLayout;
