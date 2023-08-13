@@ -19,7 +19,7 @@ const renderLoginForm = () => {
           <div class="form-row">
             <div class="form-input">
               <label for="password" class="required">Password</label>
-              <input type="password" name="password" id="password" autocomplete="current-password" required>
+              <input type="password" name="password" id="password" autocomplete="current-password" pattern ="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$" required>
               <span class="btn-show-pass">
                 <i class="fa-regular fa-eye-slash"></i>
               </span>
