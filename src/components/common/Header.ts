@@ -1,6 +1,6 @@
 import logo from "../../assets/logo/logowhite.svg";
-import iconBasket from "../../assets/icons/handbag_qmi32aaisiss.svg";
-import iconProfile from "../../assets/icons/profile_jjyeuy5kuk27 (1).svg";
+import iconBasket from "../../assets/icons/backet.svg";
+import iconProfile from "../../assets/icons/profile.svg";
 
 const getHeader = () => {
   const code:string = `
