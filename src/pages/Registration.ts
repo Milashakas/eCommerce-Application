@@ -36,6 +36,9 @@ const renderRegistrationForm = () => {
             <div class="form-input">
               <label for="password" class="required">Password</label>
               <input type="password" name="password" id="password" autocomplete="current-password" required>
+              <span class="btn-show-pass">
+                <i class="fa-regular fa-eye-slash"></i>
+              </span>
             </div>
           </div>
           ${BillingAddressBlock()}
