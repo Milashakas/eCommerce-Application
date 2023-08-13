@@ -1,7 +1,7 @@
 import { insertSelectOptions } from "../modules/setShippingAddressData";
 
-export default function BillingAddressBlock() {
-  return `
+const BillingAddressBlock = () => {
+  const view: string = `
   <div class="billing-address-block">
     <h4 class="form-subheader">Billing Address:</h4>
     <div class="form-row">
@@ -38,4 +38,7 @@ export default function BillingAddressBlock() {
     </div>
   </div>
   `;
-}
+  return view;
+};
+
+export default BillingAddressBlock;

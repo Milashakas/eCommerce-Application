@@ -1,4 +1,4 @@
-export default function togglePasswordVisibility(): void {
+const togglePasswordVisibility = () => {
   const btnShowPass = document.querySelector(".btn-show-pass");
   const icon = btnShowPass?.querySelector("i");
   const passwordInput = document.querySelector("input[type='password']");
@@ -14,4 +14,6 @@ export default function togglePasswordVisibility(): void {
       passwordInput?.setAttribute("type", "password");
     }
   });
-}
+};
+
+export default togglePasswordVisibility;

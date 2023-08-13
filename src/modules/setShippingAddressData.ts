@@ -31,11 +31,11 @@ const countries = [
   "Sweden",
 ];
 
-export function insertSelectOptions(): string {
-  return countries.map((country) => `<option value="${country}">${country}</option>`).join("");
-}
+export const insertSelectOptions = (): string =>
+  // eslint-disable-next-line implicit-arrow-linebreak
+  countries.map((country) => `<option value="${country}">${country}</option>`).join("");
 
-function copyBillingValuesToShipping() {
+const copyBillingValuesToShipping = () => {
   const billingInputs = document.querySelectorAll(".billing-address-block input, .billing-address-block select");
   const shippingInputs = document.querySelectorAll(".shipping-address-block input, .shipping-address-block select");
 
@@ -51,9 +51,9 @@ function copyBillingValuesToShipping() {
       }
     }
   });
-}
+};
 
-function handleSameShippingChange(e: Event) {
+const handleSameShippingChange = (e: Event) => {
   const target = e.target as HTMLInputElement;
 
   const existingShippingBlock = document.querySelector(".shipping-address-block");
@@ -70,11 +70,13 @@ function handleSameShippingChange(e: Event) {
   } else if (target.id === "no") {
     formButton?.insertAdjacentHTML("beforebegin", shippingBlock);
   }
-}
+};
 
-export default function initSameShippingListener() {
+const initSameShippingListener = () => {
   const sameShippingRadios = document.querySelectorAll("input[name='sameShipping']");
   sameShippingRadios.forEach((radio) => {
     radio.addEventListener("change", handleSameShippingChange);
   });
-}
+};
+
+export default initSameShippingListener;

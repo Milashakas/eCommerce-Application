@@ -1,7 +1,7 @@
 import { insertSelectOptions } from "../modules/setShippingAddressData";
 
-export default function ShippingAddressBlock() {
-  return `
+const ShippingAddressBlock = () => {
+  const view: string = `
   <div class="shipping-address-block">
     <h4 class="form-subheader">Shipping Address:</h4>
     <div class="form-row">
@@ -38,4 +38,7 @@ export default function ShippingAddressBlock() {
     </div>
   </div>
   `;
-}
+  return view;
+};
+
+export default ShippingAddressBlock;

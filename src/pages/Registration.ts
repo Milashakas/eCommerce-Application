@@ -1,6 +1,6 @@
 import BillingAddressBlock from "../components/BillingAddressBlock";
 
-export default function renderRegistrationForm() {
+const renderRegistrationForm = () => {
   const view = `
     <div class="form-container">
       <div class="form-content">
@@ -58,13 +58,15 @@ export default function renderRegistrationForm() {
     </div>
   `;
   return view;
-}
+};
 
-export function insertRegistrationFormIntoMain() {
+const insertRegistrationFormIntoMain = () => {
   const main = document.querySelector("main");
   if (main) {
     main.innerHTML = renderRegistrationForm();
   } else {
     console.error("<main> element not found!");
   }
-}
+};
+
+export default insertRegistrationFormIntoMain;
