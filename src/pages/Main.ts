@@ -2,10 +2,10 @@ import faceImg from "../assets/images/face.webp";
 import bodyImg from "../assets/images/body.webp";
 import hairImg from "../assets/images/hair.webp";
 import brandsImg from "../assets/images/brands.webp";
-import box1Img from "../assets/images/box1.jpg";
-import box2Img from "../assets/images/box2.jpg";
-import box3Img from "../assets/images/box3.jpg";
-import box4Img from "../assets/images/box4.jpg";
+import box1Img from "../assets/images/box1.webp";
+import box2Img from "../assets/images/box2.webp";
+import box3Img from "../assets/images/box3.webp";
+import box4Img from "../assets/images/box4.webp";
 
 const setMain = ():void => {
   const main = document.querySelector("main") as HTMLElement;
