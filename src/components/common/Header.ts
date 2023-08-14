@@ -4,6 +4,7 @@ import iconProfile from "../../assets/icons/profile.svg";
 
 const getHeader = () => {
   const code:string = `
+  <div class="overlay none"></div>
 <header class="header">
     <div class="header-container">
       <div class="burger">
@@ -50,8 +51,12 @@ const getHeader = () => {
         <span class="basket-count">0</span>
       </div>
     </div>
+
   </header>
+
+
   `;
   return code;
 };
+
 export default getHeader;

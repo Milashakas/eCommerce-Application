@@ -3,7 +3,9 @@ import "./assets/styles/style.scss";
 import "./assets/styles/styleHeadFoot.scss";
 import "./assets/styles/styleMain.scss";
 import setBasicLayout from "./modules/BasicLayout";
-import setMain from "./pages/Main";
+import mainPage from "./pages/Main";
+import headerEvents from "./components/headerEvents";
 
 setBasicLayout();
-setMain();
+mainPage();
+headerEvents();
