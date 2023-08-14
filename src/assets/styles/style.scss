@@ -320,11 +320,13 @@ input[type="radio"]:checked ~ .check {
   line-height: 170%;
 }
 
-.registration-link {
+.registration-link,
+.login-link {
   color: rgba(5, 135, 18, 0.8);
 }
 
-.registration-link:hover {
+.registration-link:hover,
+.login-link:hover {
   color: rgba(5, 135, 18, 0.6);
 }
 

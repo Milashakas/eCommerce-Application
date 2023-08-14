@@ -56,6 +56,7 @@ const renderRegistrationForm = () => {
             </div>
           </div>
           <button type="submit" class="form-button">Register Now</button>
+          <p class="registration-doublecheck">Already have your account? <br> <a href="#" class="login-link">Log In</a></p>
         </form>
       </div>
     </div>
