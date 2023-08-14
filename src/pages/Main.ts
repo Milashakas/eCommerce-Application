@@ -7,9 +7,7 @@ import box2Img from "../assets/images/box2.webp";
 import box3Img from "../assets/images/box3.webp";
 import box4Img from "../assets/images/box4.webp";
 
-const setMain = ():void => {
-  const main = document.querySelector("main") as HTMLElement;
-  console.log(main);
+const setMain = () => {
   const code = `
     <section class="welcom">
    <div class="welcom-back"></div>
@@ -84,6 +82,8 @@ const setMain = ():void => {
     </div>
     </section>
     `;
+  const main = document.querySelector("main") as HTMLElement;
   main.innerHTML = code;
+  return code;
 };
 export default setMain;
