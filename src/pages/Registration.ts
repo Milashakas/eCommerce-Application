@@ -19,7 +19,7 @@ const renderRegistrationForm = () => {
             </div>
             <div class="form-input">
               <label for="last-name" class="required">Last Name</label>
-              <input type="text" name="last-name" id="last-name" autocomplete="username" pattern ="^[a-zA-Z]+$" required>
+              <input type="text" name="last-name" class="invalid" id="last-name" autocomplete="username" pattern ="^[a-zA-Z]+$" required>
             </div>
           </div>
           <div class="form-row">

@@ -65,6 +65,15 @@ select {
   width: 100%;
 }
 
+input.invalid {
+  border-color: #900;
+  background-color: rgb(251, 222, 222);
+}
+
+input:focus .invalid {
+  outline: none;
+}
+
 input:focus,
 select:focus {
   border: 1px solid rgba(70, 71, 71, 0.4);
@@ -126,11 +135,13 @@ select:focus {
   position: relative;
   width: 100%;
   gap: 15px;
+  transition: all 0.9s ease;
 }
 
 .radio-row {
   justify-content: start;
   gap: 25px;
+  transition: all 0.9s ease;
 }
 
 label {
@@ -152,6 +163,13 @@ input[type="date"]:focus,
 input[name="dob"],
 input[name="address"] {
   width: 100%;
+}
+
+.email-error {
+  display: inline-block;
+  height: 18px;
+  font-size: 1.4rem;
+  color: #b90000;
 }
 
 .form-button {
@@ -260,6 +278,7 @@ input[type="radio"]:checked ~ .check {
 .form-login-container {
   margin: 200px auto 0 auto;
   width: 47vw;
+  transition: all 0.9s ease;
 }
 
 .login-form {
@@ -269,7 +288,7 @@ input[type="radio"]:checked ~ .check {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 15px;
 }
 
 .form-login-content {
@@ -291,7 +310,8 @@ input[type="radio"]:checked ~ .check {
   font-size: 2rem;
 }
 
-.btn-show-pass {
+.btn-show-pass,
+.email-error-sign {
   font-size: 15px;
   color: #999;
   display: flex;
@@ -306,6 +326,12 @@ input[type="radio"]:checked ~ .check {
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
+}
+
+.email-error-sign {
+  top: 28px;
+  color: #b90000;
+  display: none;
 }
 
 .btn-show-pass:hover {

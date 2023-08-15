@@ -4,11 +4,13 @@ import "./assets/styles/style.scss";
 import "./assets/styles/styleHeadFoot.scss";
 import "./assets/styles/styleMain.scss";
 import setBasicLayout from "./pages/BasicLayout";
-import initSameShippingListener from "./modules/setShippingAddressData";
+// import initSameShippingListener from "./modules/setShippingAddressData";
 import togglePasswordVisibility from "./modules/togglePasswordVisibility";
-import insertRegistrationFormIntoMain from "./pages/Registration";
+import insertLoginFormIntoMain from "./pages/Login";
+import validateEmail from "./modules/validateEmail";
 
 setBasicLayout();
-insertRegistrationFormIntoMain();
-initSameShippingListener();
+insertLoginFormIntoMain();
+// initSameShippingListener();
 togglePasswordVisibility();
+validateEmail();

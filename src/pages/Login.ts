@@ -12,8 +12,12 @@ const renderLoginForm = () => {
           <h3 class="form-header">Login</h3>
           <div class="form-row">
             <div class="form-input">
-              <label for="email" class="required">Email</label>
-              <input type="email" name="email" id="email" autocomplete="email" required>
+              <label for="email" class="email-label required">Email</label>
+              <input type="email" class="email-input required" name="email" id="email" autocomplete="email" required>
+              <span class="email-error"></span>
+              <span class="email-error-sign">
+                <i class="fa-solid fa-circle-exclamation"></i>
+              </span>
             </div>
           </div>
           <div class="form-row">
