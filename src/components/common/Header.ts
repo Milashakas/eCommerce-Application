@@ -15,24 +15,19 @@ const getHeader = () => {
       <img src=${logo} class="header-logo" alt="logo">
       <nav class="header-nav">
         <ul class="header-list">
-          <li><a href="#">MAIN</a></li>
-          <li><a href="#">CATALOG</a>
-            <div>&#62;</div>
+          <li><a href="/">MAIN</a></li>
+          <li><a href="/catalog">CATALOG</a>
           </li>
           <li><a href="#">BRANDS</a>
-            <div>&#62;</div>
           </li>
           <li><a href="#">FACE</a>
-            <div>&#62;</div>
           </li>
           <li><a href="#">BODY</a>
-            <div>&#62;</div>
           </li>
           <li><a href="#">HAIR</a>
-            <div>&#62;</div>
           </li>
           <li><a href="#">SALE</a></li>
-          <li><a href="#">ABOUT US</a></li>
+          <li><a href="/about us">ABOUT US</a></li>
         </ul>
         <div class="header-profile">
           <div class="header-buttons">
