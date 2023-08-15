@@ -13,8 +13,8 @@ const mainPage = () => {
    <div class="welcom-back"></div>
    <div class="welcom-conteiner">
    <div class="welcom-content"> 
-   <h1>This shop provides a lot of healthy and cozy products for you body.</h1>
-   <p class="welcom-content-p">Our products are a modern way to save youth.</p>
+   <h1>“Skin care online store where you can find everything to stay healthy and young.”</h1>
+   <p class="welcom-content-p">Be good to your skin. You’ll wear it every day for the rest of your life.</p>
    <div class="welcom-content-button">
    <a href="#">Catalog</a>
    </div>
