@@ -24,8 +24,8 @@ const validateEmailOnBlur = () => {
 
   if (emailValue === "") {
     displayEmailError("Oops, you are missing a required field");
-  } else if (!emailValue.match(/^\s+|\s+$/)) {
-    displayEmailError("Please delete leading or trailing whitespace");
+    // } else if (emailValue.startsWith(" ") || emailValue.endsWith(" ")) {
+    // displayEmailError("Please delete leading or trailing whitespace");
   } else if (!emailValue.includes("@")) {
     displayEmailError("Email address must contain an '@' symbol");
   } else if (!emailValue.split("@")[1] || emailValue.split("@")[1].split(".").length < 2) {
