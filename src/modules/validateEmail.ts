@@ -1,21 +1,21 @@
 export const displayEmailError = (message: string) => {
   const emailInput = document.querySelector(".email-input") as HTMLInputElement;
   const emailError = document.querySelector(".email-error")!;
-  const emailErrorSign = document.querySelector(".email-error-sign") as HTMLElement;
+  const errorSign = document.querySelector(".error-sign") as HTMLElement;
 
   emailError.innerHTML = message;
   emailInput.classList.add("invalid");
-  emailErrorSign.style.display = "block";
+  errorSign.style.display = "block";
 };
 
 export const hideEmailError = () => {
   const emailInput = document.querySelector(".email-input") as HTMLInputElement;
   const emailError = document.querySelector(".email-error")!;
-  const emailErrorSign = document.querySelector(".email-error-sign") as HTMLElement;
+  const errorSign = document.querySelector(".error-sign") as HTMLElement;
 
   emailError.innerHTML = "";
   emailInput.classList.remove("invalid");
-  emailErrorSign.style.display = "none";
+  errorSign.style.display = "none";
 };
 
 const validateEmailOnBlur = () => {
@@ -31,7 +31,7 @@ const validateEmailOnBlur = () => {
   } else if (!emailValue.split("@")[1] || emailValue.split("@")[1].split(".").length < 2) {
     displayEmailError("Your email is missing a domain name");
   } else if (!emailValue.match(/^[A-Za-z._\-0-9]+@[A-Za-z]+\.[a-z]{2,4}$/)) {
-    displayEmailError("Please enter a valid email (e.g., user@example.com)");
+    displayEmailError("Please enter a valid email (e.g. user@example.com)");
   } else {
     hideEmailError();
   }

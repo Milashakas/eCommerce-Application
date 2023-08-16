@@ -81,6 +81,7 @@ select:focus {
 
 .form-input {
   width: 100%;
+  position: relative;
 }
 
 .form-data {
@@ -165,7 +166,8 @@ input[name="address"] {
   width: 100%;
 }
 
-.email-error {
+.email-error,
+.password-error {
   display: inline-block;
   height: 18px;
   font-size: 1.4rem;
@@ -311,24 +313,67 @@ input[type="radio"]:checked ~ .check {
 }
 
 .btn-show-pass,
-.email-error-sign {
+.error-sign,
+.password-error-sign {
   font-size: 15px;
   color: #999;
   display: flex;
   align-items: center;
   position: absolute;
   height: 100%;
-  top: 10px;
-  right: 4px;
+  top: 0px;
+  right: -22px;
   padding-right: 5px;
   cursor: pointer;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
+  -webkit-transition: all 0.6s;
+  -o-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  transition: all 0.6s;
 }
 
-.email-error-sign {
+.password-error {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.password-error-text {
+  display: inline-block;
+}
+
+.password-error-info {
+  display: none;
+  right: 9px;
+  padding-right: 0px;
+}
+
+.password-error-info {
+  font-size: 15px;
+  color: rgba(5, 135, 18, 0.7);
+  height: 100%;
+  cursor: pointer;
+  -webkit-transition: all 0.6s;
+  -o-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.password-error-sign {
+  top: 28px;
+  color: #b90000;
+  right: -22px;
+  display: none;
+  transition: all 0.6s;
+}
+
+.btn-show-pass {
+  right: 2px;
+  top: -1px;
+}
+
+.error-sign {
   top: 28px;
   color: #b90000;
   display: none;
@@ -354,6 +399,31 @@ input[type="radio"]:checked ~ .check {
 .registration-link:hover,
 .login-link:hover {
   color: rgba(5, 135, 18, 0.6);
+}
+
+[data-hint] {
+  cursor: hint;
+}
+
+[data-hint]::after {
+  opacity: 0;
+  width: 300px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 5px;
+  content: attr(data-hint);
+  position: absolute;
+  top: -15px;
+  left: 70%;
+  transform: translate(-50%, 80%);
+  pointer-events: none;
+  transition: opacity 0.2s;
+  font-size: 1.3rem;
+}
+
+[data-hint]:hover::after {
+  opacity: 1;
 }
 
 @media screen and (max-width: 1670px) {
@@ -428,6 +498,10 @@ input[type="radio"]:checked ~ .check {
   .registration-form {
     padding: 20px 7px 20px 7px;
     width: 96%;
+  }
+
+  .password-error {
+    margin-top: 3px;
   }
 
   .form-data {

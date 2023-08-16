@@ -15,7 +15,7 @@ const renderLoginForm = () => {
               <label for="email" class="email-label required">Email</label>
               <input type="email" class="email-input required" name="email" id="email" autocomplete="email" required>
               <span class="email-error"></span>
-              <span class="email-error-sign">
+              <span class="error-sign">
                 <i class="fa-solid fa-circle-exclamation"></i>
               </span>
             </div>
@@ -23,9 +23,18 @@ const renderLoginForm = () => {
           <div class="form-row">
             <div class="form-input">
               <label for="password" class="required">Password</label>
-              <input type="password" name="password" id="password" autocomplete="current-password" pattern ="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$" required>
+              <input type="password" name="password" class="password-input" id="password" autocomplete="current-password" pattern ="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$" required>
               <span class="btn-show-pass">
                 <i class="fa-regular fa-eye-slash"></i>
+              </span>
+              <span class="password-error">
+                <span class="password-error-text"></span>
+                <div class="password-error-info" data-hint="Min 8 chars and at least: 1 uppercase letter, 1 lowercase letter, 1 number">
+                  <i class="fa-solid fa-circle-info"></i>
+                </div>
+              </span>
+              <span class="password-error-sign">
+                <i class="fa-solid fa-circle-exclamation"></i>
               </span>
             </div>
           </div>

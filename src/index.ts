@@ -8,9 +8,11 @@ import setBasicLayout from "./pages/BasicLayout";
 import togglePasswordVisibility from "./modules/togglePasswordVisibility";
 import insertLoginFormIntoMain from "./pages/Login";
 import validateEmail from "./modules/validateEmail";
+import validatePassword from "./modules/validatePassword";
 
 setBasicLayout();
 insertLoginFormIntoMain();
 // initSameShippingListener();
 togglePasswordVisibility();
 validateEmail();
+validatePassword();
