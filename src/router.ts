@@ -26,7 +26,6 @@ export const router = async () => {
   }
   const main = document.querySelector("main") as HTMLBodyElement;
   main.innerHTML = match.route.view;
-  console.log(match.route.view);
 };
 export const navigateTo = (url:string) => {
   window.history.pushState(null, "", url);

@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     item.addEventListener("click", (e) => {
       e.preventDefault();
       const link = e.target as HTMLAnchorElement;
-      console.log(`PRPR ${link.href}`);
       navigateTo(link.href);
     });
   });
