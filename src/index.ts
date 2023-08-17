@@ -6,4 +6,3 @@ import "./assets/styles/styleMain.scss";
 // import mainPage from "./pages/Main";
 // import headerOpenMenuFunctional from "./modules/headerEvents";
 // import footerOpenLinksFunctional from "./modules/footerEvents";
-
