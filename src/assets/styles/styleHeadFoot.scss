@@ -146,11 +146,12 @@ body {
 }
 
 .header-button {
+    color:rgb(255, 255, 255) ;
     font-size: 14px;
     padding: 5px 10px;
     border-radius: 50px;
     border: 0;
-    background-color: rgba(246, 246, 246, 0.114);
+    background-color: rgba(153, 145, 145, 0.314);
     letter-spacing: 1.5px;
     text-align: center;
     font-size: 18px;
@@ -303,7 +304,6 @@ body {
 
 @media screen and (max-width:1050px) {
     .header-button {
-        background-color: #c8c8c857;
         padding: 15px 20px;
         width: 100%;
         margin-bottom: 20px;

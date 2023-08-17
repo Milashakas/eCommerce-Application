@@ -83,8 +83,8 @@ const mainPage = () => {
     </section>
 
     `;
-  const main = document.querySelector("main") as HTMLElement;
-  main.innerHTML = code;
+  // const main = document.querySelector("main") as HTMLElement;
+  // main.innerHTML = code;
   return code;
 };
 export default mainPage;
