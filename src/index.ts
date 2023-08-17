@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   headerEvents();
   footerEvents();
 });
+
 window.addEventListener("load", router);
 
 window.addEventListener("popstate", router);
