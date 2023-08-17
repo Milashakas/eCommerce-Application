@@ -132,10 +132,10 @@ select:focus {
 .form-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
   position: relative;
   width: 100%;
-  gap: 15px;
+  gap: 19px;
   transition: all 0.9s ease;
 }
 
@@ -169,9 +169,10 @@ input[name="address"] {
 .email-error,
 .password-error {
   display: inline-block;
-  height: 18px;
-  font-size: 1.4rem;
+  height: 29px;
+  font-size: 1.3rem;
   color: #b90000;
+  margin-top: 2px;
 }
 
 .form-button {
@@ -318,7 +319,7 @@ input[type="radio"]:checked ~ .check {
   font-size: 15px;
   color: #999;
   display: flex;
-  align-items: center;
+  // align-items: center;
   position: absolute;
   height: 100%;
   top: 0px;
@@ -336,7 +337,6 @@ input[type="radio"]:checked ~ .check {
   display: flex;
   justify-content: start;
   gap: 5px;
-  margin-top: 5px;
 }
 
 .password-error-text {
@@ -370,7 +370,7 @@ input[type="radio"]:checked ~ .check {
 
 .btn-show-pass {
   right: 2px;
-  top: -1px;
+  top: 29px;
 }
 
 .error-sign {
@@ -415,11 +415,15 @@ input[type="radio"]:checked ~ .check {
   content: attr(data-hint);
   position: absolute;
   top: -15px;
-  left: 70%;
+  left: 30%;
   transform: translate(-50%, 80%);
   pointer-events: none;
   transition: opacity 0.2s;
   font-size: 1.3rem;
+}
+
+.password-hint::after {
+  left: 55%;
 }
 
 [data-hint]:hover::after {
@@ -429,6 +433,10 @@ input[type="radio"]:checked ~ .check {
 @media screen and (max-width: 1670px) {
   .form-login-container {
     width: 52vw;
+  }
+
+  .password-hint::after {
+    left: 55%;
   }
 }
 
@@ -441,6 +449,10 @@ input[type="radio"]:checked ~ .check {
 
   .form-login-container {
     width: 53vw;
+  }
+
+  .password-hint::after {
+    left: 55%;
   }
 }
 
@@ -457,6 +469,10 @@ input[type="radio"]:checked ~ .check {
   .form-login-container {
     margin: 170px auto 0 auto;
   }
+
+  .password-hint::after {
+    left: 45%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -471,6 +487,10 @@ input[type="radio"]:checked ~ .check {
 
   .form-login-container {
     margin: 150px auto 0 auto;
+  }
+
+  .password-hint::after {
+    left: 45%;
   }
 }
 
@@ -488,6 +508,24 @@ input[type="radio"]:checked ~ .check {
   .form-img-text {
     font-size: 1.8rem;
   }
+
+  [data-hint]::after {
+    left: 15%;
+  }
+
+  .password-hint::after {
+    left: 45%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  [data-hint]::after {
+    left: 5%;
+  }
+
+  .password-hint::after {
+    left: 45%;
+  }
 }
 
 @media screen and (max-width: 640px) {
@@ -496,12 +534,12 @@ input[type="radio"]:checked ~ .check {
   }
 
   .registration-form {
-    padding: 20px 7px 20px 7px;
+    padding: 20px 15px 20px 15px;
     width: 96%;
   }
 
   .password-error {
-    margin-top: 3px;
+    margin-top: 2px;
   }
 
   .form-data {
@@ -515,6 +553,14 @@ input[type="radio"]:checked ~ .check {
   .form-img-text-login {
     font-size: 1.6rem;
     top: 370px;
+  }
+
+  [data-hint]::after {
+    left: -2%;
+  }
+
+  .password-hint::after {
+    left: 47%;
   }
 }
 
@@ -545,10 +591,36 @@ input[type="radio"]:checked ~ .check {
     width: 70%;
     margin: 0 auto;
   }
+
+  [data-hint]::after {
+    left: 33%;
+  }
+
+  .password-hint::after {
+    left: 45%;
+  }
 }
 
 @media screen and (max-width: 500px) {
   .form-login-data {
     width: 80%;
+  }
+
+  [data-hint]::after {
+    left: 20%;
+  }
+
+  .password-hint::after {
+    left: 48%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  [data-hint]::after {
+    left: 17%;
+  }
+
+  .password-hint::after {
+    left: 45%;
   }
 }

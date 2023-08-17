@@ -14,7 +14,7 @@ const renderLoginForm = () => {
             <div class="form-input">
               <label for="email" class="email-label required">Email</label>
               <input type="email" class="email-input required" name="email" id="email" autocomplete="email" required>
-              <span class="email-error"></span>
+              <div class="email-error"></div>
               <span class="error-sign">
                 <i class="fa-solid fa-circle-exclamation"></i>
               </span>
@@ -27,12 +27,12 @@ const renderLoginForm = () => {
               <span class="btn-show-pass">
                 <i class="fa-regular fa-eye-slash"></i>
               </span>
-              <span class="password-error">
+              <div class="password-error">
                 <span class="password-error-text"></span>
-                <div class="password-error-info" data-hint="Min 8 chars and at least: 1 uppercase letter, 1 lowercase letter, 1 number">
+                <div class="password-error-info password-hint" data-hint="Min 8 chars and at least: 1 uppercase letter, 1 lowercase letter, 1 number">
                   <i class="fa-solid fa-circle-info"></i>
                 </div>
-              </span>
+              </div>
               <span class="password-error-sign">
                 <i class="fa-solid fa-circle-exclamation"></i>
               </span>

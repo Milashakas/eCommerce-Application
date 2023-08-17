@@ -19,7 +19,7 @@ const renderRegistrationForm = () => {
             </div>
             <div class="form-input">
               <label for="last-name" class="required">Last Name</label>
-              <input type="text" name="last-name" class="invalid" id="last-name" autocomplete="username" pattern ="^[a-zA-Z]+$" required>
+              <input type="text" name="last-name" id="last-name" autocomplete="username" pattern ="^[a-zA-Z]+$" required>
             </div>
           </div>
           <div class="form-row">
@@ -30,14 +30,27 @@ const renderRegistrationForm = () => {
           </div>
           <div class="form-row">
             <div class="form-input">
-              <label for="email" class="required">Email</label>
-              <input type="email" name="email" id="email" autocomplete="email" required>
+              <label for="email" class="email-label required">Email</label>
+              <input type="email" class="email-input required" name="email" id="email" autocomplete="email" required>
+              <div class="email-error"></div>
+              <span class="error-sign">
+                <i class="fa-solid fa-circle-exclamation"></i>
+              </span>
             </div>
             <div class="form-input">
               <label for="password" class="required">Password</label>
-              <input type="password" name="password" id="password" autocomplete="current-password" pattern ="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$" required>
+              <input type="password" name="password" class="password-input" id="password" autocomplete="current-password" pattern ="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$" required>
               <span class="btn-show-pass">
                 <i class="fa-regular fa-eye-slash"></i>
+              </span>
+              <div class="password-error password-error-registration">
+                <span class="password-error-text"></span>
+                <div class="password-error-info" data-hint="Min 8 chars and at least: 1 uppercase letter, 1 lowercase letter, 1 number">
+                  <i class="fa-solid fa-circle-info"></i>
+                </div>
+              </div>
+              <span class="password-error-sign">
+                <i class="fa-solid fa-circle-exclamation"></i>
               </span>
             </div>
           </div>
