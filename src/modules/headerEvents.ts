@@ -1,4 +1,4 @@
-const headerEvents = () => {
+const headerOpenMenuFunctional = () => {
   window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
     const { scrollY } = window;
@@ -24,4 +24,4 @@ const headerEvents = () => {
     lines.forEach((item) => item.classList.toggle("burger-line-acrive"));
   });
 };
-export default headerEvents;
+export default headerOpenMenuFunctional;
