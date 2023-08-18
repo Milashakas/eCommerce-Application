@@ -9,7 +9,8 @@ const setBasicLayout = (data = "<div><p>Paragraph</p></div>") => {
   </main>
   ${getFooter()}
 `;
-  return code;
+  const body = document.querySelector("body") as HTMLBodyElement;
+  body.innerHTML = code;
 };
 
 export default setBasicLayout;
