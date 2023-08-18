@@ -1,5 +1,4 @@
 @font-face {
-<<<<<<< HEAD
   font-family: "LatoRegular";
   src: url("/src/assets/fonts/Lato-Regular.ttf");
 }
@@ -16,13 +15,11 @@ html {
 
 body {
   font-family: "LatoRegular", Arial, Helvetica, sans-serif;
-  background: url("../images/registration_bg2.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   min-height: 100vh;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 a {
@@ -30,6 +27,11 @@ a {
 }
 
 .registration-page-container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background: url("../images/registration_bg2.webp");
   display: flex;
   height: 100vh;
   width: 100%;
@@ -625,23 +627,4 @@ input[type="radio"]:checked ~ .check {
     left: 45%;
   }
 }
-=======
-    font-family: "LatoRegular";
-    src: url("/src/assets/fonts/Lato-Regular.ttf");
-}
 
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'LatoRegular', Arial, Helvetica, sans-serif;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
->>>>>>> login-registration-main
