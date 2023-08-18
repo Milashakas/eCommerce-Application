@@ -81,7 +81,7 @@ const mainPage = () => {
     <div class="saleProducts"></div>
     </div>
     </section>
-
     `;
+    return code;
 };
 export default mainPage;
