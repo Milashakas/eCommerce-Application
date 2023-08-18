@@ -1,4 +1,4 @@
-const renderLoginForm = () => {
+const LoginForm = () => {
   const view = `
     <div class="form-container form-login-container">
       <div class="form-login-content">
@@ -47,13 +47,4 @@ const renderLoginForm = () => {
   return view;
 };
 
-const insertLoginFormIntoMain = () => {
-  const main = document.querySelector("main");
-  if (main) {
-    main.innerHTML = renderLoginForm();
-  } else {
-    console.error("<main> element not found!");
-  }
-};
-
-export default insertLoginFormIntoMain;
+export default LoginForm;
