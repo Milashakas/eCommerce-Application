@@ -8,6 +8,10 @@ const BillingAddressBlock = () => {
       <div class="form-input">
         <label for="address" class="required">Street</label>
         <input type="text" name="address" id="billing-street" required>
+        <div class="street-error"></div>
+        <span class="error-sign">
+          <i class="fa-solid fa-circle-exclamation"></i>
+        </span>
       </div>
     </div>
     <div class="form-row">
@@ -22,18 +26,30 @@ const BillingAddressBlock = () => {
       <div class="form-input">
         <label for="city" class="required">City</label>
         <input type="text" name="city" id="billing-city" pattern:"^[a-zA-Z]+$" required>
+        <div class="city-error"></div>
+        <span class="error-sign">
+          <i class="fa-solid fa-circle-exclamation"></i>
+        </span>
       </div>
     </div>
     <div class="form-row">
       <div class="form-input">
         <label for="postal-code" class="required">Postal Code</label>
         <input type="text" name="postal-code" id="billing-postal-code" pattern:"^[a-zA-Z0-9 ]+$" required>
+        <div class="postal-error"></div>
+        <span class="error-sign">
+          <i class="fa-solid fa-circle-exclamation"></i>
+        </span>
       </div>
       <div class="form-input">
         <label for="country" class="required">Country</label>
         <select class="country-select" id="billing-select" required>
           ${insertSelectOptions()}
         </select>
+        <div class="select-error"></div>
+        <span class="error-sign">
+          <i class="fa-solid fa-circle-exclamation"></i>
+        </span>
       </div>
     </div>
   </div>
