@@ -2,7 +2,7 @@ import mainPage from "./pages/Main";
 import errorPage from "./pages/404";
 import RegistrationForm from "./pages/Registration";
 import LoginForm from "./pages/Login";
-import runFunctionInRouting from "./modules/setFunctionsInROuting";
+import runFunctionInRouting from "./modules/setFunctionsInRouting";
 
 export const router = async () => {
   const routes = [
