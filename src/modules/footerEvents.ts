@@ -1,4 +1,4 @@
-const footerEvents = () => {
+const footerOpenLinksFunctional = () => {
   const navButton = document.querySelector(".foot-title-nav");
   navButton?.addEventListener("click", () => {
     const navMenu = document.querySelector(".footer-nav");
@@ -21,4 +21,4 @@ const footerEvents = () => {
   });
 };
 
-export default footerEvents;
+export default footerOpenLinksFunctional;

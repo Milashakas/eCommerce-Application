@@ -81,10 +81,7 @@ const mainPage = () => {
     <div class="saleProducts"></div>
     </div>
     </section>
-
     `;
-  // const main = document.querySelector("main") as HTMLElement;
-  // main.innerHTML = code;
-  return code;
+    return code;
 };
 export default mainPage;
