@@ -2,8 +2,6 @@ import BillingAddressBlock from "../components/BillingAddressBlock";
 
 const RegistrationForm = () => {
   const view = `
-  <div class="registration-login-page-container">
-  <div class="registration-login-page-container-back"></div>
     <div class="form-container">
       <div class="form-content">
         <div class="form-img">
@@ -18,17 +16,29 @@ const RegistrationForm = () => {
             <div class="form-input">
               <label for="name" class="required">First Name</label>
               <input type="text" name="name" id="name" autocomplete="username" pattern ="^[a-zA-Z]+$"required>
+              <div class="first-name-error"></div>
+              <span class="error-sign">
+                <i class="fa-solid fa-circle-exclamation"></i>
+              </span>
             </div>
             <div class="form-input">
               <label for="last-name" class="required">Last Name</label>
               <input type="text" name="last-name" id="last-name" autocomplete="username" pattern ="^[a-zA-Z]+$" required>
+              <div class="last-name-error"></div>
+              <span class="error-sign">
+                <i class="fa-solid fa-circle-exclamation"></i>
+              </span>
             </div>
           </div>
           <div class="form-row">
             <div class="form-input">
               <label for="dob" class="required">Date of Birth</label>
               <input name="dob" type="text" required onfocus="(this.type='date')" onblur="(this.type='text')" id="dob">
-            </div>
+              <div class="dob-error"></div>
+              <span class="error-sign">
+                <i class="fa-solid fa-circle-exclamation"></i>
+              </span>
+              </div>
           </div>
           <div class="form-row">
             <div class="form-input">
@@ -74,7 +84,6 @@ const RegistrationForm = () => {
           <p class="registration-doublecheck">Already have your account? <br> <a href="#" class="login-link">Log In</a></p>
         </form>
       </div>
-    </div>
     </div>
   `;
   return view;
