@@ -1,6 +1,6 @@
 import ShippingAddressBlock from "../components/ShippingAddressBlock";
 
-const countries = [
+export const countries = [
   "",
   "Austria",
   "Belgium",
