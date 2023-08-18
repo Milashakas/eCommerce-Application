@@ -82,6 +82,6 @@ const mainPage = () => {
     </div>
     </section>
     `;
-    return code;
+  return code;
 };
 export default mainPage;
