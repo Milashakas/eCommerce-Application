@@ -125,6 +125,10 @@ a {
     color: gray;
 }
 
+.bestSellers {
+    display: none;
+}
+
 .bestSellers-container {
     margin: 0px auto;
     max-width: 1200px;
@@ -220,6 +224,7 @@ a {
 }
 
 .sale {
+    display: none;
     height: 400px;
 }
 
