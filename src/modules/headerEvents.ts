@@ -13,9 +13,10 @@ const headerOpenMenuFunctional = () => {
 
   const links = document.querySelectorAll("a");
   links.forEach((item) => {
+    console.log(item);
     item.addEventListener("click", (e) => {
       e.preventDefault();
-      const link = e.target as HTMLAnchorElement;
+      const link = e.currentTarget as HTMLAnchorElement;
       navigateTo(link.href);
     });
   });
