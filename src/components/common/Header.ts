@@ -3,7 +3,7 @@ import iconBasket from "../../assets/icons/backet.svg";
 import iconProfile from "../../assets/icons/profile.svg";
 
 const getHeader = () => {
-  const code:string = `
+  const code: string = `
   <div class="overlay none"></div>
 <header class="header">
     <div class="header-container">

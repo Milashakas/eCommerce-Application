@@ -12,15 +12,14 @@ export const router = async () => {
     { path: "/signup", view: RegistrationForm() },
   ];
 
-  const potentialMatches = routes.map((root) => (
-    {
-      route: root,
-      isMatch: window.location.pathname === root.path,
-    }
-  ));
+  const potentialMatches = routes.map((root) => ({
+    route: root,
+    isMatch: window.location.pathname === root.path,
+  }));
 
   let match = potentialMatches.find((potentialMatche) => potentialMatche.isMatch);
-  if (!match) { // главная стр по дефолту
+  if (!match) {
+    // главная стр по дефолту
     match = {
       route: routes[0],
       isMatch: true,
@@ -30,7 +29,7 @@ export const router = async () => {
   main.innerHTML = match.route.view;
   runFunctionInRouting(match.route.path);
 };
-export const navigateTo = (url:string) => {
+export const navigateTo = (url: string) => {
   window.history.pushState(null, "", url);
   router();
 };

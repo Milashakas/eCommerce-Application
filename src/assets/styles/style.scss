@@ -40,7 +40,7 @@ a {
   justify-content: space-between;
 }
 
-.registration-login-page-container-back{
+.registration-login-page-container-back {
   width: 100%;
   height: 100%;
   background-color: transparent;
@@ -131,7 +131,7 @@ select:focus {
 .shipping-address-block {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 5px;
 }
 
 .form-header {
@@ -146,7 +146,6 @@ select:focus {
 .form-row {
   display: flex;
   justify-content: space-between;
-  // align-items: center;
   position: relative;
   width: 100%;
   gap: 19px;
@@ -155,6 +154,7 @@ select:focus {
 
 .radio-row {
   justify-content: start;
+  align-items: center;
   gap: 25px;
   transition: all 0.9s ease;
 }
@@ -181,12 +181,28 @@ input[name="address"] {
 }
 
 .email-error,
-.password-error {
-  display: inline-block;
+.password-error,
+.first-name-error,
+.last-name-error,
+.dob-error,
+.select-error,
+.postal-error,
+.city-error,
+.street-error {
   height: 29px;
   font-size: 1.3rem;
   color: #b90000;
   margin-top: 2px;
+}
+
+.first-name-error,
+.last-name-error,
+.dob-error,
+.select-error,
+.postal-error,
+.city-error,
+.street-error {
+  height: 15px;
 }
 
 .form-button {
@@ -421,7 +437,7 @@ input[type="radio"]:checked ~ .check {
 
 [data-hint]::after {
   opacity: 0;
-  width: 300px;
+  width: 250px;
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
@@ -429,7 +445,7 @@ input[type="radio"]:checked ~ .check {
   content: attr(data-hint);
   position: absolute;
   top: -15px;
-  left: 30%;
+  left: 40%;
   transform: translate(-50%, 80%);
   pointer-events: none;
   transition: opacity 0.2s;
@@ -442,6 +458,24 @@ input[type="radio"]:checked ~ .check {
 
 [data-hint]:hover::after {
   opacity: 1;
+}
+
+@media screen and (max-width: 2600px) {
+  [data-hint]::after {
+    left: 55%;
+  }
+}
+
+@media screen and (max-width: 2300px) {
+  [data-hint]::after {
+    left: 50%;
+  }
+}
+
+@media screen and (max-width: 1980px) {
+  [data-hint]::after {
+    left: 40%;
+  }
 }
 
 @media screen and (max-width: 1670px) {
@@ -524,7 +558,7 @@ input[type="radio"]:checked ~ .check {
   }
 
   [data-hint]::after {
-    left: 15%;
+    left: 27%;
   }
 
   .password-hint::after {
@@ -534,7 +568,7 @@ input[type="radio"]:checked ~ .check {
 
 @media screen and (max-width: 700px) {
   [data-hint]::after {
-    left: 5%;
+    left: 13%;
   }
 
   .password-hint::after {
@@ -570,7 +604,7 @@ input[type="radio"]:checked ~ .check {
   }
 
   [data-hint]::after {
-    left: -2%;
+    left: 2%;
   }
 
   .password-hint::after {
@@ -607,7 +641,7 @@ input[type="radio"]:checked ~ .check {
   }
 
   [data-hint]::after {
-    left: 33%;
+    left: 45%;
   }
 
   .password-hint::after {
@@ -638,4 +672,3 @@ input[type="radio"]:checked ~ .check {
     left: 45%;
   }
 }
-
