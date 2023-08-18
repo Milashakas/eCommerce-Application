@@ -2,6 +2,7 @@
 
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 const ESLintPlugin = require("eslint-webpack-plugin");
 
 module.exports = {
@@ -22,6 +23,11 @@ module.exports = {
     new ESLintPlugin({
       extensions: "ts",
     }),
+    new CopyPlugin({ // если у меня нет ничего в папке public то будет ошибка!!
+      patterns : [
+          {from : './public'}
+      ]
+  }),
   ],
   module: {
     rules: [
@@ -57,5 +63,6 @@ module.exports = {
   devServer: {
     compress: true,
     port: 9000,
+    historyApiFallback: true,
   },
 };

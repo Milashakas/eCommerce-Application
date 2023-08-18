@@ -18,28 +18,28 @@ const getHeader = () => {
           <li><a href="/">MAIN</a></li>
           <li><a href="/catalog">CATALOG</a>
           </li>
-          <li><a href="#">BRANDS</a>
+          <li><a href="/brands">BRANDS</a>
           </li>
-          <li><a href="#">FACE</a>
+          <li><a href="/face">FACE</a>
           </li>
-          <li><a href="#">BODY</a>
+          <li><a href="/body">BODY</a>
           </li>
-          <li><a href="#">HAIR</a>
+          <li><a href="/hair">HAIR</a>
           </li>
-          <li><a href="#">SALE</a></li>
-          <li><a href="/about us">ABOUT US</a></li>
+          <li><a href="/sale">SALE</a></li>
+          <li><a href="/aboutus">ABOUT US</a></li>
         </ul>
         <div class="header-profile">
           <div class="header-buttons">
-            <div class="logInButton header-button">Log In</div>
-            <div class="signUpButton header-button">Sign Up</div>
-            <div class="profile"><a href="#"><img src=${iconProfile} width="30px"
+            <a class="logInButton header-button" href="/login">Log In</a>
+            <a class="signUpButton header-button" href="/signup">Sign Up</a>
+            <div class="profile"><a href="/profile"><img src=${iconProfile} width="30px"
                   height="30px" title="Profile" alt="profile" class="icon"></a></div>
           </div>
         </div>
       </nav>
       <div class="basket">
-        <a href="#">
+        <a href="/basket">
           <img src=${iconBasket} width="30px" height="30px" title="Basket" alt="basket"
             class="icon">
         </a>
