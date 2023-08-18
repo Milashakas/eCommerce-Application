@@ -1,5 +1,7 @@
 const LoginForm = () => {
   const view = `
+  <div class="registration-login-page-container">
+  <div class="registration-login-page-container-back"></div>
     <div class="form-container form-login-container">
       <div class="form-login-content">
         <div class="form-img">
@@ -42,6 +44,7 @@ const LoginForm = () => {
           <p class="registration-doublecheck">Dont't have an account? <br> <a href="#" class="registration-link">Sign Up</a></p>
         </form>
       </div>
+    </div>
     </div>
   `;
   return view;

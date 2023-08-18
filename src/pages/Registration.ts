@@ -2,8 +2,8 @@ import BillingAddressBlock from "../components/BillingAddressBlock";
 
 const RegistrationForm = () => {
   const view = `
-  <div class="registration-page-container">
-  <div class="registration-page-container-back"></div>
+  <div class="registration-login-page-container">
+  <div class="registration-login-page-container-back"></div>
     <div class="form-container">
       <div class="form-content">
         <div class="form-img">

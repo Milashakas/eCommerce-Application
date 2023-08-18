@@ -18,9 +18,3 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 window.addEventListener("load", router);
 window.addEventListener("popstate", router);
-
-// import initSameShippingListener from "./modules/setShippingAddressData";
-// import togglePasswordVisibility from "./modules/togglePasswordVisibility";
-// import insertRegistrationFormIntoMain from "./pages/Registration";
-// import validateEmail from "./modules/validateEmail";
-// import validatePassword from "./modules/validatePassword";
