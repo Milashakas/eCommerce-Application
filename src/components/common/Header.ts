@@ -46,12 +46,8 @@ const getHeader = () => {
         <span class="basket-count">0</span>
       </div>
     </div>
-
   </header>
-
-
   `;
   return code;
 };
-
 export default getHeader;

@@ -1,7 +1,7 @@
 import logoBlack from "../../assets/logo/logoblack.svg";
 
 const getFooter = () => {
-  const code:string = `
+  const code: string = `
     <footer class="footer">
     <div class="footer-container">
         <div class="footer-description">
