@@ -39,7 +39,6 @@ const getFooter = () => {
         <div class="footer-aboutus">
           <p class="footer-title foot-title-aboutus">About us</p>
           <ul class="footer-aboutus-list">
-            <li><a href="#">About shop</a></li>
             <li><a href="#">Contacts</a></li>
           </ul>
         </div>
