@@ -8,8 +8,6 @@ const errorPage = () => {
     <a class="errorWindow-button" href="/">Main Page</a>
     </section>
     `;
-    // const main = document.querySelector("main") as HTMLElement;
-    // main.innerHTML = code;
   return code;
 };
 export default errorPage;

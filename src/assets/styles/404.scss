@@ -1,13 +1,12 @@
 .errorWindow {
     padding: 0px 30px;
     color: white;
-    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-color: #d5bdd1;
+    background-color: rgb(238,232,170);
     background-image: url("/src/assets/background/overlapping-circles.svg");
     background-repeat: repeat;
     background-attachment: fixed;
