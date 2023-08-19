@@ -3,7 +3,7 @@ import togglePasswordVisibility from "./togglePasswordVisibility";
 import validateEmail from "./validateEmail";
 import validatePassword from "./validatePassword";
 
-const runFunctionInRouting = (url:string) => {
+const runFunctionInRouting = (url: string) => {
   if (url === "/signup") {
     initSameShippingListener();
     togglePasswordVisibility();

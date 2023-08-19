@@ -1,1 +1,1 @@
-const errorPageLink = document.querySelector(".errorWindow-button");
+// const errorPageLink = document.querySelector(".errorWindow-button");

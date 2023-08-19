@@ -2,7 +2,7 @@ import getFooter from "../components/common/Footer";
 import getHeader from "../components/common/Header";
 
 const setBasicLayout = (data = "<div><p>Paragraph</p></div>") => {
-  const code:string = `
+  const code: string = `
   ${getHeader()}
   <main>
   ${data}
