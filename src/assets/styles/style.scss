@@ -68,6 +68,10 @@ a {
   background-position: center;
 }
 
+.form-subheader {
+  margin-top: 8px;
+}
+
 input,
 select {
   display: block;
@@ -189,7 +193,12 @@ input[name="address"] {
 .select-error,
 .postal-error,
 .city-error,
-.street-error {
+.street-error,
+.radio-error,
+.shipping-street-error,
+.shipping-city-error,
+.shipping-postal-error,
+.shipping-select-error {
   font-size: 1.3rem;
   color: #b90000;
   margin-top: 2px;
@@ -203,7 +212,12 @@ input[name="address"] {
 .select-error,
 .postal-error,
 .city-error,
-.street-error {
+.street-error,
+.radio-error,
+.shipping-street-error,
+.shipping-city-error,
+.shipping-postal-error,
+.shipping-select-error {
   height: 15px;
 }
 
@@ -408,6 +422,10 @@ input[type="radio"]:checked ~ .check {
   top: 28px;
   color: #b90000;
   display: none;
+}
+
+.radio-error-sign {
+  top: 10px;
 }
 
 .btn-show-pass:hover {

@@ -5,11 +5,11 @@ import validatePassword from "./validatePassword";
 import validateNames from "./validateNames";
 import validateDOB from "./validateBirthDate";
 import validateBillingAddress from "./validateBillingAddress";
-// import setBodyBackground from "./changeBg";
+import validateRegistrationForm from "./validateRegFormOnSubmit";
+import handleShippingAddressValidation from "./validateShippingAddress";
 
 const runFunctionInRouting = (url: string) => {
   if (url === "/signup") {
-    // setBodyBackground();
     initSameShippingListener();
     togglePasswordVisibility();
     validateNames();
@@ -17,8 +17,9 @@ const runFunctionInRouting = (url: string) => {
     validateEmail();
     validatePassword();
     validateBillingAddress();
+    validateRegistrationForm();
+    handleShippingAddressValidation();
   } else if (url === "/login") {
-    // setBodyBackground();
     validateEmail();
     validatePassword();
     togglePasswordVisibility();

@@ -115,9 +115,10 @@ const hideCountryError = () => {
 
 const validateCountryOnBlur = () => {
   const countrySelect = document.querySelector("#billing-select") as HTMLSelectElement;
+  const isValidCountry = countries.some((country) => country.name === countrySelect.value);
   if (countrySelect.value.trim() === "") {
     displayCountryError("Country is required");
-  } else if (!countries.includes(countrySelect.value)) {
+  } else if (!isValidCountry) {
     displayCountryError("Invalid country selection");
   } else {
     hideCountryError();

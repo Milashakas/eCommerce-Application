@@ -1,39 +1,41 @@
 import ShippingAddressBlock from "../components/ShippingAddressBlock";
 
 export const countries = [
-  "",
-  "Austria",
-  "Belgium",
-  "Bulgaria",
-  "Croatia",
-  "Republic of Cyprus",
-  "Czech Republic",
-  "Denmark",
-  "Estonia",
-  "Finland",
-  "France",
-  "Germany",
-  "Greece",
-  "Hungary",
-  "Ireland",
-  "Italy",
-  "Latvia",
-  "Lithuania",
-  "Luxembourg",
-  "Malta",
-  "Netherlands",
-  "Poland",
-  "Portugal",
-  "Romania",
-  "Slovakia",
-  "Slovenia",
-  "Spain",
-  "Sweden",
+  { name: "", code: "" },
+  { name: "Austria", code: "AT" },
+  { name: "Belgium", code: "BE" },
+  { name: "Bulgaria", code: "BG" },
+  { name: "Croatia", code: "HR" },
+  { name: "Republic of Cyprus", code: "CY" },
+  { name: "Czech Republic", code: "CZ" },
+  { name: "Denmark", code: "DK" },
+  { name: "Estonia", code: "EE" },
+  { name: "Finland", code: "FI" },
+  { name: "France", code: "FR" },
+  { name: "Germany", code: "DE" },
+  { name: "Greece", code: "GR" },
+  { name: "Hungary", code: "HU" },
+  { name: "Ireland", code: "IE" },
+  { name: "Italy", code: "IT" },
+  { name: "Latvia", code: "LV" },
+  { name: "Lithuania", code: "LT" },
+  { name: "Luxembourg", code: "LU" },
+  { name: "Malta", code: "MT" },
+  { name: "Netherlands", code: "NL" },
+  { name: "Poland", code: "PL" },
+  { name: "Portugal", code: "PT" },
+  { name: "Romania", code: "RO" },
+  { name: "Slovakia", code: "SK" },
+  { name: "Slovenia", code: "SI" },
+  { name: "Spain", code: "ES" },
+  { name: "Sweden", code: "SE" },
 ];
 
 export const insertSelectOptions = (): string =>
   // eslint-disable-next-line implicit-arrow-linebreak
-  countries.map((country) => `<option value="${country}">${country}</option>`).join("");
+  countries
+    .map((country) => `<option value="${country.name}" data-code="${country.code}">${country.name}</option>`)
+    .join("");
 
 const copyBillingValuesToShipping = () => {
   const billingInputs = document.querySelectorAll(".billing-address-block input, .billing-address-block select");

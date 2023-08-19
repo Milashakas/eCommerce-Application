@@ -7,7 +7,7 @@ const BillingAddressBlock = () => {
     <div class="form-row">
       <div class="form-input">
         <label for="address" class="required">Street</label>
-        <input type="text" name="address" id="billing-street" required>
+        <input type="text" name="address" id="billing-street">
         <div class="street-error"></div>
         <span class="error-sign">
           <i class="fa-solid fa-circle-exclamation"></i>
@@ -25,7 +25,7 @@ const BillingAddressBlock = () => {
       </div>
       <div class="form-input">
         <label for="city" class="required">City</label>
-        <input type="text" name="city" id="billing-city" pattern:"^[a-zA-Z]+$" required>
+        <input type="text" name="city" id="billing-city" pattern:"^[a-zA-Z]+$">
         <div class="city-error"></div>
         <span class="error-sign">
           <i class="fa-solid fa-circle-exclamation"></i>
@@ -35,7 +35,7 @@ const BillingAddressBlock = () => {
     <div class="form-row">
       <div class="form-input">
         <label for="postal-code" class="required">Postal Code</label>
-        <input type="text" name="postal-code" id="billing-postal-code" pattern:"^[a-zA-Z0-9 ]+$" required>
+        <input type="text" name="postal-code" id="billing-postal-code" pattern:"^[a-zA-Z0-9 ]+$">
         <div class="postal-error"></div>
         <span class="error-sign">
           <i class="fa-solid fa-circle-exclamation"></i>
@@ -43,7 +43,7 @@ const BillingAddressBlock = () => {
       </div>
       <div class="form-input">
         <label for="country" class="required">Country</label>
-        <select class="country-select" id="billing-select" required>
+        <select class="country-select" id="billing-select">
           ${insertSelectOptions()}
         </select>
         <div class="select-error"></div>

@@ -7,7 +7,11 @@ const ShippingAddressBlock = () => {
     <div class="form-row">
       <div class="form-input">
         <label for="address" class="required">Street</label>
-        <input type="text" name="address" id="shipping-street" required>
+        <input type="text" name="address" id="shipping-street">
+        <div class="shipping-street-error"></div>
+        <span class="error-sign">
+          <i class="fa-solid fa-circle-exclamation"></i>
+        </span>
       </div>
     </div>
     <div class="form-row">
@@ -21,19 +25,31 @@ const ShippingAddressBlock = () => {
       </div>
       <div class="form-input">
         <label for="city" class="required">City</label>
-        <input type="text" name="city" id="shipping-city" pattern:"^[a-zA-Z]+$" required>
+        <input type="text" name="city" id="shipping-city" pattern:"^[a-zA-Z]+$">
+        <div class="shipping-city-error"></div>
+        <span class="error-sign">
+          <i class="fa-solid fa-circle-exclamation"></i>
+        </span>
       </div>
     </div>
     <div class="form-row">
       <div class="form-input">
         <label for="postal-code" class="required">Postal Code</label>
-        <input type="text" name="postal-code" id="shipping-postal-code" pattern:"^[a-zA-Z0-9 ]+$" required>
+        <input type="text" name="postal-code" id="shipping-postal-code" pattern:"^[a-zA-Z0-9 ]+$">
+        <div class="shipping-postal-error"></div>
+        <span class="error-sign">
+          <i class="fa-solid fa-circle-exclamation"></i>
+        </span>
       </div>
       <div class="form-input">
         <label for="country" class="required">Country</label>
-        <select class="country-select" id="shipping-select" required>
+        <select class="country-select" id="shipping-select">
           ${insertSelectOptions()}
         </select>
+        <div class="shipping-select-error"></div>
+        <span class="error-sign">
+          <i class="fa-solid fa-circle-exclamation"></i>
+        </span>
       </div>
     </div>
   </div>
