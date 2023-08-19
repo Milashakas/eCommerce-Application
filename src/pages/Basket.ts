@@ -5,8 +5,6 @@ const basketPage = () => {
     <h2 class="test-section-page-h2">Basket</h2>
     </section>
     `;
-    // const main = document.querySelector("main") as HTMLElement;
-    // main.innerHTML = code;
   return code;
 };
 export default basketPage;

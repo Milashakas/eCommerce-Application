@@ -11,6 +11,10 @@ import salePage from "./pages/Sale";
 import facePage from "./pages/Face";
 import aboutUsPage from "./pages/AboutUs";
 import basketPage from "./pages/Basket";
+import orderInformationPage from "./pages/OrderInfo";
+import deliveryPage from "./pages/Delivery";
+import returnPage from "./pages/Return";
+import brandsFilter from "./pages/BrandsFilter";
 
 export const router = async () => {
   const routes = [
@@ -26,6 +30,10 @@ export const router = async () => {
     { path: "/sale", view: salePage() },
     { path: "/aboutus", view: aboutUsPage() },
     { path: "/basket", view: basketPage() },
+    { path: "/orderInformation", view: orderInformationPage() },
+    { path: "/delivery", view: deliveryPage() },
+    { path: "/return", view: returnPage() },
+    { path: "/filter", view: brandsFilter() },
   ];
 
   const potentialMatches = routes.map((root) => (

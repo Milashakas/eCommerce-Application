@@ -5,8 +5,6 @@ const salePage = () => {
     <h2 class="test-section-page-h2">Sale</h2>
     </section>
     `;
-    // const main = document.querySelector("main") as HTMLElement;
-    // main.innerHTML = code;
   return code;
 };
 export default salePage;

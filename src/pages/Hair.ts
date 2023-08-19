@@ -5,8 +5,6 @@ const hairPage = () => {
     <h2 class="test-section-page-h2">Hair</h2>
     </section>
     `;
-    // const main = document.querySelector("main") as HTMLElement;
-    // main.innerHTML = code;
   return code;
 };
 export default hairPage;
