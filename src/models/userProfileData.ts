@@ -1,4 +1,4 @@
-import IUserProfileData from "../interfaces/IUserProfileData";
+import { IUserProfileData } from "../interfaces/IUserProfileData";
 
 const userProfileData: IUserProfileData = {
   isAuth: false,

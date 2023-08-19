@@ -8,7 +8,8 @@ interface IAddressData {
   city: string;
   streetName: string;
   postalCode: string;
-  building: string;
+  building?: string;
+  apartment?: string;
 }
 
 interface IUserSignUpData {
@@ -18,8 +19,8 @@ interface IUserSignUpData {
   lastName: string;
   dateOfBirth: string;
   addresses: IAddressData[];
-  defaultShippingAddress: number;
-  defaultBillingAddress: number;
+  defaultShippingAddress?: number;
+  defaultBillingAddress?: number;
 }
 
-export { IUserProfileData, IUserSignUpData };
+export { IUserProfileData, IAddressData, IUserSignUpData };
