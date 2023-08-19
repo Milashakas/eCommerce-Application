@@ -27,17 +27,16 @@ a {
 }
 
 .registration-login-page-container {
-  padding-bottom: 50px;
+  padding-bottom: 205px;
+  background: url("../images/registration_bg2.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background: url("../images/registration_bg2.webp");
   display: flex;
   width: 100%;
   flex-direction: column;
   position: relative;
-  justify-content: space-between;
 }
 
 .registration-login-page-container-back {
@@ -52,7 +51,7 @@ a {
 .form-container {
   z-index: 3;
   width: 60vw;
-  margin: 120px auto 0 auto;
+  margin: 160px auto 0 auto;
   background: #fff;
   display: flex;
   border: 1px solid rgba(70, 71, 71, 0.4);
@@ -79,12 +78,14 @@ select {
   width: 100%;
 }
 
-input.invalid {
+input.invalid,
+select.invalid {
   border-color: #900;
   background-color: rgb(251, 222, 222);
 }
 
-input:focus .invalid {
+input:focus .invalid,
+select:focus .invalid {
   outline: none;
 }
 
@@ -189,12 +190,13 @@ input[name="address"] {
 .postal-error,
 .city-error,
 .street-error {
-  height: 29px;
   font-size: 1.3rem;
   color: #b90000;
   margin-top: 2px;
 }
 
+.email-error,
+.password-error,
 .first-name-error,
 .last-name-error,
 .dob-error,
@@ -349,7 +351,6 @@ input[type="radio"]:checked ~ .check {
   font-size: 15px;
   color: #999;
   display: flex;
-  // align-items: center;
   position: absolute;
   height: 100%;
   top: 0px;
