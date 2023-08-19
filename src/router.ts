@@ -16,7 +16,7 @@ import deliveryPage from "./pages/Delivery";
 import returnPage from "./pages/Return";
 import brandsFilter from "./pages/BrandsFilter";
 
-export const router = async () => {
+const router = async () => {
   const routes = [
     { path: "/404", view: errorPage() },
     { path: "/", view: mainPage() },
@@ -54,7 +54,5 @@ export const router = async () => {
   main.innerHTML = match.route.view;
   runFunctionInRouting(match.route.path);
 };
-export const navigateTo = (url:string) => {
-  window.history.pushState(null, "", url);
-  router();
-};
+
+export default router;

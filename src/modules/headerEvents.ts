@@ -1,5 +1,3 @@
-import { navigateTo } from "../router";
-
 const headerOpenMenuFunctional = () => {
   window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
@@ -9,16 +7,6 @@ const headerOpenMenuFunctional = () => {
     } else {
       header?.classList.add("header-background");
     }
-  });
-
-  const links = document.querySelectorAll("a");
-  links.forEach((item) => {
-    console.log(item);
-    item.addEventListener("click", (e) => {
-      e.preventDefault();
-      const link = e.currentTarget as HTMLAnchorElement;
-      navigateTo(link.href);
-    });
   });
 
   const burger = document.querySelector(".burger");
