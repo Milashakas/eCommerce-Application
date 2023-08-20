@@ -15,9 +15,7 @@ const mainPage = () => {
    <div class="welcom-content"> 
    <h1>“Skin care online store where you can find everything to stay healthy and young.”</h1>
    <p class="welcom-content-p">Be good to your skin. You’ll wear it every day for the rest of your life.</p>
-   <div class="welcom-content-button">
-   <a href="/catalog">Catalog</a>
-   </div>
+   <a class="welcom-content-button" href="/catalog">Catalog</a>
    </div>
    </div>
     </section>

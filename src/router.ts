@@ -3,6 +3,7 @@ import errorPage from "./pages/404";
 import RegistrationForm from "./pages/Registration";
 import LoginForm from "./pages/Login";
 import runFunctionInRouting from "./modules/setFunctionInRouting";
+import setLinksListener from "./modules/linksEventListener";
 import catalogPage from "./pages/Catalog";
 import brandsPage from "./pages/Brands";
 import hairPage from "./pages/Hair";
@@ -16,7 +17,7 @@ import deliveryPage from "./pages/Delivery";
 import returnPage from "./pages/Return";
 import brandsFilter from "./pages/BrandsFilter";
 
-const router = async () => {
+export const router = async () => {
   const routes = [
     { path: "/404", view: errorPage() },
     { path: "/", view: mainPage() },
@@ -53,6 +54,10 @@ const router = async () => {
   const main = document.querySelector("main") as HTMLBodyElement;
   main.innerHTML = match.route.view;
   runFunctionInRouting(match.route.path);
+  setLinksListener();
 };
 
-export default router;
+export const navigateTo = (url:string) => {
+  window.history.pushState({}, "", url);
+  router();
+};

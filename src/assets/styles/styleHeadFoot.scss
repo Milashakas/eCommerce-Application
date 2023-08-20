@@ -56,9 +56,6 @@ body {
     height: 70px;
 }
 
-.profile {
-    display: none;
-}
 
 .header-container {
     padding: 0px 20px;
@@ -121,6 +118,14 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.header-icons {
+    display: flex;
+    flex-direction: row;
+}
+.profile {
+    margin-right: 5px;
 }
 
 .profile,
@@ -443,4 +448,10 @@ body {
         background-color: #a19e9e;
         transform: rotate(180deg);
     }
+}
+
+
+
+.hideElement{
+    display: none;
 }
