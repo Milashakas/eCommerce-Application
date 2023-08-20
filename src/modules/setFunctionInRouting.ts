@@ -7,6 +7,7 @@ import validateDOB from "./validateBirthDate";
 import validateBillingAddress from "./validateBillingAddress";
 import validateRegistrationForm from "./validateRegFormOnSubmit";
 import handleShippingAddressValidation from "./validateShippingAddress";
+import validateLoginForm from "./validateLoginFormOnSubmit";
 
 const runFunctionInRouting = (url: string) => {
   if (url === "/signup") {
@@ -23,6 +24,7 @@ const runFunctionInRouting = (url: string) => {
     validateEmail();
     validatePassword();
     togglePasswordVisibility();
+    validateLoginForm();
   }
 };
 
