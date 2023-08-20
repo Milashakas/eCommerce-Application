@@ -7,7 +7,7 @@ const ShippingAddressBlock = () => {
     <div class="form-row">
       <div class="form-input">
         <label for="address" class="required">Street</label>
-        <input type="text" name="address" id="shipping-street">
+        <input type="text" name="address" class="shipping-street" id="streetName">
         <div class="shipping-street-error"></div>
         <span class="error-sign">
           <i class="fa-solid fa-circle-exclamation"></i>
@@ -17,15 +17,15 @@ const ShippingAddressBlock = () => {
     <div class="form-row">
       <div class="form-input">
         <label for="house-number">Building #</label>
-        <input type="text" name="building-number" id="shipping-building-number">
+        <input type="text" name="building-number" class="shipping-building-number" id="building">
       </div>
       <div class="form-input">
         <label for="apartment-number">Apt #</label>
-        <input type="text" name="apartment-number" id="shipping-apartment-number">
+        <input type="text" name="apartment-number" class="shipping-apartment-number" id="apartment">
       </div>
       <div class="form-input">
         <label for="city" class="required">City</label>
-        <input type="text" name="city" id="shipping-city" pattern:"^[a-zA-Z]+$">
+        <input type="text" name="city" class="shipping-city" id="city">
         <div class="shipping-city-error"></div>
         <span class="error-sign">
           <i class="fa-solid fa-circle-exclamation"></i>
@@ -35,7 +35,7 @@ const ShippingAddressBlock = () => {
     <div class="form-row">
       <div class="form-input">
         <label for="postal-code" class="required">Postal Code</label>
-        <input type="text" name="postal-code" id="shipping-postal-code" pattern:"^[a-zA-Z0-9 ]+$">
+        <input type="text" name="postal-code" class="shipping-postal-code" id="postalCode">
         <div class="shipping-postal-error"></div>
         <span class="error-sign">
           <i class="fa-solid fa-circle-exclamation"></i>
@@ -43,7 +43,7 @@ const ShippingAddressBlock = () => {
       </div>
       <div class="form-input">
         <label for="country" class="required">Country</label>
-        <select class="country-select" id="shipping-select">
+        <select name="country" class="shipping-country" id="country">
           ${insertSelectOptions()}
         </select>
         <div class="shipping-select-error"></div>

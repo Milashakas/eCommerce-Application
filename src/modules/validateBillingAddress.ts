@@ -1,7 +1,7 @@
 import { countries } from "./setShippingAddressData";
 
 const displayStreetError = (message: string) => {
-  const streetInput = document.querySelector("#billing-street") as HTMLInputElement;
+  const streetInput = document.querySelector(".billing-street") as HTMLInputElement;
   const streetErrorText = document.querySelector(".street-error")!;
   const errorSign = streetErrorText.nextElementSibling as HTMLElement;
 
@@ -11,7 +11,7 @@ const displayStreetError = (message: string) => {
 };
 
 const hideStreetError = () => {
-  const streetInput = document.querySelector("#billing-street") as HTMLInputElement;
+  const streetInput = document.querySelector(".billing-street") as HTMLInputElement;
   const streetErrorText = document.querySelector(".street-error")!;
   const errorSign = streetErrorText.nextElementSibling as HTMLElement;
 
@@ -21,7 +21,7 @@ const hideStreetError = () => {
 };
 
 const validateStreetOnBlur = () => {
-  const streetInput = document.querySelector("#billing-street") as HTMLInputElement;
+  const streetInput = document.querySelector(".billing-street") as HTMLInputElement;
   if (!streetInput.value.trim()) {
     displayStreetError("Street is required");
   } else {
@@ -30,7 +30,7 @@ const validateStreetOnBlur = () => {
 };
 
 const displayCityError = (message: string) => {
-  const cityInput = document.querySelector("#billing-city") as HTMLInputElement;
+  const cityInput = document.querySelector(".billing-city") as HTMLInputElement;
   const cityErrorText = document.querySelector(".city-error")!;
   const errorSign = cityErrorText.nextElementSibling as HTMLElement;
 
@@ -40,7 +40,7 @@ const displayCityError = (message: string) => {
 };
 
 const hideCityError = () => {
-  const cityInput = document.querySelector("#billing-city") as HTMLInputElement;
+  const cityInput = document.querySelector(".billing-city") as HTMLInputElement;
   const cityErrorText = document.querySelector(".city-error")!;
   const errorSign = cityErrorText.nextElementSibling as HTMLElement;
 
@@ -50,7 +50,7 @@ const hideCityError = () => {
 };
 
 const validateCityOnBlur = () => {
-  const cityInput = document.querySelector("#billing-city") as HTMLInputElement;
+  const cityInput = document.querySelector(".billing-city") as HTMLInputElement;
   const regex = /^[a-zA-Z\s]*$/;
   if (!cityInput.value.trim()) {
     displayCityError("City is required");
@@ -62,7 +62,7 @@ const validateCityOnBlur = () => {
 };
 
 const displayPostalError = (message: string) => {
-  const postalInput = document.querySelector("#billing-postal-code") as HTMLInputElement;
+  const postalInput = document.querySelector(".billing-postal-code") as HTMLInputElement;
   const postalErrorText = document.querySelector(".postal-error")!;
   const errorSign = postalErrorText.nextElementSibling as HTMLElement;
 
@@ -72,7 +72,7 @@ const displayPostalError = (message: string) => {
 };
 
 const hidePostalError = () => {
-  const postalInput = document.querySelector("#billing-postal-code") as HTMLInputElement;
+  const postalInput = document.querySelector(".billing-postal-code") as HTMLInputElement;
   const postalErrorText = document.querySelector(".postal-error")!;
   const errorSign = postalErrorText.nextElementSibling as HTMLElement;
 
@@ -82,7 +82,7 @@ const hidePostalError = () => {
 };
 
 const validatePostalOnBlur = () => {
-  const postalInput = document.querySelector("#billing-postal-code") as HTMLInputElement;
+  const postalInput = document.querySelector(".billing-postal-code") as HTMLInputElement;
   const regex = /^[A-Z0-9]{3,7}$/;
   if (!postalInput.value.trim()) {
     displayPostalError("Postal code is required");
@@ -94,7 +94,7 @@ const validatePostalOnBlur = () => {
 };
 
 const displayCountryError = (message: string) => {
-  const countrySelect = document.querySelector("#billing-select") as HTMLSelectElement;
+  const countrySelect = document.querySelector(".billing-country") as HTMLSelectElement;
   const countryErrorText = document.querySelector(".select-error")!;
   const errorSign = countryErrorText.nextElementSibling as HTMLElement;
 
@@ -104,7 +104,7 @@ const displayCountryError = (message: string) => {
 };
 
 const hideCountryError = () => {
-  const countrySelect = document.querySelector("#billing-select") as HTMLSelectElement;
+  const countrySelect = document.querySelector(".billing-country") as HTMLSelectElement;
   const countryErrorText = document.querySelector(".select-error")!;
   const errorSign = countryErrorText.nextElementSibling as HTMLElement;
 
@@ -114,7 +114,7 @@ const hideCountryError = () => {
 };
 
 const validateCountryOnBlur = () => {
-  const countrySelect = document.querySelector("#billing-select") as HTMLSelectElement;
+  const countrySelect = document.querySelector(".billing-country") as HTMLSelectElement;
   const isValidCountry = countries.some((country) => country.name === countrySelect.value);
   if (countrySelect.value.trim() === "") {
     displayCountryError("Country is required");
@@ -126,7 +126,7 @@ const validateCountryOnBlur = () => {
 };
 
 const resetStreetValidationOnFocus = () => {
-  const streetInput = document.querySelector("#billing-street") as HTMLInputElement;
+  const streetInput = document.querySelector(".billing-street") as HTMLInputElement;
 
   if (streetInput.classList.contains("invalid")) {
     hideStreetError();
@@ -134,7 +134,7 @@ const resetStreetValidationOnFocus = () => {
 };
 
 const resetCityValidationOnFocus = () => {
-  const cityInput = document.querySelector("#billing-city") as HTMLInputElement;
+  const cityInput = document.querySelector(".billing-city") as HTMLInputElement;
 
   if (cityInput.classList.contains("invalid")) {
     hideCityError();
@@ -142,7 +142,7 @@ const resetCityValidationOnFocus = () => {
 };
 
 const resetPostalValidationOnFocus = () => {
-  const postalInput = document.querySelector("#billing-postal-code") as HTMLInputElement;
+  const postalInput = document.querySelector(".billing-postal-code") as HTMLInputElement;
 
   if (postalInput.classList.contains("invalid")) {
     hidePostalError();
@@ -150,7 +150,7 @@ const resetPostalValidationOnFocus = () => {
 };
 
 const resetCountryValidationOnFocus = () => {
-  const countrySelect = document.querySelector("#billing-select") as HTMLInputElement;
+  const countrySelect = document.querySelector(".billing-country") as HTMLInputElement;
 
   if (countrySelect.classList.contains("invalid")) {
     hideCountryError();
@@ -158,19 +158,19 @@ const resetCountryValidationOnFocus = () => {
 };
 
 const validateBillingAddress = () => {
-  const streetInput = document.querySelector("#billing-street");
+  const streetInput = document.querySelector(".billing-street");
   streetInput?.addEventListener("blur", validateStreetOnBlur);
   streetInput?.addEventListener("focus", resetStreetValidationOnFocus);
 
-  const cityInput = document.querySelector("#billing-city");
+  const cityInput = document.querySelector(".billing-city");
   cityInput?.addEventListener("blur", validateCityOnBlur);
   cityInput?.addEventListener("focus", resetCityValidationOnFocus);
 
-  const postalInput = document.querySelector("#billing-postal-code");
+  const postalInput = document.querySelector(".billing-postal-code");
   postalInput?.addEventListener("blur", validatePostalOnBlur);
   postalInput?.addEventListener("focus", resetPostalValidationOnFocus);
 
-  const countrySelect = document.querySelector("#billing-select");
+  const countrySelect = document.querySelector(".billing-country");
   countrySelect?.addEventListener("blur", validateCountryOnBlur);
   countrySelect?.addEventListener("focus", resetCountryValidationOnFocus);
 };

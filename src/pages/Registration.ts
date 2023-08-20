@@ -17,7 +17,7 @@ const RegistrationForm = () => {
           <div class="form-row">
             <div class="form-input">
               <label for="name" class="required">First Name</label>
-              <input type="text" name="name" id="name" autocomplete="username" pattern ="^[a-zA-Z]+$">
+              <input type="text" name="name" class="first-name" id="firstName" autocomplete="username">
               <div class="first-name-error"></div>
               <span class="error-sign">
                 <i class="fa-solid fa-circle-exclamation"></i>
@@ -25,7 +25,7 @@ const RegistrationForm = () => {
             </div>
             <div class="form-input">
               <label for="last-name" class="required">Last Name</label>
-              <input type="text" name="last-name" id="last-name" autocomplete="username" pattern ="^[a-zA-Z]+$">
+              <input type="text" name="last-name" class="last-name" id="lastName" autocomplete="username">
               <div class="last-name-error"></div>
               <span class="error-sign">
                 <i class="fa-solid fa-circle-exclamation"></i>
@@ -35,7 +35,7 @@ const RegistrationForm = () => {
           <div class="form-row">
             <div class="form-input">
               <label for="dob" class="required">Date of Birth</label>
-              <input name="dob" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="dob">
+              <input name="dob" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" class="dob" id="dateOfBirth">
               <div class="dob-error"></div>
               <span class="error-sign">
                 <i class="fa-solid fa-circle-exclamation"></i>
@@ -45,7 +45,7 @@ const RegistrationForm = () => {
           <div class="form-row">
             <div class="form-input">
               <label for="email" class="email-label required">Email</label>
-              <input type="email" class="email-input required" name="email" id="email" autocomplete="email">
+              <input type="email" class="email-input" name="email" id="email" autocomplete="email">
               <div class="email-error"></div>
               <span class="error-sign">
                 <i class="fa-solid fa-circle-exclamation"></i>

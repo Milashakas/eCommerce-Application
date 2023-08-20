@@ -1,5 +1,5 @@
 const displayDOBError = (message: string) => {
-  const dobInput = document.querySelector("#dob") as HTMLInputElement;
+  const dobInput = document.querySelector(".dob") as HTMLInputElement;
   const dobErrorText = document.querySelector(".dob-error")!;
   const errorSign = dobErrorText.nextElementSibling as HTMLElement;
 
@@ -9,7 +9,7 @@ const displayDOBError = (message: string) => {
 };
 
 const hideDOBError = () => {
-  const dobInput = document.querySelector("#dob") as HTMLInputElement;
+  const dobInput = document.querySelector(".dob") as HTMLInputElement;
   const dobErrorText = document.querySelector(".dob-error")!;
   const errorSign = dobErrorText.nextElementSibling as HTMLElement;
 
@@ -19,7 +19,7 @@ const hideDOBError = () => {
 };
 
 const validateDOBOnBlur = () => {
-  const dobInput = document.querySelector("#dob") as HTMLInputElement;
+  const dobInput = document.querySelector(".dob") as HTMLInputElement;
   const dobValue = dobInput.value;
   const today = new Date();
   const birthDate = new Date(dobValue);
@@ -38,7 +38,7 @@ const validateDOBOnBlur = () => {
 };
 
 const resetDOBValidationOnFocus = () => {
-  const dobInput = document.querySelector("#dob") as HTMLInputElement;
+  const dobInput = document.querySelector(".dob") as HTMLInputElement;
 
   if (dobInput.classList.contains("invalid")) {
     hideDOBError();
@@ -46,7 +46,7 @@ const resetDOBValidationOnFocus = () => {
 };
 
 const validateDOB = () => {
-  const dobInput = document.querySelector("#dob") as HTMLInputElement;
+  const dobInput = document.querySelector(".dob") as HTMLInputElement;
 
   if (dobInput) {
     dobInput.addEventListener("blur", validateDOBOnBlur);

@@ -4,15 +4,15 @@ const validateRegistrationForm = () => {
 
   form?.addEventListener("submit", (event: Event) => {
     [
-      "#name",
-      "#last-name",
+      ".first-name",
+      ".last-name",
       ".email-input",
-      "#dob",
+      ".dob",
       ".password-input",
-      "#billing-street",
-      "#billing-city",
-      "#billing-postal-code",
-      "#billing-select",
+      ".billing-street",
+      ".billing-city",
+      ".billing-postal-code",
+      ".billing-country",
     ].forEach((selector) => {
       const element = document.querySelector(selector) as HTMLInputElement;
       element?.dispatchEvent(new Event("blur"));
@@ -37,7 +37,7 @@ const validateRegistrationForm = () => {
       }
     }
 
-    ["#shipping-street", "#shipping-city", "#shipping-postal-code", "#shipping-select"].forEach((selector) => {
+    [".shipping-street", ".shipping-city", ".shipping-postal-code", ".shipping-country"].forEach((selector) => {
       const element = document.querySelector(selector) as HTMLInputElement;
       element?.dispatchEvent(new Event("blur"));
     });

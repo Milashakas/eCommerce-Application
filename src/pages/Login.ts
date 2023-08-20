@@ -15,7 +15,7 @@ const LoginForm = () => {
           <div class="form-row">
             <div class="form-input">
               <label for="email" class="email-label required">Email</label>
-              <input type="email" class="email-input required" name="email" id="email" autocomplete="email" required>
+              <input type="email" class="email-input" name="email" id="email" autocomplete="email" required>
               <div class="email-error"></div>
               <span class="error-sign">
                 <i class="fa-solid fa-circle-exclamation"></i>
@@ -25,7 +25,7 @@ const LoginForm = () => {
           <div class="form-row">
             <div class="form-input">
               <label for="password" class="required">Password</label>
-              <input type="password" name="password" class="password-input" id="password" autocomplete="current-password" pattern ="^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$" required>
+              <input type="password" name="password" class="password-input" id="password" autocomplete="current-password">
               <span class="btn-show-pass">
                 <i class="fa-regular fa-eye-slash"></i>
               </span>

@@ -22,10 +22,10 @@ const hideShippingError = (selector: string) => {
 
 const validateShippingAddress = () => {
   const selectors = {
-    street: "#shipping-street",
-    city: "#shipping-city",
-    postal: "#shipping-postal-code",
-    country: "#shipping-select",
+    street: ".shipping-street",
+    city: ".shipping-city",
+    postal: ".shipping-postal-code",
+    country: ".shipping-country",
   };
 
   const streetInput = document.querySelector(selectors.street) as HTMLInputElement;

@@ -1,5 +1,5 @@
 const displayFirstNameError = (message: string) => {
-  const firstNameInput = document.querySelector("#name") as HTMLInputElement;
+  const firstNameInput = document.querySelector(".first-name") as HTMLInputElement;
   const firstNameErrorText = document.querySelector(".first-name-error")!;
   const errorSign = firstNameErrorText.nextElementSibling as HTMLElement;
 
@@ -9,7 +9,7 @@ const displayFirstNameError = (message: string) => {
 };
 
 const hideFirstNameError = () => {
-  const firstNameInput = document.querySelector("#name") as HTMLInputElement;
+  const firstNameInput = document.querySelector(".first-name") as HTMLInputElement;
   const firstNameErrorText = document.querySelector(".first-name-error")!;
   const errorSign = firstNameErrorText.nextElementSibling as HTMLElement;
 
@@ -19,7 +19,7 @@ const hideFirstNameError = () => {
 };
 
 const displayLastNameError = (message: string) => {
-  const lastNameInput = document.querySelector("#last-name") as HTMLInputElement;
+  const lastNameInput = document.querySelector(".last-name") as HTMLInputElement;
   const lastNameErrorText = document.querySelector(".last-name-error")!;
   const errorSign = lastNameErrorText.nextElementSibling as HTMLElement;
 
@@ -29,7 +29,7 @@ const displayLastNameError = (message: string) => {
 };
 
 const hideLastNameError = () => {
-  const lastNameInput = document.querySelector("#last-name") as HTMLInputElement;
+  const lastNameInput = document.querySelector(".last-name") as HTMLInputElement;
   const lastNameErrorText = document.querySelector(".last-name-error")!;
   const errorSign = lastNameErrorText.nextElementSibling as HTMLElement;
 
@@ -39,7 +39,7 @@ const hideLastNameError = () => {
 };
 
 const validateFirstNameOnBlur = () => {
-  const firstNameInput = document.querySelector("#name") as HTMLInputElement;
+  const firstNameInput = document.querySelector(".first-name") as HTMLInputElement;
   const firstNameValue = firstNameInput.value;
 
   if (firstNameValue === "") {
@@ -52,7 +52,7 @@ const validateFirstNameOnBlur = () => {
 };
 
 const validateLastNameOnBlur = () => {
-  const lastNameInput = document.querySelector("#last-name") as HTMLInputElement;
+  const lastNameInput = document.querySelector(".last-name") as HTMLInputElement;
   const lastNameValue = lastNameInput.value;
 
   if (lastNameValue === "") {
@@ -65,7 +65,7 @@ const validateLastNameOnBlur = () => {
 };
 
 const resetFirstNameValidationOnFocus = () => {
-  const firstNameInput = document.querySelector("#name") as HTMLInputElement;
+  const firstNameInput = document.querySelector(".first-name") as HTMLInputElement;
 
   if (firstNameInput.classList.contains("invalid")) {
     hideFirstNameError();
@@ -73,7 +73,7 @@ const resetFirstNameValidationOnFocus = () => {
 };
 
 const resetLastNameValidationOnFocus = () => {
-  const lastNameInput = document.querySelector("#last-name") as HTMLInputElement;
+  const lastNameInput = document.querySelector(".last-name") as HTMLInputElement;
 
   if (lastNameInput.classList.contains("invalid")) {
     hideLastNameError();
@@ -81,8 +81,8 @@ const resetLastNameValidationOnFocus = () => {
 };
 
 const validateNames = () => {
-  const firstNameInput = document.querySelector("#name") as HTMLInputElement;
-  const lastNameInput = document.querySelector("#last-name") as HTMLInputElement;
+  const firstNameInput = document.querySelector(".first-name") as HTMLInputElement;
+  const lastNameInput = document.querySelector(".last-name") as HTMLInputElement;
 
   if (firstNameInput) {
     firstNameInput.addEventListener("blur", validateFirstNameOnBlur);
