@@ -27,20 +27,19 @@ a {
 }
 
 .registration-login-page-container {
-  padding-bottom: 50px;
+  padding-bottom: 205px;
+  background: url("../images/registration_bg2.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  background: url("../images/registration_bg2.webp");
   display: flex;
   width: 100%;
   flex-direction: column;
   position: relative;
-  justify-content: space-between;
 }
 
-.registration-login-page-container-back{
+.registration-login-page-container-back {
   width: 100%;
   height: 100%;
   background-color: transparent;
@@ -52,7 +51,7 @@ a {
 .form-container {
   z-index: 3;
   width: 60vw;
-  margin: 120px auto 0 auto;
+  margin: 160px auto 0 auto;
   background: #fff;
   display: flex;
   border: 1px solid rgba(70, 71, 71, 0.4);
@@ -69,6 +68,10 @@ a {
   background-position: center;
 }
 
+.form-subheader {
+  margin-top: 8px;
+}
+
 input,
 select {
   display: block;
@@ -79,12 +82,14 @@ select {
   width: 100%;
 }
 
-input.invalid {
+input.invalid,
+select.invalid {
   border-color: #900;
   background-color: rgb(251, 222, 222);
 }
 
-input:focus .invalid {
+input:focus .invalid,
+select:focus .invalid {
   outline: none;
 }
 
@@ -131,7 +136,7 @@ select:focus {
 .shipping-address-block {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 5px;
 }
 
 .form-header {
@@ -146,15 +151,27 @@ select:focus {
 .form-row {
   display: flex;
   justify-content: space-between;
-  // align-items: center;
   position: relative;
   width: 100%;
   gap: 19px;
   transition: all 0.9s ease;
 }
 
+.form-input.first-input {
+  width: 24%;
+}
+
+.form-input.second-input {
+  width: 24%;
+}
+
+.form-input.third-input {
+  width: 52%;
+}
+
 .radio-row {
   justify-content: start;
+  align-items: center;
   gap: 25px;
   transition: all 0.9s ease;
 }
@@ -181,12 +198,39 @@ input[name="address"] {
 }
 
 .email-error,
-.password-error {
-  display: inline-block;
-  height: 29px;
+.password-error,
+.first-name-error,
+.last-name-error,
+.dob-error,
+.select-error,
+.postal-error,
+.city-error,
+.street-error,
+.radio-error,
+.shipping-street-error,
+.shipping-city-error,
+.shipping-postal-error,
+.shipping-select-error {
   font-size: 1.3rem;
   color: #b90000;
   margin-top: 2px;
+}
+
+.email-error,
+.password-error,
+.first-name-error,
+.last-name-error,
+.dob-error,
+.select-error,
+.postal-error,
+.city-error,
+.street-error,
+.radio-error,
+.shipping-street-error,
+.shipping-city-error,
+.shipping-postal-error,
+.shipping-select-error {
+  height: 29px;
 }
 
 .form-button {
@@ -295,7 +339,7 @@ input[type="radio"]:checked ~ .check {
 .form-login-container {
   margin: 200px auto 0 auto;
   width: 47vw;
-  transition: all 0.9s ease;
+  transition: all 0.5s ease;
 }
 
 .login-form {
@@ -333,7 +377,6 @@ input[type="radio"]:checked ~ .check {
   font-size: 15px;
   color: #999;
   display: flex;
-  // align-items: center;
   position: absolute;
   height: 100%;
   top: 0px;
@@ -393,6 +436,10 @@ input[type="radio"]:checked ~ .check {
   display: none;
 }
 
+.radio-error-sign {
+  top: 10px;
+}
+
 .btn-show-pass:hover {
   color: rgba(5, 135, 18, 0.5);
 }
@@ -421,7 +468,7 @@ input[type="radio"]:checked ~ .check {
 
 [data-hint]::after {
   opacity: 0;
-  width: 300px;
+  width: 250px;
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
@@ -429,7 +476,7 @@ input[type="radio"]:checked ~ .check {
   content: attr(data-hint);
   position: absolute;
   top: -15px;
-  left: 30%;
+  left: 40%;
   transform: translate(-50%, 80%);
   pointer-events: none;
   transition: opacity 0.2s;
@@ -444,7 +491,37 @@ input[type="radio"]:checked ~ .check {
   opacity: 1;
 }
 
+@media screen and (max-width: 2600px) {
+  [data-hint]::after {
+    left: 55%;
+  }
+}
+
+@media screen and (max-width: 2300px) {
+  [data-hint]::after {
+    left: 50%;
+  }
+}
+
+@media screen and (max-width: 1980px) {
+  .form-container {
+    width: 70%;
+  }
+
+  [data-hint]::after {
+    left: 40%;
+  }
+}
+
 @media screen and (max-width: 1670px) {
+  .form-container {
+    width: 75%;
+  }
+
+  .registration-form {
+    padding: 50px 40px 50px 40px;
+  }
+
   .form-login-container {
     width: 52vw;
   }
@@ -472,11 +549,11 @@ input[type="radio"]:checked ~ .check {
 
 @media screen and (max-width: 1300px) {
   .form-container {
-    width: 75vw;
+    width: 90%;
   }
 
   .registration-form {
-    padding: 50px 30px 50px 30px;
+    padding: 50px 25px 50px 25px;
     width: 97%;
   }
 
@@ -491,11 +568,11 @@ input[type="radio"]:checked ~ .check {
 
 @media screen and (max-width: 1024px) {
   .form-container {
-    width: 87vw;
+    width: 95%;
   }
 
   .registration-form {
-    padding: 50px 30px 50px 30px;
+    padding: 50px 15px 50px 15px;
     width: 97%;
   }
 
@@ -506,11 +583,28 @@ input[type="radio"]:checked ~ .check {
   .password-hint::after {
     left: 45%;
   }
+
+  .email-error,
+  .password-error,
+  .first-name-error,
+  .last-name-error,
+  .dob-error,
+  .select-error,
+  .postal-error,
+  .city-error,
+  .street-error,
+  .radio-error,
+  .shipping-street-error,
+  .shipping-city-error,
+  .shipping-postal-error,
+  .shipping-select-error {
+    font-size: 1.2rem;
+  }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
   .form-container {
-    width: 97vw;
+    width: 97%;
   }
 
   .registration-form,
@@ -524,7 +618,7 @@ input[type="radio"]:checked ~ .check {
   }
 
   [data-hint]::after {
-    left: 15%;
+    left: 27%;
   }
 
   .password-hint::after {
@@ -532,68 +626,27 @@ input[type="radio"]:checked ~ .check {
   }
 }
 
-@media screen and (max-width: 700px) {
-  [data-hint]::after {
-    left: 5%;
-  }
-
-  .password-hint::after {
-    left: 45%;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .form-container {
-    width: 96vw;
-  }
-
-  .registration-form {
-    padding: 20px 15px 20px 15px;
-    width: 96%;
-  }
-
-  .password-error {
-    margin-top: 2px;
-  }
-
-  .form-data {
-    font-size: 1.3rem;
-  }
-
-  .form-img-text {
-    top: 570px;
-  }
-
-  .form-img-text-login {
-    font-size: 1.6rem;
-    top: 370px;
-  }
-
-  [data-hint]::after {
-    left: -2%;
-  }
-
-  .password-hint::after {
-    left: 47%;
-  }
-}
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 780px) {
   .form-container {
     flex-direction: column;
   }
 
   .form-content,
   .form-login-content {
-    height: 240px;
+    height: 330px;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 0px;
   }
 
+  .registration-form {
+    padding: 50px 15px 50px 15px;
+    width: 90%;
+  }
+
   .form-img-text {
-    top: 155px;
+    top: 220px;
     padding: 5px;
   }
 
@@ -607,11 +660,18 @@ input[type="radio"]:checked ~ .check {
   }
 
   [data-hint]::after {
-    left: 33%;
+    left: 45%;
   }
 
   .password-hint::after {
     left: 45%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .registration-form {
+    padding: 50px 15px 50px 15px;
+    width: 95%;
   }
 }
 
@@ -637,5 +697,38 @@ input[type="radio"]:checked ~ .check {
   .password-hint::after {
     left: 45%;
   }
-}
 
+  .email-error,
+  .password-error,
+  .first-name-error,
+  .last-name-error,
+  .dob-error,
+  .select-error,
+  .postal-error,
+  .city-error,
+  .street-error,
+  .radio-error,
+  .shipping-street-error,
+  .shipping-city-error,
+  .shipping-postal-error,
+  .shipping-select-error {
+    font-size: 1.1rem;
+  }
+
+  .email-error,
+  .password-error,
+  .first-name-error,
+  .last-name-error,
+  .dob-error,
+  .select-error,
+  .postal-error,
+  .city-error,
+  .street-error,
+  .radio-error,
+  .shipping-street-error,
+  .shipping-city-error,
+  .shipping-postal-error,
+  .shipping-select-error {
+    height: 27px;
+  }
+}

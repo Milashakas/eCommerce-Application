@@ -37,15 +37,14 @@ export const router = async () => {
     { path: "/filter", view: brandsFilter() },
   ];
 
-  const potentialMatches = routes.map((root) => (
-    {
-      route: root,
-      isMatch: window.location.pathname === root.path,
-    }
-  ));
+  const potentialMatches = routes.map((root) => ({
+    route: root,
+    isMatch: window.location.pathname === root.path,
+  }));
 
   let match = potentialMatches.find((potentialMatche) => potentialMatche.isMatch);
-  if (!match) { // главная стр по дефолту
+  if (!match) {
+    // главная стр по дефолту
     match = {
       route: routes[0],
       isMatch: true,

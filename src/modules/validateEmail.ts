@@ -1,7 +1,7 @@
 export const displayEmailError = (message: string) => {
   const emailInput = document.querySelector(".email-input") as HTMLInputElement;
   const emailError = document.querySelector(".email-error")!;
-  const errorSign = document.querySelector(".error-sign") as HTMLElement;
+  const errorSign = emailError.nextElementSibling as HTMLElement;
 
   emailError.innerHTML = message;
   emailInput.classList.add("invalid");
@@ -11,7 +11,7 @@ export const displayEmailError = (message: string) => {
 export const hideEmailError = () => {
   const emailInput = document.querySelector(".email-input") as HTMLInputElement;
   const emailError = document.querySelector(".email-error")!;
-  const errorSign = document.querySelector(".error-sign") as HTMLElement;
+  const errorSign = emailError.nextElementSibling as HTMLElement;
 
   emailError.innerHTML = "";
   emailInput.classList.remove("invalid");
@@ -24,8 +24,6 @@ const validateEmailOnBlur = () => {
 
   if (emailValue === "") {
     displayEmailError("Oops, you are missing a required field");
-    // } else if (emailValue.startsWith(" ") || emailValue.endsWith(" ")) {
-    // displayEmailError("Please delete leading or trailing whitespace");
   } else if (!emailValue.includes("@")) {
     displayEmailError("Email address must contain an '@' symbol");
   } else if (!emailValue.split("@")[1] || emailValue.split("@")[1].split(".").length < 2) {
