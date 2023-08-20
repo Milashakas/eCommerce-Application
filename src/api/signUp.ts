@@ -16,6 +16,7 @@ const signUp = async (signUpData: IUserSignUpData): Promise<ISignUpDataResult> =
 
     if (response.statusCode === 201) {
       signUpDataResult.statusCode = response.statusCode;
+      signUpDataResult.userToken = response.body.customer.id;
     }
   } catch (error) {
     if (error instanceof Error) {

@@ -28,6 +28,7 @@ interface IUserSignUpData extends IUserBasicInfo {
 interface ISignUpDataResult {
   statusCode: number | undefined;
   errorMessage?: string;
+  userToken?: string;
 }
 
 export { IUserProfileData, IUserBasicInfo, IAddressData, IUserSignUpData, ISignUpDataResult };

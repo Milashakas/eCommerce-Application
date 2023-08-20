@@ -2,6 +2,7 @@
 import { IUserBasicInfo, IUserSignUpData, IAddressData, ISignUpDataResult } from "../interfaces/IUserProfileData";
 import signUp from "../api/signUp";
 import showPopupNotification from "../modules/showPopupNotification";
+import setUserToken from "../modules/common/setUserToken";
 
 const getFormBasicInfo = (): IUserBasicInfo => {
   let userBasicInfo: IUserBasicInfo = {} as IUserBasicInfo; // init value. Must be filled in according to interface!
@@ -99,6 +100,9 @@ const createCustomerProfile = async () => {
 
     if (signUpDataResult.statusCode === 201) {
       const notificationMessage = "Your profile has been created successfully!";
+      const userToken: string = signUpDataResult.userToken as string;
+
+      setUserToken(userToken);
       showPopupNotification({ classMode: "notification-success", message: notificationMessage });
     } else {
       const notificationMessage = signUpDataResult.errorMessage;
