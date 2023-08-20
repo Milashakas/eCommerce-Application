@@ -3,6 +3,8 @@ const validateRegistrationForm = () => {
   const radioError = document.querySelector(".radio-error")!;
 
   form?.addEventListener("submit", (event: Event) => {
+    event.preventDefault();
+    let isAnyFormError = false;
     [
       ".first-name",
       ".last-name",
@@ -28,11 +30,11 @@ const validateRegistrationForm = () => {
     }
 
     const errors = document.querySelectorAll(
-      ".first-name-error, .last-name-error, .dob-error, .email-error, .password-error, .radio-error, .shipping-street-error, .shipping-city-error, .shipping-postal-error, .shipping-select-error",
+      ".first-name-error, .last-name-error, .dob-error, .email-error, .password-error-text, .radio-error, .shipping-street-error, .shipping-city-error, .shipping-postal-error, .shipping-select-error",
     );
     for (let i = 0; i < errors.length; i += 1) {
       if (errors[i].textContent) {
-        event.preventDefault();
+        isAnyFormError = true;
         break;
       }
     }
@@ -45,17 +47,17 @@ const validateRegistrationForm = () => {
     const shippingErrors = document.querySelectorAll(
       ".shipping-street-error, .shipping-city-error, .shipping-postal-error, .shipping-select-error",
     );
-    let hasShippingErrors = false;
+
     for (let j = 0; j < shippingErrors.length; j += 1) {
       if (shippingErrors[j].textContent) {
-        hasShippingErrors = true;
+        isAnyFormError = true;
         break;
       }
     }
 
-    if (hasShippingErrors) {
-      event.preventDefault();
-    }
+    if (isAnyFormError) return;
+
+    console.log("Further part");
   });
 };
 
