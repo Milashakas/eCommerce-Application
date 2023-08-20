@@ -15,9 +15,9 @@ setBasicLayout();
 headerOpenMenuFunctional();
 footerOpenLinksFunctional();
 
-// document.addEventListener("DOMContentLoaded", () => {
-// router();
-// });
+document.addEventListener("DOMContentLoaded", () => {
+  router();
+});
 
 window.addEventListener("load", router);
 window.addEventListener("popstate", router);
