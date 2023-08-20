@@ -12,7 +12,7 @@ const logInAction = async () => {
   let userSignInData: IUserSignInData = {} as IUserSignInData;
 
   formInputs.forEach((input: HTMLInputElement) => {
-    const inputPostId: keyof IUserSignInData = input.dataset.postId as keyof IUserSignInData;
+    const inputPostId: keyof IUserSignInData = input.dataset.postid as keyof IUserSignInData;
     const inputValue: string = input.value;
     userSignInData[inputPostId] = inputValue;
   });
