@@ -9,9 +9,7 @@ import clearAllFormData from "../modules/common/clearAllFormData";
 const getFormBasicInfo = (): IUserBasicInfo => {
   let userBasicInfo: IUserBasicInfo = {} as IUserBasicInfo; // init value. Must be filled in according to interface!
 
-  const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll(
-    ".registration-form >.form-row:nth-child(-n+4) input",
-  );
+  const inputs: NodeListOf<HTMLInputElement> = document.querySelectorAll(".user-basic-info input");
 
   inputs.forEach((input: HTMLInputElement) => {
     const inputId: keyof IUserBasicInfo = input.id as keyof IUserBasicInfo;
