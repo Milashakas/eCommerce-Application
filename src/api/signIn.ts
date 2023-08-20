@@ -1,10 +1,10 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"peerDependencies": true}] */
 import { ClientResponse, CustomerSignInResult, Customer } from "@commercetools/platform-sdk";
 import { adminApiRoot } from "./ApiClients";
-import { IUserProfileStoreData, ISignInResponseData } from "../interfaces/IUserProfileData";
+import { IUserProfileStoreData, ISignInResponseData, IUserSignInData } from "../interfaces/IUserProfileData";
 import getProfileStoreData from "../modules/common/getProfileStoreData";
 
-const signIn = async (email: string, password: string): Promise<ISignInResponseData> => {
+const signIn = async (userSignInData: IUserSignInData): Promise<ISignInResponseData> => {
   const signInResponseData: ISignInResponseData = {} as ISignInResponseData;
 
   try {
@@ -12,8 +12,8 @@ const signIn = async (email: string, password: string): Promise<ISignInResponseD
       .login()
       .post({
         body: {
-          email,
-          password,
+          email: userSignInData.email,
+          password: userSignInData.password,
         },
       })
       .execute();
@@ -21,6 +21,7 @@ const signIn = async (email: string, password: string): Promise<ISignInResponseD
     const customerData: Customer = response.body.customer;
     const userProfileStoreData: IUserProfileStoreData = getProfileStoreData(customerData);
     signInResponseData.userProfileStoreData = userProfileStoreData;
+    signInResponseData.statusCode = response.statusCode;
   } catch (error) {
     if (error instanceof Error) {
       signInResponseData.errorMessage = error.message;

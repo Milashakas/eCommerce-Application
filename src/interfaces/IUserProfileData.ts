@@ -39,7 +39,13 @@ interface IUserProfileStoreData {
 interface ISignInResponseData {
   userProfileStoreData?: IUserProfileStoreData;
   errorMessage?: string;
+  statusCode: number | undefined;
+}
+
+interface IUserSignInData {
+  password: string;
+  email: string;
 }
 
 export { IUserProfileStoreData, IUserBasicInfo, IAddressData, IUserSignUpData, ISignUpDataResult };
-export { ISignInResponseData };
+export { ISignInResponseData, IUserSignInData };

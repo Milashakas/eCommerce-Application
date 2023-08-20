@@ -4,6 +4,7 @@ import signUp from "../api/signUp";
 import showPopupNotification from "../modules/showPopupNotification";
 import setUserToken from "../modules/common/setUserToken";
 import { navigateTo } from "../router";
+import clearAllFormData from "../modules/common/clearAllFormData";
 
 const getFormBasicInfo = (): IUserBasicInfo => {
   let userBasicInfo: IUserBasicInfo = {} as IUserBasicInfo; // init value. Must be filled in according to interface!
@@ -46,11 +47,6 @@ const getFormAddressesData = (): [IAddressData, IAddressData] => {
   });
 
   return [billingAddress, shippingAddress];
-};
-
-const clearAllFormData = () => {
-  const allInputs: NodeListOf<HTMLInputElement> = document.querySelectorAll(".registration-form input");
-  allInputs.forEach((input: HTMLInputElement) => (input.value = ""));
 };
 
 const createCustomerProfile = async () => {
@@ -110,7 +106,7 @@ const createCustomerProfile = async () => {
       showPopupNotification({ classMode: "notification-error", message: notificationMessage });
     }
 
-    clearAllFormData();
+    clearAllFormData("registration-form");
   });
 };
 
