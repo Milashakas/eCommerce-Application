@@ -1,5 +1,6 @@
 import PopupNotification from "../components/common/PopupNotification";
 import IPopupNotificationData from "../interfaces/IPopupNotificationData";
+import { runPageFunctional } from "../router";
 
 const popupAnimation = async () => {
   const popupNotification: HTMLElement = document.querySelector(".popup-notification") as HTMLElement;
@@ -30,6 +31,7 @@ const showPopupNotification = async (notificationData: IPopupNotificationData) =
   const body: HTMLBodyElement = document.body as HTMLBodyElement;
   body.innerHTML += PopupNotification(notificationData);
 
+  runPageFunctional();
   await popupAnimation();
 };
 

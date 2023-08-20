@@ -4,7 +4,7 @@ import RegistrationForm from "./pages/Registration";
 import LoginForm from "./pages/Login";
 import runFunctionInRouting from "./modules/setFunctionInRouting";
 
-export const router = async () => {
+const getMatch = () => {
   const routes = [
     { path: "/404", view: errorPage() },
     { path: "/", view: mainPage() },
@@ -25,9 +25,20 @@ export const router = async () => {
       isMatch: true,
     };
   }
+
+  return match;
+};
+
+export const runPageFunctional = () => {
+  const match = getMatch();
+  runFunctionInRouting(match.route.path);
+};
+
+export const router = async () => {
+  const match = getMatch();
   const main = document.querySelector("main") as HTMLBodyElement;
   main.innerHTML = match.route.view;
-  runFunctionInRouting(match.route.path);
+  runPageFunctional();
 };
 
 export const navigateTo = (url: string) => {

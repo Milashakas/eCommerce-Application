@@ -46,6 +46,11 @@ const getFormAddressesData = (): [IAddressData, IAddressData] => {
   return [billingAddress, shippingAddress];
 };
 
+const clearAllFormData = () => {
+  const allInputs: NodeListOf<HTMLInputElement> = document.querySelectorAll(".registration-form input");
+  allInputs.forEach((input: HTMLInputElement) => (input.value = ""));
+};
+
 const createCustomerProfile = async () => {
   const btn: HTMLButtonElement = document.querySelector(".form-button") as HTMLButtonElement;
 
@@ -99,6 +104,8 @@ const createCustomerProfile = async () => {
       const notificationMessage = signUpDataResult.errorMessage;
       showPopupNotification({ classMode: "notification-error", message: notificationMessage });
     }
+
+    clearAllFormData();
   });
 };
 
