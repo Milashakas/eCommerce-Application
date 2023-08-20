@@ -1,7 +1,9 @@
+import logInAction from "../controllers/logInAction";
+
 const validateLoginForm = () => {
   const form = document.querySelector(".login-form");
 
-  form?.addEventListener("submit", (event: Event) => {
+  form?.addEventListener("submit", async (event: Event) => {
     event.preventDefault();
     let isAnyFormError = false;
 
@@ -20,7 +22,7 @@ const validateLoginForm = () => {
 
     if (isAnyFormError) return;
 
-    console.log("Further part");
+    await logInAction();
   });
 };
 

@@ -10,7 +10,6 @@ import validateRegistrationForm from "./validateRegFormOnSubmit";
 import handleShippingAddressValidation from "./validateShippingAddress";
 import validateLoginForm from "./validateLoginFormOnSubmit";
 
-
 const runFunctionInRouting = (url: string) => {
   if (url === "/signup") {
     initSameShippingListener();

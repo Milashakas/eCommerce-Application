@@ -1,8 +1,10 @@
+import createCustomerProfile from "../controllers/createCustomerProfile";
+
 const validateRegistrationForm = () => {
   const form = document.querySelector(".registration-form");
   const radioError = document.querySelector(".radio-error")!;
 
-  form?.addEventListener("submit", (event: Event) => {
+  form?.addEventListener("submit", async (event: Event) => {
     event.preventDefault();
     let isAnyFormError = false;
     [
@@ -57,7 +59,7 @@ const validateRegistrationForm = () => {
 
     if (isAnyFormError) return;
 
-    console.log("Further part");
+    await createCustomerProfile();
   });
 };
 
