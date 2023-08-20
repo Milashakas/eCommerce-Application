@@ -7,7 +7,7 @@ const BillingAddressBlock = () => {
     <div class="form-row">
       <div class="form-input">
         <label for="address" class="required">Street</label>
-        <input type="text" name="address" class="billing-street" id="streetName">
+        <input type="text" name="address" class="billing-street" id="billingStreetName" data-postId="streetName">
         <div class="street-error"></div>
         <span class="error-sign">
           <i class="fa-solid fa-circle-exclamation"></i>
@@ -17,15 +17,15 @@ const BillingAddressBlock = () => {
     <div class="form-row">
       <div class="form-input">
         <label for="building-number">Building #</label>
-        <input type="text" name="building-number" class="billing-building-number" id="building">
+        <input type="text" name="building-number" class="billing-building-number" id="billingBuilding" data-postId="building">
       </div>
       <div class="form-input">
         <label for="apartment-number">Apt #</label>
-        <input type="text" name="apartment-number" class="billing-apartment-number" id="apartment">
+        <input type="text" name="apartment-number" class="billing-apartment-number" id="billingApartment" data-postId="apartment">
       </div>
       <div class="form-input">
         <label for="city" class="required">City</label>
-        <input type="text" name="city" class="billing-city" id="city">
+        <input type="text" name="city" class="billing-city" id="billingCity" data-postId="city">
         <div class="city-error"></div>
         <span class="error-sign">
           <i class="fa-solid fa-circle-exclamation"></i>
@@ -35,7 +35,7 @@ const BillingAddressBlock = () => {
     <div class="form-row">
       <div class="form-input">
         <label for="postal-code" class="required">Postal Code</label>
-        <input type="text" name="postal-code" class="billing-postal-code" id="postalCode">
+        <input type="text" name="postal-code" class="billing-postal-code" id="billingPostalCode" data-postId="postalCode">
         <div class="postal-error"></div>
         <span class="error-sign">
           <i class="fa-solid fa-circle-exclamation"></i>
@@ -43,7 +43,7 @@ const BillingAddressBlock = () => {
       </div>
       <div class="form-input">
         <label for="country" class="required">Country</label>
-        <select class="billing-country" id="country">
+        <select class="billing-country" id="billingCountry" data-postId="country">
           ${insertSelectOptions()}
         </select>
         <div class="select-error"></div>
