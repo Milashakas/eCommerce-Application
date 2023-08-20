@@ -15,15 +15,15 @@ const ShippingAddressBlock = () => {
       </div>
     </div>
     <div class="form-row">
-      <div class="form-input">
+      <div class="form-input first-input">
         <label for="house-number">Building #</label>
         <input type="text" name="building-number" class="shipping-building-number" id="shippingBuilding" data-postId="building">
       </div>
-      <div class="form-input">
+      <div class="form-input second-input">
         <label for="apartment-number">Apt #</label>
         <input type="text" name="apartment-number" class="shipping-apartment-number" id="shippingApartment" data-postId="apartment">
       </div>
-      <div class="form-input">
+      <div class="form-input third-input">
         <label for="city" class="required">City</label>
         <input type="text" name="city" class="shipping-city" id="shippingCity" data-postId="city">
         <div class="shipping-city-error"></div>

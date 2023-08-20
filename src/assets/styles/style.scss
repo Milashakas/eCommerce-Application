@@ -157,6 +157,18 @@ select:focus {
   transition: all 0.9s ease;
 }
 
+.form-input.first-input {
+  width: 24%;
+}
+
+.form-input.second-input {
+  width: 24%;
+}
+
+.form-input.third-input {
+  width: 52%;
+}
+
 .radio-row {
   justify-content: start;
   align-items: center;
@@ -218,7 +230,7 @@ input[name="address"] {
 .shipping-city-error,
 .shipping-postal-error,
 .shipping-select-error {
-  height: 27px;
+  height: 29px;
 }
 
 .form-button {
