@@ -1,3 +1,5 @@
+import setLinksListener from "./linksEventListener";
+
 const footerOpenLinksFunctional = () => {
   const navButton = document.querySelector(".foot-title-nav");
   navButton?.addEventListener("click", () => {
@@ -5,6 +7,8 @@ const footerOpenLinksFunctional = () => {
     navMenu?.classList.toggle("footer-active");
     navButton.classList.toggle("active-but");
   });
+
+  setLinksListener();
 
   const infoButton = document.querySelector(".foot-title-info");
   infoButton?.addEventListener("click", () => {

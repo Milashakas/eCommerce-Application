@@ -1,19 +1,18 @@
 .errorWindow {
-  padding: 0px 30px;
-  color: white;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-color: #d5bdd1;
-  background-image: url("/src/assets/background/overlapping-circles.svg");
-  background-repeat: repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
-  position: relative;
-  //background-position: 10vw 0px; //background-position: center center; for 1024px
+    padding: 0px 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(238,232,170);
+    background-image: url("/src/assets/background/overlapping-circles.svg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+    //background-position: 10vw 0px; //background-position: center center; for 1024px
 }
 .errorWindow-back {
   width: 100%;

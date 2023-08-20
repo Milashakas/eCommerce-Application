@@ -17,29 +17,26 @@ const getFooter = () => {
           <p class="footer-title foot-title-nav">Shop</p>
           <nav class="footer-nav">
             <ul class="footer-list">
-              <li><a href="#">Catalog</a></li>
-              <li><a href="#">Brands</a></li>
-              <li><a href="#">Face</a></li>
-              <li><a href="#">Body</a></li>
-              <li><a href="#">Hair</a></li>
+              <li><a href="/catalog">Catalog</a></li>
+              <li><a href="/brands">Brands</a></li>
+              <li><a href="/face">Face</a></li>
+              <li><a href="/body">Body</a></li>
+              <li><a href="/hair">Hair</a></li>
             </ul>
           </nav>
         </div>
         <div class="footer-info">
           <p class="footer-title foot-title-info">Information</p>
           <ul class="footer-info-list">
-            <li><a href="#">How to create order</a></li>
-            <li><a href="#">Payment</a></li>
-            <li><a href="#">Delivery</a></li>
-            <li><a href="#">Return</a></li>
-            <li><a href="#">Contract offer</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="/orderInformation">How to create order</a></li>
+            <li><a href="/delivery">Delivery</a></li>
+            <li><a href="/return">Return</a></li>
           </ul>
         </div>
         <div class="footer-aboutus">
           <p class="footer-title foot-title-aboutus">About us</p>
           <ul class="footer-aboutus-list">
-            <li><a href="#">Contacts</a></li>
+            <li><a href="/aboutus">About us</a></li>
           </ul>
         </div>
       </div>

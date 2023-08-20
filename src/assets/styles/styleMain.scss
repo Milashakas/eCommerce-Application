@@ -43,23 +43,20 @@ a {
 }
 
 .welcom-content-button {
-  width: 150px;
-  height: 55px;
-  padding: 15px 20px;
-  border-radius: 50px;
-  border: 0;
-  background-color: rgb(125, 123, 123);
-  letter-spacing: 1.5px;
-  text-align: center;
-  font-size: 18px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-
-  a {
-    transition: all 0.25s ease;
-    color: white;
-    text-decoration: none;
-  }
+    width: 150px;
+    height: 55px;
+    padding: 15px 20px;
+    border-radius: 50px;
+    border: 0;
+    background-color: rgb(125, 123, 123);
+    letter-spacing: 1.5px;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all .25s ease;
+        transition: all .25s ease;
+        color: white;
+        text-decoration: none;
 }
 
 .welcom-content-button:hover a {
@@ -170,17 +167,17 @@ a {
 }
 
 .brands-box {
-  margin-right: 10px;
-  align-items: center;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 17vw;
-  cursor: pointer;
-  max-width: 370px;
-  width: 100%;
-  transition: all 0.25s ease;
+    margin-right: 10px;
+    align-items: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 17vw;
+    cursor: pointer;
+    max-width: 600px;
+    width: 100%;
+    transition: all .25s ease;
 }
 
 .brands-box:last-child {
