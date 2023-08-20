@@ -31,11 +31,11 @@ const getFormAddressesData = (): [IAddressData, IAddressData] => {
   );
 
   inputs.forEach((input: HTMLInputElement) => {
-    const inputId: keyof IAddressData = input.id as keyof IAddressData;
+    const inputPostId: keyof IAddressData = input.dataset.postId as keyof IAddressData;
     const inputValue: string = input.value;
 
-    if (input.closest(".billing-address-block")) inputValue && (billingAddress[inputId] = inputValue);
-    if (input.closest(".shipping-address-block")) inputValue && (shippingAddress[inputId] = inputValue);
+    if (input.closest(".billing-address-block")) inputValue && (billingAddress[inputPostId] = inputValue);
+    if (input.closest(".shipping-address-block")) inputValue && (shippingAddress[inputPostId] = inputValue);
   });
 
   const countryOptions: NodeListOf<HTMLOptionElement> = document.querySelectorAll("select option");
@@ -50,64 +50,31 @@ const getFormAddressesData = (): [IAddressData, IAddressData] => {
 };
 
 const createCustomerProfile = async () => {
-  const btn: HTMLButtonElement = document.querySelector(".form-button") as HTMLButtonElement;
+  const userBasicInfo = getFormBasicInfo();
+  const [billingAddress, shippingAddress] = getFormAddressesData();
 
-  btn.addEventListener("click", async (event) => {
-    event?.preventDefault();
-    const userBasicInfo = getFormBasicInfo();
-    const [billingAddress, shippingAddress] = getFormAddressesData();
+  const signUpData: IUserSignUpData = {
+    ...userBasicInfo,
+    addresses: [billingAddress, shippingAddress],
+    defaultShippingAddress: 0,
+    defaultBillingAddress: 1,
+  };
 
-    const signUpData: IUserSignUpData = {
-      ...userBasicInfo,
-      addresses: [billingAddress, shippingAddress],
-      defaultShippingAddress: 0,
-      defaultBillingAddress: 1,
-    };
+  const signUpDataResult: ISignUpDataResult = await signUp(signUpData);
 
-    const testData = {
-      email: "edel@gmail.com",
-      password: "123Faasfzv",
-      firstName: "Pavel",
-      lastName: "Pavel",
-      dateOfBirth: "1998-02-02",
-      addresses: [
-        {
-          country: "UK",
-          city: "London",
-          streetName: "Some street",
-          postalCode: "123",
-          building: "14",
-          apartment: "88",
-        },
-        {
-          country: "UK",
-          city: "London",
-          streetName: "Some street",
-          postalCode: "123",
-          building: "14",
-          apartment: "88",
-        },
-      ],
-      defaultShippingAddress: 0,
-      defaultBillingAddress: 1,
-    };
+  if (signUpDataResult.statusCode === 201) {
+    const notificationMessage = "Your profile has been created successfully!";
+    const userToken: string = signUpDataResult.userToken as string;
 
-    const signUpDataResult: ISignUpDataResult = await signUp(testData);
+    setUserToken(userToken);
+    navigateTo("/");
+    showPopupNotification({ classMode: "notification-success", message: notificationMessage });
+  } else {
+    const notificationMessage = signUpDataResult.errorMessage;
+    showPopupNotification({ classMode: "notification-error", message: notificationMessage });
+  }
 
-    if (signUpDataResult.statusCode === 201) {
-      const notificationMessage = "Your profile has been created successfully!";
-      const userToken: string = signUpDataResult.userToken as string;
-
-      setUserToken(userToken);
-      navigateTo("/");
-      showPopupNotification({ classMode: "notification-success", message: notificationMessage });
-    } else {
-      const notificationMessage = signUpDataResult.errorMessage;
-      showPopupNotification({ classMode: "notification-error", message: notificationMessage });
-    }
-
-    clearAllFormData("registration-form");
-  });
+  clearAllFormData("registration-form");
 };
 
 export default createCustomerProfile;
