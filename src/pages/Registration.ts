@@ -14,7 +14,8 @@ const RegistrationForm = () => {
       <div class="form-data">
         <form class="registration-form">
           <h3 class="form-header">Registration Form</h3>
-          <div class="form-row">
+          <div class="user-basic-info">
+            <div class="form-row">
             <div class="form-input">
               <label for="name" class="required">First Name</label>
               <input type="text" name="name" class="first-name" id="firstName" autocomplete="username">
@@ -67,6 +68,7 @@ const RegistrationForm = () => {
                 <i class="fa-solid fa-circle-exclamation"></i>
               </span>
             </div>
+          </div>
           </div>
           ${BillingAddressBlock()}
           <div class="form-row radio-row">
