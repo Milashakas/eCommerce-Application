@@ -1,7 +1,13 @@
 import { IUserProfileStoreData } from "../interfaces/IUserProfileData";
 
-const userProfileData: IUserProfileStoreData = {
+// init value .Prospective value has much more keys
+let userProfileData: IUserProfileStoreData = {
   isAuth: false,
 };
 
-export default userProfileData;
+const getUserProfileData = (): IUserProfileStoreData => userProfileData;
+
+const setUserProfileFullData = (actualUserProfileData: IUserProfileStoreData) => {
+  userProfileData = actualUserProfileData;
+};
+export { getUserProfileData, setUserProfileFullData };

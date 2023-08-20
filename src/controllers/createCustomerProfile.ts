@@ -57,7 +57,6 @@ const createCustomerProfile = async () => {
   const btn: HTMLButtonElement = document.querySelector(".form-button") as HTMLButtonElement;
 
   btn.addEventListener("click", async (event) => {
-    console.log("CLICK REG");
     event?.preventDefault();
     const userBasicInfo = getFormBasicInfo();
     const [billingAddress, shippingAddress] = getFormAddressesData();

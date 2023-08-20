@@ -2,13 +2,16 @@
 import getUserToken from "../modules/common/getUserToken";
 import autoSignIn from "../api/autoSignIn";
 import { ISignInResponseData } from "../interfaces/IUserProfileData";
+import { setUserProfileFullData } from "../models/userProfileData";
 
 const autoLogIn = async () => {
   const userToken = getUserToken();
 
   if (userToken) {
-    const response: ISignInResponseData = await autoSignIn(userToken as string);
-    console.log(response);
+    const signInResponseData: ISignInResponseData = await autoSignIn(userToken as string);
+    const { userProfileStoreData } = signInResponseData;
+
+    if (userProfileStoreData) setUserProfileFullData(userProfileStoreData);
   }
 };
 
