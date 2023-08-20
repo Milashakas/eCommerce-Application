@@ -1,3 +1,4 @@
+// registrationPage functional
 import initSameShippingListener from "./setShippingAddressData";
 import togglePasswordVisibility from "./togglePasswordVisibility";
 import validateEmail from "./validateEmail";
@@ -8,6 +9,7 @@ import validateBillingAddress from "./validateBillingAddress";
 import validateRegistrationForm from "./validateRegFormOnSubmit";
 import handleShippingAddressValidation from "./validateShippingAddress";
 import validateLoginForm from "./validateLoginFormOnSubmit";
+
 
 const runFunctionInRouting = (url: string) => {
   if (url === "/signup") {

@@ -17,7 +17,7 @@ import deliveryPage from "./pages/Delivery";
 import returnPage from "./pages/Return";
 import brandsFilter from "./pages/BrandsFilter";
 
-export const router = async () => {
+const getMatch = () => {
   const routes = [
     { path: "/404", view: errorPage() },
     { path: "/", view: mainPage() },
@@ -50,10 +50,21 @@ export const router = async () => {
       isMatch: true,
     };
   }
-  const main = document.querySelector("main") as HTMLBodyElement;
-  main.innerHTML = match.route.view;
+
+  return match;
+};
+
+export const runPageFunctional = () => {
+  const match = getMatch();
   runFunctionInRouting(match.route.path);
   // setLinksListener();
+};
+
+export const router = async () => {
+  const match = getMatch();
+  const main = document.querySelector("main") as HTMLBodyElement;
+  main.innerHTML = match.route.view;
+  runPageFunctional();
 };
 
 export const navigateTo = (url:string) => {
