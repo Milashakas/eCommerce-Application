@@ -1,7 +1,9 @@
-const PopupNotification = (classMode: "notification-error" | "notification-success", message: string): string => {
+import IPopupNotificationData from "../../interfaces/IPopupNotificationData";
+
+const PopupNotification = (notificationData: IPopupNotificationData): string => {
   const view: string = `
-  <aside class="popup-notification ${classMode}">
-    <span>${message}</span>
+  <aside class="popup-notification notification-offset ${notificationData.classMode}">
+    <span>${notificationData.message}</span>
   </aside>
   `;
 

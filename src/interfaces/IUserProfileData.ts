@@ -25,4 +25,9 @@ interface IUserSignUpData extends IUserBasicInfo {
   defaultBillingAddress: number;
 }
 
-export { IUserProfileData, IUserBasicInfo, IAddressData, IUserSignUpData };
+interface ISignUpDataResult {
+  statusCode: number | undefined;
+  errorMessage?: string;
+}
+
+export { IUserProfileData, IUserBasicInfo, IAddressData, IUserSignUpData, ISignUpDataResult };

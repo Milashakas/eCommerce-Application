@@ -1,9 +1,11 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"peerDependencies": true}] */
 import { ClientResponse, CustomerSignInResult } from "@commercetools/platform-sdk";
 import { adminApiRoot } from "./ApiClients";
-import { IUserSignUpData } from "../interfaces/IUserProfileData";
+import { IUserSignUpData, ISignUpDataResult } from "../interfaces/IUserProfileData";
 
-const signUp = async (signUpData: IUserSignUpData) => {
+const signUp = async (signUpData: IUserSignUpData): Promise<ISignUpDataResult> => {
+  const signUpDataResult: ISignUpDataResult = {} as ISignUpDataResult;
+
   try {
     const response: ClientResponse<CustomerSignInResult> = await adminApiRoot
       .customers()
@@ -13,12 +15,15 @@ const signUp = async (signUpData: IUserSignUpData) => {
       .execute();
 
     if (response.statusCode === 201) {
-      console.log("Всё ок");
+      signUpDataResult.statusCode = response.statusCode;
     }
   } catch (error) {
-    console.log("Памылка ніжэй");
-    console.log(error);
+    if (error instanceof Error) {
+      signUpDataResult.errorMessage = error.message;
+    }
   }
+
+  return signUpDataResult;
 };
 
 export default signUp;

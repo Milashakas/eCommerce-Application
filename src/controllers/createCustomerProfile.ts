@@ -1,6 +1,7 @@
 /* eslint-disable */
-import { IUserBasicInfo, IUserSignUpData, IAddressData } from "../interfaces/IUserProfileData";
+import { IUserBasicInfo, IUserSignUpData, IAddressData, ISignUpDataResult } from "../interfaces/IUserProfileData";
 import signUp from "../api/signUp";
+import showPopupNotification from "../modules/showPopupNotification";
 
 const getFormBasicInfo = (): IUserBasicInfo => {
   let userBasicInfo: IUserBasicInfo = {} as IUserBasicInfo; // init value. Must be filled in according to interface!
@@ -49,6 +50,7 @@ const createCustomerProfile = async () => {
   const btn: HTMLButtonElement = document.querySelector(".form-button") as HTMLButtonElement;
 
   btn.addEventListener("click", async (event) => {
+    console.log("CLICK REG");
     event?.preventDefault();
     const userBasicInfo = getFormBasicInfo();
     const [billingAddress, shippingAddress] = getFormAddressesData();
@@ -88,7 +90,15 @@ const createCustomerProfile = async () => {
       defaultBillingAddress: 1,
     };
 
-    signUp(testData);
+    const signUpDataResult: ISignUpDataResult = await signUp(testData);
+
+    if (signUpDataResult.statusCode === 201) {
+      const notificationMessage = "Your profile has been created successfully!";
+      showPopupNotification({ classMode: "notification-success", message: notificationMessage });
+    } else {
+      const notificationMessage = signUpDataResult.errorMessage;
+      showPopupNotification({ classMode: "notification-error", message: notificationMessage });
+    }
   });
 };
 

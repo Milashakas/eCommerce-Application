@@ -29,6 +29,7 @@ export const router = async () => {
   main.innerHTML = match.route.view;
   runFunctionInRouting(match.route.path);
 };
+
 export const navigateTo = (url: string) => {
   window.history.pushState(null, "", url);
   router();
