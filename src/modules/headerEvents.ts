@@ -1,4 +1,4 @@
-import { navigateTo } from "../router";
+import setLinksListener from "./linksEventListener";
 
 const headerOpenMenuFunctional = () => {
   window.addEventListener("scroll", () => {
@@ -11,14 +11,7 @@ const headerOpenMenuFunctional = () => {
     }
   });
 
-  const links = document.querySelectorAll("a");
-  links.forEach((item) => {
-    item.addEventListener("click", (e) => {
-      e.preventDefault();
-      const link = e.target as HTMLAnchorElement;
-      navigateTo(link.href);
-    });
-  });
+  setLinksListener();
 
   const burger = document.querySelector(".burger");
   const overlay = document.querySelector(".overlay");

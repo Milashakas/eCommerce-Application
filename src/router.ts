@@ -3,6 +3,19 @@ import errorPage from "./pages/404";
 import RegistrationForm from "./pages/Registration";
 import LoginForm from "./pages/Login";
 import runFunctionInRouting from "./modules/setFunctionInRouting";
+// import setLinksListener from "./modules/linksEventListener";
+import catalogPage from "./pages/Catalog";
+import brandsPage from "./pages/Brands";
+import hairPage from "./pages/Hair";
+import bodyPage from "./pages/Body";
+import salePage from "./pages/Sale";
+import facePage from "./pages/Face";
+import aboutUsPage from "./pages/AboutUs";
+import basketPage from "./pages/Basket";
+import orderInformationPage from "./pages/OrderInfo";
+import deliveryPage from "./pages/Delivery";
+import returnPage from "./pages/Return";
+import brandsFilter from "./pages/BrandsFilter";
 
 const getMatch = () => {
   const routes = [
@@ -10,6 +23,18 @@ const getMatch = () => {
     { path: "/", view: mainPage() },
     { path: "/login", view: LoginForm() },
     { path: "/signup", view: RegistrationForm() },
+    { path: "/catalog", view: catalogPage() },
+    { path: "/brands", view: brandsPage() },
+    { path: "/hair", view: hairPage() },
+    { path: "/body", view: bodyPage() },
+    { path: "/face", view: facePage() },
+    { path: "/sale", view: salePage() },
+    { path: "/aboutus", view: aboutUsPage() },
+    { path: "/basket", view: basketPage() },
+    { path: "/orderInformation", view: orderInformationPage() },
+    { path: "/delivery", view: deliveryPage() },
+    { path: "/return", view: returnPage() },
+    { path: "/filter", view: brandsFilter() },
   ];
 
   const potentialMatches = routes.map((root) => ({
@@ -32,6 +57,7 @@ const getMatch = () => {
 export const runPageFunctional = () => {
   const match = getMatch();
   runFunctionInRouting(match.route.path);
+  // setLinksListener();
 };
 
 export const router = async () => {
@@ -41,7 +67,7 @@ export const router = async () => {
   runPageFunctional();
 };
 
-export const navigateTo = (url: string) => {
-  window.history.pushState(null, "", url);
+export const navigateTo = (url:string) => {
+  window.history.pushState({}, "", url);
   router();
 };

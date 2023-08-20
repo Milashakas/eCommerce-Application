@@ -15,27 +15,25 @@ const mainPage = () => {
    <div class="welcom-content"> 
    <h1>“Skin care online store where you can find everything to stay healthy and young.”</h1>
    <p class="welcom-content-p">Be good to your skin. You’ll wear it every day for the rest of your life.</p>
-   <div class="welcom-content-button">
-   <a href="#">Catalog</a>
-   </div>
+   <a class="welcom-content-button" href="/catalog">Catalog</a>
    </div>
    </div>
     </section>
     <section class="catalog">
     <div class="catalog-container">
-    <a class="catalog-face" href="#">
+    <a class="catalog-face" href="/face">
     <img src="${faceImg}" alt="Face" class="catalog-images">
     <p>Face</p>
     </a>
-    <a class="catalog-body" href="#">
+    <a class="catalog-body" href="/body">
     <img src="${bodyImg}" alt="Body" class="catalog-images">
     <p>Body</p>
     </a>
-    <a class="catalog-hair" href="#">
+    <a class="catalog-hair" href="/hair">
     <img src="${hairImg}" alt="Hair" class="catalog-images">
     <p>Hair</p>
     </a>
-    <a class="catalog-brands" href="#">
+    <a class="catalog-brands" href="/brands">
     <img src="${brandsImg}" alt="Brands" class="catalog-images">
     <p>Brands</p>
     </a>
@@ -49,25 +47,25 @@ const mainPage = () => {
     </section>
     <section class="brands-section"> 
     <div class="brands-container">
-    <a class="brands-box brands-box1"  href="#">
+    <a class="brands-box brands-box1"  href="/filter">
     <img class="welcome-back" src="${box1Img}">
     <div class="brand-box-shadow"></div>
     <p class="brands-box-name">SOME NAME</p>
     <p class="brands-box-choose">Choose products</p>
     </a>
-    <a class="brands-box brands-box2" href="#">
+    <a class="brands-box brands-box2" href="/filter">
     <img class="welcome-back" src="${box2Img}">
     <div class="brand-box-shadow"></div>
     <p class="brands-box-name">SOME NAME</p>
     <p class="brands-box-choose">Choose products</p>
     </a>
-    <a class="brands-box brands-box3" href="#">
+    <a class="brands-box brands-box3" href="/filter">
     <img class="welcome-back" src="${box3Img}">
     <div class="brand-box-shadow"></div>
     <p class="brands-box-name">SOME NAME</p>
     <p class="brands-box-choose">Choose products</p>
     </a>
-    <a class="brands-box brands-box4" href="#">
+    <a class="brands-box brands-box4" href="/filter">
     <img class="welcome-back" src="${box4Img}">
     <div class="brand-box-shadow"></div>
     <p class="brands-box-name">SOME NAME</p>
