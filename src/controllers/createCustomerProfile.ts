@@ -34,13 +34,22 @@ const getFormAddressesData = (): [IAddressData, IAddressData] => {
     if (input.closest(".shipping-address-block")) inputValue && (shippingAddress[inputId] = inputValue);
   });
 
+  const countryOptions: NodeListOf<HTMLOptionElement> = document.querySelectorAll("select option");
+  countryOptions.forEach((option: HTMLOptionElement) => {
+    const countryCode: string = option.dataset.code as string;
+
+    if (option.closest(".billing-address-block")) option.selected && (billingAddress.country = countryCode);
+    if (option.closest(".shipping-address-block")) option.selected && (shippingAddress.country = countryCode);
+  });
+
   return [billingAddress, shippingAddress];
 };
 
 const createCustomerProfile = async () => {
   const btn: HTMLButtonElement = document.querySelector(".form-button") as HTMLButtonElement;
 
-  btn.addEventListener("click", async () => {
+  btn.addEventListener("click", async (event) => {
+    event?.preventDefault();
     const userBasicInfo = getFormBasicInfo();
     const [billingAddress, shippingAddress] = getFormAddressesData();
 
@@ -51,8 +60,35 @@ const createCustomerProfile = async () => {
       defaultBillingAddress: 1,
     };
 
-    console.log(signUpData);
-    console.log(signUpData.dateOfBirth);
+    const testData = {
+      email: "edel@gmail.com",
+      password: "123Faasfzv",
+      firstName: "Pavel",
+      lastName: "Pavel",
+      dateOfBirth: "1998-02-02",
+      addresses: [
+        {
+          country: "UK",
+          city: "London",
+          streetName: "Some street",
+          postalCode: "123",
+          building: "14",
+          apartment: "88",
+        },
+        {
+          country: "UK",
+          city: "London",
+          streetName: "Some street",
+          postalCode: "123",
+          building: "14",
+          apartment: "88",
+        },
+      ],
+      defaultShippingAddress: 0,
+      defaultBillingAddress: 1,
+    };
+
+    signUp(testData);
   });
 };
 

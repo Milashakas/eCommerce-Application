@@ -4,14 +4,21 @@ import { adminApiRoot } from "./ApiClients";
 import { IUserSignUpData } from "../interfaces/IUserProfileData";
 
 const signUp = async (signUpData: IUserSignUpData) => {
-  const response: ClientResponse<CustomerSignInResult> = await adminApiRoot
-    .customers()
-    .post({
-      body: { ...signUpData },
-    })
-    .execute();
+  try {
+    const response: ClientResponse<CustomerSignInResult> = await adminApiRoot
+      .customers()
+      .post({
+        body: { ...signUpData },
+      })
+      .execute();
 
-  console.log(response);
+    if (response.statusCode === 201) {
+      console.log("Всё ок");
+    }
+  } catch (error) {
+    console.log("Памылка ніжэй");
+    console.log(error);
+  }
 };
 
 export default signUp;
