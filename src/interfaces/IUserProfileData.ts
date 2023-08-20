@@ -2,8 +2,15 @@ interface IUserProfileData {
   isAuth: boolean;
 }
 
+interface IUserBasicInfo {
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+  dateOfBirth: string;
+}
+
 interface IAddressData {
-  key: string;
   country: string;
   city: string;
   streetName: string;
@@ -12,15 +19,10 @@ interface IAddressData {
   apartment?: string;
 }
 
-interface IUserSignUpData {
-  email: string;
-  password: string;
-  firstName: string;
-  lastName: string;
-  dateOfBirth: string;
+interface IUserSignUpData extends IUserBasicInfo {
   addresses: IAddressData[];
-  defaultShippingAddress?: number;
-  defaultBillingAddress?: number;
+  defaultShippingAddress: number;
+  defaultBillingAddress: number;
 }
 
-export { IUserProfileData, IAddressData, IUserSignUpData };
+export { IUserProfileData, IUserBasicInfo, IAddressData, IUserSignUpData };

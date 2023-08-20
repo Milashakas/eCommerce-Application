@@ -17,17 +17,17 @@ const RegistrationForm = () => {
           <div class="form-row">
             <div class="form-input">
               <label for="name" class="required">First Name</label>
-              <input type="text" name="name" id="name" autocomplete="username" pattern ="^[a-zA-Z]+$"required>
+              <input type="text" name="name" id="firstName" autocomplete="username" pattern ="^[a-zA-Z]+$"required>
             </div>
             <div class="form-input">
               <label for="last-name" class="required">Last Name</label>
-              <input type="text" name="last-name" id="last-name" autocomplete="username" pattern ="^[a-zA-Z]+$" required>
+              <input type="text" name="last-name" id="lastName" autocomplete="username" pattern ="^[a-zA-Z]+$" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-input">
               <label for="dob" class="required">Date of Birth</label>
-              <input name="dob" type="text" required onfocus="(this.type='date')" onblur="(this.type='text')" id="dob">
+              <input name="dob" type="text" required onfocus="(this.type='date')" onblur="(this.type='text')" id="dateOfBirth">
             </div>
           </div>
           <div class="form-row">
