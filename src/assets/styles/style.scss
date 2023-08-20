@@ -218,7 +218,7 @@ input[name="address"] {
 .shipping-city-error,
 .shipping-postal-error,
 .shipping-select-error {
-  height: 15px;
+  height: 27px;
 }
 
 .form-button {
@@ -492,12 +492,24 @@ input[type="radio"]:checked ~ .check {
 }
 
 @media screen and (max-width: 1980px) {
+  .form-container {
+    width: 70%;
+  }
+
   [data-hint]::after {
     left: 40%;
   }
 }
 
 @media screen and (max-width: 1670px) {
+  .form-container {
+    width: 75%;
+  }
+
+  .registration-form {
+    padding: 50px 40px 50px 40px;
+  }
+
   .form-login-container {
     width: 52vw;
   }
@@ -525,11 +537,11 @@ input[type="radio"]:checked ~ .check {
 
 @media screen and (max-width: 1300px) {
   .form-container {
-    width: 75vw;
+    width: 90%;
   }
 
   .registration-form {
-    padding: 50px 30px 50px 30px;
+    padding: 50px 25px 50px 25px;
     width: 97%;
   }
 
@@ -544,11 +556,11 @@ input[type="radio"]:checked ~ .check {
 
 @media screen and (max-width: 1024px) {
   .form-container {
-    width: 87vw;
+    width: 95%;
   }
 
   .registration-form {
-    padding: 50px 30px 50px 30px;
+    padding: 50px 15px 50px 15px;
     width: 97%;
   }
 
@@ -559,11 +571,28 @@ input[type="radio"]:checked ~ .check {
   .password-hint::after {
     left: 45%;
   }
+
+  .email-error,
+  .password-error,
+  .first-name-error,
+  .last-name-error,
+  .dob-error,
+  .select-error,
+  .postal-error,
+  .city-error,
+  .street-error,
+  .radio-error,
+  .shipping-street-error,
+  .shipping-city-error,
+  .shipping-postal-error,
+  .shipping-select-error {
+    font-size: 1.2rem;
+  }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
   .form-container {
-    width: 97vw;
+    width: 97%;
   }
 
   .registration-form,
@@ -585,68 +614,27 @@ input[type="radio"]:checked ~ .check {
   }
 }
 
-@media screen and (max-width: 700px) {
-  [data-hint]::after {
-    left: 13%;
-  }
-
-  .password-hint::after {
-    left: 45%;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .form-container {
-    width: 96%;
-  }
-
-  .registration-form {
-    padding: 20px 15px 20px 15px;
-    width: 96%;
-  }
-
-  .password-error {
-    margin-top: 2px;
-  }
-
-  .form-data {
-    font-size: 1.3rem;
-  }
-
-  .form-img-text {
-    top: 570px;
-  }
-
-  .form-img-text-login {
-    font-size: 1.6rem;
-    top: 370px;
-  }
-
-  [data-hint]::after {
-    left: 2%;
-  }
-
-  .password-hint::after {
-    left: 47%;
-  }
-}
-
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 780px) {
   .form-container {
     flex-direction: column;
   }
 
   .form-content,
   .form-login-content {
-    height: 240px;
+    height: 330px;
     width: 100%;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 0px;
   }
 
+  .registration-form {
+    padding: 50px 15px 50px 15px;
+    width: 90%;
+  }
+
   .form-img-text {
-    top: 155px;
+    top: 220px;
     padding: 5px;
   }
 
@@ -665,6 +653,13 @@ input[type="radio"]:checked ~ .check {
 
   .password-hint::after {
     left: 45%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .registration-form {
+    padding: 50px 15px 50px 15px;
+    width: 95%;
   }
 }
 
@@ -689,5 +684,39 @@ input[type="radio"]:checked ~ .check {
 
   .password-hint::after {
     left: 45%;
+  }
+
+  .email-error,
+  .password-error,
+  .first-name-error,
+  .last-name-error,
+  .dob-error,
+  .select-error,
+  .postal-error,
+  .city-error,
+  .street-error,
+  .radio-error,
+  .shipping-street-error,
+  .shipping-city-error,
+  .shipping-postal-error,
+  .shipping-select-error {
+    font-size: 1.1rem;
+  }
+
+  .email-error,
+  .password-error,
+  .first-name-error,
+  .last-name-error,
+  .dob-error,
+  .select-error,
+  .postal-error,
+  .city-error,
+  .street-error,
+  .radio-error,
+  .shipping-street-error,
+  .shipping-city-error,
+  .shipping-postal-error,
+  .shipping-select-error {
+    height: 27px;
   }
 }

@@ -30,7 +30,7 @@ const validateRegistrationForm = () => {
     }
 
     const errors = document.querySelectorAll(
-      ".first-name-error, .last-name-error, .dob-error, .email-error, .password-error-text, .radio-error, .shipping-street-error, .shipping-city-error, .shipping-postal-error, .shipping-select-error",
+      ".first-name-error, .last-name-error, .dob-error, .email-error, .password-error-text, .city-error, .select-error, .radio-error, .shipping-street-error, .shipping-city-error, .shipping-postal-error, .shipping-select-error",
     );
     for (let i = 0; i < errors.length; i += 1) {
       if (errors[i].textContent) {
