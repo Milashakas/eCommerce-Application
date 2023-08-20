@@ -1,7 +1,3 @@
-interface IUserProfileData {
-  isAuth: boolean;
-}
-
 interface IUserBasicInfo {
   email: string;
   password: string;
@@ -31,4 +27,19 @@ interface ISignUpDataResult {
   userToken?: string;
 }
 
-export { IUserProfileData, IUserBasicInfo, IAddressData, IUserSignUpData, ISignUpDataResult };
+interface IUserProfileStoreData {
+  isAuth: boolean;
+  userToken?: string;
+  userBasicInfo?: IUserBasicInfo;
+  addresses?: IAddressData[];
+  defaultShippingAddress?: number | string;
+  defaultBillingAddress?: number | string;
+}
+
+interface ISignInResponseData {
+  userProfileStoreData?: IUserProfileStoreData;
+  errorMessage?: string;
+}
+
+export { IUserProfileStoreData, IUserBasicInfo, IAddressData, IUserSignUpData, ISignUpDataResult };
+export { ISignInResponseData };

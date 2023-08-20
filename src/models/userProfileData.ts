@@ -1,6 +1,6 @@
-import { IUserProfileData } from "../interfaces/IUserProfileData";
+import { IUserProfileStoreData } from "../interfaces/IUserProfileData";
 
-const userProfileData: IUserProfileData = {
+const userProfileData: IUserProfileStoreData = {
   isAuth: false,
 };
 
