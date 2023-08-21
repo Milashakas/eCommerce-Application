@@ -302,11 +302,6 @@ body {
     width: 100%;
     padding-right: 20px;
   }
-
-  .burger {
-    display: flex;
-  }
-
   .header-nav {
     transition: all 0.35s ease;
     color: black;
@@ -320,54 +315,24 @@ body {
     margin: 0px;
     flex-direction: column;
     justify-content: start;
-
+  }
     .header-list {
       margin-top: 80px;
       margin-bottom: 40px;
       flex-direction: column;
       align-items: center;
 
+      .header-buttons {
+        flex-direction: column;
+        width: 100%;
+        padding-right: 20px;
+      }
+
       li {
         height: 50px;
         border-bottom: 1px solid rgba(168, 168, 168, 0.292);
         width: 100%;
         align-items: center;
-        .header-buttons {
-          flex-direction: column;
-          width: 100%;
-          padding-right: 20px;
-        }
-
-        .burger {
-          display: flex;
-        }
-
-        .header-nav {
-          transition: all 0.35s ease;
-          color: black;
-          position: fixed;
-          width: 300px;
-          min-width: 300px;
-          height: 100%;
-          background-color: white;
-          top: 0;
-          left: -300px;
-          margin: 0px;
-          flex-direction: column;
-          justify-content: start;
-
-          .header-list {
-            margin-top: 80px;
-            margin-bottom: 40px;
-            flex-direction: column;
-            align-items: center;
-
-            li {
-              height: 50px;
-              border-bottom: 1px solid rgba(168, 168, 168, 0.292);
-              width: 100%;
-              align-items: center;
-
               a {
                 color: black;
                 padding: 15px 0px;
@@ -384,15 +349,15 @@ body {
           a:hover {
             color: #c7c6c6d3;
           }
-        }
-      }
-    }
+  .burger {
+    display: flex;
+  }
 
-    .header-opened {
-      left: 0px;
-    }
+  .header-opened {
+    left: 0px;
   }
 }
+
 @media screen and (max-width: 650px) {
   .footer-container {
     flex-wrap: nowrap;
