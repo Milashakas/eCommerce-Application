@@ -52,6 +52,12 @@ const BillingAddressBlock = () => {
         </span>
       </div>
     </div>
+    <div class="form-row checkbox-row">
+      <div class="form-checkbox-item">
+        <label class="label-default-address" for="defaultBilling">Set this billing address as default for future transactions</label>
+        <input class="input-default-address" type="checkbox" data-addresscheckbox="defaultBillingAddress" name="defaultBilling" id="default-billing">
+      </div>
+    </div>
   </div>
   `;
   return view;
