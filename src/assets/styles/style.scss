@@ -1,0 +1,759 @@
+@font-face {
+  font-family: "LatoRegular";
+  src: url("/src/assets/fonts/Lato-Regular.ttf");
+}
+
+html {
+  font-size: 10px;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "LatoRegular", Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+.registration-login-page-container {
+  padding-bottom: 205px;
+  background: url("../images/registration_bg2.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+}
+
+.registration-login-page-container-back {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  background-image: linear-gradient(90deg, #4f4e4e77 46%, #7372728d 79%);
+  opacity: 0.55;
+  position: absolute;
+}
+
+.form-container {
+  z-index: 3;
+  width: 60vw;
+  margin: 120px auto 0 auto;
+  background: #fff;
+  display: flex;
+  border: 1px solid rgba(70, 71, 71, 0.4);
+  border-radius: 10px;
+}
+
+.form-content {
+  width: 45%;
+  background: url("../images/form-side-img.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-position: center;
+}
+
+.form-subheader {
+  margin-top: 8px;
+}
+
+input,
+select {
+  display: block;
+  border: 1px solid #ebebeb;
+  padding: 7px 10px;
+  outline: none;
+  font-size: 1.6rem;
+  width: 100%;
+}
+
+input.invalid,
+select.invalid {
+  border-color: #900;
+  background-color: rgb(251, 222, 222);
+}
+
+input:focus .invalid,
+select:focus .invalid {
+  outline: none;
+}
+
+input:focus,
+select:focus {
+  border: 1px solid rgba(70, 71, 71, 0.4);
+}
+
+.form-input {
+  width: 100%;
+  position: relative;
+}
+
+.form-data {
+  width: 55%;
+  font-size: 1.8rem;
+}
+
+.form-img {
+  position: relative;
+}
+
+.form-img-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(70, 71, 71, 0.5);
+  text-align: center;
+  top: 600px;
+  color: white;
+  padding: 10px;
+  font-size: 2.4rem;
+}
+
+.registration-form {
+  padding: 50px 70px 50px 70px;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.billing-address-block,
+.registration-form,
+.shipping-address-block {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-header {
+  font-weight: 700;
+  color: #222;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  gap: 19px;
+  transition: all 0.9s ease;
+}
+
+.form-input.first-input {
+  width: 24%;
+}
+
+.form-input.second-input {
+  width: 24%;
+}
+
+.form-input.third-input {
+  width: 52%;
+}
+
+.radio-row {
+  justify-content: start;
+  align-items: center;
+  gap: 25px;
+  transition: all 0.9s ease;
+}
+
+.form-checkbox-item {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.9s ease;
+}
+
+label {
+  font-weight: 400;
+  display: block;
+  margin-bottom: 4px;
+  color: rgb(102, 102, 102);
+  font-size: 1.4rem;
+}
+
+label.required:after {
+  content: "*";
+  margin-left: 2px;
+  color: #b90000;
+}
+
+.input-default-address {
+  width: 15px;
+  transition: all 0.9s ease;
+}
+
+.label-default-address {
+  font-weight: 700;
+  color: rgba(5, 135, 18, 0.8);
+}
+
+input[type="date"]:focus,
+.country-select,
+input[name="dob"],
+input[name="address"] {
+  width: 100%;
+}
+
+.email-error,
+.password-error,
+.first-name-error,
+.last-name-error,
+.dob-error,
+.select-error,
+.postal-error,
+.city-error,
+.street-error,
+.radio-error,
+.shipping-street-error,
+.shipping-city-error,
+.shipping-postal-error,
+.shipping-select-error {
+  font-size: 1.3rem;
+  color: #b90000;
+  margin-top: 2px;
+}
+
+.email-error,
+.password-error,
+.first-name-error,
+.last-name-error,
+.dob-error,
+.select-error,
+.postal-error,
+.city-error,
+.street-error,
+.radio-error,
+.shipping-street-error,
+.shipping-city-error,
+.shipping-postal-error,
+.shipping-select-error {
+  height: 29px;
+}
+
+.form-button {
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 0;
+  background-color: rgba(5, 135, 18, 0.5);
+  letter-spacing: 1.5px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-transform: uppercase;
+  padding: 10px;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.form-button:hover {
+  letter-spacing: 2px;
+  background-color: rgba(5, 135, 18, 0.7);
+}
+
+.form-button:active {
+  transform: scale(0.97);
+}
+
+input[type="radio"] {
+  position: absolute;
+  visibility: hidden;
+}
+
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid #ebebeb;
+  outline: none;
+}
+
+.radio-label {
+  font-weight: 700;
+}
+
+.form-radio-item {
+  position: relative;
+}
+
+.form-radio-item label {
+  font-weight: 700;
+  font-size: 1.4rem;
+  padding-left: 22px;
+  position: relative;
+  z-index: 9;
+  display: block;
+  cursor: pointer;
+}
+
+.check {
+  display: inline-block;
+  position: absolute;
+  border: 1px solid #ebebeb;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  top: 2px;
+  left: 0;
+  z-index: 5;
+  transition: border 0.25s linear;
+  -webkit-transition: border 0.25s linear;
+}
+
+.check:before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  margin: auto;
+  transition: 0.25s linear;
+  -webkit-transition: 0.25s linear;
+}
+
+input[type="radio"]:checked ~ .check::before {
+  background: rgba(5, 135, 18, 0.7);
+}
+
+input[type="radio"]:checked ~ .check {
+  border: 1px solid rgba(5, 135, 18, 0.7);
+}
+
+.form-login-container {
+  margin: 200px auto 0 auto;
+  width: 47vw;
+  transition: all 0.5s ease;
+}
+
+.login-form {
+  padding: 50px 60px 50px 60px;
+  width: 95%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-login-content {
+  width: 50%;
+  background: url("../images/login-side-girls.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-position: center;
+}
+
+.form-login-data {
+  width: 50%;
+}
+
+.form-img-text-login {
+  top: 370px;
+  font-size: 2rem;
+}
+
+.btn-show-pass,
+.error-sign,
+.password-error-sign {
+  font-size: 15px;
+  color: #999;
+  display: flex;
+  position: absolute;
+  height: 100%;
+  top: 0px;
+  right: -22px;
+  padding-right: 5px;
+  cursor: pointer;
+  -webkit-transition: all 0.6s;
+  -o-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.password-error {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  gap: 5px;
+}
+
+.password-error-text {
+  display: inline-block;
+}
+
+.password-error-info {
+  display: none;
+  right: 9px;
+  padding-right: 0px;
+}
+
+.password-error-info {
+  font-size: 15px;
+  color: rgba(5, 135, 18, 0.7);
+  height: 100%;
+  cursor: pointer;
+  -webkit-transition: all 0.6s;
+  -o-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  transition: all 0.6s;
+}
+
+.password-error-sign {
+  top: 28px;
+  color: #b90000;
+  right: -22px;
+  display: none;
+  transition: all 0.6s;
+}
+
+.btn-show-pass {
+  right: 2px;
+  top: 29px;
+}
+
+.error-sign {
+  top: 28px;
+  color: #b90000;
+  display: none;
+}
+
+.radio-error-sign {
+  top: 10px;
+}
+
+.btn-show-pass:hover {
+  color: rgba(5, 135, 18, 0.5);
+}
+
+.registration-doublecheck {
+  margin-top: 18px;
+  text-align: center;
+  color: rgb(102, 102, 102);
+  font-size: 1.4rem;
+  line-height: 170%;
+}
+
+.registration-link,
+.login-link {
+  color: rgba(5, 135, 18, 0.8);
+}
+
+.registration-link:hover,
+.login-link:hover {
+  color: rgba(5, 135, 18, 0.6);
+}
+
+[data-hint] {
+  cursor: hint;
+}
+
+[data-hint]::after {
+  opacity: 0;
+  width: 250px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 5px;
+  content: attr(data-hint);
+  position: absolute;
+  top: -15px;
+  left: 40%;
+  transform: translate(-50%, 80%);
+  pointer-events: none;
+  transition: opacity 0.2s;
+  font-size: 1.3rem;
+}
+
+.password-hint::after {
+  left: 55%;
+}
+
+[data-hint]:hover::after {
+  opacity: 1;
+}
+
+.shipping-checkbox-item {
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 2600px) {
+  [data-hint]::after {
+    left: 55%;
+  }
+}
+
+@media screen and (max-width: 2300px) {
+  [data-hint]::after {
+    left: 50%;
+  }
+}
+
+@media screen and (max-width: 1980px) {
+  .form-container {
+    width: 70%;
+  }
+
+  [data-hint]::after {
+    left: 40%;
+  }
+}
+
+@media screen and (max-width: 1670px) {
+  .form-container {
+    width: 75%;
+  }
+
+  .registration-form {
+    padding: 50px 40px 50px 40px;
+  }
+
+  .form-login-container {
+    width: 52vw;
+  }
+
+  .password-hint::after {
+    left: 55%;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .registration-form,
+  .login-form {
+    padding: 50px 40px 50px 40px;
+    width: 95%;
+  }
+
+  .form-login-container {
+    width: 53vw;
+  }
+
+  .password-hint::after {
+    left: 55%;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .form-container {
+    width: 90%;
+  }
+
+  .registration-form {
+    padding: 50px 25px 50px 25px;
+    width: 97%;
+  }
+
+  .form-login-container {
+    margin: 170px auto 0 auto;
+  }
+
+  .password-hint::after {
+    left: 45%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .form-container {
+    width: 95%;
+  }
+
+  .registration-form {
+    padding: 50px 15px 50px 15px;
+    width: 97%;
+  }
+
+  .form-login-container {
+    margin: 150px auto 0 auto;
+  }
+
+  .password-hint::after {
+    left: 45%;
+  }
+
+  .email-error,
+  .password-error,
+  .first-name-error,
+  .last-name-error,
+  .dob-error,
+  .select-error,
+  .postal-error,
+  .city-error,
+  .street-error,
+  .radio-error,
+  .shipping-street-error,
+  .shipping-city-error,
+  .shipping-postal-error,
+  .shipping-select-error {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .form-container {
+    width: 97%;
+  }
+
+  .registration-form,
+  .login-form {
+    padding: 50px 15px 50px 15px;
+    width: 97%;
+  }
+
+  .form-img-text {
+    font-size: 1.8rem;
+  }
+
+  [data-hint]::after {
+    left: 27%;
+  }
+
+  .password-hint::after {
+    left: 45%;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .form-container {
+    flex-direction: column;
+  }
+
+  .form-content,
+  .form-login-content {
+    height: 330px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0px;
+  }
+
+  .registration-form {
+    padding: 50px 15px 50px 15px;
+    width: 90%;
+  }
+
+  .form-img-text {
+    top: 220px;
+    padding: 5px;
+  }
+
+  .form-data {
+    width: 100%;
+  }
+
+  .form-login-data {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  [data-hint]::after {
+    left: 45%;
+  }
+
+  .password-hint::after {
+    left: 45%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .registration-form {
+    padding: 50px 15px 50px 15px;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .form-login-data {
+    width: 80%;
+  }
+
+  [data-hint]::after {
+    left: 20%;
+  }
+
+  .password-hint::after {
+    left: 48%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  [data-hint]::after {
+    left: 17%;
+  }
+
+  .password-hint::after {
+    left: 45%;
+  }
+
+  .email-error,
+  .password-error,
+  .first-name-error,
+  .last-name-error,
+  .dob-error,
+  .select-error,
+  .postal-error,
+  .city-error,
+  .street-error,
+  .radio-error,
+  .shipping-street-error,
+  .shipping-city-error,
+  .shipping-postal-error,
+  .shipping-select-error {
+    font-size: 1.1rem;
+  }
+
+  .email-error,
+  .password-error,
+  .first-name-error,
+  .last-name-error,
+  .dob-error,
+  .select-error,
+  .postal-error,
+  .city-error,
+  .street-error,
+  .radio-error,
+  .shipping-street-error,
+  .shipping-city-error,
+  .shipping-postal-error,
+  .shipping-select-error {
+    height: 27px;
+  }
+}

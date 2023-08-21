@@ -1,0 +1,276 @@
+a {
+  text-decoration: none;
+}
+
+.welcom {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-image: url("/src/assets/images/test2.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  position: relative;
+  //background-position: 10vw 0px; //background-position: center center; for 1024px
+}
+
+.welcom-back {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  background-image: linear-gradient(90deg, #000000 46%, #737272db 79%);
+  opacity: 0.55;
+  position: absolute;
+}
+
+.welcom-conteiner {
+  padding: 0px 20px;
+  display: flex;
+  margin: 0px auto;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.welcom-content {
+  max-width: 500px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.welcom-content-button {
+  width: 150px;
+  height: 55px;
+  padding: 15px 20px;
+  border-radius: 50px;
+  border: 0;
+  background-color: rgb(125, 123, 123);
+  letter-spacing: 1.5px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  color: white;
+  text-decoration: none;
+}
+
+.welcom-content-button:hover a {
+  color: rgb(56, 54, 54);
+}
+
+.welcom-content-p {
+  margin: 20px 0px 30px 0px;
+  font-size: 20px;
+}
+
+.catalog {
+  font-size: calc(1em + 0.5vw);
+  max-width: 1200px;
+  width: 100%;
+  padding: 50px 20px;
+  margin: 0px auto;
+}
+
+.catalog-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+
+  p {
+    margin-top: 10px;
+    font-size: 2vw;
+  }
+}
+
+.catalog-images {
+  width: 85%;
+  height: 90%;
+}
+
+.catalog-face,
+.catalog-hair,
+.catalog-brands,
+.catalog-body {
+  transition: all 0.25s ease;
+  max-width: 290px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: #000;
+}
+
+.catalog-face:hover,
+.catalog-hair:hover,
+.catalog-brands:hover,
+.catalog-body:hover {
+  color: gray;
+}
+
+.bestSellers {
+  display: none;
+}
+
+.bestSellers-container {
+  margin: 0px auto;
+  max-width: 1200px;
+  width: 100%;
+  padding: 50px 20px;
+  min-height: 400px; //not important
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 30px;
+  }
+}
+
+.bestProducts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.brands-container {
+  margin: 0px auto;
+  //max-width: 1200px;
+  width: 100%;
+  padding: 40px 5px;
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+
+  a {
+    overflow: hidden;
+    color: white;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  img {
+    transition: all 0.25s ease;
+  }
+}
+
+.welcome-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.brands-box {
+  margin-right: 10px;
+  align-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 17vw;
+  cursor: pointer;
+  max-width: 600px;
+  width: 100%;
+  transition: all 0.25s ease;
+}
+
+.brands-box:last-child {
+  margin-right: 0px;
+}
+
+.brands-box:hover img {
+  transform: scale(1.06);
+}
+
+.brands-box:hover .brands-box-choose {
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
+
+.brands-box-choose {
+  border-bottom: 2px solid rgba(125, 124, 124, 0.549);
+  transition: all 0.5s ease;
+}
+
+.brands-box-name,
+.brands-box-choose {
+  z-index: 4;
+}
+
+.brand-box-shadow {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  background-image: linear-gradient(90deg, #00000073 46%, #737272db 79%);
+  opacity: 0.55;
+  position: absolute;
+}
+
+.sale {
+  display: none;
+  height: 400px;
+}
+
+.sale-container {
+  margin: 0px auto;
+  max-width: 1200px;
+  width: 100%;
+  padding: 50px 20px;
+  min-height: 400px; //not important
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .catalog-container {
+    p {
+      font-size: 3vw;
+    }
+  }
+
+  .brands-box4 {
+    display: none;
+  }
+
+  .brands-box {
+    height: 22vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .welcom {
+    background-position: center center;
+  }
+
+  .brands-box3 {
+    display: none;
+  }
+
+  .brands-box {
+    height: 30vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .brands-box1 {
+    margin-right: 0px;
+  }
+
+  .brands-box2 {
+    display: none;
+  }
+
+  .brands-box {
+    height: 65vw;
+    max-width: none;
+  }
+}
