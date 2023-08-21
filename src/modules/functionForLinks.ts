@@ -1,7 +1,8 @@
 import { navigateTo } from "../router";
 
-const setLinksListener = () => {
-  const links = document.querySelectorAll("a");
+const setListenerForLinks = () => {
+  const main = document.querySelector("main") as HTMLElement;
+  const links = main.querySelectorAll("a");
   links.forEach((item) => {
     item.addEventListener("click", (e) => {
       e.preventDefault();
@@ -10,5 +11,4 @@ const setLinksListener = () => {
     });
   });
 };
-
-export default setLinksListener;
+export default setListenerForLinks;
