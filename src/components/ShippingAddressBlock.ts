@@ -53,7 +53,7 @@ const ShippingAddressBlock = () => {
       </div>
     </div>
     <div class="form-row checkbox-row">
-      <div class="form-checkbox-item">
+      <div class="form-checkbox-item shipping-checkbox-item">
         <label class="label-default-address" for="defaultShipping">Set this shipping address as default for future transactions</label>
         <input class="input-default-address" type="checkbox" data-addresscheckbox="defaultShippingAddress" name="defaultShipping" id="default-shipping">
       </div>
