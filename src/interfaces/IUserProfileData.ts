@@ -17,8 +17,8 @@ interface IAddressData {
 
 interface IUserSignUpData extends IUserBasicInfo {
   addresses: IAddressData[];
-  defaultShippingAddress: number;
-  defaultBillingAddress: number;
+  defaultShippingAddress?: number;
+  defaultBillingAddress?: number;
 }
 
 interface ISignUpDataResult {

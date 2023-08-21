@@ -29,14 +29,17 @@ const getFormAddressesData = (): [IAddressData, IAddressData] => {
   );
 
   inputs.forEach((input: HTMLInputElement) => {
-    const inputPostId: keyof IAddressData = input.dataset.postId as keyof IAddressData;
+    const inputPostId: keyof IAddressData = input.dataset.postid as keyof IAddressData;
     const inputValue: string = input.value;
+
+    if (!inputPostId) return;
 
     if (input.closest(".billing-address-block")) inputValue && (billingAddress[inputPostId] = inputValue);
     if (input.closest(".shipping-address-block")) inputValue && (shippingAddress[inputPostId] = inputValue);
   });
 
   const countryOptions: NodeListOf<HTMLOptionElement> = document.querySelectorAll("select option");
+
   countryOptions.forEach((option: HTMLOptionElement) => {
     const countryCode: string = option.dataset.code as string;
 
@@ -47,16 +50,26 @@ const getFormAddressesData = (): [IAddressData, IAddressData] => {
   return [billingAddress, shippingAddress];
 };
 
+const setAddressesAsDefault = (signUpData: IUserSignUpData): IUserSignUpData => {
+  const defaultBillingCheckbox: HTMLInputElement = document.querySelector("#default-billing") as HTMLInputElement;
+  const defaultShippingCheckbox: HTMLInputElement = document.querySelector("#default-shipping") as HTMLInputElement;
+
+  defaultBillingCheckbox.checked && (signUpData.defaultBillingAddress = 0);
+  defaultShippingCheckbox.checked && (signUpData.defaultShippingAddress = 1);
+
+  return signUpData;
+};
+
 const createCustomerProfile = async () => {
   const userBasicInfo = getFormBasicInfo();
   const [billingAddress, shippingAddress] = getFormAddressesData();
 
-  const signUpData: IUserSignUpData = {
+  let signUpData: IUserSignUpData = {
     ...userBasicInfo,
     addresses: [billingAddress, shippingAddress],
-    defaultShippingAddress: 0,
-    defaultBillingAddress: 1,
   };
+
+  signUpData = setAddressesAsDefault(signUpData);
 
   const signUpDataResult: ISignUpDataResult = await signUp(signUpData);
 
