@@ -16,6 +16,7 @@ import orderInformationPage from "./pages/OrderInfo";
 import deliveryPage from "./pages/Delivery";
 import returnPage from "./pages/Return";
 import brandsFilter from "./pages/BrandsFilter";
+import setListenerForLinks from "./modules/functionForLinks";
 
 const getMatch = () => {
   const routes = [
@@ -65,9 +66,10 @@ export const router = async () => {
   const main = document.querySelector("main") as HTMLBodyElement;
   main.innerHTML = match.route.view;
   runPageFunctional();
+  setListenerForLinks();
 };
 
-export const navigateTo = (url: string) => {
-  window.history.pushState({}, "", url);
+export const navigateTo = (url:string) => {
+  window.history.pushState(null, "", url);
   router();
 };
