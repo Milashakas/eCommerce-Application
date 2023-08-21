@@ -51,7 +51,7 @@ a {
 .form-container {
   z-index: 3;
   width: 60vw;
-  margin: 160px auto 0 auto;
+  margin: 120px auto 0 auto;
   background: #fff;
   display: flex;
   border: 1px solid rgba(70, 71, 71, 0.4);
@@ -176,6 +176,16 @@ select:focus {
   transition: all 0.9s ease;
 }
 
+.form-checkbox-item {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.9s ease;
+}
+
 label {
   font-weight: 400;
   display: block;
@@ -188,6 +198,16 @@ label.required:after {
   content: "*";
   margin-left: 2px;
   color: #b90000;
+}
+
+.input-default-address {
+  width: 15px;
+  transition: all 0.9s ease;
+}
+
+.label-default-address {
+  font-weight: 700;
+  color: rgba(5, 135, 18, 0.8);
 }
 
 input[type="date"]:focus,
@@ -248,7 +268,6 @@ input[name="address"] {
   padding: 10px;
   width: 250px;
   margin: 0 auto;
-  margin-top: 30px;
 }
 
 .form-button:hover {
@@ -274,8 +293,6 @@ input[type="radio"] {
 
 .radio-label {
   font-weight: 700;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 .form-radio-item {
@@ -489,6 +506,10 @@ input[type="radio"]:checked ~ .check {
 
 [data-hint]:hover::after {
   opacity: 1;
+}
+
+.shipping-checkbox-item {
+  margin-bottom: 30px;
 }
 
 @media screen and (max-width: 2600px) {

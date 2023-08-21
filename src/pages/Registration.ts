@@ -60,7 +60,7 @@ const RegistrationForm = () => {
               </span>
               <div class="password-error password-error-registration">
                 <span class="password-error-text"></span>
-                <div class="password-error-info" data-hint="Min 8 chars and at least: 1 uppercase letter, 1 lowercase letter, 1 number">
+                <div class="password-error-info" data-hint="Min 8 chars made from at least: 1 uppercase letter(A-Z), 1 lowercase letter(a-z), 1 number">
                   <i class="fa-solid fa-circle-info"></i>
                 </div>
               </div>
