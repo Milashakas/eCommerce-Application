@@ -316,39 +316,39 @@ body {
     flex-direction: column;
     justify-content: start;
   }
-    .header-list {
-      margin-top: 80px;
-      margin-bottom: 40px;
-      flex-direction: column;
-      align-items: center;
+  .header-list {
+    margin-top: 80px;
+    margin-bottom: 40px;
+    flex-direction: column;
+    align-items: center;
 
-      .header-buttons {
-        flex-direction: column;
+    .header-buttons {
+      flex-direction: column;
+      width: 100%;
+      padding-right: 20px;
+    }
+
+    li {
+      height: 50px;
+      border-bottom: 1px solid rgba(168, 168, 168, 0.292);
+      width: 100%;
+      align-items: center;
+      a {
+        color: black;
+        padding: 15px 0px;
+        height: 100%;
         width: 100%;
-        padding-right: 20px;
       }
 
-      li {
-        height: 50px;
-        border-bottom: 1px solid rgba(168, 168, 168, 0.292);
-        width: 100%;
-        align-items: center;
-              a {
-                color: black;
-                padding: 15px 0px;
-                height: 100%;
-                width: 100%;
-              }
+      a:hover {
+        color: #c7c6c6d3;
+      }
+    }
+  }
 
-              a:hover {
-                color: #c7c6c6d3;
-              }
-            }
-          }
-
-          a:hover {
-            color: #c7c6c6d3;
-          }
+  a:hover {
+    color: #c7c6c6d3;
+  }
   .burger {
     display: flex;
   }

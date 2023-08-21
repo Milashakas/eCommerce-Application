@@ -69,7 +69,7 @@ export const router = async () => {
   setListenerForLinks();
 };
 
-export const navigateTo = (url:string) => {
+export const navigateTo = (url: string) => {
   window.history.pushState(null, "", url);
   router();
 };
