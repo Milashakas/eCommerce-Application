@@ -67,7 +67,7 @@ export const router = async () => {
   runPageFunctional();
 };
 
-export const navigateTo = (url:string) => {
+export const navigateTo = (url: string) => {
   window.history.pushState({}, "", url);
   router();
 };

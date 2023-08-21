@@ -38,7 +38,7 @@ const validatePasswordOnBlur = () => {
     displayPasswordError("Password must contain at least one lowercase letter (a-z)");
   } else if (!/\d/.test(passwordValue)) {
     displayPasswordError("Password must contain at least one digit");
-  } else if (!passwordValue.match(/^[a-zA-Z\d!@#$%^&*:;]{8,}$/)) {
+  } else if (!passwordValue.match(/^[a-zA-Z\d!-_@#$%^&*.,:;]{8,}$/)) {
     displayPasswordError("The password doesn't meet the requirements");
   } else {
     hidePasswordError();
