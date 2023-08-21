@@ -1,6 +1,6 @@
 /* eslint-disable */
 import signIn from "../api/signIn";
-import setUserToken from "../modules/common/setUserToken";
+import { setUserToken } from "../modules/common/useUserToken";
 import { navigateTo } from "../router";
 import { IUserSignInData, ISignInResponseData } from "../interfaces/IUserProfileData";
 import showPopupNotification from "../modules/showPopupNotification";

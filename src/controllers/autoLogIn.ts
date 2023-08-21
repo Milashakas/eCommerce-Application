@@ -1,5 +1,5 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"peerDependencies": true}] */
-import getUserToken from "../modules/common/getUserToken";
+import { getUserToken } from "../modules/common/useUserToken";
 import autoSignIn from "../api/autoSignIn";
 import { ISignInResponseData } from "../interfaces/IUserProfileData";
 import { setUserProfileFullData } from "../models/userProfileData";

@@ -2,7 +2,7 @@
 import { IUserBasicInfo, IUserSignUpData, IAddressData, ISignUpDataResult } from "../interfaces/IUserProfileData";
 import signUp from "../api/signUp";
 import showPopupNotification from "../modules/showPopupNotification";
-import setUserToken from "../modules/common/setUserToken";
+import { setUserToken } from "../modules/common/useUserToken";
 import { navigateTo } from "../router";
 import clearAllFormData from "../modules/common/clearAllFormData";
 
