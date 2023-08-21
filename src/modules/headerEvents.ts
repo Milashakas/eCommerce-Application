@@ -1,5 +1,3 @@
-import setLinksListener from "./linksEventListener";
-
 const headerOpenMenuFunctional = () => {
   window.addEventListener("scroll", () => {
     const header = document.querySelector("header");
@@ -10,8 +8,6 @@ const headerOpenMenuFunctional = () => {
       header?.classList.add("header-background");
     }
   });
-
-  setLinksListener();
 
   const burger = document.querySelector(".burger");
   const overlay = document.querySelector(".overlay");
