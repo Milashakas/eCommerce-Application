@@ -44,7 +44,7 @@ body {
 }
 
 .none {
-  display: none;
+  display: none !important;
 }
 
 .header-background {
@@ -113,6 +113,14 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.header-icons {
+  display: flex;
+}
+
+.profile {
+  margin-right: 2rem;
 }
 
 .profile,
@@ -425,5 +433,5 @@ body {
 }
 
 .hideElement {
-  display: none;
+  display: none !important;
 }

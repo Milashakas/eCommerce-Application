@@ -5,6 +5,7 @@ import { navigateTo } from "../router";
 import { IUserSignInData, ISignInResponseData } from "../interfaces/IUserProfileData";
 import showPopupNotification from "../modules/showPopupNotification";
 import clearAllFormData from "../modules/common/clearAllFormData";
+import autoLogIn from "./autoLogIn";
 
 const logInAction = async () => {
   const formInputs: NodeListOf<HTMLInputElement> = document.querySelectorAll(".login-form input");
@@ -26,6 +27,8 @@ const logInAction = async () => {
     setUserToken(userToken);
     navigateTo("/");
     showPopupNotification({ classMode: "notification-success", message: notificationMessage });
+
+    await autoLogIn(); //Костыль
   } else {
     const notificationMessage = signInDataResult.errorMessage;
     showPopupNotification({ classMode: "notification-error", message: notificationMessage });

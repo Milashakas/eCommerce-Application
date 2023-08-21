@@ -3,6 +3,7 @@ import { getUserToken, removeUserToken } from "../modules/common/useUserToken";
 import autoSignIn from "../api/autoSignIn";
 import { ISignInResponseData } from "../interfaces/IUserProfileData";
 import { setUserProfileFullData } from "../models/userProfileData";
+import showAuthUserProfileVew from "./showAuthUserProfileVew";
 
 const autoLogIn = async () => {
   const userToken = getUserToken();
@@ -13,6 +14,7 @@ const autoLogIn = async () => {
 
     if (userProfileStoreData) {
       setUserProfileFullData(userProfileStoreData);
+      showAuthUserProfileVew();
     } else removeUserToken();
   }
 };

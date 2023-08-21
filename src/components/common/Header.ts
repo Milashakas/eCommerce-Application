@@ -37,16 +37,18 @@ const getHeader = () => {
         </div>
       </nav>
       <div class="header-icons">
-      <div class="profile hideElement"><a href="/profile"><img src=${iconProfile} width="30px"
-      height="30px" title="Profile" alt="profile" class="icon"></a>
-      </div>
-      <div class="basket">
-        <a href="/basket" class="basket">
-          <img src=${iconBasket} width="30px" height="30px" title="Basket" alt="basket"
-            class="icon">
-        </a>
-        <span class="basket-count">0</span>
-      </div>
+        <div class="profile hideElement">
+          <a class="profile-icon" href="/profile">
+            <img src=${iconProfile} width="30px" height="30px" title="Profile" alt="profile" class="icon">
+          </a>
+        </div>
+        <div class="basket">
+          <a href="/basket" class="basket">
+            <img src=${iconBasket} width="30px" height="30px" title="Basket" alt="basket"
+              class="icon">
+          </a>
+          <span class="basket-count">0</span>
+        </div>
       </div>
     </div>
   </header>
