@@ -3,7 +3,6 @@ import { getUserToken, removeUserToken } from "../modules/common/useUserToken";
 import autoSignIn from "../api/autoSignIn";
 import { ISignInResponseData, IUserProfileStoreData } from "../interfaces/IUserProfileData";
 import { setUserProfileFullData } from "../models/userProfileData";
-import displayAuthUserProfileVew from "./displayAuthUserProfileVew";
 
 const setInitUserProfileStoreData = () => {
   const initUserProfileStoreData: IUserProfileStoreData = { isAuth: false };
@@ -19,15 +18,12 @@ const autoLogIn = async () => {
 
     if (userProfileStoreData) {
       setUserProfileFullData(userProfileStoreData);
-      displayAuthUserProfileVew(true);
+      // displayAuthUserProfileVew(true);
     } else {
       removeUserToken();
       setInitUserProfileStoreData();
-      displayAuthUserProfileVew(false);
+      // displayAuthUserProfileVew(false);
     }
-  } else {
-    setInitUserProfileStoreData();
-    displayAuthUserProfileVew(false);
   }
 };
 

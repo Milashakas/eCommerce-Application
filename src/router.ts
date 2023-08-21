@@ -3,7 +3,6 @@ import errorPage from "./pages/404";
 import RegistrationForm from "./pages/Registration";
 import LoginForm from "./pages/Login";
 import runFunctionInRouting from "./modules/setFunctionInRouting";
-// import setLinksListener from "./modules/linksEventListener";
 import catalogPage from "./pages/Catalog";
 import brandsPage from "./pages/Brands";
 import hairPage from "./pages/Hair";
@@ -58,7 +57,6 @@ const getMatch = () => {
 export const runPageFunctional = () => {
   const match = getMatch();
   runFunctionInRouting(match.route.path);
-  // setLinksListener();
 };
 
 export const router = async () => {
