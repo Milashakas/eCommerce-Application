@@ -21,7 +21,7 @@ const logInAction = async () => {
   const signInDataResult: ISignInResponseData = await signIn(userSignInData);
 
   if (signInDataResult.statusCode === 200) {
-    const notificationMessage = "Welcome!";
+    const notificationMessage = "You have logged in successfully !";
     const userToken: string = signInDataResult.userProfileStoreData?.userToken as string;
 
     setUserToken(userToken);
