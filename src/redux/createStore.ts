@@ -19,7 +19,9 @@ const createStore = () => {
     subscribe(callback: () => CallableFunction) {
       subscribers.push(callback);
     },
-    getState() {},
+    getState() {
+      return state;
+    },
   };
 };
 

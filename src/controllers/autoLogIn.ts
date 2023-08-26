@@ -1,13 +1,9 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"peerDependencies": true}] */
-import { getUserToken, removeUserToken } from "../modules/common/useUserToken";
+import { getUserToken } from "../modules/common/useUserToken";
 import autoSignIn from "../api/autoSignIn";
-import { ISignInResponseData, IUserProfileStoreData } from "../interfaces/IUserProfileData";
-import { setUserProfileFullData } from "../models/userProfileData";
-
-const setInitUserProfileStoreData = () => {
-  const initUserProfileStoreData: IUserProfileStoreData = { isAuth: false };
-  setUserProfileFullData(initUserProfileStoreData);
-};
+import { ISignInResponseData } from "../interfaces/IUserProfileData";
+import store from "../redux/createStore";
+import { setUserProfileDataAction } from "../redux/actions";
 
 const autoLogIn = async () => {
   const userToken = getUserToken();
@@ -17,12 +13,9 @@ const autoLogIn = async () => {
     const { userProfileStoreData } = signInResponseData;
 
     if (userProfileStoreData) {
-      setUserProfileFullData(userProfileStoreData);
-      // displayAuthUserProfileVew(true);
+      store.dispatch(setUserProfileDataAction(userProfileStoreData));
     } else {
-      removeUserToken();
-      setInitUserProfileStoreData();
-      // displayAuthUserProfileVew(false);
+      store.dispatch(setUserProfileDataAction({}));
     }
   }
 };

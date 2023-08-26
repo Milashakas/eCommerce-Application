@@ -28,7 +28,6 @@ interface ISignUpDataResult {
 }
 
 interface IUserProfileStoreData {
-  isAuth: boolean;
   userToken?: string;
   userBasicInfo?: IUserBasicInfo;
   addresses?: IAddressData[];
