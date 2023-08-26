@@ -23,12 +23,12 @@ const showHeaderUserIcon = (authBtnsBlock: HTMLDivElement, profileIcon: HTMLDivE
   window.addEventListener("click", showPopupMenu);
 };
 
-const displayAuthUserProfileVew = (ifShowUserIcon: boolean) => {
+const displayAuthUserProfileVew = () => {
   const isUserAuth: boolean = store.getState().isAuth;
   const authBtnsBlock: HTMLDivElement = document.querySelector(".header-profile") as HTMLDivElement;
   const profileIcon: HTMLDivElement = document.querySelector(".header-icons .profile ") as HTMLDivElement;
 
-  if (!isUserAuth || !ifShowUserIcon) {
+  if (!isUserAuth) {
     authBtnsBlock.classList.remove("hideElement");
     profileIcon.classList.add("hideElement");
 

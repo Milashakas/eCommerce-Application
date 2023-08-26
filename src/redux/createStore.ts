@@ -1,5 +1,6 @@
 import { IAction, IState } from "../interfaces/IRedux";
 import rootReducer from "./rootReducer";
+import displayAuthUserProfileVew from "../controllers/displayAuthUserProfileVew";
 
 const INIT_STORE: IState = {
   isAuth: false,
@@ -9,15 +10,15 @@ const INIT_STORE: IState = {
 
 const createStore = () => {
   let state: IState = rootReducer(INIT_STORE, { type: "__INIT__" });
-  const subscribers: CallableFunction[] = [];
+  let subscribers: CallableFunction[] = [];
 
   return {
     dispatch<T>(action: IAction<T>) {
       state = rootReducer(state, action);
       subscribers.forEach((subscriber) => subscriber());
     },
-    subscribe(callback: () => CallableFunction) {
-      subscribers.push(callback);
+    subscribe(callbacksArr: CallableFunction[]) {
+      subscribers = callbacksArr;
     },
     getState() {
       return state;
@@ -26,5 +27,6 @@ const createStore = () => {
 };
 
 const store = createStore();
+store.subscribe([displayAuthUserProfileVew]);
 
 export default store;

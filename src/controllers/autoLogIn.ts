@@ -7,11 +7,9 @@ import { setUserProfileDataAction } from "../redux/actions";
 
 const autoLogIn = async () => {
   const userToken = getUserToken();
-
   if (userToken) {
     const signInResponseData: ISignInResponseData = await autoSignIn(userToken as string);
     const { userProfileStoreData } = signInResponseData;
-
     if (userProfileStoreData) {
       store.dispatch(setUserProfileDataAction(userProfileStoreData));
     } else {

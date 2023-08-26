@@ -10,6 +10,7 @@ const rootReducer = <T>(state: IState, action: IAction<T>): IState => {
   if (action.type === SET_USER_PROFILE_DATA) {
     const userData: IUserProfileStoreData = action.payload as IUserProfileStoreData;
     state.userData = { ...userData };
+    state.isAuth = true;
   }
   return state;
 };
