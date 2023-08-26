@@ -1,6 +1,8 @@
-interface IAction {
+import { IUserProfileStoreData } from "./IUserProfileData";
+
+interface IAction<T> {
   type: string;
-  payload?: string | number | object | [] | boolean | null;
+  payload?: T;
 }
 
 interface IState {
@@ -9,6 +11,7 @@ interface IState {
   catalog: {
     currentPage?: number;
   };
+  userData?: IUserProfileStoreData;
 }
 
 export { IAction, IState };

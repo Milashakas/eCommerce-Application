@@ -7,7 +7,7 @@ import showPopupNotification from "../modules/showPopupNotification";
 import clearAllFormData from "../modules/common/clearAllFormData";
 import autoLogIn from "./autoLogIn";
 
-const logInAction = async () => {
+const logInProfile = async () => {
   const formInputs: NodeListOf<HTMLInputElement> = document.querySelectorAll(".login-form input");
 
   let userSignInData: IUserSignInData = {} as IUserSignInData;
@@ -37,4 +37,4 @@ const logInAction = async () => {
   clearAllFormData("login-form");
 };
 
-export default logInAction;
+export default logInProfile;

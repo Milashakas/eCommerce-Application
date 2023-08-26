@@ -1,5 +1,5 @@
 /* eslint import/no-extraneous-dependencies: ["error", {"peerDependencies": true}] */
-import { getUserToken } from "../modules/common/useUserToken";
+import { getUserToken, removeUserToken } from "../modules/common/useUserToken";
 import autoSignIn from "../api/autoSignIn";
 import { ISignInResponseData } from "../interfaces/IUserProfileData";
 import store from "../redux/createStore";
@@ -15,6 +15,7 @@ const autoLogIn = async () => {
     if (userProfileStoreData) {
       store.dispatch(setUserProfileDataAction(userProfileStoreData));
     } else {
+      removeUserToken();
       store.dispatch(setUserProfileDataAction({}));
     }
   }

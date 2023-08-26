@@ -1,5 +1,6 @@
-import { getUserProfileData } from "../models/userProfileData";
+// import { getUserProfileData } from "../models/userProfileData";
 import setProfilePopupMenuOptions from "../modules/setProfilePopupMenuOptions";
+import store from "../redux/createStore";
 
 const showPopupMenu = (event: Event) => {
   const target: Element = event.target as Element;
@@ -23,7 +24,7 @@ const showHeaderUserIcon = (authBtnsBlock: HTMLDivElement, profileIcon: HTMLDivE
 };
 
 const displayAuthUserProfileVew = (ifShowUserIcon: boolean) => {
-  const isUserAuth: boolean = getUserProfileData().isAuth;
+  const isUserAuth: boolean = store.getState().isAuth;
   const authBtnsBlock: HTMLDivElement = document.querySelector(".header-profile") as HTMLDivElement;
   const profileIcon: HTMLDivElement = document.querySelector(".header-icons .profile ") as HTMLDivElement;
 

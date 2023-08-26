@@ -12,7 +12,7 @@ const createStore = () => {
   const subscribers: CallableFunction[] = [];
 
   return {
-    dispatch(action: IAction) {
+    dispatch<T>(action: IAction<T>) {
       state = rootReducer(state, action);
       subscribers.forEach((subscriber) => subscriber());
     },
