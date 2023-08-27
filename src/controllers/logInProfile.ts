@@ -1,15 +1,15 @@
-/* eslint-disable */
 import signIn from "../api/signIn";
 import { setUserToken } from "../modules/common/useUserToken";
 import { navigateTo } from "../router";
 import { IUserSignInData, ISignInResponseData } from "../interfaces/IUserProfileData";
 import showPopupNotification from "../modules/showPopupNotification";
 import clearAllFormData from "../modules/common/clearAllFormData";
-import autoLogIn from "./autoLogIn";
+import autoLogInAsyncAction from "../redux/asyncActions/autoLogInAsyncAction";
 
 const setErrorMessage = (statucCode: number): string => {
   let errorMessage: string = "";
   if (statucCode === 400) {
+    // eslint-disable-next-line operator-linebreak
     errorMessage =
       "The profile has not been found. Check whether email and password was correct or sign up new profile";
   } else {
@@ -20,9 +20,10 @@ const setErrorMessage = (statucCode: number): string => {
 };
 
 const logInProfile = async () => {
+  // eslint-disable-next-line no-undef
   const formInputs: NodeListOf<HTMLInputElement> = document.querySelectorAll(".login-form input");
 
-  let userSignInData: IUserSignInData = {} as IUserSignInData;
+  const userSignInData: IUserSignInData = {} as IUserSignInData;
 
   formInputs.forEach((input: HTMLInputElement) => {
     const inputPostId: keyof IUserSignInData = input.dataset.postid as keyof IUserSignInData;
@@ -40,9 +41,10 @@ const logInProfile = async () => {
     navigateTo("/");
     showPopupNotification({ classMode: "notification-success", message: notificationMessage });
 
-    await autoLogIn(); //Костыль
+    await autoLogInAsyncAction(); // Костыль
   } else {
     const notificationMessage = setErrorMessage(signInDataResult.statusCode as number);
+
     showPopupNotification({ classMode: "notification-error", message: notificationMessage });
   }
 

@@ -3,7 +3,7 @@ import headerOpenMenuFunctional from "./modules/headerEvents";
 import footerOpenLinksFunctional from "./modules/footerEvents";
 import setBasicLayout from "./modules/SetBasicLayout";
 import { router, navigateTo } from "./router";
-import autoLogIn from "./controllers/autoLogIn";
+import autoLogIn from "./redux/asyncActions/autoLogInAsyncAction";
 
 setBasicLayout();
 headerOpenMenuFunctional();

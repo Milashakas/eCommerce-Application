@@ -1,16 +1,16 @@
-// registrationPage functional
+// registrationPage and loginPage functional
 import initSameShippingListener from "./setShippingAddressData";
 import togglePasswordVisibility from "./togglePasswordVisibility";
-import validateEmail from "./validateEmail";
-import validatePassword from "./validatePassword";
 import validateNames from "./validateNames";
 import validateDOB from "./validateBirthDate";
+import validateEmail from "./validateEmail";
+import validatePassword from "./validatePassword";
 import validateBillingAddress from "./validateBillingAddress";
 import validateRegistrationForm from "./validateRegFormOnSubmit";
 import handleShippingAddressValidation from "./validateShippingAddress";
 import validateLoginForm from "./validateLoginFormOnSubmit";
-import { navigateTo } from "../router";
-import { getUserToken } from "./common/useUserToken";
+// catalogPage functional
+import setProductsListAsyncAction from "../redux/asyncActions/setProductsListAsyncAction";
 
 const runFunctionInRouting = (url: string) => {
   if (url === "/signup") {
@@ -24,16 +24,12 @@ const runFunctionInRouting = (url: string) => {
     validateRegistrationForm();
     handleShippingAddressValidation();
   } else if (url === "/login") {
-    const userToken: string | null = getUserToken();
-    if (userToken) {
-      navigateTo("/");
-      return;
-    }
-
     validateEmail();
     validatePassword();
     togglePasswordVisibility();
     validateLoginForm();
+  } else if (url === "/catalog") {
+    setProductsListAsyncAction();
   }
 };
 

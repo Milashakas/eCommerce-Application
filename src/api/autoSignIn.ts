@@ -1,4 +1,3 @@
-/* eslint import/no-extraneous-dependencies: ["error", {"peerDependencies": true}] */
 import { ClientResponse, Customer } from "@commercetools/platform-sdk";
 import { adminApiRoot } from "./ApiClients";
 import { ISignInResponseData } from "../interfaces/IUserProfileData";
