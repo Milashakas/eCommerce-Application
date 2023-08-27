@@ -10,7 +10,7 @@ import validateRegistrationForm from "./validateRegFormOnSubmit";
 import handleShippingAddressValidation from "./validateShippingAddress";
 import validateLoginForm from "./validateLoginFormOnSubmit";
 // catalogPage functional
-import setProductsList from "../controllers/setProductsList";
+import setProductsListAsyncAction from "../redux/asyncActions/setProductsListAsyncAction";
 
 const runFunctionInRouting = (url: string) => {
   if (url === "/signup") {
@@ -29,7 +29,7 @@ const runFunctionInRouting = (url: string) => {
     togglePasswordVisibility();
     validateLoginForm();
   } else if (url === "/catalog") {
-    setProductsList();
+    setProductsListAsyncAction();
   }
 };
 

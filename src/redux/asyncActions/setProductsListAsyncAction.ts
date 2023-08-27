@@ -1,11 +1,11 @@
 import { Product } from "@commercetools/platform-sdk";
-import getProductsList from "../api/getProductsList";
-import { setProductsListAction } from "../redux/actions";
-import IProductsListResponseData from "../interfaces/IProducts";
-import { navigateTo } from "../router";
-import store from "../redux/createStore";
+import getProductsList from "../../api/getProductsList";
+import { setProductsListAction } from "../actions";
+import IProductsListResponseData from "../../interfaces/IProducts";
+import { navigateTo } from "../../router";
+import store from "../createStore";
 
-const setProductsList = async () => {
+const setProductsListAsyncAction = async () => {
   const productsListResponseData: IProductsListResponseData = await getProductsList();
   const { statucCode } = productsListResponseData;
 
@@ -17,4 +17,4 @@ const setProductsList = async () => {
   }
 };
 
-export default setProductsList;
+export default setProductsListAsyncAction;

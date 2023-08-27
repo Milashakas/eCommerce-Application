@@ -5,7 +5,7 @@ import showPopupNotification from "../modules/showPopupNotification";
 import { setUserToken } from "../modules/common/useUserToken";
 import { navigateTo } from "../router";
 import clearAllFormData from "../modules/common/clearAllFormData";
-import autoLogIn from "./autoLogIn";
+import autoLogInAsyncAction from "../redux/asyncActions/autoLogInAsyncAction";
 
 const getFormBasicInfo = (): IUserBasicInfo => {
   let userBasicInfo: IUserBasicInfo = {} as IUserBasicInfo; // init value. Must be filled in according to interface!
@@ -82,7 +82,7 @@ const createCustomerProfile = async () => {
     navigateTo("/");
     showPopupNotification({ classMode: "notification-success", message: notificationMessage });
 
-    await autoLogIn(); //Костыль
+    await autoLogInAsyncAction(); //Костыль
   } else {
     const notificationMessage = signUpDataResult.errorMessage;
     showPopupNotification({ classMode: "notification-error", message: notificationMessage });

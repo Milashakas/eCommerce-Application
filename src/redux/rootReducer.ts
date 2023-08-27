@@ -12,6 +12,7 @@ const rootReducer = <T>(state: IState, action: IAction<T>): IState => {
     const userData: IUserProfileStoreData = action.payload as IUserProfileStoreData;
     state.userData = { ...userData };
     state.isAuth = true;
+    state.isPreloader = false;
   }
   if (action.type === LOGOUT_PROFILE) {
     state.isAuth = false;
@@ -20,6 +21,7 @@ const rootReducer = <T>(state: IState, action: IAction<T>): IState => {
   if (action.type === SET_PRODUCTS_LIST) {
     const productsList: Product[] = action.payload as Product[];
     state.catalog.productsList = productsList;
+    state.isPreloader = false;
   }
   return state;
 };

@@ -1,4 +1,3 @@
-// import { getUserProfileData } from "../models/userProfileData";
 import setProfilePopupMenuOptions from "../modules/setProfilePopupMenuOptions";
 import store from "../redux/createStore";
 
