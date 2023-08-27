@@ -2,9 +2,11 @@ import { getUserToken, removeUserToken } from "../../modules/common/useUserToken
 import autoSignIn from "../../api/autoSignIn";
 import { ISignInResponseData } from "../../interfaces/IUserProfileData";
 import store from "../createStore";
-import { setUserProfileDataAction } from "../actions";
+import { setUserProfileDataAction, displayPreloaderAction } from "../actions";
 
 const autoLogInAsyncAction = async () => {
+  store.dispatch(displayPreloaderAction(true));
+
   const userToken = getUserToken();
 
   if (userToken) {
