@@ -7,6 +7,19 @@ import showPopupNotification from "../modules/showPopupNotification";
 import clearAllFormData from "../modules/common/clearAllFormData";
 import autoLogIn from "./autoLogIn";
 
+const setErrorMessage = (statucCode: number): string => {
+  console.log(statucCode);
+  let errorMessage: string = "";
+  if (statucCode === 400) {
+    errorMessage =
+      "The profile has not been found. Check whether email and password was correct or sign up new profile";
+  } else {
+    errorMessage = "There has just happened some error. Please, try to login later";
+  }
+
+  return errorMessage;
+};
+
 const logInProfile = async () => {
   const formInputs: NodeListOf<HTMLInputElement> = document.querySelectorAll(".login-form input");
 
@@ -30,7 +43,7 @@ const logInProfile = async () => {
 
     await autoLogIn(); //Костыль
   } else {
-    const notificationMessage = signInDataResult.errorMessage;
+    const notificationMessage = setErrorMessage(signInDataResult.statusCode as number);
     showPopupNotification({ classMode: "notification-error", message: notificationMessage });
   }
 
