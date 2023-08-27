@@ -1,4 +1,4 @@
-import logInAction from "../controllers/logInAction";
+import logInProfile from "../controllers/logInProfile";
 
 const validateLoginForm = () => {
   const form = document.querySelector(".login-form");
@@ -22,7 +22,7 @@ const validateLoginForm = () => {
 
     if (isAnyFormError) return;
 
-    await logInAction();
+    await logInProfile();
   });
 };
 

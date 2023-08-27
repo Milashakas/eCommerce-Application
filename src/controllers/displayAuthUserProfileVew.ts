@@ -1,5 +1,6 @@
-import { getUserProfileData } from "../models/userProfileData";
+// import { getUserProfileData } from "../models/userProfileData";
 import setProfilePopupMenuOptions from "../modules/setProfilePopupMenuOptions";
+import store from "../redux/createStore";
 
 const showPopupMenu = (event: Event) => {
   const target: Element = event.target as Element;
@@ -16,20 +17,20 @@ const showPopupMenu = (event: Event) => {
 };
 
 const showHeaderUserIcon = (authBtnsBlock: HTMLDivElement, profileIcon: HTMLDivElement) => {
-  authBtnsBlock.classList.add("hideElement");
-  profileIcon.classList.remove("hideElement");
+  authBtnsBlock.classList.add("none");
+  profileIcon.classList.remove("none");
 
   window.addEventListener("click", showPopupMenu);
 };
 
-const displayAuthUserProfileVew = (ifShowUserIcon: boolean) => {
-  const isUserAuth: boolean = getUserProfileData().isAuth;
+const displayAuthUserProfileVew = () => {
+  const isUserAuth: boolean = store.getState().isAuth;
   const authBtnsBlock: HTMLDivElement = document.querySelector(".header-profile") as HTMLDivElement;
   const profileIcon: HTMLDivElement = document.querySelector(".header-icons .profile ") as HTMLDivElement;
 
-  if (!isUserAuth || !ifShowUserIcon) {
-    authBtnsBlock.classList.remove("hideElement");
-    profileIcon.classList.add("hideElement");
+  if (!isUserAuth) {
+    authBtnsBlock.classList.remove("none");
+    profileIcon.classList.add("none");
 
     return;
   }
