@@ -1,3 +1,4 @@
+import { Product } from "@commercetools/platform-sdk";
 import { IUserProfileStoreData } from "./IUserProfileData";
 
 interface IAction<T> {
@@ -10,6 +11,7 @@ interface IState {
   isPreloader: boolean;
   catalog: {
     currentPage?: number;
+    productsList?: Product[];
   };
   userData?: IUserProfileStoreData;
 }

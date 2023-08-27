@@ -1,14 +1,16 @@
-// registrationPage functional
+// registrationPage and loginPage functional
 import initSameShippingListener from "./setShippingAddressData";
 import togglePasswordVisibility from "./togglePasswordVisibility";
-import validateEmail from "./validateEmail";
-import validatePassword from "./validatePassword";
 import validateNames from "./validateNames";
 import validateDOB from "./validateBirthDate";
+import validateEmail from "./validateEmail";
+import validatePassword from "./validatePassword";
 import validateBillingAddress from "./validateBillingAddress";
 import validateRegistrationForm from "./validateRegFormOnSubmit";
 import handleShippingAddressValidation from "./validateShippingAddress";
 import validateLoginForm from "./validateLoginFormOnSubmit";
+// catalogPage functional
+import setProductsList from "../controllers/setProductsList";
 
 const runFunctionInRouting = (url: string) => {
   if (url === "/signup") {
@@ -26,6 +28,8 @@ const runFunctionInRouting = (url: string) => {
     validatePassword();
     togglePasswordVisibility();
     validateLoginForm();
+  } else if (url === "/catalog") {
+    setProductsList();
   }
 };
 

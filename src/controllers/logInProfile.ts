@@ -43,6 +43,7 @@ const logInProfile = async () => {
     await autoLogIn(); //Костыль
   } else {
     const notificationMessage = setErrorMessage(signInDataResult.statusCode as number);
+
     showPopupNotification({ classMode: "notification-error", message: notificationMessage });
   }
 
