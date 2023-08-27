@@ -3,7 +3,6 @@ import getProductsList from "../api/getProductsList";
 import { setProductsListAction } from "../redux/actions";
 import IProductsListResponseData from "../interfaces/IProducts";
 import { navigateTo } from "../router";
-
 import store from "../redux/createStore";
 
 const setProductsList = async () => {
