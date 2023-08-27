@@ -9,8 +9,6 @@ import validateBillingAddress from "./validateBillingAddress";
 import validateRegistrationForm from "./validateRegFormOnSubmit";
 import handleShippingAddressValidation from "./validateShippingAddress";
 import validateLoginForm from "./validateLoginFormOnSubmit";
-import { navigateTo } from "../router";
-import { getUserToken } from "./common/useUserToken";
 
 const runFunctionInRouting = (url: string) => {
   if (url === "/signup") {
@@ -24,12 +22,6 @@ const runFunctionInRouting = (url: string) => {
     validateRegistrationForm();
     handleShippingAddressValidation();
   } else if (url === "/login") {
-    const userToken: string | null = getUserToken();
-    if (userToken) {
-      navigateTo("/");
-      return;
-    }
-
     validateEmail();
     validatePassword();
     togglePasswordVisibility();
