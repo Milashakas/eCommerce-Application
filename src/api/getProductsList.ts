@@ -1,8 +1,8 @@
 import { ClientResponse, ProductPagedQueryResponse } from "@commercetools/platform-sdk";
 import { adminApiRoot } from "./ApiClients";
-import IProductsListResponseData from "../interfaces/IProducts";
+import { IProductsListResponseData } from "../interfaces/IProducts";
 
-const getProductsList = async () => {
+const getProductsList = async (): Promise<IProductsListResponseData> => {
   const productsListResponseData: IProductsListResponseData = {} as IProductsListResponseData;
 
   try {
@@ -10,7 +10,7 @@ const getProductsList = async () => {
       .products()
       .get({
         queryArgs: {
-          limit: 9,
+          limit: 12,
         },
       })
       .execute();

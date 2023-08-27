@@ -1,7 +1,7 @@
 import { Product } from "@commercetools/platform-sdk";
 import getProductsList from "../../api/getProductsList";
 import { setProductsListAction, displayPreloaderAction } from "../actions";
-import IProductsListResponseData from "../../interfaces/IProducts";
+import { IProductsListResponseData } from "../../interfaces/IProducts";
 import { navigateTo } from "../../router";
 import store from "../createStore";
 
