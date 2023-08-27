@@ -17,8 +17,8 @@ const showPopupMenu = (event: Event) => {
 };
 
 const showHeaderUserIcon = (authBtnsBlock: HTMLDivElement, profileIcon: HTMLDivElement) => {
-  authBtnsBlock.classList.add("hideElement");
-  profileIcon.classList.remove("hideElement");
+  authBtnsBlock.classList.add("none");
+  profileIcon.classList.remove("none");
 
   window.addEventListener("click", showPopupMenu);
 };
@@ -29,8 +29,8 @@ const displayAuthUserProfileVew = () => {
   const profileIcon: HTMLDivElement = document.querySelector(".header-icons .profile ") as HTMLDivElement;
 
   if (!isUserAuth) {
-    authBtnsBlock.classList.remove("hideElement");
-    profileIcon.classList.add("hideElement");
+    authBtnsBlock.classList.remove("none");
+    profileIcon.classList.add("none");
 
     return;
   }

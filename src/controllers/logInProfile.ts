@@ -8,7 +8,6 @@ import clearAllFormData from "../modules/common/clearAllFormData";
 import autoLogIn from "./autoLogIn";
 
 const setErrorMessage = (statucCode: number): string => {
-  console.log(statucCode);
   let errorMessage: string = "";
   if (statucCode === 400) {
     errorMessage =

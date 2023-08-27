@@ -37,7 +37,7 @@ const getHeader = () => {
         </div>
       </nav>
       <div class="header-icons">
-        <div class="profile hideElement">
+        <div class="profile none">
           <span class="profile-icon"">
             <img src=${iconProfile} width="30px" height="30px" title="Profile" alt="profile" class="icon">
             <span class="profile-popup-menu hideElement">
