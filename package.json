@@ -51,6 +51,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "firebase": "^10.1.0",
-    "sass": "^1.64.2"
+    "sass": "^1.64.2",
+    "swiper": "^10.2.0"
   }
 }

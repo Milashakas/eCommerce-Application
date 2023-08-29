@@ -11,7 +11,8 @@ import salePage from "./pages/Sale";
 import facePage from "./pages/Face";
 import aboutUsPage from "./pages/AboutUs";
 import basketPage from "./pages/Basket";
-import orderInformationPage from "./pages/OrderInfo";
+// import orderInformationPage from "./pages/OrderInfo";
+import ProductPage from "./pages/Product";
 import deliveryPage from "./pages/Delivery";
 import returnPage from "./pages/Return";
 import brandsFilter from "./pages/BrandsFilter";
@@ -31,7 +32,7 @@ const getMatch = () => {
     { path: "/sale", view: salePage() },
     { path: "/aboutus", view: aboutUsPage() },
     { path: "/basket", view: basketPage() },
-    { path: "/orderInformation", view: orderInformationPage() },
+    { path: "/orderInformation", view: ProductPage() }, // just to see the result while router in process
     { path: "/delivery", view: deliveryPage() },
     { path: "/return", view: returnPage() },
     { path: "/filter", view: brandsFilter() },

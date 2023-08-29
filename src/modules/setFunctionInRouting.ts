@@ -11,6 +11,8 @@ import handleShippingAddressValidation from "./validateShippingAddress";
 import validateLoginForm from "./validateLoginFormOnSubmit";
 // catalogPage functional
 import setProductsListAsyncAction from "../redux/asyncActions/setProductsListAsyncAction";
+// productPage functional
+import swiper from "./swiper";
 
 const runFunctionInRouting = (url: string) => {
   if (url === "/signup") {
@@ -30,6 +32,9 @@ const runFunctionInRouting = (url: string) => {
     validateLoginForm();
   } else if (url === "/catalog") {
     setProductsListAsyncAction();
+  } else if (url === "/orderInformation") {
+    // just to see the result
+    swiper.init();
   }
 };
 
