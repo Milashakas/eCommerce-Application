@@ -46,7 +46,15 @@ const generateInfoBlock = () =>
     { class: "info-block" },
     makeDiv(
       { class: "text-block" },
-      makeH3({ class: "product-name" }, "Shimmering Dry Oil Huile Prodigieuse®") +
+      makeDiv(
+        { class: "brand-logo" },
+        makeImg({
+          class: "brand-img",
+          alt: "Brand Logo",
+          src: "https://virtualtrexpo.com/wp-content/uploads/2020/07/Nuxe-logo-1.png",
+        }),
+      ) +
+        makeH3({ class: "product-name" }, "Shimmering Dry Oil Huile Prodigieuse®") +
         makeDiv(
           { class: "product-short-descr" },
           "Nourishes, softens and illuminates <br> 98% ingredients of natural origin",
@@ -57,7 +65,7 @@ const generateInfoBlock = () =>
         { class: "availability-price-block" },
         makeDiv({ class: "product-instock" }, "<i class='fa-solid fa-check'></i> In Stock") +
           makeDiv({ class: "product-price-line" }) +
-          makeDiv({ class: "product-price" }, "<i class='fa-solid fa-money-bill-1-wave'></i> Price: 43 EUR") +
+          makeDiv({ class: "product-price" }, "Price: 43.00 <i class='fa-solid fa-euro-sign'></i>") +
           makeDiv({ class: "product-price-line" }),
       ) +
       makeDiv(
