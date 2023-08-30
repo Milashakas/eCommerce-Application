@@ -63,7 +63,11 @@ export const runPageFunctional = () => {
 export const router = async () => {
   const match = getMatch();
   const main = document.querySelector("main") as HTMLBodyElement;
-  main.innerHTML = match.route.view;
+  if (match.route.view instanceof Promise) {
+    main.innerHTML = await match.route.view;
+  } else {
+    main.innerHTML = match.route.view;
+  }
   runPageFunctional();
   setListenerForLinks();
 };
