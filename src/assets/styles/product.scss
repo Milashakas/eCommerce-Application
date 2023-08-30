@@ -24,7 +24,7 @@
   z-index: 3;
   width: 55%;
   margin: 120px auto 0 auto;
-  padding: 40px 65px 40px 65px;
+  padding: 40px 0px;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@
 
 .info-block {
   width: 50%;
-  padding: 10px 30px 10px 5px;
+  padding: 15px 30px 15px 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -131,7 +131,7 @@
   max-width: 705px;
   width: 100%;
   height: auto;
-  margin: 0px auto 0 auto;
+  margin: 0px auto 0 40px;
 }
 
 .swiper-wrapper {
@@ -164,7 +164,6 @@
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  // background-color: rgba(158, 199, 157, 0.105);
   transform: scale(1.15);
 }
 
@@ -195,7 +194,6 @@
 }
 
 .separation {
-  // background-image: linear-gradient(180deg, rgba(5, 135, 18, 0.3), white);
   display: block;
   width: 100%;
   margin-top: 35px;
@@ -236,7 +234,6 @@
 .about-product-heading,
 .beauty-tips-heading {
   font-size: 2.2rem;
-  // font-weight: 700;
   color: rgba(5, 135, 18, 0.9);
   margin-bottom: 15px;
   text-transform: uppercase;
@@ -253,7 +250,6 @@
 
 .product-detailed-line {
   border: 1px solid rgba(0, 0, 0, 0.105);
-  // border: 1px solid rgba(5, 135, 18, 0.3);
   display: block;
   width: 100%;
   margin-top: 8px;
@@ -295,6 +291,10 @@
   .product-info-container {
     width: 95%;
     padding: 20px;
+  }
+
+  .swiper {
+    margin: 0px auto 0 0px;
   }
 
   .info-block {
@@ -375,6 +375,15 @@
   .swiper-block,
   .swiper {
     border-radius: 0px;
+  }
+
+  .product-detailed-info {
+    padding: 30px 30px 70px 20px;
+  }
+
+  .about-product-text,
+  .beauty-tips-text {
+    padding-left: 20px;
   }
 }
 
