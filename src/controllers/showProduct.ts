@@ -1,18 +1,7 @@
 import { Product } from "@commercetools/platform-sdk";
 import getProductDataAsyncAction from "../redux/asyncActions/getProductDataAsyncAction";
-
-export interface IProdData {
-  brandLogo: string;
-  img1: string;
-  img2: string;
-  img3: string;
-  name: string;
-  description: string;
-  size: string;
-  price: string;
-  about: string;
-  beautyTips: string;
-}
+import { navigateTo } from "../router";
+import { IProdData } from "../interfaces/IProdData";
 
 const showProduct = async (): Promise<IProdData | null> => {
   // here the place to extract id from URL
@@ -49,8 +38,8 @@ const showProduct = async (): Promise<IProdData | null> => {
       about: prodAbout,
       beautyTips: prodBeautyTips,
     };
-
-    // console.log(prodDataObj);
+  } else {
+    navigateTo("/404");
   }
   return prodDataObj;
 };

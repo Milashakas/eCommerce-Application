@@ -1,5 +1,6 @@
 import { makeTag, makeDiv, makeImg, makeH3 } from "../utils/tagsCreation";
-import showProduct, { IProdData } from "../controllers/showProduct";
+import showProduct from "../controllers/showProduct";
+import { IProdData } from "../interfaces/IProdData";
 
 const generateSwiperBlock = (prodDataObj: IProdData) =>
   makeDiv(
