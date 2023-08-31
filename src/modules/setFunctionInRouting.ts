@@ -10,9 +10,11 @@ import validateRegistrationForm from "./validateRegFormOnSubmit";
 import handleShippingAddressValidation from "./validateShippingAddress";
 import validateLoginForm from "./validateLoginFormOnSubmit";
 // catalogPage functional
+import setCatalog from "./setCatalog";
 import setProductsListAsyncAction from "../redux/asyncActions/setProductsListAsyncAction";
+import openedMenu from "./openFlterMenu";
 
-const runFunctionInRouting = (url: string) => {
+const runFunctionInRouting = async (url: string) => {
   if (url === "/signup") {
     initSameShippingListener();
     togglePasswordVisibility();
@@ -29,7 +31,9 @@ const runFunctionInRouting = (url: string) => {
     togglePasswordVisibility();
     validateLoginForm();
   } else if (url === "/catalog") {
-    setProductsListAsyncAction();
+    await setProductsListAsyncAction();
+    await setCatalog();
+    openedMenu();
   }
 };
 

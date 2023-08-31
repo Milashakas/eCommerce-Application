@@ -1,0 +1,66 @@
+.product-block {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-block-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-y: hidden;
+}
+
+.product-block-img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.product-block-busket-button{
+    position: absolute;
+    text-align: center;
+    padding: 10px 20px;
+    width: 100%;
+    bottom: 0;
+    color: white;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.705);
+    bottom: -40px;
+    overflow: hidden;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+.product-block-busket-button:hover {
+    color: rgb(143, 143, 143);
+}
+.product-block:hover .product-block-busket-button{
+    bottom: 0;
+}
+.product-description-block{
+    display: flex;
+    height: 100px;
+    align-items: center;
+    flex-direction:column;
+    justify-content: space-between;
+}
+.product-block-name, .product-block-price{
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.product-block-description{
+    font-size: 12px;
+    text-align: center;
+    color: gray;
+}
+
+@media screen and (max-width: 500px) {
+.product-block {
+    height: 300px;
+}
+    
+    }
