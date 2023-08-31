@@ -1,6 +1,8 @@
 import { makeTag, makeDiv, makeImg, makeH3 } from "../utils/tagsCreation";
 import showProduct from "../controllers/showProduct";
 import { IProdData } from "../interfaces/IProdData";
+// import { navigateTo } from "../router";
+import errorPage from "./404";
 
 const generateSwiperBlock = (prodDataObj: IProdData) =>
   makeDiv(
@@ -90,8 +92,11 @@ const generateDetailedInfoBlock = (prodDataObj: IProdData) =>
       ),
   );
 
-const ProductPage = async () => {
+const ProductPage = async (): Promise<string> => {
   const prodDataObj = await showProduct();
+  if (!prodDataObj) {
+    return errorPage();
+  }
   if (prodDataObj) {
     return makeDiv(
       { class: "product-page-container" },

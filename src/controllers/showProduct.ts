@@ -1,6 +1,6 @@
 import { Product } from "@commercetools/platform-sdk";
 import getProductDataAsyncAction from "../redux/asyncActions/getProductDataAsyncAction";
-import { navigateTo } from "../router";
+// import { navigateTo } from "../router";
 import { IProdData } from "../interfaces/IProdData";
 
 const showProduct = async (): Promise<IProdData | null> => {
@@ -13,7 +13,6 @@ const showProduct = async (): Promise<IProdData | null> => {
   if (responseProduct.isData) {
     const product: Product = responseProduct.data as Product;
     const certainData = product.masterData.current;
-    console.log(certainData);
     const prodBrandLogo = certainData.masterVariant.images?.[3]?.url || "Url not available";
     const prodImg1 = certainData.masterVariant.images?.[0]?.url || "Url not available";
     const prodImg2 = certainData.masterVariant.images?.[1]?.url || "Url not available";
@@ -39,7 +38,7 @@ const showProduct = async (): Promise<IProdData | null> => {
       beautyTips: prodBeautyTips,
     };
   } else {
-    navigateTo("/404");
+    return null;
   }
   return prodDataObj;
 };
