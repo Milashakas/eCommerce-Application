@@ -9,4 +9,5 @@ export interface IProdData {
   price: string;
   about: string;
   beautyTips: string;
+  salePrice?: string;
 }

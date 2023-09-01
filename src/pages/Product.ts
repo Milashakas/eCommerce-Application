@@ -1,7 +1,6 @@
 import { makeTag, makeDiv, makeImg, makeH3 } from "../utils/tagsCreation";
 import showProduct from "../controllers/showProduct";
 import { IProdData } from "../interfaces/IProdData";
-// import { navigateTo } from "../router";
 import errorPage from "./404";
 
 const generateSwiperBlock = (prodDataObj: IProdData) =>
@@ -63,7 +62,10 @@ const generateInfoBlock = (prodDataObj: IProdData) =>
         { class: "availability-price-block" },
         makeDiv({ class: "product-instock" }, "<i class='fa-solid fa-check'></i> In Stock") +
           makeDiv({ class: "product-price-line" }) +
-          makeDiv({ class: "product-price" }, `Price: ${prodDataObj.price} <i class='fa-solid fa-euro-sign'></i>`) +
+          makeDiv(
+            { class: "product-price" },
+            `Price: <span class="original-price"> ${prodDataObj.price} <i class='fa-solid fa-euro-sign'></i></span> <span class="sale-price">${prodDataObj.salePrice}</span>`,
+          ) +
           makeDiv({ class: "product-price-line" }),
       ) +
       makeDiv(

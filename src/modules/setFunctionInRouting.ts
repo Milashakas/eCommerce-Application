@@ -14,6 +14,7 @@ import setCatalog from "./setCatalog";
 import setProductsListAsyncAction from "../redux/asyncActions/setProductsListAsyncAction";
 // productPage functional
 import setSwiper from "./swiper";
+import toggleInactivePrice from "./toggleInactivePrice";
 import openedMenu from "./openFlterMenu";
 
 const runFunctionInRouting = async (url: string) => {
@@ -39,6 +40,7 @@ const runFunctionInRouting = async (url: string) => {
   } else if (url === "/orderInformation") {
     // just to see the result
     setSwiper();
+    toggleInactivePrice();
   }
 };
 

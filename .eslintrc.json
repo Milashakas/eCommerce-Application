@@ -38,7 +38,7 @@
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error",
     "implicit-arrow-linebreak": "off",
-    "operator-linebreak": ["error", "after"]
+    "operator-linebreak": "off"
   },
   "settings": {
     "import/resolver": {
