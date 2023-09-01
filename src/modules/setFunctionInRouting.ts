@@ -12,6 +12,8 @@ import validateLoginForm from "./validateLoginFormOnSubmit";
 // catalogPage functional
 import setCatalog from "./setCatalog";
 import setProductsListAsyncAction from "../redux/asyncActions/setProductsListAsyncAction";
+// productPage functional
+import setSwiper from "./swiper";
 import openedMenu from "./openFlterMenu";
 
 const runFunctionInRouting = async (url: string) => {
@@ -34,6 +36,9 @@ const runFunctionInRouting = async (url: string) => {
     await setProductsListAsyncAction();
     await setCatalog();
     openedMenu();
+  } else if (url === "/orderInformation") {
+    // just to see the result
+    setSwiper();
   }
 };
 
