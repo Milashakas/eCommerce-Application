@@ -1,4 +1,4 @@
-const createProduct = (name:string, img: string | undefined, price: number, des: string) => {
+const createProduct = (name: string, img: string | undefined, price: number, des: string) => {
   const code = `
   <div class="product-block">
   <div class="product-block-image">

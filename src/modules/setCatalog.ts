@@ -14,7 +14,7 @@ const setCatalog = async () => {
     const price = item.masterData.current.masterVariant.prices;
     let currentPrice = 1;
     if (price) {
-      currentPrice = price[0].value.centAmount / 100 as number;
+      currentPrice = (price[0].value.centAmount / 100) as number;
     }
     const des = item.masterData.current.description;
     let currentDescription = "";
