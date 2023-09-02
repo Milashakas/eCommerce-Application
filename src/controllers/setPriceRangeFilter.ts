@@ -25,17 +25,24 @@ const setFilterAction = async () => {
   setCatalog();
 };
 
+const resetFilterAction = async () => {
+  const minInput = document.querySelector(".filter-price-input-min") as HTMLInputElement;
+  const maxInput = document.querySelector(".filter-price-input-max") as HTMLInputElement;
+  minInput.value = "0";
+  maxInput.value = "500";
+
+  store.dispatch(resetCatalogFilterData({ isResetPrice: true }));
+  await setProductsListAsyncAction();
+  setCatalog();
+};
+
 const setPriceRangeFilter = () => {
   const applyBtn: HTMLButtonElement = document.querySelector(".filter-price-button") as HTMLButtonElement;
   const resetBtn: HTMLButtonElement = document.querySelector(".reset-filter-price-button") as HTMLButtonElement;
 
   applyBtn.addEventListener("click", setFilterAction);
 
-  resetBtn.addEventListener("click", async () => {
-    store.dispatch(resetCatalogFilterData({ isResetPrice: true }));
-    await setProductsListAsyncAction();
-    setCatalog();
-  });
+  resetBtn.addEventListener("click", resetFilterAction);
 };
 
 export default setPriceRangeFilter;

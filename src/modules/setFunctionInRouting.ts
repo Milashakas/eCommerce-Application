@@ -14,6 +14,8 @@ import validateLoginForm from "./validateLoginFormOnSubmit";
 import setCatalog from "../controllers/setCatalog";
 import setProductsListAsyncAction from "../redux/asyncActions/setProductsListAsyncAction";
 import setPriceRangeFilter from "../controllers/setPriceRangeFilter";
+import setSortSelectValue from "./setSortSelectValue";
+import sortCatalog from "../controllers/sortCatalog";
 
 // productPage functional
 import setSwiper from "./swiper";
@@ -39,8 +41,10 @@ const runFunctionInRouting = async (url: string) => {
   } else if (url === "/catalog") {
     await setProductsListAsyncAction();
     setCatalog();
+    setSortSelectValue();
     openedMenu();
     setPriceRangeFilter();
+    sortCatalog();
   } else if (url === "/orderInformation") {
     // just to see the result
     setSwiper();

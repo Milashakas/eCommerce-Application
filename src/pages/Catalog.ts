@@ -34,11 +34,11 @@ const catalogPage = () => {
           <p>Filter</p>
         </div>
         <select name="orderBy" class="orderBy">
-          <option value="base" selected="selected">Base sorting</option>
-          <option value="priceHight">Price:high</option>
-          <option value="priceLow">Price:low</option>
-          <option value="aToW">A -> W</option>
-          <option value="aToA">W -> A</option>
+          <option value="base" data-sort="id asc">Base sorting</option>
+          <option value="priceHight" data-sort="price asc">Price:high</option>
+          <option value="priceLow" data-sort="id desc">Price:low</option>
+          <option value="aToW" data-sort="name.en-US asc">A -> W</option>
+          <option value="aToA" data-sort="name.en-US desc">W -> A</option>
         </select>
       </div>
       <div class="catalog-section-wrapper">
@@ -87,7 +87,6 @@ const catalogPage = () => {
               <li><a href="/catalog/category-face">Face</a></li>
               <li><a href="/catalog/category-body">Body</a></li>
               <li><a href="/catalog/category-hair">Hair</a></li>
-              <li><a href="#">Discount</a></li>
             </ul>
           </div>
         </div>

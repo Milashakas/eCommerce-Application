@@ -34,6 +34,7 @@ const setProductsListAsyncAction = async () => {
   if (isAnyFilterData) {
     const filterData: IFilterData = store.getState().catalog.filterData as IFilterData;
     const sortDataValue = store.getState().catalog.sortValue;
+    console.log(filterData, sortDataValue);
     productsListResponseData = await getFilteredProductsList(filterData, sortDataValue);
   } else productsListResponseData = await getProductsList();
 
