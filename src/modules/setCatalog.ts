@@ -5,7 +5,7 @@ const setCatalog = () => {
   const list = productsList();
   const catalog = document.querySelector(".catalog-section-products") as HTMLElement;
   list?.forEach((item) => {
-    const name = item.name as unknown as string;
+    const name: string = item.name["en-US"];
     const img = item.masterVariant.images;
     let firstImage;
     if (img) {
