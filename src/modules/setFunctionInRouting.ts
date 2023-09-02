@@ -39,6 +39,8 @@ const runFunctionInRouting = async (url: string) => {
   } else if (url === "/orderInformation") {
     // just to see the result
     setSwiper();
+  } else if (url === "/catalog/:id") {
+    setSwiper();
   }
 };
 

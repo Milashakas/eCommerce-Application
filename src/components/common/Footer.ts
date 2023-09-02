@@ -20,7 +20,7 @@ const getFooter = () => {
               <li><a href="/catalog">Catalog</a></li>
               <li><a href="/brands">Brands</a></li>
               <li><a href="/face">Face</a></li>
-              <li><a href="/body">Body</a></li>
+              <li><a href="/catalog/:id">Body</a></li>
               <li><a href="/hair">Hair</a></li>
             </ul>
           </nav>

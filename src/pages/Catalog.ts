@@ -25,6 +25,12 @@ const catalogPage = () => {
 <option value="aToA">W -> A</option>
     </select>
     </div>
+    <div class="searchingBlock">
+    <div class="searchForm">
+    <input name="s" placeholder="Search" type="search">
+    <button type="submit"></button>
+  </div>
+    </div>
     <div class="catalog-section-wrapper">
 <div Class="catalog-section-filter">
 <div class="catalog-burger-close-button">

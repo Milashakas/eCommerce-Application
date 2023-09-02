@@ -228,6 +228,43 @@
   display: none;
 }
 
+.searchingBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.searchForm {
+  width: 70%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+.searchingBlock input,
+.searchingBlock button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.searchingBlock input {
+  width: 100%;
+  height: 42px;
+  padding-left: 15px;
+}
+.searchingBlock button {
+  height: 42px;
+  width: 42px;
+  cursor: pointer;
+}
+
+.searchingBlock button:before {
+  content: "\f002";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #000000dc;
+}
+
 @media screen and (max-width: 1050px) {
   .catalog-section-header {
     justify-content: space-between;

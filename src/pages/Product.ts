@@ -92,8 +92,8 @@ const generateDetailedInfoBlock = (prodDataObj: IProdData) =>
       ),
   );
 
-const ProductPage = async (): Promise<string> => {
-  const prodDataObj = await showProduct();
+const ProductPage = async (id: string = "2"): Promise<string> => {
+  const prodDataObj = await showProduct(id);
   if (!prodDataObj) {
     return errorPage();
   }

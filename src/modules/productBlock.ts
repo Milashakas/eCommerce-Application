@@ -1,6 +1,6 @@
-const createProduct = (name: string, img: string | undefined, price: number, des: string) => {
+const product = (name: string, img: string | undefined, price: number, des: string, id: string) => {
   const code = `
-  <div class="product-block">
+  <a class="product-block" id="${id}" href="/catalog/${id}">
   <div class="product-block-image">
   <img src="${img}" class="product-block-img">
   <div class="product-block-busket-button">
@@ -12,9 +12,9 @@ const createProduct = (name: string, img: string | undefined, price: number, des
   <p class="product-block-description">${des}</p>
   <p class="product-block-price">${price} EUR</p>
   </div>
-  </div>
+  </a>
   `;
   return code;
 };
 
-export default createProduct;
+export default product;

@@ -1,5 +1,5 @@
 import productsList from "../controllers/getCatalogProducts";
-import createProduct from "../assets/styles/productBlock";
+import createProduct from "./productBlock";
 
 const setCatalog = async () => {
   const list = await productsList();
@@ -21,7 +21,8 @@ const setCatalog = async () => {
     if (des) {
       currentDescription = des["en-US"] as string;
     }
-    catalog.innerHTML += createProduct(name, firstImage, currentPrice, currentDescription);
+    const { id } = item;
+    catalog.innerHTML += createProduct(name, firstImage, currentPrice, currentDescription, id);
   });
 };
 

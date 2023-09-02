@@ -3,10 +3,10 @@ import getProductDataAsyncAction from "../redux/asyncActions/getProductDataAsync
 // import { navigateTo } from "../router";
 import { IProdData } from "../interfaces/IProdData";
 
-const showProduct = async (): Promise<IProdData | null> => {
+const showProduct = async (id: string): Promise<IProdData | null> => {
   // here the place to extract id from URL
-  const productId = "bd6b638b-6a20-4331-9f15-8826ca747c31";
-  const responseProduct = await getProductDataAsyncAction(productId);
+  // const idtest = "bd6b638b-6a20-4331-9f15-8826ca747c31";
+  const responseProduct = await getProductDataAsyncAction(id);
 
   let prodDataObj: IProdData | null = null;
 
