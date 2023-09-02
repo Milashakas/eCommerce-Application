@@ -24,6 +24,11 @@ const showProduct = async (): Promise<IProdData | null> => {
     const prodPrice = rawPrice !== undefined ? (rawPrice / 100).toFixed(2) : "Price not available";
     const prodAbout = certainData.masterVariant.attributes?.[1]?.value || "There is no info";
     const prodBeautyTips = certainData.masterVariant.attributes?.[2]?.value || "There is no info";
+    const rawSalePrice = certainData.masterVariant.prices?.[0]?.discounted?.value?.centAmount;
+    const prodSalePrice =
+      rawSalePrice !== undefined
+        ? `${(rawSalePrice / 100).toFixed(2)} <i class='fa-solid fa-euro-sign'></i><div class="sale-img"></div>`
+        : "";
 
     prodDataObj = {
       brandLogo: prodBrandLogo,
@@ -36,6 +41,7 @@ const showProduct = async (): Promise<IProdData | null> => {
       price: prodPrice,
       about: prodAbout,
       beautyTips: prodBeautyTips,
+      salePrice: prodSalePrice,
     };
   } else {
     return null;

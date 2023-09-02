@@ -48,8 +48,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
   text-align: center;
+  gap: 8px;
 }
 
 .product-name {
@@ -75,7 +76,26 @@
 .product-price {
   font-size: 2.4rem;
   font-weight: 700;
-  color: rgba(5, 135, 18, 0.8);
+  color: black;
+}
+
+.inactive-price {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.sale-price {
+  color: rgba(191, 11, 14, 0.8);
+}
+
+.sale-img {
+  background-image: url("../images/20-off.png");
+  width: 100px;
+  height: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 auto;
 }
 
 .product-price-line {
