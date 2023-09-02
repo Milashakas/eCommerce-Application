@@ -10,7 +10,7 @@ import validateRegistrationForm from "./validateRegFormOnSubmit";
 import handleShippingAddressValidation from "./validateShippingAddress";
 import validateLoginForm from "./validateLoginFormOnSubmit";
 // catalogPage functional
-import setCatalog from "./setCatalog";
+import setCatalog from "../controllers/setCatalog";
 import setProductsListAsyncAction from "../redux/asyncActions/setProductsListAsyncAction";
 // productPage functional
 import setSwiper from "./swiper";
