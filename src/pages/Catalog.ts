@@ -59,9 +59,9 @@ const catalogPage = () => {
 <div class="filter-catalog-links">
 <p class="filter-title">Catalog</p>
 <ul class="catalog-links-list">
-<li><a href="/catalog/face">Face</a></li>
-<li><a href="#">Body</a></li>
-<li><a href="#">Hair</a></li>
+<li><a href="/catalog/category-face">Face</a></li>
+<li><a href="/catalog/category-body">Body</a></li>
+<li><a href="/catalog/category-hair">Hair</a></li>
 <li><a href="#">Discount</a></li>
 </ul>
 </div>

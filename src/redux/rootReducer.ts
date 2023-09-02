@@ -35,7 +35,7 @@ const rootReducer = <T>(state: IState, action: IAction<T>): IState => {
   }
   if (action.type === SET_CATALOG_FILTER_DATA) {
     const filterData: IFilterData = action.payload as IFilterData;
-    state.catalog.filterData = filterData;
+    state.catalog.filterData = { ...filterData };
   }
   if (action.type === RESET_CATALOG_FILTER_DATA) {
     delete state.catalog.filterData;

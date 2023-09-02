@@ -32,8 +32,11 @@ const createQueryString = (filterData: IFilterData): string[] => {
     const priceQuery = `variants.price.centAmount:range (${lowPrice} to ${highPrice})`;
     queryString.push(priceQuery);
   }
-  if (filterData.category) queryString.push(CATEGORIES_ID[filterData.category]);
+  if (filterData.category) {
+    queryString.push(`categories.id:"${CATEGORIES_ID[filterData.category]}"`);
+  }
 
+  console.log(queryString);
   return queryString;
 };
 
