@@ -28,7 +28,6 @@ const setProductsListAsyncAction = async () => {
   setProspectiveFilterCategory();
 
   const isAnyFilterData = checkIsAnyCatalogFilter();
-  console.log(isAnyFilterData);
 
   let productsListResponseData: IProductsListResponseData = {} as IProductsListResponseData;
 

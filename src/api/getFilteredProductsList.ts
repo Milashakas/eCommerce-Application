@@ -49,6 +49,7 @@ const getFilteredProductsList = async (filterData: IFilterData): Promise<IProduc
       .search()
       .get({
         queryArgs: {
+          limit: 9,
           "filter.query": createQueryString(filterData),
         },
       })

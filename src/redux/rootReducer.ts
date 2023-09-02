@@ -35,7 +35,12 @@ const rootReducer = <T>(state: IState, action: IAction<T>): IState => {
   }
   if (action.type === SET_CATALOG_FILTER_DATA) {
     const filterData: IFilterData = action.payload as IFilterData;
-    state.catalog.filterData = { ...filterData };
+    const { category } = filterData;
+    const { priceRange } = filterData;
+    if (state.catalog.filterData) {
+      if (category) state.catalog.filterData.category = category;
+      if (priceRange) state.catalog.filterData.priceRange = priceRange;
+    }
   }
   if (action.type === RESET_CATALOG_FILTER_DATA) {
     const isResetData: IResetFilterData = action.payload as IResetFilterData;
