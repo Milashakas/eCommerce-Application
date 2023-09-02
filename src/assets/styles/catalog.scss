@@ -72,8 +72,9 @@
   font-weight: bold;
 }
 
-.filter-price-button {
-  padding: 10px 20px;
+.filter-price-button,
+.reset-filter-price-button {
+  padding: 0.5rem 1rem;
   font-size: 14px;
   color: rgb(0, 0, 0);
   border: 1px solid rgb(0, 0, 0);
@@ -83,7 +84,8 @@
   cursor: pointer;
 }
 
-.filter-price-button:hover {
+.filter-price-button:hover,
+.reset-filter-price-button:hover {
   color: rgba(0, 0, 0, 0.575);
   border: 1px solid rgba(0, 0, 0, 0.575);
 }

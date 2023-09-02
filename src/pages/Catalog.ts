@@ -39,6 +39,7 @@ const catalogPage = () => {
 </div>
 <p class="filter-price-title">Price : <span class="filter-price-min">0</span> EUR - <span class="filter-price-max">500</span> EUR</p>
 <button class="filter-price-button">SET FILTER</button>
+<button class="reset-filter-price-button">RESET FILTER</button>
 </div>
 <div class="filter-brands">
 <p class="filter-title">Brands</p>
