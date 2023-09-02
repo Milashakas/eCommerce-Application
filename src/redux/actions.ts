@@ -1,7 +1,5 @@
-import { Product } from "@commercetools/platform-sdk";
-
 import { SET_USER_PROFILE_DATA, LOGOUT_PROFILE, SET_PRODUCTS_LIST, DISPLAY_PRELOADER } from "./actionTypes";
-import { IAction } from "../interfaces/IRedux";
+import { IAction, IProductData } from "../interfaces/IRedux";
 import { IUserProfileStoreData } from "../interfaces/IUserProfileData";
 
 const setUserProfileDataAction = <T>(userProfileData: IUserProfileStoreData): IAction<T> => ({
@@ -13,7 +11,7 @@ const logoutProfileAction = <T>(): IAction<T> => ({
   type: LOGOUT_PROFILE,
 });
 
-const setProductsListAction = <T>(productsList: Product[]): IAction<T> => ({
+const setProductsListAction = <T>(productsList: IProductData[]): IAction<T> => ({
   type: SET_PRODUCTS_LIST,
   payload: productsList as T,
 });

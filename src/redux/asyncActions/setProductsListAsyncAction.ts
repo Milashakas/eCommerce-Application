@@ -1,9 +1,9 @@
-import { Product } from "@commercetools/platform-sdk";
 import getProductsList from "../../api/getProductsList";
 import { setProductsListAction, displayPreloaderAction } from "../actions";
 import { IProductsListResponseData } from "../../interfaces/IProducts";
 import { navigateTo } from "../../router";
 import store from "../createStore";
+import { IProductData } from "../../interfaces/IRedux";
 
 const setProductsListAsyncAction = async () => {
   store.dispatch(displayPreloaderAction(true));
@@ -15,7 +15,8 @@ const setProductsListAsyncAction = async () => {
     navigateTo("/404");
     store.dispatch(displayPreloaderAction(false));
   } else {
-    const productsList: Product[] = productsListResponseData.productsListData?.results as Product[];
+    // eslint-disable-next-line max-len
+    const productsList: IProductData[] = productsListResponseData.catalogData?.productsList as IProductData[];
     store.dispatch(setProductsListAction(productsList));
   }
 };

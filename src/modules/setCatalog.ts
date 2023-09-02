@@ -1,22 +1,22 @@
 import productsList from "../controllers/getCatalogProducts";
 import createProduct from "../assets/styles/productBlock";
 
-const setCatalog = async () => {
-  const list = await productsList();
+const setCatalog = () => {
+  const list = productsList();
   const catalog = document.querySelector(".catalog-section-products") as HTMLElement;
   list?.forEach((item) => {
-    const name = item.masterData.current.name["en-US"] as unknown as string;
-    const img = item.masterData.current.masterVariant.images;
+    const name = item.name as unknown as string;
+    const img = item.masterVariant.images;
     let firstImage;
     if (img) {
       firstImage = img[0].url;
     }
-    const price = item.masterData.current.masterVariant.prices;
+    const price = item.masterVariant.prices;
     let currentPrice = 1;
     if (price) {
       currentPrice = (price[0].value.centAmount / 100) as number;
     }
-    const des = item.masterData.current.description;
+    const des = item.description;
     let currentDescription = "";
     if (des) {
       currentDescription = des["en-US"] as string;

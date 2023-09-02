@@ -1,6 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { Product } from "@commercetools/platform-sdk";
-import { IAction, IState } from "../interfaces/IRedux";
+import { IAction, IState, IProductData } from "../interfaces/IRedux";
 import { SET_USER_PROFILE_DATA, LOGOUT_PROFILE, SET_PRODUCTS_LIST, DISPLAY_PRELOADER } from "./actionTypes";
 import { IUserProfileStoreData } from "../interfaces/IUserProfileData";
 
@@ -23,7 +22,7 @@ const rootReducer = <T>(state: IState, action: IAction<T>): IState => {
     delete state.userData;
   }
   if (action.type === SET_PRODUCTS_LIST) {
-    const productsList: Product[] = action.payload as Product[];
+    const productsList: IProductData[] = action.payload as IProductData[];
     state.catalog.productsList = productsList;
     state.isPreloader = false;
   }
