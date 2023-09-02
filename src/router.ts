@@ -18,6 +18,22 @@ import returnPage from "./pages/Return";
 import brandsFilter from "./pages/BrandsFilter";
 import setListenerForLinks from "./modules/functionForLinks";
 
+const checkIsMatch = (rootPath: string): boolean => {
+  const windowPathName = window.location.pathname;
+  let isMatch: boolean = windowPathName === rootPath;
+
+  if (isMatch) return isMatch;
+
+  if (rootPath === "/catalog") {
+    const pathSlicesArr = windowPathName.split("/");
+    pathSlicesArr.shift();
+
+    if (pathSlicesArr.length === 2) isMatch = true;
+  }
+
+  return isMatch;
+};
+
 const getMatch = () => {
   const routes = [
     { path: "/404", view: errorPage() },
@@ -40,7 +56,7 @@ const getMatch = () => {
 
   const potentialMatches = routes.map((root) => ({
     route: root,
-    isMatch: window.location.pathname === root.path,
+    isMatch: checkIsMatch(root.path),
   }));
 
   let match = potentialMatches.find((potentialMatche) => potentialMatche.isMatch);

@@ -59,7 +59,7 @@ const catalogPage = () => {
 <div class="filter-catalog-links">
 <p class="filter-title">Catalog</p>
 <ul class="catalog-links-list">
-<li><a href="#">Face</a></li>
+<li><a href="/catalog/face">Face</a></li>
 <li><a href="#">Body</a></li>
 <li><a href="#">Hair</a></li>
 <li><a href="#">Discount</a></li>
