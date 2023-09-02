@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
 import { CategoryReference, LocalizedString, ProductTypeReference, ProductVariant } from "@commercetools/platform-sdk";
 import { IUserProfileStoreData } from "./IUserProfileData";
 
@@ -7,7 +6,6 @@ interface IAction<T> {
   payload?: T;
 }
 
-// eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
 interface IProductData {
   id: string;
   name: LocalizedString;
@@ -17,10 +15,22 @@ interface IProductData {
   masterVariant: ProductVariant;
 }
 
+interface IFilterPriceRange {
+  low: number;
+  high: number;
+}
+
+interface IFilterData {
+  category?: "hair" | "face" | "body";
+  brand?: string;
+  priceRange?: IFilterPriceRange;
+}
+
 interface ICatalogData {
   offset?: number;
   total?: number;
   productsList: IProductData[];
+  filterData?: IFilterData;
 }
 
 interface IState {
@@ -30,4 +40,4 @@ interface IState {
   userData?: IUserProfileStoreData;
 }
 
-export { IAction, IState, ICatalogData, IProductData };
+export { IAction, IState, ICatalogData, IProductData, IFilterData, IFilterPriceRange };

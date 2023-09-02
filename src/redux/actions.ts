@@ -1,5 +1,11 @@
-import { SET_USER_PROFILE_DATA, LOGOUT_PROFILE, SET_PRODUCTS_LIST, DISPLAY_PRELOADER } from "./actionTypes";
-import { IAction, IProductData } from "../interfaces/IRedux";
+import {
+  SET_USER_PROFILE_DATA,
+  LOGOUT_PROFILE,
+  SET_PRODUCTS_LIST,
+  DISPLAY_PRELOADER,
+  SET_CATALOG_FILTER_DATA,
+} from "./actionTypes";
+import { IAction, IProductData, IFilterData } from "../interfaces/IRedux";
 import { IUserProfileStoreData } from "../interfaces/IUserProfileData";
 
 const setUserProfileDataAction = <T>(userProfileData: IUserProfileStoreData): IAction<T> => ({
@@ -21,5 +27,10 @@ const displayPreloaderAction = <T>(flag: boolean): IAction<T> => ({
   payload: flag as T,
 });
 
+const setCatalogFilterData = <T>(filterData: IFilterData): IAction<T> => ({
+  type: SET_CATALOG_FILTER_DATA,
+  payload: filterData as T,
+});
+
 export { setUserProfileDataAction, logoutProfileAction, setProductsListAction };
-export { displayPreloaderAction };
+export { displayPreloaderAction, setCatalogFilterData };

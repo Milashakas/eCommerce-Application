@@ -1,6 +1,6 @@
 import { ClientResponse, ProductProjectionPagedSearchResponse, ProductProjection } from "@commercetools/platform-sdk";
 import { adminApiRoot } from "./ApiClients";
-import { ICatalogData, IProductData } from "../interfaces/IRedux";
+import { ICatalogData, IProductData, IFilterData } from "../interfaces/IRedux";
 import { IProductsListResponseData } from "../interfaces/IProducts";
 
 const converResultArray = (resultArr: ProductProjection[]): IProductData[] => {
@@ -16,8 +16,20 @@ const converResultArray = (resultArr: ProductProjection[]): IProductData[] => {
   return convertedArray;
 };
 
-const getFilteredProductsList = async (): Promise<IProductsListResponseData> => {
-  const queryString: string = "variants.price.centAmount:range (0 to 1200)";
+const createQueryString = (filterData: IFilterData): string[] => {
+  const queryString: string[] = [];
+  if (filterData.priceRange) {
+    const lowPrice = filterData.priceRange.low;
+    const highPrice = filterData.priceRange.high;
+    const priceQuery = `variants.price.centAmount:range (${lowPrice} to ${highPrice})`;
+    queryString.push(priceQuery);
+  }
+
+  return queryString;
+};
+
+// eslint-disable-next-line max-len
+const getFilteredProductsList = async (filterData: IFilterData): Promise<IProductsListResponseData> => {
   const productsResponseData: IProductsListResponseData = {} as IProductsListResponseData;
 
   try {
@@ -26,7 +38,7 @@ const getFilteredProductsList = async (): Promise<IProductsListResponseData> => 
       .search()
       .get({
         queryArgs: {
-          filter: queryString,
+          "filter.query": createQueryString(filterData),
         },
       })
       .execute();
