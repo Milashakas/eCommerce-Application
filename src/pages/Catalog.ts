@@ -82,7 +82,7 @@ const catalogPage = () => {
             </div>
           </div>
           <div class="filter-catalog-links">
-            <p class="filter-title">Catalog</p>
+            <p class="filter-title">Categories</p>
             <ul class="catalog-links-list">
               <li><a href="/catalog/category-face">Face</a></li>
               <li><a href="/catalog/category-body">Body</a></li>

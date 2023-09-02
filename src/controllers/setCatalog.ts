@@ -8,10 +8,21 @@ const getProductsList = () => {
   return catalogProducts;
 };
 
+const setActiveCategoryLink = () => {
+  // eslint-disable-next-line no-undef
+  const catalogLinks = document.querySelectorAll(".catalog-links-list a") as NodeListOf<HTMLLinkElement>;
+  const path = window.location.pathname;
+
+  catalogLinks.forEach((link: HTMLLinkElement) => {
+    if (link.getAttribute("href") === path) link.classList.add("activeCategoryLink");
+  });
+};
+
 const setCatalog = () => {
   const list = getProductsList();
   const catalog = document.querySelector(".catalog-section-products") as HTMLElement;
   catalog.innerHTML = "";
+  setActiveCategoryLink();
 
   list?.forEach((item) => {
     const name: string = item.name["en-US"];
