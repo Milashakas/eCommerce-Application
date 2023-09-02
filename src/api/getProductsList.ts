@@ -25,6 +25,7 @@ const getProductsList = async (): Promise<IProductsListResponseData> => {
       .get({
         queryArgs: {
           limit: 9,
+          sort: "id asc",
         },
       })
       .execute();

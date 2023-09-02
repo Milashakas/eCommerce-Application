@@ -51,6 +51,7 @@ const getFilteredProductsList = async (filterData: IFilterData): Promise<IProduc
         queryArgs: {
           limit: 9,
           "filter.query": createQueryString(filterData),
+          sort: "id asc",
         },
       })
       .execute();
