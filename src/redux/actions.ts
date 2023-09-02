@@ -4,6 +4,7 @@ import {
   SET_PRODUCTS_LIST,
   DISPLAY_PRELOADER,
   SET_CATALOG_FILTER_DATA,
+  RESET_CATALOG_FILTER_DATA,
 } from "./actionTypes";
 import { IAction, IProductData, IFilterData } from "../interfaces/IRedux";
 import { IUserProfileStoreData } from "../interfaces/IUserProfileData";
@@ -32,5 +33,9 @@ const setCatalogFilterData = <T>(filterData: IFilterData): IAction<T> => ({
   payload: filterData as T,
 });
 
+const resetCatalogFilterData = <T>(): IAction<T> => ({
+  type: RESET_CATALOG_FILTER_DATA,
+});
+
 export { setUserProfileDataAction, logoutProfileAction, setProductsListAction };
-export { displayPreloaderAction, setCatalogFilterData };
+export { displayPreloaderAction, setCatalogFilterData, resetCatalogFilterData };

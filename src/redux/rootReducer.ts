@@ -1,6 +1,13 @@
 /* eslint-disable no-param-reassign */
-import { IAction, IState, IProductData } from "../interfaces/IRedux";
-import { SET_USER_PROFILE_DATA, LOGOUT_PROFILE, SET_PRODUCTS_LIST, DISPLAY_PRELOADER } from "./actionTypes";
+import { IAction, IState, IProductData, IFilterData } from "../interfaces/IRedux";
+import {
+  SET_USER_PROFILE_DATA,
+  LOGOUT_PROFILE,
+  SET_PRODUCTS_LIST,
+  DISPLAY_PRELOADER,
+  SET_CATALOG_FILTER_DATA,
+  RESET_CATALOG_FILTER_DATA,
+} from "./actionTypes";
 import { IUserProfileStoreData } from "../interfaces/IUserProfileData";
 
 const rootReducer = <T>(state: IState, action: IAction<T>): IState => {
@@ -25,6 +32,13 @@ const rootReducer = <T>(state: IState, action: IAction<T>): IState => {
     const productsList: IProductData[] = action.payload as IProductData[];
     state.catalog.productsList = productsList;
     state.isPreloader = false;
+  }
+  if (action.type === SET_CATALOG_FILTER_DATA) {
+    const filterData: IFilterData = action.payload as IFilterData;
+    state.catalog.filterData = filterData;
+  }
+  if (action.type === RESET_CATALOG_FILTER_DATA) {
+    delete state.catalog.filterData;
   }
   return state;
 };
