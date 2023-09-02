@@ -6,7 +6,7 @@ import {
   SET_CATALOG_FILTER_DATA,
   RESET_CATALOG_FILTER_DATA,
 } from "./actionTypes";
-import { IAction, IProductData, IFilterData } from "../interfaces/IRedux";
+import { IAction, IProductData, IFilterData, IResetFilterData } from "../interfaces/IRedux";
 import { IUserProfileStoreData } from "../interfaces/IUserProfileData";
 
 const setUserProfileDataAction = <T>(userProfileData: IUserProfileStoreData): IAction<T> => ({
@@ -33,8 +33,9 @@ const setCatalogFilterData = <T>(filterData: IFilterData): IAction<T> => ({
   payload: filterData as T,
 });
 
-const resetCatalogFilterData = <T>(): IAction<T> => ({
+const resetCatalogFilterData = <T>(resetData: IResetFilterData): IAction<T> => ({
   type: RESET_CATALOG_FILTER_DATA,
+  payload: resetData as T,
 });
 
 export { setUserProfileDataAction, logoutProfileAction, setProductsListAction };

@@ -9,6 +9,10 @@ const INIT_STORE: IState = {
     total: 0,
     offset: 0,
     productsList: [],
+    filterData: {
+      category: undefined,
+      priceRange: undefined,
+    },
   },
 };
 

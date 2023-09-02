@@ -25,6 +25,11 @@ interface IFilterData {
   priceRange?: IFilterPriceRange;
 }
 
+interface IResetFilterData {
+  isResetCategory?: boolean;
+  isResetPrice?: boolean;
+}
+
 interface ICatalogData {
   offset?: number;
   total?: number;
@@ -40,3 +45,4 @@ interface IState {
 }
 
 export { IAction, IState, ICatalogData, IProductData, IFilterData, IFilterPriceRange };
+export { IResetFilterData };

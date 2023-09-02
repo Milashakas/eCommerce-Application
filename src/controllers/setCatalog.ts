@@ -11,6 +11,7 @@ const getProductsList = () => {
 const setCatalog = () => {
   const list = getProductsList();
   const catalog = document.querySelector(".catalog-section-products") as HTMLElement;
+  catalog.innerHTML = "";
 
   list?.forEach((item) => {
     const name: string = item.name["en-US"];

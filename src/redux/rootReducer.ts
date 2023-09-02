@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { IAction, IState, IProductData, IFilterData } from "../interfaces/IRedux";
+import { IAction, IState, IProductData, IFilterData, IResetFilterData } from "../interfaces/IRedux";
 import {
   SET_USER_PROFILE_DATA,
   LOGOUT_PROFILE,
@@ -38,7 +38,9 @@ const rootReducer = <T>(state: IState, action: IAction<T>): IState => {
     state.catalog.filterData = { ...filterData };
   }
   if (action.type === RESET_CATALOG_FILTER_DATA) {
-    delete state.catalog.filterData;
+    const isResetData: IResetFilterData = action.payload as IResetFilterData;
+    if (isResetData.isResetCategory) delete state.catalog.filterData?.category;
+    if (isResetData.isResetPrice) delete state.catalog.filterData?.priceRange;
   }
   return state;
 };

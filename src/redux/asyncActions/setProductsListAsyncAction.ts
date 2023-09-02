@@ -19,14 +19,16 @@ const setProspectiveFilterCategory = () => {
   if (category) {
     const categoryName = category.split("-")[1];
     store.dispatch(setCatalogFilterData({ category: categoryName as IFilterData["category"] }));
-  } else store.dispatch(resetCatalogFilterData());
+  } else store.dispatch(resetCatalogFilterData({ isResetCategory: true }));
 };
 
 const setProductsListAsyncAction = async () => {
   store.dispatch(displayPreloaderAction(true));
+
   setProspectiveFilterCategory();
 
   const isAnyFilterData = checkIsAnyCatalogFilter();
+  console.log(isAnyFilterData);
 
   let productsListResponseData: IProductsListResponseData = {} as IProductsListResponseData;
 
