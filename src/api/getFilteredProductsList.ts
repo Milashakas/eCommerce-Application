@@ -36,7 +36,6 @@ const createQueryString = (filterData: IFilterData): string[] => {
     queryString.push(`categories.id:"${CATEGORIES_ID[filterData.category]}"`);
   }
 
-  console.log(queryString);
   return queryString;
 };
 

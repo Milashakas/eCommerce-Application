@@ -7,18 +7,13 @@ import { IProductData, IFilterData } from "../../interfaces/IRedux";
 import getFilteredProductsList from "../../api/getFilteredProductsList";
 import checkIsAnyCatalogFilter from "../../modules/checkIsAnyCatalogFilter";
 
-const PROSPECTIVE_CATEGORY_NAME = ["hair", "body", "face"];
-
 const setProspectiveFilterCategory = () => {
   const path = window.location.pathname;
   const category: string = path.split("/")[2];
 
   if (category) {
     const categoryName = category.split("-")[1];
-
-    if (PROSPECTIVE_CATEGORY_NAME.indexOf(categoryName)) {
-      store.dispatch(setCatalogFilterData({ category: categoryName as IFilterData["category"] }));
-    }
+    store.dispatch(setCatalogFilterData({ category: categoryName as IFilterData["category"] }));
   }
 };
 
