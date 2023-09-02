@@ -56,6 +56,9 @@
   text-align: center;
   font-weight: bold;
 }
+.product-block-price {
+  margin-right: 10px;
+}
 
 .product-block-description {
   font-size: 12px;
@@ -63,8 +66,31 @@
   color: gray;
 }
 
+.product-block-prices {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-block-price-withoutdis {
+  text-decoration: line-through;
+}
+
+.product-block-price-dis {
+  color: rgba(251, 36, 36, 0.736);
+}
+
 @media screen and (max-width: 500px) {
   .product-block {
     height: 300px;
+  }
+  .product-description-block {
+    height: 120px;
+
+    .product-block-name {
+      font-size: 14px;
+    }
+    .product-block-price {
+      font-size: 12px;
+    }
   }
 }
