@@ -21,8 +21,7 @@ interface IFilterPriceRange {
 }
 
 interface IFilterData {
-  category?: "hair" | "face" | "body";
-  brand?: string;
+  category?: "hair" | "face" | "body" | "nuxe" | "the-ordinary";
   priceRange?: IFilterPriceRange;
 }
 
