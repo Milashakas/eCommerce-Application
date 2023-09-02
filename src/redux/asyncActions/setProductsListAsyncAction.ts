@@ -1,5 +1,10 @@
 import getProductsList from "../../api/getProductsList";
-import { setProductsListAction, displayPreloaderAction, setCatalogFilterData } from "../actions";
+import {
+  setProductsListAction,
+  displayPreloaderAction,
+  setCatalogFilterData,
+  resetCatalogFilterData,
+} from "../actions";
 import { IProductsListResponseData } from "../../interfaces/IProducts";
 import { navigateTo } from "../../router";
 import store from "../createStore";
@@ -14,7 +19,7 @@ const setProspectiveFilterCategory = () => {
   if (category) {
     const categoryName = category.split("-")[1];
     store.dispatch(setCatalogFilterData({ category: categoryName as IFilterData["category"] }));
-  }
+  } else store.dispatch(resetCatalogFilterData());
 };
 
 const setProductsListAsyncAction = async () => {
