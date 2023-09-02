@@ -34,6 +34,7 @@ const getProductsList = async (): Promise<IProductsListResponseData> => {
       total: response.body.total,
       offset: response.body.offset,
       productsList: converResultArray(response.body.results),
+      sortValue: "id asc",
     };
 
     productsResponseData.catalogData = catalogData;

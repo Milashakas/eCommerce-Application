@@ -35,6 +35,7 @@ interface ICatalogData {
   total?: number;
   productsList: IProductData[];
   filterData?: IFilterData;
+  sortValue: "id asc" | "price asc" | "price desc" | "name.en-US asc" | "name.en-US desc";
 }
 
 interface IState {

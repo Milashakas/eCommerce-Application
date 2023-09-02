@@ -33,7 +33,8 @@ const setProductsListAsyncAction = async () => {
 
   if (isAnyFilterData) {
     const filterData: IFilterData = store.getState().catalog.filterData as IFilterData;
-    productsListResponseData = await getFilteredProductsList(filterData);
+    const sortDataValue = store.getState().catalog.sortValue;
+    productsListResponseData = await getFilteredProductsList(filterData, sortDataValue);
   } else productsListResponseData = await getProductsList();
 
   const { statucCode } = productsListResponseData;

@@ -40,7 +40,10 @@ const createQueryString = (filterData: IFilterData): string[] => {
 };
 
 // eslint-disable-next-line max-len
-const getFilteredProductsList = async (filterData: IFilterData): Promise<IProductsListResponseData> => {
+const getFilteredProductsList = async (
+  filterData: IFilterData,
+  sortDataValue: ICatalogData["sortValue"],
+): Promise<IProductsListResponseData> => {
   const productsResponseData: IProductsListResponseData = {} as IProductsListResponseData;
 
   try {
@@ -51,7 +54,7 @@ const getFilteredProductsList = async (filterData: IFilterData): Promise<IProduc
         queryArgs: {
           limit: 9,
           "filter.query": createQueryString(filterData),
-          sort: "id asc",
+          sort: `${sortDataValue}`,
         },
       })
       .execute();
@@ -60,6 +63,7 @@ const getFilteredProductsList = async (filterData: IFilterData): Promise<IProduc
       total: response.body.total,
       offset: response.body.offset,
       productsList: converResultArray(response.body.results),
+      sortValue: `${sortDataValue}`,
     };
 
     productsResponseData.catalogData = catalogData;

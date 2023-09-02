@@ -13,6 +13,7 @@ const INIT_STORE: IState = {
       category: undefined,
       priceRange: undefined,
     },
+    sortValue: "id asc",
   },
 };
 
