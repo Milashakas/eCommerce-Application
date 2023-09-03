@@ -21,7 +21,7 @@ interface IFilterPriceRange {
 }
 
 interface IFilterData {
-  category?: "hair" | "face" | "body" | "nuxe" | "the-ordinary";
+  category?: "hair" | "face" | "body" | "nuxe" | "ordinary" | "sale" | "clarins" | "kiehls";
   priceRange?: IFilterPriceRange;
 }
 

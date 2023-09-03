@@ -72,16 +72,16 @@ const catalogPage = () => {
             <div class="filter-list-wripper">
               <ul class="filter-brands-list">
                 <li>
-                  <a href="#"><img src="${nuxe}" id ="nuxe"></a>
+                  <a href="/catalog/brand-nuxe"><img src="${nuxe}" id ="nuxe"></a>
                 </li>
                 <li>
-                  <a href="#"><img src="${ordinary}" id ="ordinary"></a>
+                  <a href="/catalog/brand-ordinary"><img src="${ordinary}" id ="ordinary"></a>
                 </li>
                 <li>
-                  <a href="#"><img src="${clarins}" id ="clarins"></a>
+                  <a href="/catalog/brand-clarins"><img src="${clarins}" id ="clarins"></a>
                 </li>
                 <li>
-                <a href="#"><img src="${kiehls}" id ="kiehls"></a>
+                <a href="/catalog/brand-kiehls"><img src="${kiehls}" id ="kiehls"></a>
               </li>
               </ul>
             </div>

@@ -1,4 +1,4 @@
-const PROSPECTIVE_CATEGORY_NAME = ["hair", "body", "face", "sale"];
+const PROSPECTIVE_CATEGORY_NAME = ["hair", "face", "body", "nuxe", "ordinary", "sale", "clarins", "kiehls"];
 
 const getPathSlicesArr = (windowPathName: string): string[] => {
   const pathSlicesArr = windowPathName.split("/");

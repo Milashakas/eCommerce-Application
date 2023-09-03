@@ -8,8 +8,10 @@ const CATEGORIES_ID = {
   body: "a54cb7d0-445e-46a9-9ba5-f2c79d7a1e26",
   face: "054a4767-c156-44c4-8042-9b30e6a18b4b",
   sale: "054a4767-c156-44c4-8042-9b30e6a18b4b",
-  "the-ordinary": "c4036828-5699-49bb-a0a0-964d84c0f0ba",
+  ordinary: "c4036828-5699-49bb-a0a0-964d84c0f0ba",
   nuxe: "16620333-742c-4e0c-896f-7e1666da0a5c",
+  clarins: "d835d635-7374-4067-81d6-1682f2e88d6a",
+  kiehls: "e17127ab-bec3-4137-9da4-e861aeac557a",
 };
 
 const converResultArray = (resultArr: ProductProjection[]): IProductData[] => {
