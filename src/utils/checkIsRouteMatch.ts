@@ -1,3 +1,6 @@
+import store from "../redux/createStore";
+
+/* eslint-disable max-len */
 const PROSPECTIVE_CATEGORY_NAME = ["hair", "face", "body", "nuxe", "ordinary", "sale", "clarins", "kiehls"];
 const PROSPECTIVE_PROFILE_PATHS = ["info", "addresses", "settings"];
 
@@ -31,8 +34,10 @@ const checkIsRouteMatch = (rootPath: string): boolean => {
 
   if (rootPath === "/catalog" && pathSlicesArr.length === 2 && checkIsCorrectCatalogPath(pathSlicesArr)) isMatch = true;
   if (rootPath === "/product" && pathSlicesArr.length === 2 && pathSlicesArr[0] !== "profile") isMatch = true;
-  if (rootPath === "/profile" && pathSlicesArr.length === 2 && checkIsCorrectProfilePath(pathSlicesArr)) {
-    isMatch = true;
+  if (rootPath === "/profile") {
+    const isUserAuth = store.getState().isAuth;
+    console.log(isUserAuth);
+    if (pathSlicesArr.length === 2 && checkIsCorrectProfilePath(pathSlicesArr) && isUserAuth) isMatch = true;
   }
 
   return isMatch;
