@@ -94,14 +94,17 @@ const generateDetailedInfoBlock = (prodDataObj: IProdData) =>
       ),
   );
 
-const ProductPage = async (): Promise<string> => {
+const asyncProductPage = async () => {
+  const main = document.querySelector("main") as HTMLDivElement;
+  let view: string = "";
+
   const prodDataObj = await showProduct();
   if (!prodDataObj) {
-    return errorPage();
+    view = errorPage();
   }
 
   if (prodDataObj) {
-    return makeDiv(
+    view = makeDiv(
       { class: "product-page-container" },
       makeDiv({ class: "product-container-back" }) +
         makeDiv(
@@ -116,7 +119,8 @@ const ProductPage = async (): Promise<string> => {
         ),
     );
   }
-  return "Error loading product data.";
+
+  main.innerHTML = view;
 };
 
-export default ProductPage;
+export default asyncProductPage;

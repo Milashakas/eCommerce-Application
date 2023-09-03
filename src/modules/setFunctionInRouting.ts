@@ -21,6 +21,7 @@ import sortCatalog from "../controllers/sortCatalog";
 import setSwiper from "./swiper";
 import toggleInactivePrice from "./toggleInactivePrice";
 import openedMenu from "./openFlterMenu";
+import asyncProductPage from "../pages/Product";
 
 const runFunctionInRouting = async (url: string) => {
   if (url === "/signup") {
@@ -47,6 +48,7 @@ const runFunctionInRouting = async (url: string) => {
     sortCatalog();
   } else if (url === "/product") {
     // just to see the result
+    await asyncProductPage();
     setSwiper();
     toggleInactivePrice();
   }

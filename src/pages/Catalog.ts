@@ -4,6 +4,9 @@ import clarins from "../assets/images/companyLogos/clarins.png";
 import kiehls from "../assets/images/companyLogos/kiehls.png";
 import store from "../redux/createStore";
 
+// component
+import WelcomeSection from "../components/common/WelcomeSection";
+
 const getDataPriceInputsValues = (): number[] => {
   const CENT_PER_EURO = 100;
   const inputsValueArr: number[] = [0, 500];
@@ -21,10 +24,7 @@ const catalogPage = () => {
   const dataPriceInputsValues = getDataPriceInputsValues();
 
   const code = `
-    <section class="catalog-section-page-welcome">
-      <div class="catalog-section-page-welcome-back"></div>
-      <h2 class="catalog-section-page-welcome-h2">Catalog</h2>
-    </section>
+    ${WelcomeSection("Catalog")}
     <section class="catalog-section">
       <div class="catalog-section-header">
         <div class="catalog-header-wripper">
@@ -38,7 +38,7 @@ const catalogPage = () => {
         <select name="orderBy" class="orderBy">
           <option value="base" data-sort="id asc">Base sorting</option>
           <option value="priceHight" data-sort="price asc">Price:high</option>
-          <option value="priceLow" data-sort="id desc">Price:low</option>
+          <option value="priceLow" data-sort="price desc">Price:low</option>
           <option value="aToW" data-sort="name.en-US asc">A -> W</option>
           <option value="aToA" data-sort="name.en-US desc">W -> A</option>
         </select>
@@ -72,16 +72,16 @@ const catalogPage = () => {
             <div class="filter-list-wripper">
               <ul class="filter-brands-list">
                 <li>
-                  <a href="#"><img src="${nuxe}" id ="nuxe"></a>
+                  <a href="/catalog/brand-nuxe"><img src="${nuxe}" id ="nuxe"></a>
                 </li>
                 <li>
-                  <a href="#"><img src="${ordinary}" id ="ordinary"></a>
+                  <a href="/catalog/brand-ordinary"><img src="${ordinary}" id ="ordinary"></a>
                 </li>
                 <li>
-                  <a href="#"><img src="${clarins}" id ="clarins"></a>
+                  <a href="/catalog/brand-clarins"><img src="${clarins}" id ="clarins"></a>
                 </li>
                 <li>
-                <a href="#"><img src="${kiehls}" id ="kiehls"></a>
+                <a href="/catalog/brand-kiehls"><img src="${kiehls}" id ="kiehls"></a>
               </li>
               </ul>
             </div>
