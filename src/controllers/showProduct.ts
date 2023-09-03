@@ -2,10 +2,11 @@ import { Product } from "@commercetools/platform-sdk";
 import getProductDataAsyncAction from "../redux/asyncActions/getProductDataAsyncAction";
 // import { navigateTo } from "../router";
 import { IProdData } from "../interfaces/IProdData";
+import getCurrentLocationPath from "../utils/getCurrentLocationPath";
 
 const showProduct = async (): Promise<IProdData | null> => {
   // here the place to extract id from URL
-  const productId = "bd6b638b-6a20-4331-9f15-8826ca747c31";
+  const productId = getCurrentLocationPath();
   const responseProduct = await getProductDataAsyncAction(productId);
 
   let prodDataObj: IProdData | null = null;

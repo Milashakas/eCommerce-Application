@@ -45,7 +45,7 @@ const runFunctionInRouting = async (url: string) => {
     openedMenu();
     setPriceRangeFilter();
     sortCatalog();
-  } else if (url === "/orderInformation") {
+  } else if (url === "/product") {
     // just to see the result
     setSwiper();
     toggleInactivePrice();
