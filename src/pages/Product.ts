@@ -99,6 +99,7 @@ const ProductPage = async (): Promise<string> => {
   if (!prodDataObj) {
     return errorPage();
   }
+
   if (prodDataObj) {
     return makeDiv(
       { class: "product-page-container" },

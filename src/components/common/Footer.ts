@@ -28,7 +28,7 @@ const getFooter = () => {
         <div class="footer-info">
           <p class="footer-title foot-title-info">Information</p>
           <ul class="footer-info-list">
-            <li><a href="/orderInformation">How to create order</a></li>
+            <li><a href="/product">How to create order</a></li>
             <li><a href="/delivery">Delivery</a></li>
             <li><a href="/return">Return</a></li>
           </ul>
