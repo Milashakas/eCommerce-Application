@@ -18,6 +18,13 @@ const setActiveCategoryLink = () => {
   });
 };
 
+const disableBasketBtnLinkingInfo = () => {
+  const allBtns = document.querySelectorAll(".product-block .product-block-busket-button");
+  allBtns.forEach((btn) => {
+    btn.addEventListener("click", (event) => event.preventDefault());
+  });
+};
+
 const setCatalog = () => {
   const list = getProductsList();
   const catalog = document.querySelector(".catalog-section-products") as HTMLElement;
@@ -35,6 +42,8 @@ const setCatalog = () => {
 
     catalog.innerHTML += ProductItem(name, firstImg, price, description, productID);
   });
+
+  disableBasketBtnLinkingInfo();
 };
 
 export default setCatalog;
