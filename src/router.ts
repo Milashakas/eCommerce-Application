@@ -35,7 +35,7 @@ const getMatch = () => {
     { path: "/sale", view: salePage() },
     { path: "/aboutus", view: aboutUsPage() },
     { path: "/basket", view: basketPage() },
-    { path: "/orderInformation", view: ProductPage() }, // just to see the result while router in process
+    { path: "/product", view: ProductPage() }, // just to see the result while router in process
     { path: "/delivery", view: deliveryPage() },
     { path: "/return", view: returnPage() },
     { path: "/filter", view: brandsFilter() },
