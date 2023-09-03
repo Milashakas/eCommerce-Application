@@ -36,14 +36,20 @@ const setCatalog = () => {
     const { images } = item.masterVariant;
     const firstImg: string = images ? images[0].url : "...";
     const { prices } = item.masterVariant;
-    const price: number = prices ? ((prices[0].value.centAmount / 100) as number) : 0;
+    let price: number | string = prices ? ((prices[0].value.centAmount / 100) as number) : 0;
+    price = price.toFixed(2);
     const description = item.description ? item.description["en-US"] : "There is no description";
     const productID = item.id;
-
-    catalog.innerHTML += ProductItem(name, firstImg, price, description, productID);
+    let dis: string | undefined;
+    if (prices) {
+      // eslint-disable-next-line max-len
+      dis = prices[0].discounted
+        ? (((prices[0].discounted.value.centAmount as number) / 100).toFixed(2) as string)
+        : undefined;
+      catalog.innerHTML += ProductItem(name, firstImg, price, description, productID, dis);
+    }
+    disableBasketBtnLinkingInfo();
   });
-
-  disableBasketBtnLinkingInfo();
 };
 
 export default setCatalog;

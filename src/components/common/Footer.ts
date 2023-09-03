@@ -19,9 +19,9 @@ const getFooter = () => {
             <ul class="footer-list">
               <li><a href="/catalog">Catalog</a></li>
               <li><a href="/brands">Brands</a></li>
-              <li><a href="/face">Face</a></li>
-              <li><a href="/body">Body</a></li>
-              <li><a href="/hair">Hair</a></li>
+              <li><a href="/catalog/category-face">Face</a></li>
+              <li><a href="/catalog/category-body">Body</a></li>
+              <li><a href="/catalog/category-hair">Hair</a></li>
             </ul>
           </nav>
         </div>

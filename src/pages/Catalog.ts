@@ -1,5 +1,7 @@
 import nuxe from "../assets/images/companyLogos/nuxe.png";
 import ordinary from "../assets/images/companyLogos/theOrdinary.png";
+import clarins from "../assets/images/companyLogos/clarins.png";
+import kiehls from "../assets/images/companyLogos/kiehls.png";
 import store from "../redux/createStore";
 
 const getDataPriceInputsValues = (): number[] => {
@@ -41,6 +43,12 @@ const catalogPage = () => {
           <option value="aToA" data-sort="name.en-US desc">W -> A</option>
         </select>
       </div>
+      <div class="searchingBlock">
+    <div class="searchForm">
+    <input name="s" placeholder="Search" type="search">
+    <button type="submit"></button>
+  </div>
+    </div>
       <div class="catalog-section-wrapper">
         <div class="catalog-section-filter">
           <div class="catalog-burger-close-button">
@@ -64,20 +72,17 @@ const catalogPage = () => {
             <div class="filter-list-wripper">
               <ul class="filter-brands-list">
                 <li>
-                  <a href="#"><img src="${nuxe}" /></a>
+                  <a href="#"><img src="${nuxe}" id ="nuxe"></a>
                 </li>
                 <li>
-                  <a href="#"><img src="${ordinary}" /></a>
+                  <a href="#"><img src="${ordinary}" id ="ordinary"></a>
                 </li>
                 <li>
-                  <a><img /></a>
+                  <a href="#"><img src="${clarins}" id ="clarins"></a>
                 </li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
+                <li>
+                <a href="#"><img src="${kiehls}" id ="kiehls"></a>
+              </li>
               </ul>
             </div>
           </div>
@@ -87,6 +92,7 @@ const catalogPage = () => {
               <li><a href="/catalog/category-face">Face</a></li>
               <li><a href="/catalog/category-body">Body</a></li>
               <li><a href="/catalog/category-hair">Hair</a></li>
+              <li><a href="/catalog/category-sale">SALE</a></li>
             </ul>
           </div>
         </div>
