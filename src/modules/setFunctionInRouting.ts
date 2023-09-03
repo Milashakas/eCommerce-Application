@@ -18,6 +18,7 @@ import setSortSelectValue from "./setSortSelectValue";
 import sortCatalog from "../controllers/sortCatalog";
 
 // productPage functional
+import setProductPageAsyncLayout from "./setProductPageAsyncLayout";
 import setSwiper from "./swiper";
 import toggleInactivePrice from "./toggleInactivePrice";
 import openedMenu from "./openFlterMenu";
@@ -47,6 +48,7 @@ const runFunctionInRouting = async (url: string) => {
     sortCatalog();
   } else if (url === "/product") {
     // just to see the result
+    await setProductPageAsyncLayout();
     setSwiper();
     toggleInactivePrice();
   }

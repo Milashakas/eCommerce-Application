@@ -11,7 +11,7 @@ import salePage from "./pages/Sale";
 import facePage from "./pages/Face";
 import aboutUsPage from "./pages/AboutUs";
 import basketPage from "./pages/Basket";
-// import orderInformationPage from "./pages/OrderInfo";
+import ProfilePage from "./pages/Profile";
 import ProductPage from "./pages/Product";
 import deliveryPage from "./pages/Delivery";
 import returnPage from "./pages/Return";
@@ -39,6 +39,7 @@ const getMatch = () => {
     { path: "/delivery", view: deliveryPage() },
     { path: "/return", view: returnPage() },
     { path: "/filter", view: brandsFilter() },
+    { path: "/profile", view: ProfilePage() },
   ];
 
   const potentialMatches = routes.map((root) => ({
@@ -65,12 +66,9 @@ export const runPageFunctional = () => {
 
 export const router = async () => {
   const match = getMatch();
+  console.log(match);
   const main = document.querySelector("main") as HTMLDivElement;
-  if (match.route.view instanceof Promise) {
-    main.innerHTML = await match.route.view;
-  } else {
-    main.innerHTML = match.route.view;
-  }
+  main.innerHTML = match.route.view;
   runPageFunctional();
   setListenerForLinks();
 };

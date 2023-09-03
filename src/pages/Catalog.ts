@@ -4,6 +4,9 @@ import clarins from "../assets/images/companyLogos/clarins.png";
 import kiehls from "../assets/images/companyLogos/kiehls.png";
 import store from "../redux/createStore";
 
+// component
+import WelcomeSection from "../components/common/WelcomeSection";
+
 const getDataPriceInputsValues = (): number[] => {
   const CENT_PER_EURO = 100;
   const inputsValueArr: number[] = [0, 500];
@@ -21,10 +24,7 @@ const catalogPage = () => {
   const dataPriceInputsValues = getDataPriceInputsValues();
 
   const code = `
-    <section class="catalog-section-page-welcome">
-      <div class="catalog-section-page-welcome-back"></div>
-      <h2 class="catalog-section-page-welcome-h2">Catalog</h2>
-    </section>
+    ${WelcomeSection("Catalog")}
     <section class="catalog-section">
       <div class="catalog-section-header">
         <div class="catalog-header-wripper">

@@ -41,7 +41,7 @@ const getHeader = () => {
           <span class="profile-icon"">
             <img src=${iconProfile} width="30px" height="30px" title="Profile" alt="profile" class="icon">
             <span class="profile-popup-menu hideElement">
-              <span class="popup-menu-point">Profile</span>
+              <a href="/profile" class="popup-menu-point">Profile</a>
               <span class="popup-menu-point">Settings</span>
               <span class="popup-menu-point">Basket</span>
               <span class="popup-menu-point popup-menu-exit">Exit</span>

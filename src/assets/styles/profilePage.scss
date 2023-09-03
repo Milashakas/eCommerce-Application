@@ -1,0 +1,19 @@
+.profile-window {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+
+  .profile-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-right: 1rem;
+    border-right: 0.2rem black solid;
+
+    .profile-nav-link {
+      font-size: 2.2rem;
+      margin: 1rem 0;
+    }
+  }
+}

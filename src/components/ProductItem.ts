@@ -3,7 +3,7 @@ const pr = (name: string, img: string, price: string, description: string, id: s
   let code;
   if (sale === undefined) {
     code = `
-  <a class="product-block" id="${id}" href="/catalog/${id}">
+  <a class="product-block" id="${id}" href="/product/${id}">
   <div class="product-block-image">
   <img src="${img}" class="product-block-img">
   <div class="product-block-busket-button">
@@ -19,7 +19,7 @@ const pr = (name: string, img: string, price: string, description: string, id: s
   `;
   } else {
     code = `
-    <a class="product-block" id="${id}" href="/catalog/${id}">
+    <a class="product-block" id="${id}" href="/product/${id}">
     <div class="product-block-image">
     <img src="${img}" class="product-block-img">
     <div class="product-block-busket-button">
