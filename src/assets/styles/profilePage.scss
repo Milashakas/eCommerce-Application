@@ -21,5 +21,33 @@
 
   .profile-tab {
     width: 100%;
+    padding-left: 5rem;
   }
+}
+
+// ProfileInfo component
+h2 {
+  margin-top: 2rem;
+}
+
+.profile-info-field {
+  display: flex;
+  flex-direction: column;
+  min-width: 280px;
+  margin: 1.5rem 0;
+
+  .profile-field-title {
+    font-size: 1.5rem;
+  }
+  .profile-field-value {
+    margin-top: 0.5rem;
+    font-size: 2rem;
+  }
+}
+
+// AddressesInfo component
+.billing-address-field,
+.shipping-address-field {
+  display: flex;
+  margin: 2rem 0;
 }

@@ -1,11 +1,12 @@
 // Components
 import ProfileInfo from "../components/profilePageCpmponents/ProfileInfo";
 import WelcomeSection from "../components/common/WelcomeSection";
+import AddressesInfo from "../components/profilePageCpmponents/AddressesInfo";
 // Utils
 import getCurrentLocationPath from "../utils/getCurrentLocationPath";
 // Interfaces
-import { IProfileInfo } from "../interfaces/IProfile";
-import { IUserProfileStoreData, IUserBasicInfo } from "../interfaces/IUserProfileData";
+import { IProfileInfo, IAdressessInfo } from "../interfaces/IProfile";
+import { IUserProfileStoreData, IUserBasicInfo, IAddressData } from "../interfaces/IUserProfileData";
 // store
 import store from "../redux/createStore";
 
@@ -24,7 +25,15 @@ const getProfileTab = (userData: IUserProfileStoreData) => {
     profileTabLayout = ProfileInfo(profileInfo);
   }
   if (currentPath === "addresses") {
-    profileTabLayout = "f";
+    const addressesData = userData.addresses as IAddressData[];
+    const defaultBilling = userData.defaultBillingAddress;
+    const defaultShipping = userData.defaultShippingAddress;
+    const adressesInfo: IAdressessInfo = {
+      addresses: addressesData,
+      defaultBilling,
+      defaultShipping,
+    };
+    profileTabLayout = AddressesInfo(adressesInfo);
   }
 
   return profileTabLayout;
@@ -32,10 +41,11 @@ const getProfileTab = (userData: IUserProfileStoreData) => {
 
 const Profile = () => {
   const { isAuth } = store.getState();
-  console.log(isAuth);
+
   if (!isAuth) return "<h1>Loading Page</h1>";
 
   const userData = store.getState().userData as IUserProfileStoreData;
+  console.log(userData);
 
   const view = `
     ${WelcomeSection("My Profile")}
