@@ -60,13 +60,11 @@ const getMatch = () => {
 
 export const runPageFunctional = () => {
   const match = getMatch();
-  console.log(match);
   runFunctionInRouting(match.route.path);
 };
 
 export const router = async () => {
   const match = getMatch();
-  console.log(match);
   const main = document.querySelector("main") as HTMLDivElement;
 
   main.innerHTML = match.route.view;

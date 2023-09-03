@@ -26,7 +26,7 @@ const getHeader = () => {
           </li>
           <li><a href="/catalog/category-hair">HAIR</a>
           </li>
-          <li><a href="/catalog/sale">SALE</a></li>
+          <li><a href="/catalog/category-sale">SALE</a></li>
           <li><a href="/aboutus">ABOUT US</a></li>
         </ul>
         <div class="header-profile">

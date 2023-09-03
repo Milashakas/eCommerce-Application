@@ -45,7 +45,6 @@ const Profile = () => {
   if (!isAuth) return "<h1>Loading Page</h1>";
 
   const userData = store.getState().userData as IUserProfileStoreData;
-  console.log(userData);
 
   const view = `
     ${WelcomeSection("My Profile")}
