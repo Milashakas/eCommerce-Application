@@ -38,7 +38,7 @@ const catalogPage = () => {
         <select name="orderBy" class="orderBy">
           <option value="base" data-sort="id asc">Base sorting</option>
           <option value="priceHight" data-sort="price asc">Price:high</option>
-          <option value="priceLow" data-sort="id desc">Price:low</option>
+          <option value="priceLow" data-sort="price desc">Price:low</option>
           <option value="aToW" data-sort="name.en-US asc">A -> W</option>
           <option value="aToA" data-sort="name.en-US desc">W -> A</option>
         </select>
