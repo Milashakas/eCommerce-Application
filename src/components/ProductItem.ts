@@ -1,6 +1,7 @@
-const createProduct = (name: string, img: string | undefined, price: number, des: string) => {
+// eslint-disable-next-line max-len
+const ProductItem = (name: string, img: string | undefined, price: number, des: string, id: string) => {
   const code = `
-  <div class="product-block">
+  <div class="product-block" id="${id}">
   <div class="product-block-image">
   <img src="${img}" class="product-block-img">
   <div class="product-block-busket-button">
@@ -17,4 +18,4 @@ const createProduct = (name: string, img: string | undefined, price: number, des
   return code;
 };
 
-export default createProduct;
+export default ProductItem;
