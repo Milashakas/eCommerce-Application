@@ -7,6 +7,9 @@ import getCurrentLocationPath from "../utils/getCurrentLocationPath";
 const showProduct = async (): Promise<IProdData | null> => {
   // here the place to extract id from URL
   const productId = getCurrentLocationPath();
+
+  if (!productId) return null;
+
   const responseProduct = await getProductDataAsyncAction(productId);
 
   let prodDataObj: IProdData | null = null;

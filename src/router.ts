@@ -65,7 +65,7 @@ export const runPageFunctional = () => {
 
 export const router = async () => {
   const match = getMatch();
-  const main = document.querySelector("main") as HTMLBodyElement;
+  const main = document.querySelector("main") as HTMLDivElement;
   if (match.route.view instanceof Promise) {
     main.innerHTML = await match.route.view;
   } else {

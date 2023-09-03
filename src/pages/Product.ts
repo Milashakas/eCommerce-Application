@@ -95,11 +95,11 @@ const generateDetailedInfoBlock = (prodDataObj: IProdData) =>
   );
 
 const ProductPage = async (): Promise<string> => {
-  console.log("PRFA");
   const prodDataObj = await showProduct();
   if (!prodDataObj) {
     return errorPage();
   }
+
   if (prodDataObj) {
     return makeDiv(
       { class: "product-page-container" },
