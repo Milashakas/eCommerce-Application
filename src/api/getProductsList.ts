@@ -1,29 +1,51 @@
-import { ClientResponse, ProductPagedQueryResponse } from "@commercetools/platform-sdk";
+import { ClientResponse, ProductPagedQueryResponse, Product } from "@commercetools/platform-sdk";
 import { adminApiRoot } from "./ApiClients";
 import { IProductsListResponseData } from "../interfaces/IProducts";
+import { ICatalogData, IProductData } from "../interfaces/IRedux";
+
+const converResultArray = (resultArr: Product[]): IProductData[] => {
+  const convertedArray: IProductData[] = resultArr.map((product: Product) => ({
+    id: product.id,
+    name: product.masterData.current.name,
+    categories: product.masterData.current.categories,
+    description: product.masterData.current.description,
+    productType: product.productType,
+    masterVariant: product.masterData.current.masterVariant,
+  }));
+
+  return convertedArray;
+};
 
 const getProductsList = async (): Promise<IProductsListResponseData> => {
-  const productsListResponseData: IProductsListResponseData = {} as IProductsListResponseData;
+  const productsResponseData: IProductsListResponseData = {} as IProductsListResponseData;
 
   try {
     const response: ClientResponse<ProductPagedQueryResponse> = await adminApiRoot
       .products()
       .get({
         queryArgs: {
-          limit: 12,
+          limit: 9,
+          sort: "id asc",
         },
       })
       .execute();
 
-    productsListResponseData.statucCode = response.statusCode;
-    productsListResponseData.productsListData = response.body;
+    const catalogData: ICatalogData = {
+      total: response.body.total,
+      offset: response.body.offset,
+      productsList: converResultArray(response.body.results),
+      sortValue: "id asc",
+    };
+
+    productsResponseData.catalogData = catalogData;
+    productsResponseData.statucCode = response.statusCode;
   } catch (error) {
     if (error instanceof Error) {
-      productsListResponseData.message = error.message;
+      productsResponseData.message = error.message;
     }
   }
 
-  return productsListResponseData;
+  return productsResponseData;
 };
 
 export default getProductsList;

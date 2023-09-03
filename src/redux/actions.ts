@@ -1,7 +1,13 @@
-import { Product } from "@commercetools/platform-sdk";
-
-import { SET_USER_PROFILE_DATA, LOGOUT_PROFILE, SET_PRODUCTS_LIST, DISPLAY_PRELOADER } from "./actionTypes";
-import { IAction } from "../interfaces/IRedux";
+import {
+  SET_USER_PROFILE_DATA,
+  LOGOUT_PROFILE,
+  SET_PRODUCTS_LIST,
+  DISPLAY_PRELOADER,
+  SET_CATALOG_FILTER_DATA,
+  RESET_CATALOG_FILTER_DATA,
+  SET_SORT_VALUE,
+} from "./actionTypes";
+import { IAction, IProductData, IFilterData, IResetFilterData, ICatalogData } from "../interfaces/IRedux";
 import { IUserProfileStoreData } from "../interfaces/IUserProfileData";
 
 const setUserProfileDataAction = <T>(userProfileData: IUserProfileStoreData): IAction<T> => ({
@@ -13,7 +19,7 @@ const logoutProfileAction = <T>(): IAction<T> => ({
   type: LOGOUT_PROFILE,
 });
 
-const setProductsListAction = <T>(productsList: Product[]): IAction<T> => ({
+const setProductsListAction = <T>(productsList: IProductData[]): IAction<T> => ({
   type: SET_PRODUCTS_LIST,
   payload: productsList as T,
 });
@@ -23,5 +29,20 @@ const displayPreloaderAction = <T>(flag: boolean): IAction<T> => ({
   payload: flag as T,
 });
 
+const setCatalogFilterData = <T>(filterData: IFilterData): IAction<T> => ({
+  type: SET_CATALOG_FILTER_DATA,
+  payload: filterData as T,
+});
+
+const resetCatalogFilterData = <T>(resetData: IResetFilterData): IAction<T> => ({
+  type: RESET_CATALOG_FILTER_DATA,
+  payload: resetData as T,
+});
+
+const setCatalogSortData = <T>(sortValue: ICatalogData["sortValue"]): IAction<T> => ({
+  type: SET_SORT_VALUE,
+  payload: sortValue as T,
+});
+
 export { setUserProfileDataAction, logoutProfileAction, setProductsListAction };
-export { displayPreloaderAction };
+export { displayPreloaderAction, setCatalogFilterData, resetCatalogFilterData, setCatalogSortData };

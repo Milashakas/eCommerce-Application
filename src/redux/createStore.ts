@@ -5,7 +5,16 @@ import displayAuthUserProfileVew from "../controllers/displayAuthUserProfileVew"
 const INIT_STORE: IState = {
   isAuth: false,
   isPreloader: false,
-  catalog: {},
+  catalog: {
+    total: 0,
+    offset: 0,
+    productsList: [],
+    filterData: {
+      category: undefined,
+      priceRange: undefined,
+    },
+    sortValue: "id asc",
+  },
 };
 
 const createStore = () => {

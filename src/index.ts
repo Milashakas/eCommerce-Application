@@ -4,13 +4,14 @@ import footerOpenLinksFunctional from "./modules/footerEvents";
 import setBasicLayout from "./modules/SetBasicLayout";
 import { router, navigateTo } from "./router";
 import autoLogIn from "./redux/asyncActions/autoLogInAsyncAction";
+import resetStateAfterLink from "./controllers/resetStateAfterLink";
 
 setBasicLayout();
 headerOpenMenuFunctional();
 footerOpenLinksFunctional();
 autoLogIn();
+resetStateAfterLink();
 
-// window.addEventListener("load", router);
 window.addEventListener("popstate", router);
 
 document.addEventListener("DOMContentLoaded", () => {

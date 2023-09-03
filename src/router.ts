@@ -18,6 +18,9 @@ import returnPage from "./pages/Return";
 import brandsFilter from "./pages/BrandsFilter";
 import setListenerForLinks from "./modules/functionForLinks";
 
+// utils
+import checkIsRouteMatch from "./utils/checkIsRouteMatch";
+
 const getMatch = () => {
   const routes = [
     { path: "/404", view: errorPage() },
@@ -40,7 +43,7 @@ const getMatch = () => {
 
   const potentialMatches = routes.map((root) => ({
     route: root,
-    isMatch: window.location.pathname === root.path,
+    isMatch: checkIsRouteMatch(root.path),
   }));
 
   let match = potentialMatches.find((potentialMatche) => potentialMatche.isMatch);

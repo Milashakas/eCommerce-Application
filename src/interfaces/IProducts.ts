@@ -1,8 +1,9 @@
-import { ProductPagedQueryResponse, Product } from "@commercetools/platform-sdk";
+import { Product } from "@commercetools/platform-sdk";
+import { ICatalogData } from "./IRedux";
 
 interface IProductsListResponseData {
   statucCode?: number;
-  productsListData?: ProductPagedQueryResponse;
+  catalogData?: ICatalogData;
   message?: string;
 }
 
@@ -12,10 +13,10 @@ interface IProductResponseData {
   message?: string;
 }
 
-interface IProductData {
+interface IProductDataByID {
   isData: boolean;
   data: Product | null;
   message: string | null | undefined;
 }
 
-export { IProductsListResponseData, IProductResponseData, IProductData };
+export { IProductsListResponseData, IProductResponseData, IProductDataByID };

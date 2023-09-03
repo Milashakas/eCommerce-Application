@@ -1,17 +1,17 @@
 import { Product } from "@commercetools/platform-sdk";
 import getProduct from "../../api/getProduct";
-import { IProductResponseData, IProductData } from "../../interfaces/IProducts";
+import { IProductResponseData, IProductDataByID } from "../../interfaces/IProducts";
 import store from "../createStore";
 import { displayPreloaderAction } from "../actions";
 
-const getProductDataAsyncAction = async (productId: string): Promise<IProductData> => {
+const getProductDataAsyncAction = async (productId: string): Promise<IProductDataByID> => {
   store.dispatch(displayPreloaderAction(true));
 
   const productDataResponse: IProductResponseData = await getProduct(productId);
 
   const { statucCode } = productDataResponse;
 
-  const data: IProductData = {
+  const data: IProductDataByID = {
     isData: true,
     data: null,
     message: null,
