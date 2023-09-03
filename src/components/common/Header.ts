@@ -20,13 +20,13 @@ const getHeader = () => {
           </li>
           <li><a href="/brands">BRANDS</a>
           </li>
-          <li><a href="/face">FACE</a>
+          <li><a href="/catalog/category-face">FACE</a>
           </li>
-          <li><a href="/body">BODY</a>
+          <li><a href="/catalog/category-body">BODY</a>
           </li>
-          <li><a href="/hair">HAIR</a>
+          <li><a href="/catalog/category-hair">HAIR</a>
           </li>
-          <li><a href="/sale">SALE</a></li>
+          <li><a href="/catalog/sale">SALE</a></li>
           <li><a href="/aboutus">ABOUT US</a></li>
         </ul>
         <div class="header-profile">
