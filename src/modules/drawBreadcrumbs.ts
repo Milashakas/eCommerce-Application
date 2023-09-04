@@ -1,7 +1,7 @@
 const drawBreadcrumbs = (): void => {
   const url = window.location.href;
 
-  const match = url.match(/http:\/\/[^/]+\/([^/]+)\/[^-]+-([^-]+)$/);
+  const match = url.match(/https?:\/\/[^/]+\/([^/]+)\/[^-]+-([^-]+)$/);
 
   if (!match) {
     return;
