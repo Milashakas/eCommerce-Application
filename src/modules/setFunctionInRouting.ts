@@ -22,6 +22,7 @@ import setSwiper from "./swiper";
 import toggleInactivePrice from "./toggleInactivePrice";
 import openedMenu from "./openFlterMenu";
 import asyncProductPage from "../pages/Product";
+import handleModalVisibility from "./handleModalVisibility";
 
 const runFunctionInRouting = async (url: string) => {
   if (url === "/signup") {
@@ -51,6 +52,7 @@ const runFunctionInRouting = async (url: string) => {
     await asyncProductPage();
     setSwiper();
     toggleInactivePrice();
+    handleModalVisibility();
   }
 };
 
