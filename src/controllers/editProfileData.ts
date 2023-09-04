@@ -8,9 +8,13 @@ import validateEmail from "../modules/validateEmail";
 import validatePassword from "../modules/validatePassword";
 import validateBillingAddress from "../modules/validateBillingAddress";
 import { validateShippingAddress } from "../modules/validateShippingAddress";
-
+import showPopupNotification from "../modules/showPopupNotification";
 // Components
 import EditModeWindow from "../components/EditModeWindow";
+// api
+import updateProfileData from "../api/updateProfileData";
+// Async Actions
+import autoLogInAsyncAction from "../redux/asyncActions/autoLogInAsyncAction";
 
 const setNecessaryValidation = (editModeId: string) => {
   if (editModeId === "editName") validateFirstName();
@@ -28,8 +32,34 @@ const closeModeWindow = () => {
   const closeBtn = document.querySelector(".edit-mode-cancelBtn") as HTMLButtonElement;
 
   closeBtn.addEventListener("click", () => {
-    const modeWindow = getModeWindow() as HTMLDivElement;
-    modeWindow.remove();
+    const modeWindow = getModeWindow();
+    modeWindow?.remove();
+  });
+};
+
+const removeEditModeWindow = () => {
+  const editModeWindow = document.querySelector(".edit-mode-window");
+  editModeWindow?.remove();
+};
+
+const submitNewData = (editModeId: string) => {
+  const submitBtn = document.querySelector(".edit-mode-sumbitBtn") as HTMLButtonElement;
+  const validatedInpput = document.querySelector(".form-input input") as HTMLInputElement;
+
+  submitBtn.addEventListener("click", async () => {
+    validatedInpput.dispatchEvent(new Event("blur"));
+
+    if (validatedInpput.classList.contains("invalid")) return;
+    const responseCode = await updateProfileData(editModeId, validatedInpput.value);
+
+    if (responseCode === 200) {
+      await autoLogInAsyncAction();
+      showPopupNotification({ classMode: "notification-success", message: "You data was changed successfully!" });
+      removeEditModeWindow();
+    } else {
+      showPopupNotification({ classMode: "notification-error", message: "Your attempt to change data failed" });
+      removeEditModeWindow();
+    }
   });
 };
 
@@ -48,8 +78,10 @@ const editProfileData = () => {
       if (prospectiveModeWindow) return;
 
       main.innerHTML += EditModeWindow(editBtn.id);
+
       setNecessaryValidation(editModeId);
       closeModeWindow();
+      submitNewData(editModeId);
       runPageFunctional();
     });
   });
