@@ -309,7 +309,8 @@
 }
 
 .modal-content > .swiper-block > .swiper {
-  max-width: 870px;
+  max-width: 880px;
+  max-height: 95%;
   margin: 0px auto 0 0px;
 }
 
@@ -354,7 +355,7 @@
   }
 }
 
-@media screen and (max-width: 1350px) {
+@media screen and (max-width: 1370px) {
   .product-info-container {
     width: 87%;
   }
@@ -363,7 +364,7 @@
   }
 
   .modal-content > .swiper-block > .swiper {
-    max-width: 710px;
+    max-width: 640px;
   }
 }
 
