@@ -23,6 +23,7 @@ import toggleInactivePrice from "./toggleInactivePrice";
 import openedMenu from "./openFlterMenu";
 import asyncProductPage from "../pages/Product";
 import handleModalVisibility from "./handleModalVisibility";
+import drawBreadcrumbs from "./drawBreadcrumbs";
 
 // ProfileData
 import editProfileData from "../controllers/editProfileData";
@@ -50,6 +51,7 @@ const runFunctionInRouting = async (url: string) => {
     openedMenu();
     setPriceRangeFilter();
     sortCatalog();
+    drawBreadcrumbs();
   } else if (url === "/product") {
     // just to see the result
     await asyncProductPage();
