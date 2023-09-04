@@ -1,5 +1,6 @@
 const handleModalVisibility = () => {
   const modal = document.querySelector(".modal") as HTMLElement | null;
+  const header = document.querySelector(".header") as HTMLElement | null;
   const slides = document.querySelectorAll<HTMLElement>(
     ".product-info-main > .swiper-block > .swiper > .swiper-wrapper > .swiper-slide",
   );
@@ -23,6 +24,7 @@ const handleModalVisibility = () => {
 
   const show = () => {
     modal.style.display = "block";
+    if (header) header.style.zIndex = "3";
 
     const [firstSlide, secondSlide, thirdSlide] = slides;
 
@@ -44,6 +46,7 @@ const handleModalVisibility = () => {
 
   const hide = () => {
     modal.style.display = "none";
+    if (header) header.style.zIndex = "10";
 
     modalSwiperImgs.forEach((img, index) => {
       // eslint-disable-next-line no-param-reassign

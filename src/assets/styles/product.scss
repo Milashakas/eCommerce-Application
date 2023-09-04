@@ -295,6 +295,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 12;
   transform: translate(-50%, -50%);
   background-color: #fff;
   padding: 5px;
@@ -324,7 +325,7 @@
   font-size: 33px;
   color: white;
   cursor: pointer;
-  z-index: 11;
+  z-index: 13;
   transition: all 0.9s ease;
 }
 
@@ -341,6 +342,9 @@
   .product-info-container {
     width: 70%;
   }
+  .modal-content > .swiper-block > .swiper {
+    max-width: 800px;
+  }
 }
 
 @media screen and (max-width: 1670px) {
@@ -349,7 +353,7 @@
   }
 
   .modal-content > .swiper-block > .swiper {
-    max-width: 740px;
+    max-width: 750px;
   }
 }
 
@@ -362,7 +366,7 @@
   }
 
   .modal-content > .swiper-block > .swiper {
-    max-width: 640px;
+    max-width: 700px;
   }
 }
 
