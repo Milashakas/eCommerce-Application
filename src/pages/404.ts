@@ -4,7 +4,7 @@ const errorPage = () => {
     <div class="errorWindow-back"></div>
     <h2 class="errorWindow-h2">404</h2>
     <p class="errorWindow-p">PAGE NOT FOUND</p>
-    <p class="errorWindow-p2">Something seems to have wrong!The page you are requesting doesn't exist!</p>
+    <p class="errorWindow-p2">Something seems to have gone wrong! <br> Either the page you are requesting doesn't exist or there happened some failure!</p>
     <a class="errorWindow-button" href="/">Main Page</a>
     </section>
     `;

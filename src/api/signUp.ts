@@ -1,7 +1,7 @@
-/* eslint import/no-extraneous-dependencies: ["error", {"peerDependencies": true}] */
 import { ClientResponse, CustomerSignInResult } from "@commercetools/platform-sdk";
 import { adminApiRoot } from "./ApiClients";
 import { IUserSignUpData, ISignUpDataResult } from "../interfaces/IUserProfileData";
+import IResponseError from "../interfaces/IResponseError";
 
 const signUp = async (signUpData: IUserSignUpData): Promise<ISignUpDataResult> => {
   const signUpDataResult: ISignUpDataResult = {} as ISignUpDataResult;
@@ -20,6 +20,8 @@ const signUp = async (signUpData: IUserSignUpData): Promise<ISignUpDataResult> =
     }
   } catch (error) {
     if (error instanceof Error) {
+      const responseError: IResponseError = error as IResponseError;
+      signUpDataResult.statusCode = responseError.statusCode;
       signUpDataResult.errorMessage = error.message;
     }
   }

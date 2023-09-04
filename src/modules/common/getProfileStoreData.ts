@@ -4,8 +4,8 @@ import { IUserProfileStoreData, IAddressData } from "../../interfaces/IUserProfi
 
 const getProfileStoreData = (customerData: Customer) => {
   const userProfileStoreData: IUserProfileStoreData = {
-    isAuth: true,
     userToken: customerData.id,
+    version: customerData.version,
     userBasicInfo: {
       email: customerData.email,
       password: customerData.password as string,

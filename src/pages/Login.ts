@@ -1,3 +1,5 @@
+import { FormPasswordInput } from "../components/common/FormInputs";
+
 const LoginForm = () => {
   const view = `
   <div class="registration-login-page-container">
@@ -23,22 +25,7 @@ const LoginForm = () => {
             </div>
           </div>
           <div class="form-row">
-            <div class="form-input">
-              <label for="password" class="required">Password</label>
-              <input type="password" name="password" class="password-input" id="loginPassword" data-postId="password" autocomplete="current-password">
-              <span class="btn-show-pass">
-                <i class="fa-regular fa-eye-slash"></i>
-              </span>
-              <div class="password-error">
-                <span class="password-error-text"></span>
-                <div class="password-error-info password-hint" data-hint="Min 8 chars and at least: 1 uppercase letter, 1 lowercase letter, 1 number">
-                  <i class="fa-solid fa-circle-info"></i>
-                </div>
-              </div>
-              <span class="password-error-sign">
-                <i class="fa-solid fa-circle-exclamation"></i>
-              </span>
-            </div>
+            ${FormPasswordInput()}
           </div>
           <button type="submit" class="form-button login-button">Login</button>
           <p class="registration-doublecheck">Dont't have an account? <br> <a href="/signup" class="registration-link">Sign Up</a></p>

@@ -21,19 +21,19 @@ const mainPage = () => {
     </section>
     <section class="catalog">
     <div class="catalog-container">
-    <a class="catalog-face" href="/face">
+    <a class="catalog-face" href="/catalog/category-face">
     <img src="${faceImg}" alt="Face" class="catalog-images">
     <p>Face</p>
     </a>
-    <a class="catalog-body" href="/body">
+    <a class="catalog-body" href="/catalog/category-body">
     <img src="${bodyImg}" alt="Body" class="catalog-images">
     <p>Body</p>
     </a>
-    <a class="catalog-hair" href="/hair">
+    <a class="catalog-hair" href="/catalog/category-hair">
     <img src="${hairImg}" alt="Hair" class="catalog-images">
     <p>Hair</p>
     </a>
-    <a class="catalog-brands" href="/brands">
+    <a class="catalog-brands" href="/catalog/category-face">
     <img src="${brandsImg}" alt="Brands" class="catalog-images">
     <p>Brands</p>
     </a>

@@ -94,4 +94,4 @@ const handleShippingAddressValidation = () => {
   });
 };
 
-export default handleShippingAddressValidation;
+export { handleShippingAddressValidation, validateShippingAddress };

@@ -20,13 +20,13 @@ const getHeader = () => {
           </li>
           <li><a href="/brands">BRANDS</a>
           </li>
-          <li><a href="/face">FACE</a>
+          <li><a href="/catalog/category-face">FACE</a>
           </li>
-          <li><a href="/body">BODY</a>
+          <li><a href="/catalog/category-body">BODY</a>
           </li>
-          <li><a href="/hair">HAIR</a>
+          <li><a href="/catalog/category-hair">HAIR</a>
           </li>
-          <li><a href="/sale">SALE</a></li>
+          <li><a href="/catalog/category-sale">SALE</a></li>
           <li><a href="/aboutus">ABOUT US</a></li>
         </ul>
         <div class="header-profile">
@@ -37,11 +37,11 @@ const getHeader = () => {
         </div>
       </nav>
       <div class="header-icons">
-        <div class="profile hideElement">
+        <div class="profile none">
           <span class="profile-icon"">
             <img src=${iconProfile} width="30px" height="30px" title="Profile" alt="profile" class="icon">
             <span class="profile-popup-menu hideElement">
-              <span class="popup-menu-point">Profile</span>
+              <a href="/profile" class="popup-menu-point">Profile</a>
               <span class="popup-menu-point">Settings</span>
               <span class="popup-menu-point">Basket</span>
               <span class="popup-menu-point popup-menu-exit">Exit</span>

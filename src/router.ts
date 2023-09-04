@@ -8,14 +8,17 @@ import brandsPage from "./pages/Brands";
 import hairPage from "./pages/Hair";
 import bodyPage from "./pages/Body";
 import salePage from "./pages/Sale";
+import Profile from "./pages/Profile";
 import facePage from "./pages/Face";
 import aboutUsPage from "./pages/AboutUs";
 import basketPage from "./pages/Basket";
-import orderInformationPage from "./pages/OrderInfo";
 import deliveryPage from "./pages/Delivery";
 import returnPage from "./pages/Return";
 import brandsFilter from "./pages/BrandsFilter";
 import setListenerForLinks from "./modules/functionForLinks";
+
+// utils
+import checkIsRouteMatch from "./utils/checkIsRouteMatch";
 
 const getMatch = () => {
   const routes = [
@@ -31,15 +34,16 @@ const getMatch = () => {
     { path: "/sale", view: salePage() },
     { path: "/aboutus", view: aboutUsPage() },
     { path: "/basket", view: basketPage() },
-    { path: "/orderInformation", view: orderInformationPage() },
+    { path: "/product", view: " " }, // just to see the result while router in process
     { path: "/delivery", view: deliveryPage() },
     { path: "/return", view: returnPage() },
     { path: "/filter", view: brandsFilter() },
+    { path: "/profile", view: Profile() },
   ];
 
   const potentialMatches = routes.map((root) => ({
     route: root,
-    isMatch: window.location.pathname === root.path,
+    isMatch: checkIsRouteMatch(root.path),
   }));
 
   let match = potentialMatches.find((potentialMatche) => potentialMatche.isMatch);
@@ -61,7 +65,8 @@ export const runPageFunctional = () => {
 
 export const router = async () => {
   const match = getMatch();
-  const main = document.querySelector("main") as HTMLBodyElement;
+  const main = document.querySelector("main") as HTMLDivElement;
+
   main.innerHTML = match.route.view;
   runPageFunctional();
   setListenerForLinks();

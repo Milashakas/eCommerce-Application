@@ -13,6 +13,12 @@
   },
   "plugins": ["@typescript-eslint", "jest"],
   "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "peerDependencies": true
+      }
+    ],
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -30,7 +36,9 @@
     "jest/no-focused-tests": "error",
     "jest/no-identical-title": "error",
     "jest/prefer-to-have-length": "warn",
-    "jest/valid-expect": "error"
+    "jest/valid-expect": "error",
+    "implicit-arrow-linebreak": "off",
+    "operator-linebreak": "off"
   },
   "settings": {
     "import/resolver": {

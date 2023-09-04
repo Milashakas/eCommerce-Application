@@ -19,16 +19,16 @@ const getFooter = () => {
             <ul class="footer-list">
               <li><a href="/catalog">Catalog</a></li>
               <li><a href="/brands">Brands</a></li>
-              <li><a href="/face">Face</a></li>
-              <li><a href="/body">Body</a></li>
-              <li><a href="/hair">Hair</a></li>
+              <li><a href="/catalog/category-face">Face</a></li>
+              <li><a href="/catalog/category-body">Body</a></li>
+              <li><a href="/catalog/category-hair">Hair</a></li>
             </ul>
           </nav>
         </div>
         <div class="footer-info">
           <p class="footer-title foot-title-info">Information</p>
           <ul class="footer-info-list">
-            <li><a href="/orderInformation">How to create order</a></li>
+            <li><a href="/product">How to create order</a></li>
             <li><a href="/delivery">Delivery</a></li>
             <li><a href="/return">Return</a></li>
           </ul>
