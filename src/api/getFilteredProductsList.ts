@@ -46,6 +46,7 @@ const createQueryString = (filterData: IFilterData): string[] => {
 const getFilteredProductsList = async (
   filterData: IFilterData,
   sortDataValue: ICatalogData["sortValue"],
+  offset: number = 0,
 ): Promise<IProductsListResponseData> => {
   const productsResponseData: IProductsListResponseData = {} as IProductsListResponseData;
 
@@ -58,6 +59,7 @@ const getFilteredProductsList = async (
           limit: 9,
           "filter.query": createQueryString(filterData),
           sort: `${sortDataValue}`,
+          offset,
         },
       })
       .execute();

@@ -96,7 +96,10 @@ const catalogPage = () => {
             </ul>
           </div>
         </div>
-        <div class="catalog-section-products"></div>
+        <div class="catalog-section-products">
+          <div class="catalog-products-list"></div>
+          <div class="catalog-pagination"></div>
+        </div>
       </div>
     </section>
     `;
