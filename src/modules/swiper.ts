@@ -18,9 +18,9 @@ const setSwiper = () => {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    spaceBetween: 10,
   });
-
-  swiper.init();
+  return swiper;
 };
 
 export default setSwiper;

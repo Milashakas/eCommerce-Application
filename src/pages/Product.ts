@@ -94,6 +94,15 @@ const generateDetailedInfoBlock = (prodDataObj: IProdData) =>
       ),
   );
 
+const generateModal = (prodDataObj: IProdData) => `
+  <div class="modal" id="imageModal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      ${generateSwiperBlock(prodDataObj)}
+    </div>
+  </div>
+`;
+
 const asyncProductPage = async () => {
   const main = document.querySelector("main") as HTMLDivElement;
   let view: string = "";
@@ -115,7 +124,8 @@ const asyncProductPage = async () => {
               makeDiv({ class: "separation-text" }, "More Details") +
                 makeDiv({ class: "separation-sign" }, "<i class='fa-solid fa-angle-down'></i>"),
             ) +
-            generateDetailedInfoBlock(prodDataObj),
+            generateDetailedInfoBlock(prodDataObj) +
+            generateModal(prodDataObj),
         ),
     );
   }
