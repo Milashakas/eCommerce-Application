@@ -2,8 +2,15 @@ import PopupNotification from "../components/common/PopupNotification";
 import IPopupNotificationData from "../interfaces/IPopupNotificationData";
 import { runPageFunctional } from "../router";
 
+const getPopupElement = () => {
+  const popupNotification = document.querySelector(".popup-notification");
+
+  return popupNotification;
+};
+
 const popupAnimation = async () => {
-  const popupNotification: HTMLElement = document.querySelector(".popup-notification") as HTMLElement;
+  const popupNotification = getPopupElement();
+  if (!popupNotification) return;
 
   await new Promise((resolve) => {
     setTimeout(() => {
@@ -29,6 +36,9 @@ const popupAnimation = async () => {
 
 const showPopupNotification = async (notificationData: IPopupNotificationData) => {
   const body: HTMLBodyElement = document.body as HTMLBodyElement;
+  const prospectivePopupElement = getPopupElement();
+  if (prospectivePopupElement) prospectivePopupElement.remove();
+
   body.innerHTML += PopupNotification(notificationData);
 
   runPageFunctional();

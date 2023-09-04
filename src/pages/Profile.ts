@@ -2,6 +2,7 @@
 import ProfileInfo from "../components/profilePageCpmponents/ProfileInfo";
 import WelcomeSection from "../components/common/WelcomeSection";
 import AddressesInfo from "../components/profilePageCpmponents/AddressesInfo";
+import ProfileSettings from "../components/profilePageCpmponents/ProfileSettings";
 // Utils
 import getCurrentLocationPath from "../utils/getCurrentLocationPath";
 // Interfaces
@@ -34,6 +35,9 @@ const getProfileTab = (userData: IUserProfileStoreData) => {
       defaultShipping,
     };
     profileTabLayout = AddressesInfo(adressesInfo);
+  }
+  if (currentPath === "settings") {
+    profileTabLayout = ProfileSettings();
   }
 
   return profileTabLayout;

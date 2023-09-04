@@ -1,6 +1,6 @@
 import Profile from "../pages/Profile";
 
-const rerenderPage = () => {
+const rerenderProfilePage = () => {
   const currentPage = window.location.pathname.split("/")[1];
   const main = document.querySelector("main") as HTMLDivElement;
   if (currentPage === "profile") {
@@ -8,4 +8,4 @@ const rerenderPage = () => {
   }
 };
 
-export default rerenderPage;
+export default rerenderProfilePage;

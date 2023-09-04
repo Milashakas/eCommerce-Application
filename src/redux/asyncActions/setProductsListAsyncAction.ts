@@ -22,7 +22,7 @@ const setProspectiveFilterCategory = () => {
   } else store.dispatch(resetCatalogFilterData({ isResetCategory: true }));
 };
 
-const setProductsListAsyncAction = async () => {
+const setProductsListAsyncAction = async (offset: number = 0) => {
   store.dispatch(displayPreloaderAction(true));
 
   setProspectiveFilterCategory();
@@ -35,8 +35,8 @@ const setProductsListAsyncAction = async () => {
     const filterData: IFilterData = store.getState().catalog.filterData as IFilterData;
     const sortDataValue = store.getState().catalog.sortValue;
 
-    productsListResponseData = await getFilteredProductsList(filterData, sortDataValue);
-  } else productsListResponseData = await getProductsList();
+    productsListResponseData = await getFilteredProductsList(filterData, sortDataValue, offset);
+  } else productsListResponseData = await getProductsList(offset);
 
   const { statucCode } = productsListResponseData;
 
