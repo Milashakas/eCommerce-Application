@@ -1,7 +1,8 @@
 import { IAction, IState } from "../interfaces/IRedux";
 import rootReducer from "./rootReducer";
 import displayAuthUserProfileVew from "../controllers/displayAuthUserProfileVew";
-import rerenderPage from "../modules/rerenderPage";
+import rerenderProfilePage from "../modules/rerenderProfilePage";
+import editProfileData from "../controllers/editProfileData";
 
 const INIT_STORE: IState = {
   isAuth: false,
@@ -37,6 +38,6 @@ const createStore = () => {
 };
 
 const store = createStore();
-store.subscribe([displayAuthUserProfileVew, rerenderPage]);
+store.subscribe([displayAuthUserProfileVew, rerenderProfilePage, editProfileData]);
 
 export default store;

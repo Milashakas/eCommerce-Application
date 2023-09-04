@@ -51,3 +51,19 @@ h2 {
   display: flex;
   margin: 2rem 0;
 }
+
+// ProfileSettings component
+.profile-settings-tab {
+  display: flex;
+  flex-direction: column;
+
+  .edit-profileData-btn {
+    width: 100%;
+    max-width: 26rem;
+    margin: 0.5rem 0;
+    padding: 0.2rem;
+    outline: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}

@@ -3,13 +3,13 @@ import headerOpenMenuFunctional from "./modules/headerEvents";
 import footerOpenLinksFunctional from "./modules/footerEvents";
 import setBasicLayout from "./modules/SetBasicLayout";
 import { router, navigateTo } from "./router";
-import autoLogIn from "./redux/asyncActions/autoLogInAsyncAction";
+import autoLogInAsyncAction from "./redux/asyncActions/autoLogInAsyncAction";
 import resetStateAfterLink from "./controllers/resetStateAfterLink";
 
 setBasicLayout();
 headerOpenMenuFunctional();
 footerOpenLinksFunctional();
-autoLogIn();
+autoLogInAsyncAction();
 resetStateAfterLink();
 
 window.addEventListener("popstate", router);

@@ -154,10 +154,23 @@
 }
 
 .catalog-section-products {
-  width: 80%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  display: flex;
+  flex-direction: column;
+
+  .catalog-products-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .catalog-pagination {
+    margin-top: 1.5rem;
+    font-size: 24px;
+    .pagination-page {
+      font-size: 24px;
+    }
+  }
 }
 
 .filter-brands-list {

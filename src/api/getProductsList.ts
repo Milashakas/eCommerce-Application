@@ -16,7 +16,7 @@ const converResultArray = (resultArr: Product[]): IProductData[] => {
   return convertedArray;
 };
 
-const getProductsList = async (): Promise<IProductsListResponseData> => {
+const getProductsList = async (offset: number = 0): Promise<IProductsListResponseData> => {
   const productsResponseData: IProductsListResponseData = {} as IProductsListResponseData;
 
   try {
@@ -26,6 +26,7 @@ const getProductsList = async (): Promise<IProductsListResponseData> => {
         queryArgs: {
           limit: 9,
           sort: "id asc",
+          offset,
         },
       })
       .execute();

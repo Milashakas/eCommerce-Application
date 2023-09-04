@@ -29,6 +29,7 @@ interface ISignUpDataResult {
 
 interface IUserProfileStoreData {
   userToken?: string;
+  version?: number;
   userBasicInfo?: IUserBasicInfo;
   addresses?: IAddressData[];
   defaultShippingAddress?: number | string;

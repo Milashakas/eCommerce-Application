@@ -80,14 +80,17 @@ const resetLastNameValidationOnFocus = () => {
   }
 };
 
-const validateNames = () => {
+const validateFirstName = () => {
   const firstNameInput = document.querySelector(".first-name") as HTMLInputElement;
-  const lastNameInput = document.querySelector(".last-name") as HTMLInputElement;
 
   if (firstNameInput) {
     firstNameInput.addEventListener("blur", validateFirstNameOnBlur);
     firstNameInput.addEventListener("focus", resetFirstNameValidationOnFocus);
   }
+};
+
+const validateLastName = () => {
+  const lastNameInput = document.querySelector(".last-name") as HTMLInputElement;
 
   if (lastNameInput) {
     lastNameInput.addEventListener("blur", validateLastNameOnBlur);
@@ -95,4 +98,9 @@ const validateNames = () => {
   }
 };
 
-export default validateNames;
+const validateNames = () => {
+  validateFirstName();
+  validateLastName();
+};
+
+export { validateFirstName, validateLastName, validateNames };

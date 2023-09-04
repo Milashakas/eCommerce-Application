@@ -27,7 +27,7 @@ const disableBasketBtnLinkingInfo = () => {
 
 const setCatalog = () => {
   const list = getProductsList();
-  const catalog = document.querySelector(".catalog-section-products") as HTMLElement;
+  const catalog = document.querySelector(".catalog-products-list") as HTMLElement;
   catalog.innerHTML = "";
   setActiveCategoryLink();
 
