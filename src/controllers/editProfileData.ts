@@ -13,6 +13,7 @@ import showPopupNotification from "../modules/showPopupNotification";
 import EditModeWindow from "../components/EditModeWindow";
 // api
 import updateProfileData from "../api/updateProfileData";
+import changeProfilePassword from "../api/changeProfilePassword";
 // Async Actions
 import autoLogInAsyncAction from "../redux/asyncActions/autoLogInAsyncAction";
 
@@ -44,13 +45,21 @@ const removeEditModeWindow = () => {
 
 const submitNewData = (editModeId: string) => {
   const submitBtn = document.querySelector(".edit-mode-sumbitBtn") as HTMLButtonElement;
-  const validatedInpput = document.querySelector(".form-input input") as HTMLInputElement;
+  const validatedInpput = document.querySelectorAll(".form-input input")[0] as HTMLInputElement; // current password as well in case of changing password
 
   submitBtn.addEventListener("click", async () => {
     validatedInpput.dispatchEvent(new Event("blur"));
 
     if (validatedInpput.classList.contains("invalid")) return;
-    const responseCode = await updateProfileData(editModeId, validatedInpput.value);
+    let responseCode: number = NaN;
+
+    // Дикий костыль в случая смены пароля. Писал за 2 часа до дедлайна на характере
+    if (editModeId === "editPassword") {
+      const newPasswordInput = document.querySelector("#newPassword") as HTMLInputElement;
+      if (newPasswordInput.classList.contains("invalid")) return;
+
+      responseCode = await changeProfilePassword(validatedInpput.value, newPasswordInput.value);
+    } else responseCode = await updateProfileData(editModeId, validatedInpput.value);
 
     if (responseCode === 200) {
       await autoLogInAsyncAction();

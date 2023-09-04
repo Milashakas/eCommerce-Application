@@ -21,6 +21,7 @@ const EditModeWindow = (editModeId: string) => {
   const view = `
     <div class="edit-mode-window">
       ${inputView}
+      ${editModeId === "editPassword" ? FormPasswordInput("newPassword", "newPasswordField") : ""}
       <div class="edit-mode-options">
         <button class="edit-mode-sumbitBtn">Submit</button>
         <button class="edit-mode-cancelBtn">Cancel</button>

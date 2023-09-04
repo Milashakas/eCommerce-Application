@@ -58,11 +58,11 @@ const FormEmailInput = () => {
   return view;
 };
 
-const FormPasswordInput = () => {
+const FormPasswordInput = (id: string = "password", fieldId: string = "passwordField") => {
   const view = `
-    <div class="form-input">
+    <div class="form-input" id="${fieldId}">
       <label for="password" class="required">Password</label>
-      <input type="password" name="password" class="password-input" id="password" data-postId="password" autocomplete="current-password">
+      <input type="password" name="password" class="password-input" id="${id}" data-postId="password" autocomplete="current-password">
       <span class="btn-show-pass">
         <i class="fa-regular fa-eye-slash"></i>
       </span>
