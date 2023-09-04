@@ -1,13 +1,13 @@
 // registrationPage and loginPage functional
 import initSameShippingListener from "./setShippingAddressData";
 import togglePasswordVisibility from "./togglePasswordVisibility";
-import validateNames from "./validateNames";
+import { validateNames } from "./validateNames";
 import validateDOB from "./validateBirthDate";
 import validateEmail from "./validateEmail";
 import validatePassword from "./validatePassword";
 import validateBillingAddress from "./validateBillingAddress";
 import validateRegistrationForm from "./validateRegFormOnSubmit";
-import handleShippingAddressValidation from "./validateShippingAddress";
+import { handleShippingAddressValidation } from "./validateShippingAddress";
 import validateLoginForm from "./validateLoginFormOnSubmit";
 
 // catalogPage functional
@@ -22,6 +22,9 @@ import setSwiper from "./swiper";
 import toggleInactivePrice from "./toggleInactivePrice";
 import openedMenu from "./openFlterMenu";
 import asyncProductPage from "../pages/Product";
+
+// ProfileData
+import editProfileData from "../controllers/editProfileData";
 
 const runFunctionInRouting = async (url: string) => {
   if (url === "/signup") {
@@ -51,6 +54,8 @@ const runFunctionInRouting = async (url: string) => {
     await asyncProductPage();
     setSwiper();
     toggleInactivePrice();
+  } else if (url === "/profile") {
+    editProfileData();
   }
 };
 

@@ -1,6 +1,6 @@
 const EditBtn = (editTitle: string, id: string): string => {
   const view = `
-    <button class="edit-profileData-btn id="${id}"">${editTitle}</button>
+    <button class="edit-profileData-btn" id="${id}">${editTitle}</button>
   `;
 
   return view;
