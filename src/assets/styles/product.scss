@@ -299,7 +299,7 @@
   background-color: #fff;
   padding: 5px;
   max-width: 98%;
-  max-height: 85%;
+  max-height: 87%;
   border-radius: 5px;
 }
 
@@ -309,7 +309,7 @@
 }
 
 .modal-content > .swiper-block > .swiper {
-  max-width: 940px;
+  max-width: 870px;
   margin: 0px auto 0 0px;
 }
 
@@ -348,6 +348,10 @@
   .product-info-container {
     width: 75%;
   }
+
+  .modal-content > .swiper-block > .swiper {
+    max-width: 740px;
+  }
 }
 
 @media screen and (max-width: 1350px) {
@@ -356,6 +360,10 @@
   }
   .info-block {
     padding: 15px 10px 15px 5px;
+  }
+
+  .modal-content > .swiper-block > .swiper {
+    max-width: 710px;
   }
 }
 
