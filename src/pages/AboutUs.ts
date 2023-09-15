@@ -56,14 +56,27 @@ Start looking for a Junior Frontend position in a good company in Poland.</br>
     <div class="profilePhotoWripper">
     <img src="${pavel}" class="profilePhoto">
     </div>
-    <div class="desName">Pavel</div>
+    <div class="desName">Pavel Fursevich</div>
     </div>
 <p>Role: <span>Frontend Developer</span></p>
-<p>Location:<span>Minsk,,Belarus</span></p>
-<p>Education:<span></span></p>
-<p>Experience:<span></span></p>
+<p>Location:<span>Minsk, Belarus</span></p>
+<p>Education:<span>
+IT Academy, Minsk :</br>
+   Preparatory course "Basics of web technologies" -  07.10.2020 — 04.11.2020</br>
+   The training course "Development of websites using HTML and CSS" with a small JavaScript module - 02.12.2020 — 08.02.2021</br>
+   The training course "Development of web applications in JavaScript" - 05.05.2021 — 18.08.2021</br>
+Udemy:</br>
+    React Front To Back by Brad Traversy</br>
+YouTube:</br>
+    React JS Full Course for Beginners by Dave Gray</br>
+    React Redux Full Course for Beginners | Redux Toolkit Complete Tutorial by Dave Gray</br>
+</span></p>
+<p>Experience:<span> I have made several pet-projects which you can get acquainted with on my github.</span></p>
 <p>English level: <span>B2</span></p>
-<p>Future plans after RssSchool second stage:<span></span></p>
+<p>Future plans after RssSchool second stage:<span>
+I would like to finish current RSSchool frontend course. After that I'm going to begin the next RSS course which is related to React library.
+But despite I wrote above I understand that I have to have much more knowledge so I will learn as much as needed.
+</span></p>
 <a data-link="git" href="https://github.com/Milashakas"><img src="${gitHub}"></a>
     </div>
     <div class="aboutUsrofile milana">
