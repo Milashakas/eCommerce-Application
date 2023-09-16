@@ -77,7 +77,7 @@ YouTube:</br>
 I would like to finish current RSSchool frontend course. After that I'm going to begin the next RSS course which is related to React library.
 But despite I wrote above I understand that I have to have much more knowledge so I will learn as much as needed.
 </span></p>
-<a data-link="git" href="https://github.com/Milashakas"><img src="${gitHub}"></a>
+<a data-link="git" href="https://github.com/pauluswhite"><img src="${gitHub}"></a>
     </div>
     <div class="aboutUsrofile milana">
     <div class="photoNamewrapper">
@@ -100,7 +100,7 @@ After second stage i'm going to join to Angular course, fill some my weak sides 
 And then i have a plan to find a job as Junior or Intern Frontend Developer in Poland or in Belarus.
 </span>
 </p>
-<a data-link="git" href="https://github.com/pauluswhite"><img src="${gitHub}"></a>
+<a data-link="git" href="https://github.com/Milashakas"><img src="${gitHub}"></a>
     </div>
     </div>
     </section>
