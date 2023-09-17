@@ -6,7 +6,9 @@ const basketPage = () => {
     ${WelcomeSection("Basket")}
 
     <div class="basket-item-list"></div>
-    <p class="basket-total-cost">00.00 EUR</p>
+    <p class="basket-total-price">
+      Total price: <span class="basket-total-price-value"></span> EUR
+    </p>
     `;
   return code;
 };

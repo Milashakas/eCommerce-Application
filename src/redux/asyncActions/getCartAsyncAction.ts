@@ -16,8 +16,19 @@ import { setAnonymosUserCartID } from "../../modules/getSetAnonymosUserCartID";
 // Store
 import store from "../createStore";
 
+const getCartData = (cartResponseData: ICartResponseData) => {
+  const cartData: ICartData = {
+    cartID: cartResponseData.cartData?.id as string,
+    cartItems: cartResponseData.cartData?.lineItems as LineItem[],
+    cartVersion: cartResponseData.cartData?.version as number,
+    totalPrice: cartResponseData.cartData?.totalPrice.centAmount as number,
+  };
+
+  return cartData;
+};
+
 const getCartAsyncAction = async (cartRequestData: ICartRequestData) => {
-  const cartData: ICartData = {} as ICartData;
+  let cartData: ICartData = {} as ICartData;
 
   if (cartRequestData.cartType === "authUser") {
     let cartResponseData: ICartResponseData = await getAuthUserCart(cartRequestData.id as string);
@@ -26,9 +37,7 @@ const getCartAsyncAction = async (cartRequestData: ICartRequestData) => {
       cartResponseData = await createUserCart(cartRequestData.id as string);
     }
 
-    cartData.cartID = cartResponseData.cartData?.id as string;
-    cartData.cartItems = cartResponseData.cartData?.lineItems as LineItem[];
-    cartData.cartVersion = cartResponseData.cartData?.version as number;
+    cartData = getCartData(cartResponseData);
   } else {
     const anonymousUserCartID = cartRequestData.id;
     let cartResponseData: ICartResponseData = {} as ICartResponseData;
@@ -44,9 +53,7 @@ const getCartAsyncAction = async (cartRequestData: ICartRequestData) => {
       cartResponseData = await getNonAuthUserCart(anonymousUserCartID);
     }
 
-    cartData.cartID = cartResponseData.cartData?.id as string;
-    cartData.cartItems = cartResponseData.cartData?.lineItems as LineItem[];
-    cartData.cartVersion = cartResponseData.cartData?.version as number;
+    cartData = getCartData(cartResponseData);
   }
 
   store.dispatch(setCartData(cartData));

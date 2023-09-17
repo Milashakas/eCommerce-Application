@@ -12,6 +12,13 @@ import { ICartItemData } from "../interfaces/ICart";
 // Store
 import store from "../redux/createStore";
 
+const setTotalPriceValue = () => {
+  const totalPrice = store.getState().cart?.totalPrice as number;
+  const totalPriceValue = document.querySelector(".basket-total-price-value") as HTMLSpanElement;
+
+  totalPriceValue.innerHTML = `${totalPrice}`;
+};
+
 const setBasketProductsList = () => {
   const currentPath = getCurrentLocationPath();
 
@@ -37,6 +44,8 @@ const setBasketProductsList = () => {
 
     basketList.innerHTML += BasketItem(itemData);
   });
+
+  setTotalPriceValue();
 };
 
 export default setBasketProductsList;
