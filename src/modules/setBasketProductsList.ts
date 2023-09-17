@@ -14,9 +14,8 @@ import store from "../redux/createStore";
 
 const setBasketProductsList = () => {
   const currentPath = getCurrentLocationPath();
-  console.log(currentPath);
+
   if (currentPath !== "/basket") return;
-  console.log("BAKET PAGES");
 
   const basketItems = store.getState().cart?.cartItems as LineItem[];
   const basketList = document.querySelector(".basket-item-list") as HTMLDivElement;

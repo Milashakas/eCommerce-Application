@@ -18,8 +18,9 @@ interface ICartResponseData {
 }
 
 interface IUpdateCartdata {
-  action: "addLineItem" | "removeLineItem";
+  action: "addLineItem" | "removeLineItem" | "changeLineItemQuantity";
   productID: string;
+  quantity?: number;
 }
 
 interface ICartItemData {
