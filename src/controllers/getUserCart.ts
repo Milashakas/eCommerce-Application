@@ -8,18 +8,18 @@ import getCartAsyncAction from "../redux/asyncActions/getCartAsyncAction";
 // Modules
 import { getAnonymosUserCartID } from "../modules/getSetAnonymosUserCartID";
 
-const getUserCart = () => {
+const getUserCart = async () => {
   const state: IState = store.getState();
   const isUserAuth = state.isAuth;
 
   if (isUserAuth) {
     const userID: string = state.userData?.userToken as string;
 
-    getCartAsyncAction({ id: userID, cartType: "authUser" });
+    await getCartAsyncAction({ id: userID, cartType: "authUser" });
   } else {
     const anonymousUserCartID = getAnonymosUserCartID();
 
-    getCartAsyncAction({ id: anonymousUserCartID, cartType: "anonymous " });
+    await getCartAsyncAction({ id: anonymousUserCartID, cartType: "anonymous " });
   }
 };
 

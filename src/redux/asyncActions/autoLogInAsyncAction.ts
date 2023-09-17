@@ -23,7 +23,8 @@ const autoLogInAsyncAction = async () => {
     }
   }
 
-  getUserCart();
+  await getUserCart();
+  console.log(store.getState());
 };
 
 export default autoLogInAsyncAction;

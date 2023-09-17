@@ -3,7 +3,7 @@ import {
   LocalizedString,
   ProductTypeReference,
   ProductVariant,
-  Cart,
+  LineItem,
 } from "@commercetools/platform-sdk";
 import { IUserProfileStoreData } from "./IUserProfileData";
 
@@ -49,7 +49,7 @@ interface IState {
   isPreloader: boolean;
   catalog: ICatalogData;
   userData?: IUserProfileStoreData;
-  cart?: Cart;
+  cart?: LineItem[];
 }
 
 export { IAction, IState, ICatalogData, IProductData, IFilterData, IFilterPriceRange };
