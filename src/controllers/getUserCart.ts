@@ -4,7 +4,7 @@ import { IState } from "../interfaces/IRedux";
 // import { Cart } from "@commercetools/platform-sdk";
 
 // Async Actions
-import getCartAsyncAction from "../redux/asyncActions/getCartAsyncAction";
+import { getCartAsyncAction } from "../redux/asyncActions/getCartAsyncAction";
 // Modules
 import { getAnonymosUserCartID } from "../modules/getSetAnonymosUserCartID";
 

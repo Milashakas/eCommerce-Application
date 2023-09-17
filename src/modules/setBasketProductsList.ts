@@ -17,7 +17,7 @@ const setTotalPriceValue = () => {
   const totalPrice = store.getState().cart?.totalPrice as number;
   const totalPriceValue = document.querySelector(".basket-total-price") as HTMLSpanElement;
 
-  totalPriceValue.innerHTML = `Total price: ${totalPrice} EUR`;
+  totalPriceValue.innerHTML = `Total price: ${(totalPrice / 100).toFixed(2)} EUR`;
 };
 
 const setBasketProductsList = () => {
@@ -27,6 +27,7 @@ const setBasketProductsList = () => {
 
   const basketItems = store.getState().cart?.cartItems as LineItem[];
   const basketList = document.querySelector(".basket-item-list") as HTMLDivElement;
+
   if (!basketItems) return;
 
   basketList.innerHTML = "";

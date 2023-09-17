@@ -22,7 +22,6 @@ const updateUserCartData = async (updateData: IUpdateCartdata) => {
   };
 
   store.dispatch(setCartData(updatedcartData));
-  console.log(store.getState().cart);
 };
 
 export default updateUserCartData;

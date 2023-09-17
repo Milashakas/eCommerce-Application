@@ -59,4 +59,4 @@ const getCartAsyncAction = async (cartRequestData: ICartRequestData) => {
   store.dispatch(setCartData(cartData));
 };
 
-export default getCartAsyncAction;
+export { getCartAsyncAction, getCartData };

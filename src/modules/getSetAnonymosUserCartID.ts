@@ -4,4 +4,8 @@ const setAnonymosUserCartID = (cartID: string) => {
   localStorage.setItem("anonymousUserCartID", cartID);
 };
 
-export { getAnonymosUserCartID, setAnonymosUserCartID };
+const removeAnonymosUserCartID = () => {
+  localStorage.removeItem("anonymousUserCartID");
+};
+
+export { getAnonymosUserCartID, setAnonymosUserCartID, removeAnonymosUserCartID };
