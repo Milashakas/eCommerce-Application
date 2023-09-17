@@ -2,6 +2,7 @@ import { LineItem } from "@commercetools/platform-sdk";
 
 // Components
 import BasketItem from "../components/BasketItem";
+import EmptyCartMessage from "../components/EmptyCartMessage";
 
 // Utils
 import { getCurrentLocationPath } from "../utils/getCurrentLocationPath";
@@ -14,9 +15,9 @@ import store from "../redux/createStore";
 
 const setTotalPriceValue = () => {
   const totalPrice = store.getState().cart?.totalPrice as number;
-  const totalPriceValue = document.querySelector(".basket-total-price-value") as HTMLSpanElement;
+  const totalPriceValue = document.querySelector(".basket-total-price") as HTMLSpanElement;
 
-  totalPriceValue.innerHTML = `${totalPrice}`;
+  totalPriceValue.innerHTML = `Total price: ${totalPrice} EUR`;
 };
 
 const setBasketProductsList = () => {
@@ -29,6 +30,11 @@ const setBasketProductsList = () => {
   if (!basketItems) return;
 
   basketList.innerHTML = "";
+
+  if (!basketItems.length) {
+    basketList.innerHTML = EmptyCartMessage();
+    return;
+  }
 
   basketItems.forEach((item: LineItem) => {
     const imageLink = item.variant.images ? item.variant.images[0].url : "...";
