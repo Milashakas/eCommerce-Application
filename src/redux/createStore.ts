@@ -17,6 +17,7 @@ const INIT_STORE: IState = {
     },
     sortValue: "id asc",
   },
+  cart: undefined,
 };
 
 const createStore = () => {

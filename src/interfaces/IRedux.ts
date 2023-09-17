@@ -1,4 +1,10 @@
-import { CategoryReference, LocalizedString, ProductTypeReference, ProductVariant } from "@commercetools/platform-sdk";
+import {
+  CategoryReference,
+  LocalizedString,
+  ProductTypeReference,
+  ProductVariant,
+  Cart,
+} from "@commercetools/platform-sdk";
 import { IUserProfileStoreData } from "./IUserProfileData";
 
 interface IAction<T> {
@@ -43,6 +49,7 @@ interface IState {
   isPreloader: boolean;
   catalog: ICatalogData;
   userData?: IUserProfileStoreData;
+  cart?: Cart;
 }
 
 export { IAction, IState, ICatalogData, IProductData, IFilterData, IFilterPriceRange };

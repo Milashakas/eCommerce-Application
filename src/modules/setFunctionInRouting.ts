@@ -16,6 +16,7 @@ import setProductsListAsyncAction from "../redux/asyncActions/setProductsListAsy
 import setPriceRangeFilter from "../controllers/setPriceRangeFilter";
 import setSortSelectValue from "./setSortSelectValue";
 import sortCatalog from "../controllers/sortCatalog";
+import addItemToBasket from "./addItemToBasket";
 
 // productPage functional
 import setSwiper from "./swiper";
@@ -50,6 +51,7 @@ const runFunctionInRouting = async (url: string) => {
     openedMenu();
     setPriceRangeFilter();
     sortCatalog();
+    addItemToBasket();
   } else if (url === "/product") {
     // just to see the result
     await asyncProductPage();
