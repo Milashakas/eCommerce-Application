@@ -18,6 +18,7 @@ const updateUserCartData = async (updateData: IUpdateCartdata) => {
     cartID: response.cartData?.id as string,
     cartVersion: response.cartData?.version as number,
     cartItems: response.cartData?.lineItems as LineItem[],
+    totalPrice: response.cartData?.totalPrice.centAmount as number,
   };
 
   store.dispatch(setCartData(updatedcartData));

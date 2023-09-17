@@ -1,7 +1,6 @@
 import { ICartItemData } from "../interfaces/ICart";
 
 const BasketItem = (itemData: ICartItemData) => {
-  console.log(itemData);
   const view = `
 
   <h1>${itemData.quantity}</h1>

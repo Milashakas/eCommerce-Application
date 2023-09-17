@@ -9,6 +9,7 @@ interface ICartData {
   cartID: string;
   cartVersion: number;
   cartItems: LineItem[];
+  totalPrice: number;
 }
 
 interface ICartResponseData {
