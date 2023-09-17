@@ -22,4 +22,13 @@ interface IUpdateCartdata {
   productID: string;
 }
 
-export { ICartRequestData, ICartResponseData, IUpdateCartdata, ICartData };
+interface ICartItemData {
+  id: string;
+  quantity: number;
+  name: string;
+  imageLink: string;
+  price: string;
+  totalPrice: string;
+}
+
+export { ICartRequestData, ICartResponseData, IUpdateCartdata, ICartData, ICartItemData };

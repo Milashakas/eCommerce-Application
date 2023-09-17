@@ -1,9 +1,12 @@
+// Components
+import WelcomeSection from "../components/common/WelcomeSection";
+
 const basketPage = () => {
   const code = `
-    <section class="test-section-page">
-    <div class="test-section-page-back"></div>
-    <h2 class="test-section-page-h2">Basket</h2>
-    </section>
+    ${WelcomeSection("Basket")}
+
+    <div class="basket-item-list"></div>
+    <p class="basket-total-cost">00.00 EUR</p>
     `;
   return code;
 };

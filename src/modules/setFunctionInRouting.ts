@@ -28,6 +28,9 @@ import handleModalVisibility from "./handleModalVisibility";
 // ProfileData
 import editProfileData from "../controllers/editProfileData";
 
+// BasketPage
+import setBasketProductsList from "./setBasketProductsList";
+
 const runFunctionInRouting = async (url: string) => {
   if (url === "/signup") {
     initSameShippingListener();
@@ -60,6 +63,8 @@ const runFunctionInRouting = async (url: string) => {
     handleModalVisibility();
   } else if (url === "/profile") {
     editProfileData();
+  } else if (url === "/basket") {
+    setBasketProductsList();
   }
 };
 
