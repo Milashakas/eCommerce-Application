@@ -1,8 +1,14 @@
-import { Cart } from "@commercetools/platform-sdk";
+import { Cart, LineItem } from "@commercetools/platform-sdk";
 
 interface ICartRequestData {
   id: string | null;
   cartType: "authUser" | "anonymous ";
+}
+
+interface ICartData {
+  cartID: string;
+  cartVersion: number;
+  cartItems: LineItem[];
 }
 
 interface ICartResponseData {
@@ -11,4 +17,9 @@ interface ICartResponseData {
   statucCode?: number;
 }
 
-export { ICartRequestData, ICartResponseData };
+interface IUpdateCartdata {
+  action: "addLineItem" | "removeLineItem";
+  productID: string;
+}
+
+export { ICartRequestData, ICartResponseData, IUpdateCartdata, ICartData };

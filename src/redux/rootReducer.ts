@@ -1,5 +1,4 @@
 /* eslint-disable no-param-reassign */
-import { LineItem } from "@commercetools/platform-sdk";
 import { IAction, IState, IProductData, IFilterData, IResetFilterData, ICatalogData } from "../interfaces/IRedux";
 import {
   SET_USER_PROFILE_DATA,
@@ -12,6 +11,7 @@ import {
   SET_CART_DATA,
 } from "./actionTypes";
 import { IUserProfileStoreData } from "../interfaces/IUserProfileData";
+import { ICartData } from "../interfaces/ICart";
 
 const rootReducer = <T>(state: IState, action: IAction<T>): IState => {
   if (action.type === "__INIT__") {
@@ -63,7 +63,7 @@ const rootReducer = <T>(state: IState, action: IAction<T>): IState => {
   }
 
   if (action.type === SET_CART_DATA) {
-    const cartData: LineItem[] = action.payload as LineItem[];
+    const cartData: ICartData = action.payload as ICartData;
     state.cart = cartData;
   }
   return state;

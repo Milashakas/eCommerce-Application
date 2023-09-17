@@ -1,4 +1,3 @@
-import { LineItem } from "@commercetools/platform-sdk";
 import {
   SET_USER_PROFILE_DATA,
   LOGOUT_PROFILE,
@@ -11,6 +10,7 @@ import {
 } from "./actionTypes";
 import { IAction, IProductData, IFilterData, IResetFilterData, ICatalogData } from "../interfaces/IRedux";
 import { IUserProfileStoreData } from "../interfaces/IUserProfileData";
+import { ICartData } from "../interfaces/ICart";
 
 const setUserProfileDataAction = <T>(userProfileData: IUserProfileStoreData): IAction<T> => ({
   type: SET_USER_PROFILE_DATA,
@@ -46,7 +46,7 @@ const setCatalogSortData = <T>(sortValue: ICatalogData["sortValue"]): IAction<T>
   payload: sortValue as T,
 });
 
-const setCartData = <T>(cartData: LineItem[]): IAction<T> => ({
+const setCartData = <T>(cartData: ICartData): IAction<T> => ({
   type: SET_CART_DATA,
   payload: cartData as T,
 });

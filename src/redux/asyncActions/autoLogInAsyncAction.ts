@@ -9,7 +9,6 @@ const autoLogInAsyncAction = async () => {
   store.dispatch(displayPreloaderAction(true));
 
   const userToken = getUserToken();
-  console.log(" LOGIN AUTO");
 
   if (userToken) {
     const signInResponseData: ISignInResponseData = await autoSignIn(userToken as string);
@@ -24,7 +23,6 @@ const autoLogInAsyncAction = async () => {
   }
 
   await getUserCart();
-  console.log(store.getState());
 };
 
 export default autoLogInAsyncAction;
