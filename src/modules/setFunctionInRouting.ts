@@ -30,6 +30,7 @@ import editProfileData from "../controllers/editProfileData";
 
 // BasketPage
 import setBasketProductsList from "./setBasketProductsList";
+import clearEntireCart from "./clearEntireCart";
 
 const runFunctionInRouting = async (url: string) => {
   if (url === "/signup") {
@@ -65,6 +66,7 @@ const runFunctionInRouting = async (url: string) => {
     editProfileData();
   } else if (url === "/basket") {
     setBasketProductsList();
+    clearEntireCart();
   }
 };
 

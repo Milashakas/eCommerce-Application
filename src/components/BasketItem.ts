@@ -7,10 +7,10 @@ const BasketItem = (itemData: ICartItemData) => {
   <div class="basket-item" id="${itemData.id}">
     <img class="basket-item-img" src="${itemData.imageLink}"></img>
     <span class="basket-item-name">${itemData.name}</span>
-    <span class="basket-item-price">${itemData.discountPrice} EUR</span>
+    <span class="basket-item-price">${+itemData.discountPrice || +itemData.price} EUR</span>
     <div class="quantity">
       <input type="button" value="-" class="minus">
-      <input type="number" id="quantity_${itemData.id}" class="item-quantity" value="${itemData.quantity}" disabled step="1" inputmode="numeric" autocomplete="off">
+      <input type="number" class="item-quantity" value="${itemData.quantity}" disabled>
       <input type="button" value="+" class="plus">
     </div>
     <span class="basket-item-total-price">${totalItemPrice} EUR</span>

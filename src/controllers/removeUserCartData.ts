@@ -22,7 +22,7 @@ const removeUserCartData = async () => {
     removeAnonymosUserCartID();
     const cartResponseData: ICartResponseData = await createUserCart();
 
-    if (cartResponseData.statucCode !== 200) return;
+    if (cartResponseData.statucCode !== 201) return;
 
     const cartData = getCartData(cartResponseData);
     store.dispatch(setCartData(cartData));
