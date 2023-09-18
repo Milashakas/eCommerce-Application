@@ -30,6 +30,7 @@ interface ICartItemData {
   name: string;
   imageLink: string;
   price: string;
+  discountPrice: string;
   totalPrice: string;
 }
 

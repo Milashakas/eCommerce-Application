@@ -50,6 +50,7 @@ const setBasketProductsList = () => {
       imageLink,
       id: item.id,
       quantity: item.quantity,
+      discountPrice: ((item.price.discounted?.value.centAmount as number) / 100).toFixed(2),
     };
 
     basketList.innerHTML += BasketItem(itemData);

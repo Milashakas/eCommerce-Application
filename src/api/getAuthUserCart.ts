@@ -16,6 +16,7 @@ const getAuthUserCart = async (userID: string): Promise<ICartResponseData> => {
       .get()
       .execute();
 
+    console.log(response);
     cartResponseData.cartData = response.body;
     cartResponseData.statucCode = response.statusCode;
   } catch (error) {
