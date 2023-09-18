@@ -102,7 +102,7 @@ div.quantity input[type="button"]:hover {
   text-align: center;
   font-size: 1.4rem;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.5s ease;
   text-transform: uppercase;
   max-width: 115px;
   padding: 8px;
@@ -122,16 +122,24 @@ div.quantity input[type="button"]:hover {
   margin-bottom: 150px;
 }
 
+.coupon-and-del-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 915px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
 .coupon {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
   gap: 20px;
-  width: 98%;
-  max-width: 910px;
-  margin: 50px auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  width: 100%;
+  max-width: 915px;
 }
 
 .coupon-code {
@@ -146,7 +154,7 @@ div.quantity input[type="button"]:hover {
   text-align: center;
   font-size: 1.4rem;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.5s ease;
   text-transform: uppercase;
   max-width: 50%;
   padding: 8px;
@@ -156,9 +164,36 @@ div.quantity input[type="button"]:hover {
   background-color: rgba(96, 155, 102, 0.9);
 }
 
+.code-button:active,
+.basket-remove-button:active,
+.clear-cart-button:active,
+.minus:active,
+.plus:active {
+  transform: scale(0.97);
+}
+
 .promotion-info {
   background-color: rgba(96, 155, 102, 0.7);
   font-size: 1.8rem;
   text-align: center;
   padding: 10px;
+}
+
+.clear-cart-button {
+  border-radius: 5px;
+  border: 0;
+  background-color: rgba(96, 155, 102, 0.5);
+  text-align: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-transform: uppercase;
+  width: 200px;
+  padding: 8px;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+.clear-cart-button:hover {
+  background-color: rgba(96, 155, 102, 0.7);
 }
