@@ -98,7 +98,15 @@ const catalogPage = () => {
         </div>
         <div class="catalog-section-products">
           <div class="catalog-products-list"></div>
-          <div class="catalog-pagination"></div>
+          <div class="catalog-pagination">
+          <div class="leftPagination"><</div>
+          <div class="pagesCount">
+          <p class="currentPage">1</p>
+          <span>/</span>
+          <p class="allPages">3</p>
+          </div>
+          <div class="rightPagination">></div>
+          </div>
         </div>
       </div>
     </section>

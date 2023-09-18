@@ -156,6 +156,7 @@
 .catalog-section-products {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   .catalog-products-list {
     width: 100%;
@@ -165,7 +166,7 @@
   }
 
   .catalog-pagination {
-    margin-top: 1.5rem;
+    margin-top: 50px;
     font-size: 24px;
     .pagination-page {
       font-size: 24px;
@@ -263,6 +264,31 @@
   font-family: FontAwesome;
   font-size: 16px;
   color: #000000dc;
+}
+
+.catalog-pagination {
+  display: flex;
+  width: 150px;
+  justify-content: space-between;
+  font-size: 16px;
+}
+.pagesCount {
+  display: flex;
+  width: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+.leftPagination,
+.rightPagination {
+  border: 1px solid black;
+  padding: 7px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.leftPagination:hover,
+.rightPagination:hover {
+  border-color: gray;
 }
 
 @media screen and (max-width: 1050px) {

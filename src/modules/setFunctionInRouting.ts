@@ -17,6 +17,7 @@ import setPriceRangeFilter from "../controllers/setPriceRangeFilter";
 import setSortSelectValue from "./setSortSelectValue";
 import sortCatalog from "../controllers/sortCatalog";
 import addItemToBasket from "./addItemToBasket";
+import setPagination from "./pagination";
 
 // productPage functional
 import setSwiper from "./swiper";
@@ -50,6 +51,7 @@ const runFunctionInRouting = async (url: string) => {
   } else if (url === "/catalog") {
     await setProductsListAsyncAction();
     setCatalog();
+    setPagination();
     setSortSelectValue();
     openedMenu();
     setPriceRangeFilter();
