@@ -22,9 +22,7 @@ const pr = (name: string, img: string, price: string, description: string, id: s
     <a class="product-block" id="${id}" href="/product/${id}">
     <div class="product-block-image">
     <img src="${img}" class="product-block-img">
-    <div class="product-block-busket-button">
-    <p>Add to bag</p>
-    </div>
+    <button class="product-block-busket-button">Add to bag</button>
     </div>
     <div class="product-description-block">
     <p class="product-block-name">${name}</p>

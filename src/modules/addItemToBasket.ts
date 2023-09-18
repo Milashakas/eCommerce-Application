@@ -8,10 +8,15 @@ const addItemToBasket = () => {
     const target: Element = event.target as Element;
 
     if (target.closest(".product-block-busket-button")) {
-      const addBtn = target.closest(".product-block-busket-button") as Element;
+      const addBtn = target.closest(".product-block-busket-button") as HTMLButtonElement;
+      if (addBtn.innerHTML === "PRODUCT IN CART") {
+        return;
+      }
       const itemID = addBtn.parentElement?.parentElement?.id as string;
-
       await updateUserCartData({ action: "addLineItem", productID: itemID });
+      addBtn.innerHTML = "PRODUCT IN CART";
+      addBtn.classList.add("product-block-busket-button-red");
+      addBtn.classList.remove("product-block-busket-button");
     }
   });
 };
