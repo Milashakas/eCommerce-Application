@@ -1,13 +1,5 @@
 import updateUserCartData from "../controllers/updateUserCartData";
 
-// import { IState } from "../interfaces/IRedux";
-// import store from "../redux/createStore";
-
-// const state: IState = store.getState();
-// const array = state.cart?.cartItems;
-
-// console.log("array", array);
-
 const handleRemoveItemFromBasket = () => {
   const removeButton = document.querySelector(".cart-remove-button") as HTMLButtonElement;
 
