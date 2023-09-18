@@ -37,6 +37,7 @@ const setBasketProductsList = () => {
 
   if (!basketItems.length) {
     basketList.innerHTML = EmptyCartMessage();
+    setTotalPriceValue();
     return;
   }
 
