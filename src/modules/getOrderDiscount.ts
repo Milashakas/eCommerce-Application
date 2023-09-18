@@ -4,7 +4,6 @@ import updateUserCart from "../api/updateUserCart";
 import { ICartResponseData } from "../interfaces/ICart";
 
 // Modules
-// import setBasketProductsList from "./setBasketProductsList";
 import getUserCart from "../controllers/getUserCart";
 
 const getOrderDiscount = () => {
