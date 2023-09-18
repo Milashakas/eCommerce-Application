@@ -7,7 +7,7 @@ const getFooter = () => {
         <div class="footer-description">
           <div class="footer-logo"><img src=${logoBlack}></div>
           <p class="footer-description-p">
-            This shop provides a lot of healthy and cozy products for you body.
+            This shop provides a lot of healthy and cozy products for your body.
           </p>
           <p class="footer-description-p">
             Our products are a modern way to save youth.
