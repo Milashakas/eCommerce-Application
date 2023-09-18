@@ -1,4 +1,4 @@
-import { Cart, LineItem } from "@commercetools/platform-sdk";
+import { Cart, LineItem, DiscountCodeReference } from "@commercetools/platform-sdk";
 
 interface ICartRequestData {
   id: string | null;
@@ -10,6 +10,7 @@ interface ICartData {
   cartVersion: number;
   cartItems: LineItem[];
   totalPrice: number;
+  discountCode?: DiscountCodeReference;
 }
 
 interface ICartResponseData {
@@ -19,9 +20,10 @@ interface ICartResponseData {
 }
 
 interface IUpdateCartdata {
-  action: "addLineItem" | "removeLineItem" | "changeLineItemQuantity";
-  productID: string;
+  action: "addLineItem" | "removeLineItem" | "changeLineItemQuantity" | "addDiscountCode" | "removeDiscountCode";
+  productID?: string;
   quantity?: number;
+  code?: string;
 }
 
 interface ICartItemData {

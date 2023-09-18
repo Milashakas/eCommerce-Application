@@ -24,6 +24,11 @@ const getCartData = (cartResponseData: ICartResponseData) => {
     totalPrice: cartResponseData.cartData?.totalPrice.centAmount as number,
   };
 
+  const discountCodesLength = cartResponseData.cartData?.discountCodes.length;
+  if (discountCodesLength && discountCodesLength > 0) {
+    cartData.discountCode = cartResponseData.cartData?.discountCodes[0].discountCode;
+  }
+
   return cartData;
 };
 

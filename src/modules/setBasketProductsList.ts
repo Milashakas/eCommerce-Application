@@ -17,10 +17,23 @@ import modifyCartItem from "./modifyCartItem";
 import store from "../redux/createStore";
 
 const setTotalPriceValue = () => {
-  const totalPrice = store.getState().cart?.totalPrice as number;
-  const totalPriceValue = document.querySelector(".basket-total-price") as HTMLSpanElement;
+  const state = store.getState();
+  const totalPrice = state.cart?.totalPrice as number;
+  const discountCode = state.cart?.discountCode;
+  const price = (totalPrice / 100).toFixed(2);
+  let priceValue = "";
 
-  totalPriceValue.innerHTML = `Total price: ${(totalPrice / 100).toFixed(2)} EUR`;
+  if (discountCode) {
+    const originalPrice = (((totalPrice / 100) * 100) / 90).toFixed(2);
+    priceValue = `Total Price: <span class="crossedText">${originalPrice}</span>   ${price} EUR`;
+  } else {
+    priceValue = `Total Price: ${price} EUR`;
+  }
+
+  const totalPriceValue = document.querySelector(".basket-total-price") as HTMLSpanElement;
+  totalPriceValue.innerHTML = "";
+
+  totalPriceValue.innerHTML = priceValue;
 };
 
 const setBasketProductsList = () => {

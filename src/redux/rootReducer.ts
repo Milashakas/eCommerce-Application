@@ -63,7 +63,6 @@ const rootReducer = <T>(state: IState, action: IAction<T>): IState => {
   }
 
   if (action.type === SET_CART_DATA) {
-    console.log("HELLO");
     const cartData: ICartData = action.payload as ICartData;
     state.cart = cartData;
   }

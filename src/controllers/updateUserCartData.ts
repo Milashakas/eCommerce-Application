@@ -23,6 +23,10 @@ const updateUserCartData = async (updateData: IUpdateCartdata) => {
     totalPrice: response.cartData?.totalPrice.centAmount as number,
   };
 
+  if (response.cartData?.discountCodes.length) {
+    updatedcartData.discountCode = response.cartData.discountCodes[0].discountCode;
+  }
+
   store.dispatch(setCartData(updatedcartData));
 };
 

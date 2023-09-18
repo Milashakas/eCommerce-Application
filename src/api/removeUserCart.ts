@@ -30,9 +30,7 @@ const removeUserCart = async () => {
   } catch (error) {
     if (error instanceof Error) {
       const responseError: IResponseError = error as IResponseError;
-      console.log(responseError);
-      // cartResponseData.message = error.message;
-      // cartResponseData.statucCode = responseError.code;
+      console.log(responseError.message);
     }
   }
 
