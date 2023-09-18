@@ -1,5 +1,4 @@
 .product-block {
-  height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -45,10 +44,11 @@
 }
 .product-description-block {
   display: flex;
-  height: 100px;
+  height: 120px;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
+  margin-top: 15px;
 }
 .product-block-name,
 .product-block-price {
@@ -80,11 +80,11 @@
 }
 
 @media screen and (max-width: 500px) {
-  .product-block {
-    height: 300px;
+  .product-block-busket-button {
+    bottom: -60px;
   }
   .product-description-block {
-    height: 120px;
+    height: 200px;
 
     .product-block-name {
       font-size: 14px;
