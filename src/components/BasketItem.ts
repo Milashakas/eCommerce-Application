@@ -2,7 +2,7 @@ import { ICartItemData } from "../interfaces/ICart";
 
 const BasketItem = (itemData: ICartItemData) => {
   const totalItemPrice = (+itemData.totalPrice / 100).toFixed(2);
-  console.log(itemData);
+
   const view = `
   <div class="basket-item" id="${itemData.id}">
     <img class="basket-item-img" src="${itemData.imageLink}"></img>
