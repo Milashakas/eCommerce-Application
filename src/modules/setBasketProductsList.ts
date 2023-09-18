@@ -10,6 +10,9 @@ import { getCurrentLocationPath } from "../utils/getCurrentLocationPath";
 // Interfaces
 import { ICartItemData } from "../interfaces/ICart";
 
+// Modules
+import changeCartItemQuantity from "./changeCartItemQuantity";
+
 // Store
 import store from "../redux/createStore";
 
@@ -53,6 +56,7 @@ const setBasketProductsList = () => {
   });
 
   setTotalPriceValue();
+  changeCartItemQuantity();
 };
 
 export default setBasketProductsList;

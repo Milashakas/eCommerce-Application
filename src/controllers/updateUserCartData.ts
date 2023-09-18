@@ -14,6 +14,8 @@ import updateUserCart from "../api/updateUserCart";
 const updateUserCartData = async (updateData: IUpdateCartdata) => {
   const response: ICartResponseData = await updateUserCart(updateData);
 
+  console.log("FSAFSAFSA\n", response);
+
   const updatedcartData: ICartData = {
     cartID: response.cartData?.id as string,
     cartVersion: response.cartData?.version as number,
