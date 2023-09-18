@@ -39,7 +39,7 @@ const setTotalPriceValue = () => {
 const setBasketProductsList = () => {
   const currentPath = getCurrentLocationPath();
 
-  if (currentPath !== "/basket") return;
+  if (currentPath !== "basket") return;
 
   const basketItems = store.getState().cart?.cartItems as LineItem[];
   const basketList = document.querySelector(".basket-item-list") as HTMLDivElement;

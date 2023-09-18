@@ -4,6 +4,7 @@ import displayAuthUserProfileVew from "../controllers/displayAuthUserProfileVew"
 import rerenderProfilePage from "../modules/rerenderProfilePage";
 import editProfileData from "../controllers/editProfileData";
 import setBasketProductsList from "../modules/setBasketProductsList";
+import setRedButton from "../modules/setRedButton";
 
 const INIT_STORE: IState = {
   isAuth: false,
@@ -45,5 +46,6 @@ store.subscribe(displayAuthUserProfileVew);
 store.subscribe(rerenderProfilePage);
 store.subscribe(editProfileData);
 store.subscribe(setBasketProductsList);
+store.subscribe(setRedButton);
 
 export default store;
