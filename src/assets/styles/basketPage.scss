@@ -14,7 +14,7 @@
   justify-content: space-between;
   gap: 20px;
   width: 100%;
-  max-width: 830px;
+  max-width: 915px;
 }
 
 .basket-item-img {
@@ -43,7 +43,8 @@
 .basket-item-line {
   border: 1px solid rgba(0, 0, 0, 0.105);
   display: block;
-  width: 100%;
+  width: 98%;
+  max-width: 930px;
   margin-top: 8px;
   margin-bottom: 8px;
 }
@@ -117,6 +118,47 @@ div.quantity input[type="button"]:hover {
   color: #000;
   font-weight: bold;
   text-transform: uppercase;
-  margin-top: -32px;
+  margin-top: 0px;
   margin-bottom: 150px;
+}
+
+.coupon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  width: 98%;
+  max-width: 910px;
+  margin: 50px auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.coupon-code {
+  width: 50%;
+  border-radius: 5px;
+}
+
+.code-button {
+  border-radius: 5px;
+  border: 0;
+  background-color: rgba(96, 155, 102, 0.7);
+  text-align: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-transform: uppercase;
+  max-width: 50%;
+  padding: 8px;
+}
+
+.code-button:hover {
+  background-color: rgba(96, 155, 102, 0.9);
+}
+
+.promotion-info {
+  background-color: rgba(96, 155, 102, 0.7);
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 10px;
 }
