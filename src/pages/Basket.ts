@@ -15,8 +15,6 @@ const basketPage = () => {
       <button type="submit" class="clear-cart-button">Clear Shopping Cart</button>
     </div>
     <p class="basket-total-price"></p>
-
-
     `;
   return code;
 };

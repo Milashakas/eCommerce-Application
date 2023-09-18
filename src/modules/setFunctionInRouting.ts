@@ -24,6 +24,7 @@ import toggleInactivePrice from "./toggleInactivePrice";
 import openedMenu from "./openFlterMenu";
 import asyncProductPage from "../pages/Product";
 import handleModalVisibility from "./handleModalVisibility";
+import handleAddingItemsToBasket from "./handleAddingItemsToBasket";
 
 // ProfileData
 import editProfileData from "../controllers/editProfileData";
@@ -61,6 +62,7 @@ const runFunctionInRouting = async (url: string) => {
     setSwiper();
     toggleInactivePrice();
     handleModalVisibility();
+    handleAddingItemsToBasket();
   } else if (url === "/profile") {
     editProfileData();
   } else if (url === "/basket") {

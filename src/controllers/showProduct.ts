@@ -33,6 +33,7 @@ const showProduct = async (): Promise<IProdData | null> => {
       rawSalePrice !== undefined
         ? `${(rawSalePrice / 100).toFixed(2)} <i class='fa-solid fa-euro-sign'></i><div class="sale-img"></div>`
         : "";
+    const prodID = product.id;
 
     prodDataObj = {
       brandLogo: prodBrandLogo,
@@ -46,6 +47,7 @@ const showProduct = async (): Promise<IProdData | null> => {
       about: prodAbout,
       beautyTips: prodBeautyTips,
       salePrice: prodSalePrice,
+      id: prodID,
     };
   } else {
     return null;
