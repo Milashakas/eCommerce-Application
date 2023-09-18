@@ -6,9 +6,11 @@ import {
   SET_CATALOG_FILTER_DATA,
   RESET_CATALOG_FILTER_DATA,
   SET_SORT_VALUE,
+  SET_CART_DATA,
 } from "./actionTypes";
 import { IAction, IProductData, IFilterData, IResetFilterData, ICatalogData } from "../interfaces/IRedux";
 import { IUserProfileStoreData } from "../interfaces/IUserProfileData";
+import { ICartData } from "../interfaces/ICart";
 
 const setUserProfileDataAction = <T>(userProfileData: IUserProfileStoreData): IAction<T> => ({
   type: SET_USER_PROFILE_DATA,
@@ -44,5 +46,10 @@ const setCatalogSortData = <T>(sortValue: ICatalogData["sortValue"]): IAction<T>
   payload: sortValue as T,
 });
 
-export { setUserProfileDataAction, logoutProfileAction, setProductsListAction };
+const setCartData = <T>(cartData: ICartData): IAction<T> => ({
+  type: SET_CART_DATA,
+  payload: cartData as T,
+});
+
+export { setUserProfileDataAction, logoutProfileAction, setProductsListAction, setCartData };
 export { displayPreloaderAction, setCatalogFilterData, resetCatalogFilterData, setCatalogSortData };

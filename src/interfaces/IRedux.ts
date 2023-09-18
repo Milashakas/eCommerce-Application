@@ -1,5 +1,7 @@
 import { CategoryReference, LocalizedString, ProductTypeReference, ProductVariant } from "@commercetools/platform-sdk";
+
 import { IUserProfileStoreData } from "./IUserProfileData";
+import { ICartData } from "./ICart";
 
 interface IAction<T> {
   type: string;
@@ -43,6 +45,7 @@ interface IState {
   isPreloader: boolean;
   catalog: ICatalogData;
   userData?: IUserProfileStoreData;
+  cart?: ICartData;
 }
 
 export { IAction, IState, ICatalogData, IProductData, IFilterData, IFilterPriceRange };

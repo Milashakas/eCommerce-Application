@@ -3,6 +3,7 @@ import rootReducer from "./rootReducer";
 import displayAuthUserProfileVew from "../controllers/displayAuthUserProfileVew";
 import rerenderProfilePage from "../modules/rerenderProfilePage";
 import editProfileData from "../controllers/editProfileData";
+import setBasketProductsList from "../modules/setBasketProductsList";
 
 const INIT_STORE: IState = {
   isAuth: false,
@@ -17,19 +18,20 @@ const INIT_STORE: IState = {
     },
     sortValue: "id asc",
   },
+  cart: undefined,
 };
 
 const createStore = () => {
   let state: IState = rootReducer(INIT_STORE, { type: "__INIT__" });
-  let subscribers: CallableFunction[] = [];
+  const subscribers: CallableFunction[] = [];
 
   return {
     dispatch<T>(action: IAction<T>) {
       state = rootReducer(state, action);
       subscribers.forEach((subscriber) => subscriber());
     },
-    subscribe(callbacksArr: CallableFunction[]) {
-      subscribers = callbacksArr;
+    subscribe(callback: CallableFunction) {
+      subscribers.push(callback);
     },
     getState() {
       return state;
@@ -38,6 +40,10 @@ const createStore = () => {
 };
 
 const store = createStore();
-store.subscribe([displayAuthUserProfileVew, rerenderProfilePage, editProfileData]);
+
+store.subscribe(displayAuthUserProfileVew);
+store.subscribe(rerenderProfilePage);
+store.subscribe(editProfileData);
+store.subscribe(setBasketProductsList);
 
 export default store;

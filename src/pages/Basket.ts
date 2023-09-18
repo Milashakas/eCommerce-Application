@@ -1,9 +1,20 @@
+// Components
+import WelcomeSection from "../components/common/WelcomeSection";
+
 const basketPage = () => {
   const code = `
-    <section class="test-section-page">
-    <div class="test-section-page-back"></div>
-    <h2 class="test-section-page-h2">Basket</h2>
-    </section>
+    ${WelcomeSection("Basket")}
+    <div class="promotion-info">Fantastic Offer For Our Clients During Autumn 2023! Get 10% OFF For Everything Using Our Special Discount Code: AUTUMNSALECODE</div>
+    <div class="basket-item-list"></div>
+    <div class="coupon-and-del-section">
+      <div class="coupon">
+        <input type="text" name="coupon_code" class="coupon-code" id="coupon_code" value="" placeholder="Add Your Discount Code">
+        <button type="submit" class="code-button" name="apply_coupon" value="Apply code">
+        Apply discount</button>
+      </div>
+      <button type="submit" class="clear-cart-button">Clear Shopping Cart</button>
+    </div>
+    <p class="basket-total-price"></p>
     `;
   return code;
 };

@@ -74,11 +74,9 @@ export const router = async () => {
 
 export const navigateTo = (url: string) => {
   if (url.includes("github")) {
-    console.log(url);
     window.history.pushState(null, "", url);
     return;
   }
-  console.log(url);
   window.history.pushState(null, "", url);
   router();
 };

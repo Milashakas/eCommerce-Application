@@ -3,6 +3,7 @@ import autoSignIn from "../../api/autoSignIn";
 import { ISignInResponseData } from "../../interfaces/IUserProfileData";
 import store from "../createStore";
 import { setUserProfileDataAction, displayPreloaderAction } from "../actions";
+import getUserCart from "../../controllers/getUserCart";
 
 const autoLogInAsyncAction = async () => {
   store.dispatch(displayPreloaderAction(true));
@@ -20,6 +21,8 @@ const autoLogInAsyncAction = async () => {
       store.dispatch(setUserProfileDataAction({}));
     }
   }
+
+  await getUserCart();
 };
 
 export default autoLogInAsyncAction;

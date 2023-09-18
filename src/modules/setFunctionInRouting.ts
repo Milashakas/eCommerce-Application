@@ -16,6 +16,8 @@ import setProductsListAsyncAction from "../redux/asyncActions/setProductsListAsy
 import setPriceRangeFilter from "../controllers/setPriceRangeFilter";
 import setSortSelectValue from "./setSortSelectValue";
 import sortCatalog from "../controllers/sortCatalog";
+import addItemToBasket from "./addItemToBasket";
+// import setRedButton from "./setRedButton";
 
 // productPage functional
 import setSwiper from "./swiper";
@@ -23,9 +25,15 @@ import toggleInactivePrice from "./toggleInactivePrice";
 import openedMenu from "./openFlterMenu";
 import asyncProductPage from "../pages/Product";
 import handleModalVisibility from "./handleModalVisibility";
+import handleAddingItemsToBasket from "./handleAddingItemsToBasket";
 
 // ProfileData
 import editProfileData from "../controllers/editProfileData";
+
+// BasketPage
+import setBasketProductsList from "./setBasketProductsList";
+import clearEntireCart from "./clearEntireCart";
+import getOrderDiscount from "./getOrderDiscount";
 
 const runFunctionInRouting = async (url: string) => {
   if (url === "/signup") {
@@ -50,14 +58,21 @@ const runFunctionInRouting = async (url: string) => {
     openedMenu();
     setPriceRangeFilter();
     sortCatalog();
+    addItemToBasket();
+    // setRedButton();
   } else if (url === "/product") {
     // just to see the result
     await asyncProductPage();
     setSwiper();
     toggleInactivePrice();
     handleModalVisibility();
+    handleAddingItemsToBasket();
   } else if (url === "/profile") {
     editProfileData();
+  } else if (url === "/basket") {
+    setBasketProductsList();
+    clearEntireCart();
+    getOrderDiscount();
   }
 };
 

@@ -1,0 +1,31 @@
+.emptyCartSectionWrapper {
+  margin: 0px auto;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24px;
+  line-height: 35px;
+  text-align: center;
+  i {
+    font-size: 35px;
+  }
+}
+
+.emptyCart-header {
+  margin: 15px 0px;
+}
+.emptyCart-catalogBtn {
+  border: 2px solid black;
+  padding: 10px 20px;
+  transition: all 0.25s ease;
+  border-radius: 30px;
+  margin-top: 30px;
+}
+
+.emptyCart-catalogBtn:hover {
+  border: 2px solid rgb(109, 108, 108);
+  padding: 10px 20px;
+}
