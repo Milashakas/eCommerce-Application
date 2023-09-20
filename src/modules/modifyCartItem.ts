@@ -1,9 +1,10 @@
 // Controllers
 import updateUserCartData from "../controllers/updateUserCartData";
+import setCount from "../components/getCountCart";
 
 const removeItem = async (target: Element) => {
   const itemID = target.parentElement?.id as string;
-
+  setCount();
   await updateUserCartData({
     action: "removeLineItem",
     productID: itemID,
@@ -16,6 +17,7 @@ const changeItemQuantity = async (target: Element) => {
   const currentValue = +(pressedBtn.parentElement?.children[1] as HTMLInputElement).value;
   const newValue = pressedBtn.value === "+" ? currentValue + 1 : currentValue - 1;
 
+  setCount();
   if (!newValue) return;
 
   await updateUserCartData({

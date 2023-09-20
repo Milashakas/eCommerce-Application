@@ -5,12 +5,14 @@ import setBasicLayout from "./modules/SetBasicLayout";
 import { router, navigateTo } from "./router";
 import autoLogInAsyncAction from "./redux/asyncActions/autoLogInAsyncAction";
 import resetStateAfterLink from "./controllers/resetStateAfterLink";
+import setCount from "./components/getCountCart";
 
 setBasicLayout();
 headerOpenMenuFunctional();
 footerOpenLinksFunctional();
 autoLogInAsyncAction();
 resetStateAfterLink();
+setCount();
 
 window.addEventListener("popstate", router);
 
