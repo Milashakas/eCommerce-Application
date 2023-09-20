@@ -43,5 +43,4 @@ const modifyCartItem = () => {
 
   basketItemList.addEventListener("click", modifyCartItemAction);
 };
-
 export default modifyCartItem;

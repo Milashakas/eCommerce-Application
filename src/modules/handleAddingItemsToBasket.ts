@@ -1,18 +1,22 @@
 import updateUserCartData from "../controllers/updateUserCartData";
+import setCount from "../components/getCountCart";
+import getProductCartId from "./getIdCart";
 
 const handleRemoveItemFromBasket = () => {
   const removeButton = document.querySelector(".cart-remove-button") as HTMLButtonElement;
 
   removeButton?.addEventListener("click", async () => {
     const itemID = removeButton.getAttribute("id") as string;
-    await updateUserCartData({ action: "removeLineItem", productID: itemID });
+    const currentId = getProductCartId(itemID) as string;
+    console.log(currentId);
+    await updateUserCartData({ action: "removeLineItem", productID: currentId });
 
-    const basketCountElement = document.querySelector(".basket-count");
-    const currentCount = parseInt(basketCountElement?.innerHTML || "0", 10);
+    // const basketCountElement = document.querySelector(".basket-count");
+    // const currentCount = parseInt(basketCountElement?.innerHTML || "0", 10);
 
-    if (currentCount > 0) {
-      basketCountElement!.innerHTML = (currentCount - 1).toString();
-    }
+    // if (currentCount > 0) {
+    // basketCountElement!.innerHTML = (currentCount - 1).toString();
+    // }
 
     const cartButton = document.querySelector(".cart-button") as HTMLButtonElement;
     if (cartButton) {
@@ -23,6 +27,7 @@ const handleRemoveItemFromBasket = () => {
     removeButton.classList.add("inactive");
     removeButton.setAttribute("disabled", "disabled");
   });
+  setCount();
 };
 
 const handleAddingItemsToBasket = () => {
@@ -31,10 +36,10 @@ const handleAddingItemsToBasket = () => {
   cartButton?.addEventListener("click", async () => {
     const itemID = cartButton.getAttribute("id") as string;
     await updateUserCartData({ action: "addLineItem", productID: itemID });
-
-    const basketCountElement = document.querySelector(".basket-count");
-    const currentCount = parseInt(basketCountElement?.innerHTML || "0", 10);
-    basketCountElement!.innerHTML = (currentCount + 1).toString();
+    setCount();
+    // const basketCountElement = document.querySelector(".basket-count");
+    // const currentCount = parseInt(basketCountElement?.innerHTML || "0", 10);
+    // basketCountElement!.innerHTML = (currentCount + 1).toString();
 
     const removeButton = document.querySelector(".cart-remove-button") as HTMLButtonElement;
     if (removeButton) {

@@ -69,7 +69,7 @@ const generateInfoBlock = (prodDataObj: IProdData) =>
           makeDiv({ class: "product-price-line" }),
       ) +
       makeDiv(
-        { class: "cart-button-block" },
+        { class: "cart-button-block", id: `${prodDataObj.id}` },
         makeTag("button", { type: "submit", class: "cart-button", id: `${prodDataObj.id}` }, "Add to cart") +
           makeTag(
             "button",
