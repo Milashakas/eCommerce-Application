@@ -1,23 +1,26 @@
 import { IState } from "../interfaces/IRedux";
 import store from "../redux/createStore";
 
-const setRedButton = async () => {
-  const path = window.location.pathname;
+// utils
+import { getCurrentLocationPath } from "../utils/getCurrentLocationPath";
 
-  if (path !== "/catalog") {
-    return;
-  }
+const setRedButton = () => {
+  const path = getCurrentLocationPath();
+
+  if (path !== "catalog") return;
+
   const state: IState = store.getState();
   const array = state.cart?.cartItems;
   console.log(array);
-  console.log(state);
+  // Всё ок, но почему-то синтаксис на 18 строке не работает, хотя должен
   array?.forEach((item) => {
-    const elem = document.getElementById(item.id);
+    const elem = document.getElementById(`${item.productId}`) as HTMLAnchorElement;
     const button = elem?.querySelector(".product-block-busket-button") as HTMLButtonElement;
-    console.log(elem);
-    button.innerHTML = "PRODUCT IN CART";
-    button.classList.add("product-block-busket-button-red");
-    button.classList.remove("product-block-busket-button");
+    if (button) {
+      button.innerHTML = "PRODUCT IN CART";
+      button.classList.add("product-block-busket-button-red");
+      button.classList.remove("product-block-busket-button");
+    }
   });
 };
 

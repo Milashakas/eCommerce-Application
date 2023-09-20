@@ -18,7 +18,7 @@
 }
 
 .basket-item-img {
-  width: 100px;
+  width: 80px;
 }
 
 .basket-item-name {
@@ -196,4 +196,34 @@ div.quantity input[type="button"]:hover {
 
 .clear-cart-button:hover {
   background-color: rgba(96, 155, 102, 0.7);
+}
+
+@media screen and (max-width: 600px) {
+  .basket-item-name {
+    font-size: 12px;
+  }
+
+  .basket-item-img {
+    width: 50px;
+  }
+  .basket-remove-button {
+    font-size: 10px;
+  }
+  .basket-item {
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .basket-item-price,
+  .basket-item-total-price {
+    font-size: 12px;
+  }
+  .code-button,
+  .clear-cart-button {
+    font-size: 12px;
+  }
+  .clear-cart-button {
+    width: 150px;
+    margin-left: 5px;
+  }
 }

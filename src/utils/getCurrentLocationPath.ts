@@ -5,8 +5,10 @@ const getCurrentLocationSecondPath = (): string | undefined => {
 };
 
 const getCurrentLocationPath = (): string => {
-  const path = window.location.pathname;
-  return path;
+  const currentPath = window.location.pathname;
+
+  const firstPath = currentPath.split("/")[1];
+  return firstPath;
 };
 
 export { getCurrentLocationSecondPath, getCurrentLocationPath };
