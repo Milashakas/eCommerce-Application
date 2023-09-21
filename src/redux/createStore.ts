@@ -7,6 +7,7 @@ import setBasketProductsList from "../modules/setBasketProductsList";
 import setRedButton from "../modules/setRedButton";
 import setCount from "../components/getCountCart";
 import getProductCartId from "../modules/getIdCart";
+import setRemoveButton from "../modules/addRemoveButton";
 
 const INIT_STORE: IState = {
   isAuth: false,
@@ -50,6 +51,8 @@ store.subscribe(editProfileData);
 store.subscribe(setBasketProductsList);
 store.subscribe(setRedButton);
 store.subscribe(setCount);
+store.subscribe(setRemoveButton);
 store.subscribe(getProductCartId);
+store.subscribe(setRemoveButton);
 
 export default store;

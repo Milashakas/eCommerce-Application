@@ -26,6 +26,7 @@ import openedMenu from "./openFlterMenu";
 import asyncProductPage from "../pages/Product";
 import handleModalVisibility from "./handleModalVisibility";
 import handleAddingItemsToBasket from "./handleAddingItemsToBasket";
+import setRemoveButton from "./addRemoveButton";
 
 // ProfileData
 import editProfileData from "../controllers/editProfileData";
@@ -67,6 +68,7 @@ const runFunctionInRouting = async (url: string) => {
     toggleInactivePrice();
     handleModalVisibility();
     handleAddingItemsToBasket();
+    setRemoveButton();
   } else if (url === "/profile") {
     editProfileData();
   } else if (url === "/basket") {
