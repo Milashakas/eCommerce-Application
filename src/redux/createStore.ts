@@ -19,6 +19,7 @@ const INIT_STORE: IState = {
     filterData: {
       category: undefined,
       priceRange: undefined,
+      searchText: undefined,
     },
     sortValue: "id asc",
   },
@@ -53,6 +54,5 @@ store.subscribe(setRedButton);
 store.subscribe(setCount);
 store.subscribe(setRemoveButton);
 store.subscribe(getProductCartId);
-store.subscribe(setRemoveButton);
 
 export default store;

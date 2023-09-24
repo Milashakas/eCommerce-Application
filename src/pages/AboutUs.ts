@@ -72,7 +72,7 @@ YouTube:</br>
     React Redux Full Course for Beginners | Redux Toolkit Complete Tutorial by Dave Gray</br>
 </span></p>
 <p>Experience:<span> I have made several pet-projects which you can get acquainted with on my github.</span></p>
-<p>English level: <span>B2</span></p>
+<p>English level: <span>B1</span></p>
 <p>Future plans after RssSchool second stage:<span>
 I would like to finish current RSSchool frontend course. After that I'm going to begin the next RSS course which is related to React library.
 But despite I wrote above I understand that I have to have much more knowledge so I will learn as much as needed.

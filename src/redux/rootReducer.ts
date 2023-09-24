@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { IAction, IState, IProductData, IFilterData, IResetFilterData, ICatalogData } from "../interfaces/IRedux";
+import { IAction, IState, IFilterData, IResetFilterData, ICatalogData, IProductsListData } from "../interfaces/IRedux";
 import {
   SET_USER_PROFILE_DATA,
   LOGOUT_PROFILE,
@@ -36,8 +36,10 @@ const rootReducer = <T>(state: IState, action: IAction<T>): IState => {
   }
 
   if (action.type === SET_PRODUCTS_LIST) {
-    const productsList: IProductData[] = action.payload as IProductData[];
-    state.catalog.productsList = productsList;
+    const productsListData: IProductsListData = action.payload as IProductsListData;
+    state.catalog.productsList = productsListData.productsList;
+    state.catalog.total = productsListData.total;
+    state.catalog.offset = productsListData.offset;
     state.isPreloader = false;
   }
 
@@ -45,9 +47,11 @@ const rootReducer = <T>(state: IState, action: IAction<T>): IState => {
     const filterData: IFilterData = action.payload as IFilterData;
     const { category } = filterData;
     const { priceRange } = filterData;
+    const { searchText } = filterData;
     if (state.catalog.filterData) {
       if (category) state.catalog.filterData.category = category;
       if (priceRange) state.catalog.filterData.priceRange = priceRange;
+      if (searchText) state.catalog.filterData.searchText = searchText;
     }
   }
 
@@ -55,6 +59,7 @@ const rootReducer = <T>(state: IState, action: IAction<T>): IState => {
     const isResetData: IResetFilterData = action.payload as IResetFilterData;
     if (isResetData.isResetCategory) delete state.catalog.filterData?.category;
     if (isResetData.isResetPrice) delete state.catalog.filterData?.priceRange;
+    if (isResetData.isResetSearchTextData) delete state.catalog.filterData?.searchText;
   }
 
   if (action.type === SET_SORT_VALUE) {

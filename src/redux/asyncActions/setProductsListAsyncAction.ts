@@ -1,4 +1,6 @@
 import getProductsList from "../../api/getProductsList";
+import getFilteredProductsList from "../../api/getFilteredProductsList";
+
 import {
   setProductsListAction,
   displayPreloaderAction,
@@ -8,8 +10,7 @@ import {
 import { IProductsListResponseData } from "../../interfaces/IProducts";
 import { navigateTo } from "../../router";
 import store from "../createStore";
-import { IProductData, IFilterData } from "../../interfaces/IRedux";
-import getFilteredProductsList from "../../api/getFilteredProductsList";
+import { IProductData, IFilterData, IProductsListData } from "../../interfaces/IRedux";
 import checkIsAnyCatalogFilter from "../../modules/checkIsAnyCatalogFilter";
 
 const setProspectiveFilterCategory = () => {
@@ -35,6 +36,7 @@ const setProductsListAsyncAction = async (offset: number = 0) => {
     const filterData: IFilterData = store.getState().catalog.filterData as IFilterData;
     const sortDataValue = store.getState().catalog.sortValue;
 
+    // eslint-disable-next-line max-len
     productsListResponseData = await getFilteredProductsList(filterData, sortDataValue, offset);
   } else productsListResponseData = await getProductsList(offset);
 
@@ -46,7 +48,14 @@ const setProductsListAsyncAction = async (offset: number = 0) => {
   } else {
     // eslint-disable-next-line max-len
     const productsList: IProductData[] = productsListResponseData.catalogData?.productsList as IProductData[];
-    store.dispatch(setProductsListAction(productsList));
+
+    const productsListData: IProductsListData = {
+      productsList,
+      total: productsListResponseData.catalogData?.total as number,
+      offset: productsListResponseData.catalogData?.offset as number,
+    };
+
+    store.dispatch(setProductsListAction(productsListData));
   }
 };
 

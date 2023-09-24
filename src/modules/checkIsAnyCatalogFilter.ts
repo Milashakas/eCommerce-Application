@@ -6,7 +6,7 @@ const checkIsAnyCatalogFilter = (): boolean => {
 
   if (!filterData) return isAnyFilter;
 
-  if (filterData.category || filterData.priceRange) isAnyFilter = true;
+  if (filterData.category || filterData.priceRange || filterData.searchText) isAnyFilter = true;
 
   return isAnyFilter;
 };

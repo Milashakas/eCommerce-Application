@@ -2,10 +2,18 @@
 import store from "../redux/createStore";
 import { resetCatalogFilterData } from "../redux/actions";
 
+// Interfaces
+import { IResetFilterData } from "../interfaces/IRedux";
+
 const setResetStateAction = (linksArr: NodeListOf<HTMLLinkElement>) => {
   linksArr.forEach((link) => {
+    const resetData: IResetFilterData = {
+      isResetCategory: true,
+      isResetPrice: true,
+      isResetSearchTextData: true,
+    };
     link.addEventListener("click", () => {
-      store.dispatch(resetCatalogFilterData({ isResetCategory: true, isResetPrice: true }));
+      store.dispatch(resetCatalogFilterData(resetData));
     });
   });
 };
