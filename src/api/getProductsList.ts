@@ -17,7 +17,6 @@ const converResultArray = (resultArr: Product[]): IProductData[] => {
 };
 
 const getProductsList = async (offset: number = 0): Promise<IProductsListResponseData> => {
-  console.log(offset);
   const productsResponseData: IProductsListResponseData = {} as IProductsListResponseData;
 
   try {
