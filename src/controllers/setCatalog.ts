@@ -31,7 +31,10 @@ const disableBasketBtnLinkingInfo = () => {
 const setCatalog = () => {
   const list = getProductsList();
   const catalog = document.querySelector(".catalog-products-list") as HTMLElement;
+  const paginationLine = document.querySelector(".catalog-pagination") as HTMLDivElement;
+  paginationLine.innerHTML = "";
   catalog.innerHTML = "";
+
   setActiveCategoryLink();
 
   list?.forEach((item) => {

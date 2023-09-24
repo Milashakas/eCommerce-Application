@@ -52,6 +52,7 @@ const setProductsListAsyncAction = async (offset: number = 0) => {
     const productsListData: IProductsListData = {
       productsList,
       total: productsListResponseData.catalogData?.total as number,
+      offset: productsListResponseData.catalogData?.offset as number,
     };
 
     store.dispatch(setProductsListAction(productsListData));

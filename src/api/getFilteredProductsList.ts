@@ -51,7 +51,6 @@ const getFilteredProductsList = async (
   offset: number = 0,
 ): Promise<IProductsListResponseData> => {
   const productsResponseData: IProductsListResponseData = {} as IProductsListResponseData;
-
   try {
     const response: ClientResponse<ProductProjectionPagedSearchResponse> = await adminApiRoot
       .productProjections()

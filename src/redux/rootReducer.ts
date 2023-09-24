@@ -39,6 +39,7 @@ const rootReducer = <T>(state: IState, action: IAction<T>): IState => {
     const productsListData: IProductsListData = action.payload as IProductsListData;
     state.catalog.productsList = productsListData.productsList;
     state.catalog.total = productsListData.total;
+    state.catalog.offset = productsListData.offset;
     state.isPreloader = false;
   }
 

@@ -53,6 +53,7 @@ interface IState {
 interface IProductsListData {
   productsList: IProductData[];
   total: number;
+  offset: number;
 }
 
 export { IAction, IState, ICatalogData, IProductData, IFilterData, IFilterPriceRange };

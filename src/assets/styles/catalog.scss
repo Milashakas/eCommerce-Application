@@ -165,11 +165,10 @@
   }
 
   .catalog-pagination {
-    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 4.5rem;
     font-size: 24px;
-    .pagination-page {
-      font-size: 24px;
-    }
   }
 }
 
