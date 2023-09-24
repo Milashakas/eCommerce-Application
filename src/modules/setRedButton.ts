@@ -11,7 +11,7 @@ const setRedButton = () => {
 
   const state: IState = store.getState();
   const array = state.cart?.cartItems;
-  console.log(array);
+
   array?.forEach((item) => {
     const elem = document.getElementById(`${item.productId}`) as HTMLAnchorElement;
     const button = elem?.querySelector(".product-block-busket-button") as HTMLButtonElement;

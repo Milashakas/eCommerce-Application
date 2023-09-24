@@ -8,7 +8,6 @@ const handleRemoveItemFromBasket = () => {
   removeButton?.addEventListener("click", async () => {
     const itemID = removeButton.getAttribute("id") as string;
     const currentId = getProductCartId(itemID) as string;
-    console.log(currentId);
     await updateUserCartData({ action: "removeLineItem", productID: currentId });
 
     const cartButton = document.querySelector(".cart-button") as HTMLButtonElement;
