@@ -19,6 +19,7 @@ const INIT_STORE: IState = {
     filterData: {
       category: undefined,
       priceRange: undefined,
+      searchText: undefined,
     },
     sortValue: "id asc",
   },

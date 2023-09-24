@@ -1,4 +1,6 @@
 import getProductsList from "../../api/getProductsList";
+import getFilteredProductsList from "../../api/getFilteredProductsList";
+
 import {
   setProductsListAction,
   displayPreloaderAction,
@@ -8,8 +10,7 @@ import {
 import { IProductsListResponseData } from "../../interfaces/IProducts";
 import { navigateTo } from "../../router";
 import store from "../createStore";
-import { IProductData, IFilterData } from "../../interfaces/IRedux";
-import getFilteredProductsList from "../../api/getFilteredProductsList";
+import { IProductData, IFilterData, IProductsListData } from "../../interfaces/IRedux";
 import checkIsAnyCatalogFilter from "../../modules/checkIsAnyCatalogFilter";
 
 const setProspectiveFilterCategory = () => {
@@ -47,7 +48,13 @@ const setProductsListAsyncAction = async (offset: number = 0) => {
   } else {
     // eslint-disable-next-line max-len
     const productsList: IProductData[] = productsListResponseData.catalogData?.productsList as IProductData[];
-    store.dispatch(setProductsListAction(productsList));
+
+    const productsListData: IProductsListData = {
+      productsList,
+      total: productsListResponseData.catalogData?.total as number,
+    };
+
+    store.dispatch(setProductsListAction(productsListData));
   }
 };
 

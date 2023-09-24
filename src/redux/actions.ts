@@ -8,7 +8,7 @@ import {
   SET_SORT_VALUE,
   SET_CART_DATA,
 } from "./actionTypes";
-import { IAction, IProductData, IFilterData, IResetFilterData, ICatalogData } from "../interfaces/IRedux";
+import { IAction, IFilterData, IResetFilterData, ICatalogData, IProductsListData } from "../interfaces/IRedux";
 import { IUserProfileStoreData } from "../interfaces/IUserProfileData";
 import { ICartData } from "../interfaces/ICart";
 
@@ -21,7 +21,7 @@ const logoutProfileAction = <T>(): IAction<T> => ({
   type: LOGOUT_PROFILE,
 });
 
-const setProductsListAction = <T>(productsList: IProductData[]): IAction<T> => ({
+const setProductsListAction = <T>(productsList: IProductsListData): IAction<T> => ({
   type: SET_PRODUCTS_LIST,
   payload: productsList as T,
 });
