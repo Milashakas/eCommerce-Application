@@ -4,6 +4,7 @@ import store from "../redux/createStore";
 
 // Modules
 import setPagination from "./setPagination";
+import setRedButton from "../modules/setRedButton";
 
 const getProductsList = () => {
   const state: IState = store.getState();
@@ -59,6 +60,7 @@ const setCatalog = () => {
   });
 
   setPagination();
+  setRedButton();
 };
 
 export default setCatalog;

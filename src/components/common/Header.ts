@@ -18,8 +18,6 @@ const getHeader = () => {
           <li><a href="/">MAIN</a></li>
           <li><a href="/catalog">CATALOG</a>
           </li>
-          <li><a href="/brands">BRANDS</a>
-          </li>
           <li><a href="/catalog/category-face">FACE</a>
           </li>
           <li><a href="/catalog/category-body">BODY</a>

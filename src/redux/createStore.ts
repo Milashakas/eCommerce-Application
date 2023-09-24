@@ -54,6 +54,5 @@ store.subscribe(setRedButton);
 store.subscribe(setCount);
 store.subscribe(setRemoveButton);
 store.subscribe(getProductCartId);
-store.subscribe(setRemoveButton);
 
 export default store;
