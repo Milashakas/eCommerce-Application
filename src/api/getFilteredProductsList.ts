@@ -42,6 +42,8 @@ const createQueryString = (filterData: IFilterData): string[] => {
   return queryString;
 };
 
+const createSearchString = (searchText: string | undefined): string => searchText || "";
+
 // eslint-disable-next-line max-len
 const getFilteredProductsList = async (
   filterData: IFilterData,
@@ -60,6 +62,8 @@ const getFilteredProductsList = async (
           "filter.query": createQueryString(filterData),
           sort: `${sortDataValue}`,
           offset,
+          "text.en-us": createSearchString(filterData.searchText),
+          fuzzy: true,
         },
       })
       .execute();

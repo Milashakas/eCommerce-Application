@@ -23,6 +23,7 @@ interface IFilterPriceRange {
 }
 
 interface IFilterData {
+  searchText?: string;
   category?: "hair" | "face" | "body" | "nuxe" | "ordinary" | "sale" | "clarins" | "kiehls";
   priceRange?: IFilterPriceRange;
 }

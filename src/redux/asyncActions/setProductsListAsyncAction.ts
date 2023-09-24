@@ -35,6 +35,7 @@ const setProductsListAsyncAction = async (offset: number = 0) => {
     const filterData: IFilterData = store.getState().catalog.filterData as IFilterData;
     const sortDataValue = store.getState().catalog.sortValue;
 
+    // eslint-disable-next-line max-len
     productsListResponseData = await getFilteredProductsList(filterData, sortDataValue, offset);
   } else productsListResponseData = await getProductsList(offset);
 

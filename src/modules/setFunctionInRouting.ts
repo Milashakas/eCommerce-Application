@@ -18,6 +18,7 @@ import setSortSelectValue from "./setSortSelectValue";
 import sortCatalog from "../controllers/sortCatalog";
 import addItemToBasket from "./addItemToBasket";
 import setRedButton from "./setRedButton";
+import getItemsBySearch from "../controllers/getItemsBySearch";
 
 // productPage functional
 import setSwiper from "./swiper";
@@ -61,6 +62,7 @@ const runFunctionInRouting = async (url: string) => {
     sortCatalog();
     addItemToBasket();
     setRedButton();
+    getItemsBySearch();
   } else if (url === "/product") {
     // just to see the result
     await asyncProductPage();

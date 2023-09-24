@@ -45,9 +45,11 @@ const rootReducer = <T>(state: IState, action: IAction<T>): IState => {
     const filterData: IFilterData = action.payload as IFilterData;
     const { category } = filterData;
     const { priceRange } = filterData;
+    const { searchText } = filterData;
     if (state.catalog.filterData) {
       if (category) state.catalog.filterData.category = category;
       if (priceRange) state.catalog.filterData.priceRange = priceRange;
+      if (searchText) state.catalog.filterData.searchText = searchText;
     }
   }
 
