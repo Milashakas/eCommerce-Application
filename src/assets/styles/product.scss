@@ -359,6 +359,19 @@
   max-width: 1200px;
 }
 
+.breadcrumbs {
+  text-transform: uppercase;
+  color: #777;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.6rem;
+  transition: all 0.9s ease;
+}
+
+.breadcrumbs a:hover {
+  color: #000;
+}
+
 @media screen and (max-width: 1980px) {
   .product-info-container {
     width: 70%;
