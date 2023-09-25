@@ -1,0 +1,80 @@
+.profile-window {
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  margin: 3rem auto 0 auto;
+
+  .profile-nav {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-right: 1rem;
+    border-right: 0.2rem black solid;
+
+    .profile-nav-link {
+      font-size: 2.2rem;
+      margin: 1rem 0;
+    }
+  }
+
+  .profile-tab {
+    // width: 100%;
+    padding-left: 3rem;
+  }
+}
+
+// ProfileInfo component
+h2 {
+  margin-top: 2rem;
+}
+
+.profile-info-field {
+  display: flex;
+  flex-direction: column;
+  // min-width: 280px;
+  margin: 1.5rem 0;
+
+  .profile-field-title {
+    font-size: 1.5rem;
+  }
+  .profile-field-value {
+    margin-top: 0.5rem;
+    font-size: 2rem;
+  }
+}
+
+// AddressesInfo component
+.billing-address-field,
+.shipping-address-field {
+  display: flex;
+  margin: 2rem 0;
+}
+
+// ProfileSettings component
+.profile-settings-tab {
+  display: flex;
+  flex-direction: column;
+
+  .edit-profileData-btn {
+    width: 100%;
+    max-width: 26rem;
+    margin: 0.5rem 0;
+    padding: 0.2rem;
+    outline: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .billing-address-field,
+  .shipping-address-field {
+    flex-direction: column;
+  }
+
+  .profile-info-field .profile-field-value {
+    font-size: 14px;
+  }
+}
