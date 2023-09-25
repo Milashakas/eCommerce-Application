@@ -2,6 +2,10 @@ import ProductItem from "../components/ProductItem";
 import { IState } from "../interfaces/IRedux";
 import store from "../redux/createStore";
 
+// Modules
+import setPagination from "./setPagination";
+import setRedButton from "../modules/setRedButton";
+
 const getProductsList = () => {
   const state: IState = store.getState();
   const catalogProducts = state.catalog.productsList;
@@ -28,7 +32,10 @@ const disableBasketBtnLinkingInfo = () => {
 const setCatalog = () => {
   const list = getProductsList();
   const catalog = document.querySelector(".catalog-products-list") as HTMLElement;
+  const paginationLine = document.querySelector(".catalog-pagination") as HTMLDivElement;
+  paginationLine.innerHTML = "";
   catalog.innerHTML = "";
+
   setActiveCategoryLink();
 
   list?.forEach((item) => {
@@ -41,6 +48,7 @@ const setCatalog = () => {
     const description = item.description ? item.description["en-US"] : "There is no description";
     const productID = item.id;
     let dis: string | undefined;
+
     if (prices) {
       // eslint-disable-next-line max-len
       dis = prices[0].discounted
@@ -50,6 +58,9 @@ const setCatalog = () => {
     }
     disableBasketBtnLinkingInfo();
   });
+
+  setPagination();
+  setRedButton();
 };
 
 export default setCatalog;

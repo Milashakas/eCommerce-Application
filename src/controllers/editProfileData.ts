@@ -1,5 +1,5 @@
 // Utils
-import getCurrentLocationPath from "../utils/getCurrentLocationPath";
+import { getCurrentLocationSecondPath } from "../utils/getCurrentLocationPath";
 // Modules
 import { runPageFunctional } from "../router";
 import { validateFirstName, validateLastName } from "../modules/validateNames";
@@ -73,7 +73,7 @@ const submitNewData = (editModeId: string) => {
 };
 
 const editProfileData = () => {
-  const profilePath = getCurrentLocationPath();
+  const profilePath = getCurrentLocationSecondPath();
   if (profilePath !== "settings") return;
 
   const editBtns = document.querySelectorAll(".edit-profileData-btn");

@@ -2,11 +2,11 @@ import { Product } from "@commercetools/platform-sdk";
 import getProductDataAsyncAction from "../redux/asyncActions/getProductDataAsyncAction";
 // import { navigateTo } from "../router";
 import { IProdData } from "../interfaces/IProdData";
-import getCurrentLocationPath from "../utils/getCurrentLocationPath";
+import { getCurrentLocationSecondPath } from "../utils/getCurrentLocationPath";
 
 const showProduct = async (): Promise<IProdData | null> => {
   // here the place to extract id from URL
-  const productId = getCurrentLocationPath();
+  const productId = getCurrentLocationSecondPath();
 
   if (!productId) return null;
 
@@ -33,6 +33,7 @@ const showProduct = async (): Promise<IProdData | null> => {
       rawSalePrice !== undefined
         ? `${(rawSalePrice / 100).toFixed(2)} <i class='fa-solid fa-euro-sign'></i><div class="sale-img"></div>`
         : "";
+    const prodID = product.id;
 
     prodDataObj = {
       brandLogo: prodBrandLogo,
@@ -46,6 +47,7 @@ const showProduct = async (): Promise<IProdData | null> => {
       about: prodAbout,
       beautyTips: prodBeautyTips,
       salePrice: prodSalePrice,
+      id: prodID,
     };
   } else {
     return null;

@@ -26,13 +26,13 @@
 .product-block-busket-button {
   position: absolute;
   text-align: center;
-  padding: 10px 20px;
+  padding: 7px 5px;
   width: 100%;
   bottom: 0;
   color: white;
   font-size: 16px;
   background-color: rgba(0, 0, 0, 0.705);
-  bottom: -40px;
+  bottom: -60px;
   overflow: hidden;
   transition: all 0.25s ease;
   cursor: pointer;
@@ -40,7 +40,22 @@
 .product-block-busket-button:hover {
   color: rgb(143, 143, 143);
 }
-.product-block:hover .product-block-busket-button {
+
+.product-block-busket-button-red {
+  position: absolute;
+  text-align: center;
+  padding: 7px 5px;
+  width: 100%;
+  bottom: 0;
+  color: rgb(136, 35, 35);
+  font-size: 12px;
+  background-color: rgba(211, 69, 69, 0.705);
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.product-block:hover .product-block-busket-button,
+.product-block:hover .product-block-busket-button-red {
   bottom: 0;
 }
 .product-description-block {
@@ -79,9 +94,20 @@
   color: rgba(251, 36, 36, 0.736);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1023px) {
+  .product-block-busket-button {
+    bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 700px) {
   .product-block {
     height: 300px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .product-block {
+    height: 270px;
   }
   .product-description-block {
     height: 120px;

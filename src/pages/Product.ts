@@ -69,8 +69,13 @@ const generateInfoBlock = (prodDataObj: IProdData) =>
           makeDiv({ class: "product-price-line" }),
       ) +
       makeDiv(
-        { class: "cart-button-block" },
-        makeTag("button", { type: "submit", class: "cart-button" }, "Add to cart") +
+        { class: "cart-button-block", id: `${prodDataObj.id}` },
+        makeTag("button", { type: "submit", class: "cart-button", id: `${prodDataObj.id}` }, "Add to cart") +
+          makeTag(
+            "button",
+            { type: "submit", class: "cart-remove-button", id: `${prodDataObj.id}` },
+            "Remove from cart",
+          ) +
           makeDiv(
             { class: "product-shipment" },
             "<i class='fa-solid fa-truck-fast'></i> Free Shipping for Orders Over 99 EUR",
@@ -117,7 +122,7 @@ const asyncProductPage = async () => {
       { class: "product-page-container" },
       makeDiv({ class: "product-container-back" }) +
         makeDiv(
-          { class: "product-info-container" },
+          { class: "product-info-container", id: `${prodDataObj.id}` },
           makeDiv({ class: "product-info-main" }, generateSwiperBlock(prodDataObj) + generateInfoBlock(prodDataObj)) +
             makeDiv(
               { class: "separation" },

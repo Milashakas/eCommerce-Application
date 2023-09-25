@@ -4,7 +4,7 @@ import WelcomeSection from "../components/common/WelcomeSection";
 import AddressesInfo from "../components/profilePageCpmponents/AddressesInfo";
 import ProfileSettings from "../components/profilePageCpmponents/ProfileSettings";
 // Utils
-import getCurrentLocationPath from "../utils/getCurrentLocationPath";
+import { getCurrentLocationSecondPath } from "../utils/getCurrentLocationPath";
 // Interfaces
 import { IProfileInfo, IAdressessInfo } from "../interfaces/IProfile";
 import { IUserProfileStoreData, IUserBasicInfo, IAddressData } from "../interfaces/IUserProfileData";
@@ -12,7 +12,7 @@ import { IUserProfileStoreData, IUserBasicInfo, IAddressData } from "../interfac
 import store from "../redux/createStore";
 
 const getProfileTab = (userData: IUserProfileStoreData) => {
-  const currentPath = getCurrentLocationPath();
+  const currentPath = getCurrentLocationSecondPath();
   let profileTabLayout = "";
 
   if (currentPath === "info" || !currentPath) {

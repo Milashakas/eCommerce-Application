@@ -1,5 +1,7 @@
 import { CategoryReference, LocalizedString, ProductTypeReference, ProductVariant } from "@commercetools/platform-sdk";
+
 import { IUserProfileStoreData } from "./IUserProfileData";
+import { ICartData } from "./ICart";
 
 interface IAction<T> {
   type: string;
@@ -21,6 +23,7 @@ interface IFilterPriceRange {
 }
 
 interface IFilterData {
+  searchText?: string;
   category?: "hair" | "face" | "body" | "nuxe" | "ordinary" | "sale" | "clarins" | "kiehls";
   priceRange?: IFilterPriceRange;
 }
@@ -28,6 +31,7 @@ interface IFilterData {
 interface IResetFilterData {
   isResetCategory?: boolean;
   isResetPrice?: boolean;
+  isResetSearchTextData?: boolean;
 }
 
 interface ICatalogData {
@@ -43,7 +47,14 @@ interface IState {
   isPreloader: boolean;
   catalog: ICatalogData;
   userData?: IUserProfileStoreData;
+  cart?: ICartData;
+}
+
+interface IProductsListData {
+  productsList: IProductData[];
+  total: number;
+  offset: number;
 }
 
 export { IAction, IState, ICatalogData, IProductData, IFilterData, IFilterPriceRange };
-export { IResetFilterData };
+export { IResetFilterData, IProductsListData };

@@ -20,8 +20,8 @@
   }
 
   .profile-tab {
-    width: 100%;
-    padding-left: 5rem;
+    // width: 100%;
+    padding-left: 3rem;
   }
 }
 
@@ -33,7 +33,7 @@ h2 {
 .profile-info-field {
   display: flex;
   flex-direction: column;
-  min-width: 280px;
+  // min-width: 280px;
   margin: 1.5rem 0;
 
   .profile-field-title {
@@ -65,5 +65,16 @@ h2 {
     outline: none;
     font-size: 1.5rem;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .billing-address-field,
+  .shipping-address-field {
+    flex-direction: column;
+  }
+
+  .profile-info-field .profile-field-value {
+    font-size: 14px;
   }
 }

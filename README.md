@@ -17,9 +17,7 @@ It's a **Body Care shop**, where customers enjoy of buying a lot of body care pr
 - HTML/CSS/Sass
 - TypeScript
 - Webpack
-- Redux
-- Jest
-- Firebase
+- swiper
 - Commercetools
 ```
 
